@@ -1,0 +1,564 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Introduction to Functional Programming in Haskell -- Course Overview
+\end_layout
+
+\begin_layout Section
+L1.1 Introduction
+\end_layout
+
+\begin_layout Standard
+JS+WV
+\end_layout
+
+\begin_layout Enumerate
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Introduction to Functional Programming in Haskell
+\begin_inset Quotes erd
+\end_inset
+
+ course
+\end_layout
+
+\begin_layout Enumerate
+Programming paradigms 
+\end_layout
+
+\begin_layout Enumerate
+Functional Languages
+\end_layout
+
+\begin_layout Enumerate
+Expressions
+\end_layout
+
+\begin_layout Enumerate
+Equations
+\end_layout
+
+\begin_layout Section
+L1.2 Reduction, Functions, and Lists 
+\end_layout
+
+\begin_layout Standard
+WV
+\end_layout
+
+\begin_layout Enumerate
+Reduction
+\end_layout
+
+\begin_layout Enumerate
+Functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Function definitions
+\end_layout
+
+\begin_layout Itemize
+Function application
+\end_layout
+
+\begin_layout Itemize
+Multiple arguments and results
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Lists
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Constructing lists
+\end_layout
+
+\begin_layout Itemize
+Operating on lists
+\end_layout
+
+\end_deeper
+\begin_layout Section
+L2.1 Text Input/Output
+\end_layout
+
+\begin_layout Standard
+JS
+\end_layout
+
+\begin_layout Enumerate
+Practical Functional programming
+\end_layout
+
+\begin_layout Enumerate
+Some basic techniques
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Layout
+\end_layout
+
+\begin_layout Itemize
+Some standard functions
+\end_layout
+
+\begin_layout Itemize
+Conditional expressions
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Input/output
+\end_layout
+
+\begin_layout Enumerate
+The Starman program
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Calculating the result
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Interaction with game player
+\end_layout
+
+\begin_layout Section
+L2.2 Computations and Polymorphism
+\end_layout
+
+\begin_layout Standard
+JS
+\end_layout
+
+\begin_layout Enumerate
+Computations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Running Starman
+\end_layout
+
+\begin_layout Itemize
+IO operations
+\end_layout
+
+\begin_layout Itemize
+Using let in a monad
+\end_layout
+
+\begin_layout Itemize
+show and read
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Polymorphic types
+\end_layout
+
+\begin_layout Enumerate
+Using ghci
+\end_layout
+
+\begin_layout Section
+L3.1 Data Structures
+\end_layout
+
+\begin_layout Standard
+WV
+\end_layout
+
+\begin_layout Itemize
+Recursion on lists
+\end_layout
+
+\begin_layout Itemize
+filter
+\end_layout
+
+\begin_layout Itemize
+Computations over lists
+\end_layout
+
+\begin_layout Itemize
+map
+\end_layout
+
+\begin_layout Itemize
+foldl
+\end_layout
+
+\begin_layout Itemize
+foldr
+\end_layout
+
+\begin_layout Section
+L3.2 Computations and Types
+\end_layout
+
+\begin_layout Standard
+JS
+\end_layout
+
+\begin_layout Enumerate
+IO Operations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Computations
+\end_layout
+
+\begin_layout Itemize
+Using let in a monad
+\end_layout
+
+\begin_layout Itemize
+show and read
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Algebraic data types
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deriving Show and Read
+\end_layout
+
+\begin_layout Itemize
+Recursion over a tree
+\end_layout
+
+\end_deeper
+\begin_layout Section
+L3.3 Equational Reasoning [optional extra]
+\end_layout
+
+\begin_layout Itemize
+Equational Reasoning
+\end_layout
+
+\begin_layout Section
+L4.1 Returning Functions as Values – Parsing
+\end_layout
+
+\begin_layout Standard
+WV
+\end_layout
+
+\begin_layout Itemize
+Returning functions as values
+\end_layout
+
+\begin_layout Itemize
+Function generators
+\end_layout
+
+\begin_layout Itemize
+Structuring a program
+\end_layout
+
+\begin_layout Itemize
+Parsing text
+\end_layout
+
+\begin_layout Itemize
+Parsec: monadic parsing combinators
+\end_layout
+
+\begin_layout Section
+L4.2 Program Structure
+\end_layout
+
+\begin_layout Standard
+JS
+\end_layout
+
+\begin_layout Enumerate
+Scoping
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+let expressions
+\end_layout
+
+\begin_layout Itemize
+where clauses
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Conditionals
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Guards
+\end_layout
+
+\begin_layout Itemize
+Constructors and case expressions
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Maybe
+\end_layout
+
+\begin_layout Enumerate
+Documentation
+\end_layout
+
+\begin_layout Section
+L5.1 Strictness
+\end_layout
+
+\begin_layout Standard
+JS
+\end_layout
+
+\begin_layout Enumerate
+Strictness
+\end_layout
+
+\begin_layout Enumerate
+Data recursion
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fibonacci numbers
+\end_layout
+
+\begin_layout Itemize
+Modularity and infinite data structures
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Advice on structuring a program
+\end_layout
+
+\begin_layout Enumerate
+Real world parsing examples
+\end_layout
+
+\begin_layout Enumerate
+Unassessed exercises
+\end_layout
+
+\begin_layout Section
+L5.2 Types
+\end_layout
+
+\begin_layout Standard
+WV
+\end_layout
+
+\begin_layout Enumerate
+Function types
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lambda expressions
+\end_layout
+
+\begin_layout Itemize
+Monomorphic functions
+\end_layout
+
+\begin_layout Itemize
+Polymorphic functions
+\end_layout
+
+\begin_layout Itemize
+Currying
+\end_layout
+
+\begin_layout Itemize
+Type classes
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Type inference
+\end_layout
+
+\begin_layout Section
+L6.1 Type classes and Lambda Calculus
+\end_layout
+
+\begin_layout Standard
+WV
+\end_layout
+
+\begin_layout Enumerate
+Defining type classes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class and instance declarations
+\end_layout
+
+\begin_layout Itemize
+The Num class
+\end_layout
+
+\begin_layout Itemize
+The Show class
+\end_layout
+
+\begin_layout Itemize
+More standard typeclasses
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Introduction to Lambda Calculus
+\end_layout
+
+\begin_layout Section
+L6.2 Monads
+\end_layout
+
+\begin_layout Standard
+JS+WV
+\end_layout
+
+\begin_layout Enumerate
+Monads
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Building blocks
+\end_layout
+
+\begin_layout Itemize
+Type class
+\end_layout
+
+\begin_layout Itemize
+Laws
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The Maybe Monad
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Maybe type constructor
+\end_layout
+
+\begin_layout Itemize
+Monad instance of Maybe
+\end_layout
+
+\begin_layout Itemize
+A computation using explicit Maybe
+\end_layout
+
+\begin_layout Itemize
+A computation using the Maybe monad
+\end_layout
+
+\begin_layout Itemize
+Example: Reduction of bar [5,6]
+\end_layout
+
+\begin_layout Itemize
+Example: Reduction of bar [5,6,7]
+\end_layout
+
+\begin_layout Itemize
+do notation
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
