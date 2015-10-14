@@ -29,6 +29,136 @@ CHECK1
 
 CHECK1
 
+2.3 There are some special cases, in particular regarding the '-' sign. For example, try 4+-3
+
+CHECK2: Check if they typed this particular arithmetic expression or at least this sequence, using a regex
+/[0-9]+\+\-[0-9]+/
+If OK, say, "So, that did not work as expected: Haskell thinks you wanted to use a special operation '+-'."
+Else 
+"The issue here is with the '+-' without spaces, so if you want to see what happens, try it again"
+If they still do it wrong, just skip it.
+
+Now, try 4+ -3 (that's right, just an extra space)
+CHECK3: Check if they typed this particular arithmetic expression or at least this sequence, using a regex
+/[0-9]+\+\s+\-[0-9]+/
+
+If OK, say, "Again, that did not work as expected: Haskell does not allow you to combine 'infix' operations (like 3+4) with 'prefix' operations (like '-4')."
+Else 
+"The issue here is with the '+' followed by a '-', so if you want to see what happens, try it again"
+If they still do it wrong, just skip it.
+
+So, what should we do? Use parentheses: 4+(-3)
+CHECK4: Check if they typed this particular arithmetic expression or at least this sequence, using a regex
+/[0-9]+\+\s*\(\s*\-[0-9]+\s*\)/
+If OK, say, "OK, that worked! So in general it is best to enclose negative numbers with parentheses in expressions"
+Else 
+"That's not what we expected, please try it again"
+If they still do it wrong, just skip it.
+
+
 3. Functions
+
+3.1 A function has a textual name (e.g. 'abs' or 'sin') rather than an operator. It takes argument(s), performs some computation, and produces result(s). 
+To use a function in Haskell, you apply it to an argument: write the function followed by the argument, separated by a space. For example 'abs 5'
+
+CHECK5: Check if they typed abs with a positive number, using a regex
+/abs\s+[0-9]+/
+If OK, say, "As expected, applying abs to a positive number just returns its value"
+
+Else 
+say "What you typed was not what I expected, hope you got what you wanted."
+
+Now let's try a negative number: 'abs (-3)'
+
+CHECK5: Check if they typed abs with a positive or negative number with parenthesis, using a regex
+/abs\s+[\(\)\-0-9]+/
+
+If OK, say, "As expected, applying abs to a negative number returns the absolute value"
+
+Else 
+say "What you typed was not what I expected, hope you got what you wanted."
+
+
+3.2 Functions can take several arguments, e.g. min and max take two arguments. The arguments are given after the function,  separated by whitespace.  For example, 'min 3 8' or 'max 3 8'
+
+CHECK6: /\w+(\s+[\(\)\-0-9]+)+/
+
+If OK say, "See? No need for parentheses!"
+
+3.3 To combine functions you need to know their precedence. In Haskel this is simple: Function application binds tighter than anything else. For example, try 'sqrt 9+4'.
+
+CHECK7: /sqrt\s+\d+\s*[\+\-\*]\s*\d+/
+
+If OK say "Surprised? Haskell considers this as (sqrt 9)+4, not sqrt (9+4)
+Else 
+say "What you typed was not what I expected, can't help you there."
+
+So try 'sqrt (9+4)'
+CHECK8: /sqrt\s+\(\s*\d+\s*[\+\-\*]\s*\d+\s*\)/
+If OK say "That worked as expected! If an argument to a function is an expression, you need to
+  put it in parentheses."
+Else
+say "What you typed was not what I expected, try again?"
+
+3.4 So what about combining two functions? Try for example to apply 'min' to 'max 3 4' and '5'
+
+CHECK9: They can do min 5 max 3 4, min max 3 4 5, min 5 (max 3 4) or min (max 3 4) 5, we need to catch each case:
+
+/min\s+\d+\s+max\s+\d+\s+\d+/
+If OK
+say "That doesn't work: Haskell thinks you're trying to apply 'min' to 4 arguments"
+
+Else If
+/min\s+max\s+\d+\s+\d+\s+\d+/
+say "That doesn't work: Haskell thinks you're trying to apply 'min' to 4 arguments"
+
+Else If
+/min\s+\(\s*max\s+\d+\s+\d+\s*\)\s+\d+/
+say "That worked, well done!"
+
+Else If
+/min\s+\d+\s+\(\s*max\s+\d+\s+\d+\s*\)/
+say "That worked, well done!"
+
+Else
+
+say "What you typed was not what I expected, can't help you there."
+
+
+4. Equations
+4.1 Equations are used to give names to values, e.g.
+'answer = 42'
+CHECK11: /\w+\s*=\s*\d+/
+If OK say 
+"That did not work, sorry. In the interactive interpreter, you need to use the keyword 'let' to indicate that you are writing an equation. Try this: 'let answer = 42'
+CHECK12: /let\s+\w+\s*=\s*\d+/
+If OK say "OK, nothing happened. Now just type 'answer'"
+NOTE: ideally I would capture the name of the variable and use it.
+say "Equations give names to values. So now 'answer' is just another name for '42'
+Else
+CHECK14: /\w+/
+say "The name $1 is not yet defined, maybe you mistyped?"
+Else
+say "Whatever"
+
+4.2
+An equation in Haskell is a mathematical equation: it says
+  that the left hand side and the right hand side denote the same
+  value.
+The left hand side should be a name that you're giving a
+  value to.
+
+So now you can say 'let double = answer * 2'
+CHECK: /let\s+\w+\s*=\s*\w+\s*[\*\+\-\/]\s*\d+/
+
+But not 'let answer = answer * 2'
+If you tried it, you see nothing happened. But now try to evaluate 'answer' (by typing 'answer')
+
+This actually creates a loop because you want to name an expression in terms of itself. Reassignment is not allowed in a pure functional language like Haskell.
+
+Other things you can't say is e.g. 'let 2*single=double'
+CHECK: /let\s+\d\s*[\+\-\*\/]\s*]\w+\s*=\s*\w+/
+if OK say "The LHS must be a name, not an expression"
+
 
 
