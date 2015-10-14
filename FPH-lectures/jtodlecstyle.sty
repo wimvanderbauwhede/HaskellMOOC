@@ -1,0 +1,229 @@
+%-----------------------------------------------------------------------
+% jtodlecstyle.sty:  a style for series of lectures
+% Uses beamer, tikz
+% John O'Donnell
+% December 2009
+%-----------------------------------------------------------------------
+
+%\usepackage{pgfkeys}
+%\usepackage{tikz}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+
+% Tikz configuration
+
+\usefonttheme{professionalfonts}
+%\usetikzlibrary{arrows,shapes}
+
+% Each picture using external nodes needs remember picture; make
+% this default for all pictures.
+%\tikzstyle{every picture}+=[remember picture]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+
+
+% How to use this style
+% See example file CA4-2009-Lec00test.tex
+%   pdflatex tikzslides
+
+% Defining title, author, and date
+\newcommand{\TitleColor}{blue}
+
+\newcommand{\SetPresentationTitle}[2]
+  {\newcommand{\PresentationShortTitle}{#1}
+   \newcommand{\PresentationFullTitle}{#2}}
+
+\newcommand{\SetPresentationDate}[2]
+  {\newcommand{\PresentationShortDate}{#1}
+   \newcommand{\PresentationLongDate}{#2}}
+
+\newcommand{\SetPresentationNumber}[1]
+  {\newcommand{\PresentationNumber}{#1}}
+
+\newcommand{\PresentationTitleSlide}{
+  \begin{center}
+    {\large\PresentationTitle}\\
+    \vspace{2em}
+    {\LARGE\color{\TitleColor}\PresentationFullTitle\\\strut}\\
+%  The \strut allows the title to end with \\, so all the lines
+%  have proper interline spacing
+    \vspace{0.9em}
+    {\large \PresentationType\ \PresentationNumber}\\
+    \vspace{0.2em}
+    {\normalsize\PresentationLongDate}\\
+    \vspace{2em}
+    {\AuthorName}\\
+    {\Institution}\\
+    \vspace{0.8em}
+    {\footnotesize\CopyRight}
+  \end{center}
+}
+
+% Configuring beamer class
+
+% Boadilla allows a 120mm horizontal rule, same as in book page
+\usetheme[secheader]{Boadilla}
+
+% from beamerouterthemeinfolines.sty
+% \defbeamertemplate*{footline}{infolines theme}
+% {
+%   \leavevmode%
+%   \hbox{%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%     \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+% 
+% \setbeamertemplate{footline}{hello}
+
+% My modified version of the footline...
+
+
+% Set up footline, overriding default, using modified footline template
+\newcommand{\footlinePartOne}{\hbox{\PresentationTitle}}
+\newcommand{\footlinePartTwo}{\PresentationShortTitle}
+\newcommand{\footlinePartThree}{\PresentationType\ \PresentationNumber
+  \hspace*{2ex}
+  \PresentationShortDate \hspace*{2ex}
+  \insertframenumber{} / \inserttotalframenumber \hspace*{2ex}}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+    \usebeamerfont{author in head/foot}\footlinePartOne
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\footlinePartTwo
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \usebeamerfont{date in head/foot}\footlinePartThree
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+
+
+
+%\usefonttheme{structurebold}
+%\setbeamercovered{dynamic}
+
+%\usetheme{Malmoe}
+%\usetheme{Goettingen}
+
+
+%-----------------------------------------------------------------------
+% Packages
+
+\usepackage[english]{babel}
+\usepackage{pdfpages}
+
+\usepackage{verbatim}
+\usepackage{graphicx}
+%\usepackage{xcolor} don't need this with tikz?
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+%\usepackage{tikz}
+%\usepackage{tikz-timing}
+
+%\usetikzlibrary{backgrounds,arrows,shapes,snakes}
+%\usetikzlibrary{automata,petri,calc,shapes.gates.logic.US}
+
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+%\tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+%-----------------------------------------------------------------------
+% Typesetting text structures
+
+\newcommand{\Realo}{\,R \!\!\!\!\!\!I\,\,\,}
+
+\newenvironment{myitemize}{\begin{list}{$\bullet$}{
+%   \labelwidth0.2cm \leftmargin1cm \labelsep0.2cm \rightmargin0cm
+   \parsep0.2ex plus 0.1ex minus 0.1ex \itemsep0ex
+   \topsep0.1ex}}{\end{list}}
+\newcounter{mycounter}
+\newenvironment{myenumerate}{\begin{list}{(\arabic{mycounter})}{
+    \usecounter{mycounter}
+%   \labelwidth0.2cm \leftmargin1cm \labelsep0.2cm \rightmargin0cm
+   \parsep0.2ex plus 0.1ex minus 0.1ex \itemsep0ex
+   \topsep0.1ex}}{\end{list}}
+\newcounter{mcounter}
+
+%-----------------------------------------------------------------------
+% How to use the verbatim environment...
+% 
+% \begin{frame}[fragile]
+% \frametitle{Verbatim text}
+% 
+% \begin{verbatim}
+% this
+% is
+% \end{verbatim}
+% 
+% \end{frame}
+
+%-----------------------------------------------------------------------
+% Colors
+
+\xdefinecolor{Darkred}{rgb}{0.9,0.0,0.1}
+\xdefinecolor{Darkblue}{rgb}{0.1,0.2,0.9}
+
+\definecolor{mygreen}{rgb}{0.2,0.6,0.1}
+\definecolor{darkred}{rgb}{0.5,0.0,0.0}
+\definecolor{darkblue}{rgb}{0,0.2,0.5}
+\definecolor{darkgreen}{rgb}{0,0.2,0.0}
+\definecolor{myyellow}{rgb}{1.0,1.0,0.80}
+\definecolor{myyellow1}{rgb}{1.0,0.8,0.90}
+
+\colorlet{redshaded}{red!25!bg}
+\colorlet{shaded}{black!25!bg}
+\colorlet{shadedshaded}{black!10!bg}
+\colorlet{blackshaded}{black!40!bg}
+
+\colorlet{darkred}{red!80!black}
+\colorlet{darkblue}{blue!80!black}
+\colorlet{darkgreen}{green!80!black}
+
+\newcommand{\bluetext }{\color[rgb]{0.1,0.2,0.8}}
+\newcommand{\redtext  }{\color[rgb]{0.8,0.2,0.1}}
+\newcommand{\greentext}{\color[rgb]{0.2,0.8,0.1}}
+
+
+\xdefinecolor{graphicbackground}{rgb}{0.96,0.96,0.8}
+
+\renewcommand{\textcolor}[1]{{}}
+
+%-----------------------------------------------------------------------
+% Definitions for this presentation (within a series)
+
+\newcommand{\newsig}[1]{{\color{darkred}#1}}
+
+
+
+
+

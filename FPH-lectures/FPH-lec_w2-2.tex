@@ -1,0 +1,593 @@
+%-----------------------------------------------------------------------
+% Functional Programming 4
+% John O'Donnell, Wim Vanderbauwhede
+% University of Glasgow
+%-----------------------------------------------------------------------
+
+\documentclass{beamer}
+\usepackage{jtodlecseriesFP4}
+%include polycode.fmt
+%format alpha = "\alpha"
+%format -- > = "\leadsto "
+
+% Identify this presentation
+\SetPresentationTitle
+  {Computations and Polymorphism}
+  {Computations and Polymorphism}
+\SetPresentationNumber
+  {4}
+\SetPresentationDate
+  {Week 2-2}
+  {Week 2-2}
+
+%-----------------------------------------------------------------------
+% Beginning
+
+\begin{document}
+
+\begin{frame}[fragile]
+  \PresentationTitleSlide
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Topics}
+  \tableofcontents
+\end{frame}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\begin{center}
+\includegraphics[scale=0.075]
+	{figures/jpg/pic03.jpg}
+\end{center}
+\end{frame}
+%-----------------------------------------------------------------------
+\section{Computations}
+\subsection{Running Starman}
+\begin{frame}[fragile]
+\frametitle{Running the Starman program}
+
+\begin{enumerate}
+\item Launch haskell: {\tt hci}
+\item Load the program: {\tt :load Starman}
+\item Run a game by entering \emph{starman word n}, where $word ::
+  String$ is the word to be guessed, and $n :: Int$ is the number
+  of stars you start with.
+\item Example: \emph{starman "astonishing" 5}
+\item When the game finishes, you'll be back at the ghci prompt.
+\end{enumerate}
+\end{frame}
+
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Winning}
+
+{\footnotesize
+\begin{verbatim}
+$  starman elephant 4
+________  ****
+  Enter your guess: e
+e_e_____  ****
+  Enter your guess: q
+e_e_____  ***
+  Enter your guess: r
+e_e_____  **
+  Enter your guess: p
+e_ep____  **
+  Enter your guess: t
+e_ep___t  **
+  Enter your guess: a
+e_ep_a_t  **
+  Enter your guess: n
+e_ep_ant  **
+  Enter your guess: l
+elep_ant  **
+  Enter your guess: h
+You win!
+\end{verbatim}
+}
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Losing}
+
+{\footnotesize
+\begin{verbatim}
+$ starman easy 3
+____  ***
+  Enter your guess: e
+e___  ***
+  Enter your guess: a
+ea__  ***
+  Enter your guess: c
+ea__  **
+  Enter your guess: t
+ea__  *
+  Enter your guess: h
+You lose
+\end{verbatim}
+}
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Improvements}
+
+\begin{itemize}
+\item There are some small improvements.  If you win, it would be
+  nice to display the complete word, but the program just says you
+  won.
+\item Major improvement:
+  \begin{itemize}
+  \item To run the game, you have to tell it the secret word.  So
+    it isn't very secret.
+  \item We should really generate the words automatically in the
+    program: for example, we could generate a random number $i$ and
+    read in the $i$th word from a dictionary.
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+%-----------------------------------------------------------------------
+\subsection{IO operations}
+
+\begin{frame}[fragile]
+\frametitle{Computations}
+
+\begin{itemize}
+\item Most programming languages have types for primitive data:
+  $Int$, $Bool$, $Double$, $Char$.
+\item Most languages also have at least a few types for structured
+  data, such as arrays.  (Haskell has this.)
+\item Some languages go farther, and have types for more advanced
+  data structures: tuples, lists, records, enumerations.  (Haskell
+  has all these.)
+\item A few languages go still farther, and have user-definable
+  types for general structures like trees and graphs.  (Haskell has
+  this.)
+\item Haskell goes still farther: it has the concept of a
+  \emph{computation}, and \emph{types to represent computations}.
+\item Computations are ``first class'': they can be used as
+  arguments to functions, or results of functions, they can be
+  stored in data structures, etc.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Computation types}
+
+\begin{itemize}
+\item A computation type has a form like $IO\; Int$.
+  \begin{itemize}
+  \item The first part, $IO$, is a \emph{monad}.  We'll look at
+    monads later, but for now, think of a monad as the method by
+    which the computations in a $do$ expression are combined into a
+    larger computation.
+  \item There are many monads in Haskell, and you can define your
+    own.  For the time being, we will be working with just one
+    monad --- $IO$ --- so all our computations will have types that
+    start with $IO$.
+  \item The second part ($Int$ in the example above) is the type of
+    \emph{the result computed by the computation}.
+  \end{itemize}
+\item So $IO\; Int$ means ``the type of a computation that does some
+  work and then eventually produces a value of type $Int$''.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{The type of $putStrLn$}
+
+Here is the type of $putStrLn$.  It isn't a statement!  It's a
+function that takes an argument and returns a result.
+
+\begin{verbatim}
+putStrLn :: String -> IO ()
+\end{verbatim}
+
+\begin{itemize}
+\item $putStrLn$ takes a $String$ and it returns a computation.
+  That computation has type $IO ()$.
+\item The computation must run in the $IO$ monad.  This means you
+  can combine $putStrLn$ with other $IO$ operations, but not with
+  some completely unrelated computations that we'll encounter
+  later.
+\item When the computation executes it will perform the output.  It
+  doesn't have a useful result to produce, so by convention it just
+  produces the empty tuple $()$.
+\item The application $putStrLn$\emph{ "hello"} has type $IO ()$ --- when
+  you apply the function $putStrLn$ to a string, the result is the
+  computation.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Some text output operations}
+
+\begin{itemize}
+\item $putStr :: String -> IO ()$
+\item $putStrLn :: String -> IO ()$
+\item $putChar :: Char -> IO ()$
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{$getChar$}
+
+Here is the type of $getChar$:
+
+\begin{verbatim}
+getChar :: IO Char
+\end{verbatim}
+
+\begin{itemize}
+\item $getChar$ is not a function: it doesn't need an arguments to
+  tell it how to read a character.
+\item It is simply a constant, like $42$ or $'a'$ or any other
+  constant.
+\item The type says that
+  \begin{itemize}
+  \item $getChar$ executes in the $IO$ monad --- that means that
+    you can combine it in a $do$ expression with other $IO$
+    operations, but not with operations that are completely
+    unrelated.
+  \item When the computation is executed, it yields a result with
+    type $Char$.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Receiving the result of a computation}
+
+\begin{itemize}
+\item When the computation $getChar$ is executed, we need to grab
+  the result so we can use it!
+\item This is done by binding a name to the result of the computation.
+\item {\tt c <- getChar} means ``run the computation $getChar$ and then
+  define $c$ to be the value produced by the computation''.
+\item Since $getChar :: IO Char$, we will have $c :: Char$
+\item In general, if you write {\tt x <- someComputation}, where
+  $someComputation :: IO a$ for any type $a$, then $x$ will have
+  the type $a$.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{More text input operations}
+
+\begin{itemize}
+\item $getChar :: IO Char$
+\item $getLine :: IO String$
+\end{itemize}
+
+\end{frame}
+
+
+%-----------------------------------------------------------------------
+\subsection{Using let in a monad}
+\begin{frame}
+\frametitle{Using \emph{let} in a monad}
+
+\begin{itemize}
+\item What if you want to do something ordinary in a $do$
+  expression, like just say {\tt x = 2+2}?
+\item You can't put an equation like this in a $do$ expression
+  because it doesn't have the right monadic type.
+\item Instead, you write {\tt let x = 2+2}.  This is now a computation,
+  and the types are ok.
+\item A typical $do$ expression combines computations (with and
+  without {\tt <-} and {\tt let} expressions.
+\end{itemize}
+
+\end{frame}
+
+
+%-----------------------------------------------------------------------
+\subsection{show and read}
+
+\begin{frame}[fragile]
+\frametitle{The \emph{show} function}
+
+\begin{itemize}
+\item When you have done some calculation (like $2+2$) you may want
+  to print it!
+\item But $putStrLn$ requires a $String$ to print, and $2+2 :: Int$.
+\item Solution: you can apply the function $show$ to an $Int$, and
+  it converts it to a string.
+\end{itemize}
+
+\begin{verbatim}
+show (2+2) -- > "4"
+\end{verbatim}
+
+\emph{Note that the result is a string, not a number.}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{The $read$ function}
+
+\begin{itemize}
+\item When you have read some input with $getLine$, it is a
+  $String$.
+\item You can convert it to an $Int$ (or some other type) using
+  $read$.
+\item But if you have read a string like "23", how can $read$ know
+  whether it should give you an $Int$, or a $Double$, or one of the
+  many other types it could be?
+\item \emph{You need to tell it} by specifying the type of the
+  result $read$ should produce.
+\end{itemize}
+
+\begin{verbatim}
+read "23" :: Int     -- > 23
+read "23" :: Double  -- > 23.0
+\end{verbatim}
+
+If you just write {\tt read "23"} Haskell will give an error message,
+referring to ``Ambiguous type variable$\ldots$''.
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Example: program \tt{Lec04Prog1.hs}}
+
+\begin{verbatim}
+main =
+  do  putStrLn "Enter a number"
+      xs <- getLine
+      let n = 3 * (read xs :: Int)
+      putStrLn (show n)
+\end{verbatim}
+
+\begin{verbatim}
+*Main> main
+Enter a number
+21
+63
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\section{Polymorphic types}
+
+\begin{frame}[fragile]
+\frametitle{Polymorphic types}
+
+\begin{itemize}
+\item The word \emph{polymorphic} means ``has many forms''.
+\item In Haskell, a polymorphic type is a set of basic types.
+\item Polymorphic functions raise the level of abstraction, and
+  they make programs more concise.
+\end{itemize}
+
+\end{frame}
+
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{$length$ of a list}
+
+To motivate the need for polymorphism, we look at the $length$
+function.
+
+\begin{itemize}
+\item $length$ takes a list, and returns the number of elements.
+\item {\tt length [2,5,6,7] -- > 4}
+\item {\tt length [] -- > 0}
+\end{itemize}
+
+There are many mathematical theorems about  functions, and
+here is one of them.
+
+\begin{theorem}
+  For all $xs, \,ys\, ::\, [a]$, $length\, (xs++ys)\, =\, length\,  xs + length\,ys$.
+\end{theorem}
+
+Later, we will prove this theorem.
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{What is the type of \emph{length}?}
+
+Consider some examples:
+
+\begin{itemize}
+\item \texttt{length [4,8,2] -- > 3}, so apparently {\tt length :: [Int] -> Int}.
+\item But \texttt{length [3.1, 6,7] -- > 2}, so now it seems that {\tt length ::
+  [Double] -> Int}.
+\item Also \texttt{length ["a","bb","ccc"'] -- > 3}, which would imply that
+  {\tt length :: [String] -> Int}.
+\item This isn't all: \emph{for any type at all, if you have a list
+    of elements of that type, $length$ will take that list and
+    return an $Int$}.
+\end{itemize}
+
+{\redtext Conclusion: $length$ has many types: it is
+  \emph{polymorphic.}}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Type variables}
+
+\begin{itemize}
+\item A concrete type is just one specific datatype: $Int$,
+  $Double$, $Bool$, etc.
+\item A type variable can stand for any arbitrary type: $a$, $b$,
+  etc.
+\item A polymorphic function's type is expressed using a type
+  variable.
+\end{itemize}
+
+\begin{verbatim}
+length :: [a] -> Int
+\end{verbatim}
+
+This means: for any type $a$, the function $length$ takes a list
+whose elements have type $a$ and returns an $Int$.
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{The type of $++$}
+
+\begin{itemize}
+\item The $++$ operator is just a function: it takes two lists and
+  returns a big list containing all their elements.
+\item These lists could have \emph{any type at all}
+  \begin{itemize}
+  \item \texttt{[2,3] ++ [6,7,8] -- > [2,3,6,7,8]}.  Here all the lists have
+    type $[Int]$.
+  \item \texttt{["head",1] ++ ["strong",2] -- > ["head",1,"strong",2]}.  Here all the lists
+    have "mixed" types. This would be a type error in Haskell!
+  \end{itemize}
+\end{itemize}
+
+\begin{verbatim}
+(++) :: [a] -> [a] -> [a]
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Saying that two types must be the same}
+
+\begin{itemize}
+\item To say that two types are arbitrary, give them
+  \emph{different type variable names}
+  \begin{itemize}
+  \item $f :: [a] -> [b] -> Int$ says that $f$ takes two lists, and
+    each list could have any type at all.
+  \end{itemize}
+\item To say that two types are arbitrary except that they have to
+  be the same, give them \emph{the same type variable name}.
+  \begin{itemize}
+  \item $g :: [a] -> [a] -> Int$ says that $g$ takes two lists, and
+    they can have any element type except that the two lists must
+    be the \emph{same} type.
+  \end{itemize}
+  \item The type variable $a$ can refer to a polymorphic type that contains all possible types. This is the case in e.g. LiveScript arrays: the array can contain values of any type, so the type variable must refer to a type that contains all possible types. You will find this notation used in the LiveScript Prelude documentation.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Type of \emph{zip}}
+
+\begin{itemize}
+\item The $zip$ function takes two lists, and they can have any
+  type at all.  Therefore their types are described with two
+  different type variables.
+\item It returns a list of pairs, with each element of the pair
+  coming from one of the lists.  This constrains the output type,
+  so we say the result type is $[(a,b)]$.
+\end{itemize}
+
+\begin{verbatim}
+zip :: [a] -> [b] -> [ (a, b) ]
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\section{Using ghci}
+
+\begin{frame}[fragile]
+\frametitle{Haskell script files}
+
+Create a file named {\tt Basic1.hs} with the following contents:
+
+%\vspace{1em}
+%
+%\fbox{
+%\begin{minipage}{8cm}
+\begin{verbatim}
+g :: Int -> Int
+g x = x+2
+\end{verbatim}
+%\end{minipage}
+%}
+%\vspace{1em}
+
+Use the {\tt load} command to read the script file:
+
+{\footnotesize
+\begin{verbatim}
+Prelude> :load Basic1
+[1 of 1] Compiling Main             ( Basic1.hs, interpreted )
+Ok, modules loaded: Main.
+\end{verbatim}
+}
+
+\begin{verbatim}
+*Main> g 15
+17
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Asking ghci about types}
+
+\begin{itemize}
+\item ghci has a command {\tt :t} --- put an expression after{\tt :t}  and
+  ghci will tell you its type.
+\end{itemize}
+
+\begin{verbatim}
+Prelude> :t (2<3)
+(2<3) :: Bool
+\end{verbatim}
+
+Useful for finding types of functions.
+
+\begin{verbatim}
+Prelude> :t zip
+zip :: [a] -> [b] -> [(a, b)]
+\end{verbatim}
+
+Sometimes it may surprise you!
+
+\begin{verbatim}
+Prelude> :t 3
+3 :: (Num t) => t
+\end{verbatim}
+
+{\redtext There are a lot of Haskell features we haven't seen yet
+  (but we will soon).  But for now, this means you'll see types and
+  error messages that aren't meaningful because they refer to some
+  of these features!}
+
+\end{frame}
+
+
+\end{document}

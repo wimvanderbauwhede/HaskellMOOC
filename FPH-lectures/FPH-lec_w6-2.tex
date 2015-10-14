@@ -1,0 +1,501 @@
+%-----------------------------------------------------------------------
+% Functional Programming 4
+% John O'Donnell, Wim Vanderbauwhede
+% University of Glasgow
+%-----------------------------------------------------------------------
+
+\documentclass{beamer}
+\usepackage{jtodlecseriesFP4}
+
+%include polycode.fmt
+%format alpha = "\alpha"
+%format -- > = "\leadsto "
+
+\newcommand{\alphaconv}{\hbox{\quad$\equiv\alpha$\quad}}
+\newcommand{\betaconv}{\hbox{\quad$\equiv\beta$\quad}}
+\newcommand{\etaconv}{\hbox{\quad$\equiv\eta$\quad}}
+
+% Identify this presentation
+\SetPresentationTitle
+  {Monads}
+  {Monads}
+\SetPresentationNumber
+  {12}
+\SetPresentationDate
+  {Week 6-2}
+  {Week 6-2}
+
+%-----------------------------------------------------------------------
+% Beginning
+
+\begin{document}
+
+\begin{frame}[fragile]
+  \PresentationTitleSlide
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Topics}
+  \tableofcontents
+\end{frame}
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\begin{center}
+\includegraphics[scale=0.075]
+    {figures/jpg/pic09.jpg}
+\end{center}
+\end{frame}
+%-----------------------------------------------------------------------
+\section{Monads}
+
+\begin{frame}[fragile]
+\frametitle{Monads}
+
+\begin{itemize}
+\item A monad is an algebraic structure in category theory.
+\item Monads are abstract, and they have many useful concrete
+  instances.
+\item Monads provide a way to structure a program.
+\item They can be used (along with abstract data types) to allow
+  actions (e.g. mutable variables) to be implemented safely.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Building blocks}
+
+\begin{frame}[fragile]
+\frametitle{Building blocks of a monad}
+
+A monad has three building blocks:
+
+\begin{itemize}
+\item A type constructor that produces the type of a computation,
+  tiven the type of that computation's result.
+\item A function that takes a value, and returns a computation
+  that---when executed---will produce that value.
+\item A function that takes two computations and performs them one
+  after the other, making the result of the first computation
+  available to the second.
+\end{itemize}
+
+This will be restated more precisely$\ldots$
+
+\end{frame}
+
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Definition}
+
+A monad consists of three objects (below), which must satisfy the
+monad laws (later).
+
+\begin{itemize}
+\item A type constructor $M$, such that for any type $a$, the type
+  $M a$ is the type of a computation in the monad $M$ that produces
+  a result of type $a$.
+\item A function $return :: a \rightarrow M\, a$.  Thus if $x::a$, then
+  $return \, x$ is a computation in $M$ that, when executed, will
+  produce a value of type $a$.
+\item A function $(>>=) :: M\, a \rightarrow  (a \rightarrow  M\, b) \rightarrow  M\, b$.
+  \begin{itemize}
+  \item The first argument is a computation that produces a value
+    of type $a$.
+  \item The second argument is a function that requires an argument
+    of type $a$ and returns a computation that produces a value of
+    type $b$.
+  \item The result is a computation that will produce a value of
+    type $b$.  It works by running the first computation and
+    passing its result to the function that returns the second
+    computation, which is then executed.
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{The definition says what a monad is!}
+
+\begin{itemize}
+\item There are many metaphors or intuitions about what a monad is.
+\item Example: a ``computation'' or an ``action''.
+\item But these terms are vague---they may help you to understand,
+  but they can also be misleading at times.
+\item \emph{A monad is exactly what the definition says, no more
+    and no less.}
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Type class}
+
+\begin{frame}[fragile]
+\frametitle{Generality of monads}
+
+\begin{itemize}
+\item Monads are abstract and general and useful.
+\item Consequently, there are many instances of them.
+\item This is captured by defining a type class for monads, along
+  with many standard instances.  And you can define your own.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Monad type class}
+
+\begin{verbatim}
+class Monad m where
+    return :: a -> m a
+    (>>=) :: m a -> (a -> m b) -> m b
+    (>>)   :: m a -> m b -> m b
+    fail   :: String -> m a
+\end{verbatim}
+
+\begin{itemize}
+\item The $fail$ function is used by the system to help produce
+  error messages when there is a pattern that fails to match;
+  normally you don't use it directly.
+\item We'll just pretend $fail$ isn't there.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{The ``then'' operator}
+
+\begin{itemize}
+\item The ``bind'' operator $>>=$ is a crucial part of a monad.
+\item Sometimes the value returned by a computation is unimportant.
+%\item If you apply a function to a value but the function doesn't
+%  need the value, you can use the underscore as a dummy variable
+%  name: {\tt ( \_ -> 23) (2+2)}.
+\item The $>>$ operator is like $>>=$, but it just ignores the
+  value returned by the computation.
+\end{itemize}
+
+\begin{verbatim}
+m >> n = m >>= \_ -> n
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Laws}
+\begin{frame}[fragile]
+\frametitle{Monad laws}
+
+Every monad must satisfy the following three laws.
+
+\vspace{1em}
+
+The \emph{right unit law}:
+
+\begin{verbatim}
+m >>= return = m
+\end{verbatim}
+
+The \emph{left unit law}:
+
+\begin{verbatim}
+return x >>= f  = f x
+\end{verbatim}
+
+The \emph{associativity law}:
+
+\begin{verbatim}
+(m >>= f) >>= g = m >>= (\x -> f x >>= g)
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\section{The Maybe Monad}
+\begin{frame}[fragile]
+\frametitle{The Maybe Monad}
+
+\begin{itemize}
+\item We'll look at several examples, of monads, starting with Maybe.
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{The $Maybe$ type constructor}
+\begin{frame}[fragile]
+\frametitle{The $Maybe$ type constructor}
+
+\begin{verbatim}
+import Control.Monad
+\end{verbatim}
+
+\begin{verbatim}
+data MyMaybe a = MyNothing | MyJust a
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Safe head and tail}
+
+\begin{verbatim}
+myHead :: [a] -> Maybe a
+myHead [] = Nothing
+myHead (x:xs) = Just x
+\end{verbatim}
+
+\begin{verbatim}
+myTail :: [a] -> Maybe [a]
+myTail [] = Nothing
+myTail (x:xs) = Just xs
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Monad instance of Maybe}
+\begin{frame}[fragile]
+\frametitle{Monad instance of Maybe}
+
+\begin{verbatim}
+instance Monad MyMaybe where
+    return           =   MyJust
+    MyNothing  >>= f = MyNothing
+    (MyJust x) >>= f = f x
+    fail _           =   MyNothing
+\end{verbatim}
+
+    
+\begin{verbatim}
+instance MonadPlus MyMaybe where
+    mzero               = MyNothing
+    MyNothing `mplus` x = x
+    x `mplus` _         = x
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{A computation using explicit Maybe}
+\begin{frame}[fragile]
+\frametitle{A computation using explicit Maybe}
+
+\begin{verbatim}
+foo :: [a] -> Maybe a
+foo xs =
+  case myTail xs of
+    Nothing -> Nothing
+    Just a -> case myTail a of
+                Nothing -> Nothing
+                Just b -> myHead b
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{A computation using the Maybe monad}
+\begin{frame}[fragile]
+\frametitle{A computation using the Maybe monad}
+
+\begin{verbatim}
+bar :: [a] -> Maybe a
+bar xs =
+  myTail xs >>=
+    (\a -> myTail a >>=
+      (\b -> myHead b))
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Syntax: Changing the line breaks and indentation}
+
+\begin{verbatim}
+bar2 :: [a] -> Maybe a
+bar2 xs =
+  myTail xs >>= (\a ->
+  myTail a >>=  (\b ->
+  myHead b))
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Syntax: Removing unnecessary parentheses}
+
+\begin{verbatim}
+bar3 :: [a] -> Maybe a
+bar3 xs =
+  myTail xs >>= \a ->
+  myTail a >>=  \b ->
+  myHead b
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Example: Reduction of {\tt bar [5,6]}}
+\begin{frame}[fragile]
+\frametitle{Example: Reduction of bar [5,6]}
+
+\begin{verbatim}
+    bar [5,6]
+
+-- > substitute [5,6] for xs in definition of bar
+
+    myTail [5,6] >>=
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+
+-- > def. myTail
+
+    myJust [6]  >>=
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+
+-- >  def.2 of (>>=)
+
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+        [6]
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Reduction of bar [5,6] continued}
+
+\begin{verbatim}
+-- > beta reduction, substitute [6] for a
+
+     myTail [6] >>= (\b -> myHead b)
+
+-- > reduce myTail
+
+     Just [] >>=  (\b -> myHead b)
+
+-- >  def.2 of (>>=)   
+
+    (\b -> myHead b) []
+
+-- > beta reduction, substitute [] for b
+
+   myHead []
+
+-- > def.1 myHead
+
+  Nothing
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{Example: Reduction of {\tt bar [5,6,7]}}
+\begin{frame}[fragile]
+\frametitle{Example: Reduction of bar [5,6,7]}
+
+\begin{verbatim}
+    bar [5,6,7]
+
+-- > substitute [5,6,7] for xs in definition of bar
+
+    myTail [5,6,7] >>=
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+
+-- > def. myTail
+
+    myJust [6,7]  >>=
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+
+-- >  def.2 of (>>=)
+
+     (\a -> myTail a >>=
+      (\b -> myHead b))
+        [6,7]
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Reduction of bar [5,6,7] continued}
+
+\begin{verbatim}
+-- > beta reduction, substitute [6,7] for a
+
+     myTail [6,7] >>= (\b -> myHead b)
+
+-- > reduce myTail
+
+     Just [7] >>=  (\b -> myHead b)
+
+-- >  def.2 of (>>=)   
+
+    (\b -> myHead b) [7]
+
+-- > beta reduction, substitute [7] for b
+
+    myHead [7]
+
+-- > def myHead
+
+    Just 7
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{{\tt do} notation}
+\begin{frame}[fragile]
+\frametitle{do notation}
+
+\begin{verbatim}
+baz :: [a] -> Maybe a
+
+baz xs =
+  do  a <- myTail xs
+      b <- myTail a
+      c <- myHead b
+      return c
+\end{verbatim}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Syntax rules for do}
+
+\begin{verbatim}
+do { x }  -- >  x
+\end{verbatim}
+
+\begin{verbatim}
+do {x ; <xs> }  -- >  x >> do { <xs> }
+\end{verbatim}
+
+\begin{verbatim}
+do { a <- x ; <xs> }  -- >  x >>= \a -> do { <xs> }
+\end{verbatim}
+
+\begin{verbatim}
+do { let <declarations> ; xs }
+  -- >
+let <declarations> in do { xs }
+\end{verbatim}
+
+
+\end{frame}
+   
+\end{document}

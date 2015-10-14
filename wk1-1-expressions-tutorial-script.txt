@@ -1,0 +1,34 @@
+Tutorial: Expressions
+
+1. Integer Expressions
+
+1.1 Type an integer number, e.g. 42,  and observe that it evaluates to itself
+CHECK1:  Check if they typed a number or at least an arithmetic expression, using a regex
+/[0-9\+\-\*\(\)]+/
+If OK, say, "OK, no surprises so far!"
+If not
+If they used a division 
+/\// 
+say 
+"When you use the '/' sign for division, Haskell will treat the numbers as real rather than integer/"
+Else
+"what you typed does not seem to be an integer arithmetic expression, so I can't help you here ..."
+
+
+1.2 Type a simple integer arithmetic operation, e.g. 6*7, and observe that it evaluates to the expected result
+
+CHECK1
+
+2. Syntax of Expressions
+
+2.1 You can use parenthesis to group subexpressions, e.g. (3+4)*6, but they are optional, and the arithmetic operations have the same precedence as in maths, e.g. 3+4*6 means 3+(4*6).
+
+CHECK1
+
+2.2 You can nest as many parentheses as you like (even if it looks silly): ((6))*(((7)))
+
+CHECK1
+
+3. Functions
+
+
