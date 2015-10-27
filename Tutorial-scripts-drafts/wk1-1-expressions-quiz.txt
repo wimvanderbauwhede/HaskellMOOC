@@ -13,8 +13,7 @@ Quiz for Lecture on Expressions and Equations
 
 Expressions determine control flow and are often composed of statements
 
-2. What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: 
-<code> sqrt 16+9</code>
+2. What is the result of the following expression in Haskell, where sqrt returns the square root of its argument:  `sqrt 16+9`
 
 2.a 
 
@@ -26,7 +25,8 @@ Expressions determine control flow and are often composed of statements
 
 
 3. What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: 
-<code> sqrt (16+9)</code>
+
+  sqrt (16+9)
 
 2.a (correct)
 
@@ -38,8 +38,8 @@ Expressions determine control flow and are often composed of statements
 
 4. Give one reason why the following code is incorrect in Haskell:
 
-x = 4
-x = ((x * 2))
+  x = 4
+  x = ((x * 2))
 
 4.a 
 Because there are too many parenteses
@@ -57,11 +57,35 @@ immutable variables
 
 constant variables
 
-6.
+6. What is the result of the expression `abs -6` in Haskell, where abs returns the absolute value of its argument.
 
-7.
+6.a 
 
-8.
+6
+
+6.b (correct)
+
+An error because Haskell interprets this code as `abs - 6` and abs  requires a numerical argument.
+
+7. In Haskell, what is the name for the type of expression
+
+  n = n + 1
+
+7.a (correct)
+
+equation
+
+7.b
+
+assignment
+
+8. Is it valid to write `n = n + 1` in Haskell
+
+8.a (correct)
+Yes, but Haskell will fail to compute the result
+
+8.b
+No, it is a syntax error
 
 
 
