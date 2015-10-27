@@ -1,0 +1,69 @@
+Quiz for Lecture on Expressions and Equations 
+
+8 Questions, multiple choice. 
+
+1. What is the difference between an expression and a statement in an imperative programming language
+
+1.a (correct)
+
+* Expressions denote small scale computations that return a value
+* Statements handle sequencing, looping, conditionals, and all the large scale operation of a program
+
+1.b
+
+Expressions determine control flow and are often composed of statements
+
+2. What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: 
+<code> sqrt 16+9</code>
+
+2.a 
+
+5
+
+2.b (correct)
+
+13
+
+
+3. What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: 
+<code> sqrt (16+9)</code>
+
+2.a (correct)
+
+5
+
+2.b
+
+13
+
+4. Give one reason why the following code is incorrect in Haskell:
+
+x = 4
+x = ((x * 2))
+
+4.a 
+Because there are too many parenteses
+
+4.b (correct)
+Because you can assign an expression to a name only once
+
+5. What is the term for variables that can be assigned to an expression only once?
+
+5.a (correct) 
+
+immutable variables
+
+5.b 
+
+constant variables
+
+6.
+
+7.
+
+8.
+
+
+
+
+
