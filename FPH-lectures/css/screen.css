@@ -1,0 +1,78 @@
+html { color: black; padding: 20px 10px 10px 10px; }
+
+body { font-size: 14pt; line-height: 1.4em; font-family: Georgia, serif; }
+
+header        { }
+header span   { font-family: Arial, Verdana, sans-serif; }
+header .big   { font-size: 36pt; border: none; }
+header .small { font-size: 22pt; color: gray; }
+
+ul ul { margin-bottom: 0.5em }
+
+div#TOC { font-size: 10pt; margin: 2em 0 1em 0; padding: 0; background-color: white; }
+div#TOC ul > ul { margin-left: 1em; }
+
+dd { margin-left: 2em; }
+
+hr { height: 1px; color: #aaa; background-color: #aaa; border: 0; margin: .2em 0 .2em 0; }
+
+h1.title { font-size: 24pt; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; border-bottom: 1px solid black; }
+h1 { font-size: 20pt; }
+h2 { font-size: 18pt; }
+h3 { font-size: 16pt; }
+h4 h5 h6  { font-size: 14pt; }
+
+ul { list-style-type: square; }
+dt { font-weight: bold; margin-bottom: .1em; }
+
+table { border-top: 1px solid #ccc;  border-left: 1px solid #ccc; }
+th, td { border-bottom: 1px solid #ddd; border-right: 1px solid #ccc; }
+
+blockquote { padding: 0 1.6em; color: #666; }
+
+main { max-width: 46em; }
+
+footer { padding: 1em; color: #888; text-align: center; font-size: 12pt; }
+
+nav { font-family: Arial, Verdana, sans-serif; font-size: 12pt; font-weight: bold; }
+nav { margin-top: 2em; }
+nav ul { margin-top: 0; margin-bottom: 0; }
+nav ul li { list-style: none; padding: 0; }
+nav ul li > ul { margin-left: 1em; }
+nav ul li a { text-decoration: none; }
+nav label { }
+
+.navbar-default { background-color: transparent; border: none; }
+
+/* Tree menus */
+.nav-header:after {
+content: "\00A0\25BE";
+}
+
+div#toc { border-top: 1px solid gray; margin-top: 1em; padding-top: 1em; }
+div#flattr { float: right; font-size: 12pt; font-family: sans-serif; }
+div#paypal { float: right; font-size: 12pt; font-family: sans-serif; }
+div#bitcoin { float: right; font-size: 12pt; font-family: sans-serif; }
+
+/* Loosely based on pygment's default colors */
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+pre.sourceCode { }
+pre.sourceCode span.kw { color: #007020; font-weight: bold; }
+pre.sourceCode span.dt { color: #902000; }
+pre.sourceCode span.dv { color: #40a070; }
+pre.sourceCode span.bn { color: #40a070; }
+pre.sourceCode span.fl { color: #40a070; }
+pre.sourceCode span.ch { color: #4070a0; }
+pre.sourceCode span.st { color: #4070a0; }
+pre.sourceCode span.co { color: #60a0b0; font-style: italic; }
+pre.sourceCode span.ot { color: #007020; }
+pre.sourceCode span.al { color: red; font-weight: bold; }
+pre.sourceCode span.fu { color: #06287e; }
+pre.sourceCode span.re { }
+pre.sourceCode span.er { color: red; font-weight: bold; }
+
+span.math { color: #3D59AB; font-style: italic; }
