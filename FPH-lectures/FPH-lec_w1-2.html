@@ -53,7 +53,7 @@
 -- &gt;
   42</code></pre>
 <h3 id="result-doesnt-depend-on-reduction-path">Result doesn’t depend on reduction path!</h3>
-<p>A fundamental theorem:</p>
+<p>A fundamental theorem (the Church-Rosser theorem):</p>
 <p>This means that</p>
 <ul>
 <li><p>Correctness doesn’t depend on order of evaluation.</p></li>
@@ -83,7 +83,7 @@ f x = x+1 -- named function</code></pre>
 <h2 id="function-application">Function application</h2>
 <h3 id="how-function-application-works">How function application works</h3>
 <ul>
-<li><p>A function definition is an equation like \(\tt{f \, =\, \backslash x \rightarrow x+1}\)</p>
+<li><p>A function definition is an equation, e.g. \(\tt{f \, =\, \backslash x \rightarrow x+1}\)</p>
 <ul>
 <li><p>The left hand side gives the name of the function;</p></li>
 <li><p>The right hand side (the “body”) is an expression giving the formal parameters, and the value of the application. The expression may use the parameters.</p></li>

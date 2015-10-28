@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 if (!@ARGV) {die "please provude the Latex source file name.\n"; }
-
+# ./convert_to_html.pl FPH-lec_w1-2.tex
 my $tex_fn = $ARGV[0];
 my $html_fn= $tex_fn;
 $html_fn=~s/\.tex/\.html/;
@@ -16,22 +16,10 @@ while (my $line=<$TMP>) {
     $line=~/<h3 id=.topics.>Topics<.h3>/ && next;
     $line=~/\[fragile/ && next;
     $line=~/\<img/ && next;
-    #$line=~s/\$/\$\$/g;
-
+    # a bit weak but we're not aiming for perfection
     $line=~s/\<span\ class=.LaTeX.\>\$/\\(/g;
     $line=~s/\$\<\/span\>/\\)/g;
-    $line=~s/code\>\-/code>--/;
-#    $line=~s/.backslash\s+/$bs/g;
-
-#    $line=~s/.rightarrow/$rightarow_ent/g;
-#    $line=~s/\\,/ /g;
-#    $line=~s/\$.tt\{//;
-#    $line=~s/\}\$//;
-#    if ($line=~/\+  \+/) {say $line;
-
-#    $line=~s/\s*\+  \+\s*/++/;
-#}
-#    $\tt{f \, =\, \backslash x \rightarrow x+1}$
+    $line=~s/code\>–/code>--/;
     $fin_src.= $line;
 }
 close $TMP;
