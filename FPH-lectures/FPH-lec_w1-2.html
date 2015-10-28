@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/screen.css">
+  <link rel="stylesheet" type="text/css" media="print" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/print.css">
+</head>
+<body>
+
+<h1 id="reduction">Reduction</h1>
+<h3 id="model-of-program-execution">Model of program execution</h3>
+<ul>
+<li><p>A programmer needs a concrete model for how a program is executed.</p></li>
+<li><p>For imperative programs, we can execute statement by statement, keeping track of the values of variables (the stack) and where we are in the program (the program counter).</p></li>
+<li><p>Functional programs don’t have statements!</p></li>
+<li><p>The mechanism for executing functional programs is <em>reduction</em>.</p></li>
+</ul>
+<h3 id="reduction-1">Reduction</h3>
+<p>An expression is reduced, by simplifying one <em>reducible expression</em> (called “redex”). Each step is called a reduction, and we’ll use <code>-- &gt;</code> to show the result.</p>
+<pre><code>  3 + (4*5)
+-- &gt;
+  3 + 20
+-- &gt;
+  23</code></pre>
+<p>Reduction is important because it is the sole means of execution of a functional program. There are no statements, as in imperative languages; all computation is achieved solely by reducing expressions.</p>
+<h3 id="unique-reduction-path">Unique reduction path</h3>
+<p>When a reduction is performed, there is only one possible answer. In this example, the computation has only one possible path:</p>
+<pre><code>  3 + (5 * (8-2))
+-- &gt;
+  3 + (5 * 6)
+-- &gt;
+  3 + 30
+-- &gt;
+  33</code></pre>
+<p>There is only one possible reduction path in that example, because in each step the current expression contains only one redex.</p>
+<h3 id="multiple-reduction-paths">Multiple reduction paths</h3>
+<p>If an expression contains several redexes, there will be several reduction paths.</p>
+<p><span>5cm</span></p>
+<pre><code>  (3+4) * (15-9)
+-- &gt;
+  7 * (15-9)    
+-- &gt;
+  7 * 6         
+-- &gt;
+ 42            </code></pre>
+<p><span>5cm</span></p>
+<pre><code>  (3+4) * (15-9)
+-- &gt;
+  (3+4) * 6
+-- &gt;
+  7 * 6
+-- &gt;
+  42</code></pre>
+<h3 id="result-doesnt-depend-on-reduction-path">Result doesn’t depend on reduction path!</h3>
+<p>A fundamental theorem:</p>
+<p>This means that</p>
+<ul>
+<li><p>Correctness doesn’t depend on order of evaluation.</p></li>
+<li><p>The compiler (or programmer) can change the order freely to improve performance, without affecting the result.</p></li>
+<li><p>Different expressions can be evaluated in parallel, without affecting the result. <span><em>As a result, functional languages are leading contenders for programming future parallel systems.</em></span></p></li>
+</ul>
+<h1 id="functions">Functions</h1>
+<h2 id="function-definitions">Function definitions</h2>
+<h3 id="function-definitions-1">Function definitions</h3>
+<ul>
+<li><p>In Haskell, many functions are pre-defined in a standard library called the <em>prelude</em>.</p></li>
+<li><p>In due course, we’ll learn how to use many of these standard functions.</p></li>
+</ul>
+<h3 id="defining-a-function">Defining a function</h3>
+<ul>
+<li><p>But the essence of functional programming is defining your own functions to solve your problems!</p></li>
+<li><p>A function is defined by an <em>equation</em>.</p></li>
+</ul>
+<pre><code>f = \x -&gt; x+1  -- lambda function
+-- or
+f x = x+1 -- named function</code></pre>
+<p>This is equivalent to \(f(x) = x+1\) in mathematical notation.</p>
+<ul>
+<li><p>The left hand side of the equation looks like a variable – and that’s what it is</p></li>
+<li><p>The right hand side is an expression that uses the local variables listen in parentheses and defines the result of the expression.</p></li>
+</ul>
+<h2 id="function-application">Function application</h2>
+<h3 id="how-function-application-works">How function application works</h3>
+<ul>
+<li><p>A function definition is an equation like \(\tt{f \, =\, \backslash x \rightarrow x+1}\)</p>
+<ul>
+<li><p>The left hand side gives the name of the function;</p></li>
+<li><p>The right hand side (the “body”) is an expression giving the formal parameters, and the value of the application. The expression may use the parameters.</p></li>
+</ul></li>
+<li><p>An application is an expression like <code>f 31</code>, where \(31\) is the argument.</p></li>
+<li><p>The application is evaluated by replacing it with the body of the function, where the formal parameters are replaced by the arguments.</p></li>
+</ul>
+<h3 id="example-of-application">Example of application</h3>
+<pre><code>f  = \x -&gt; x+1</code></pre>
+<pre><code>  f 3
+-- &gt; {bind x=3}
+  (x+1) where x=3
+-- &gt; {substitute 3 for x}
+  3+1
+-- &gt;
+  4</code></pre>
+<h2 id="multiple-arguments-and-results">Multiple arguments and results</h2>
+<h3 id="functions-with-several-arguments">Functions with several arguments</h3>
+<p>A function with three arguments:</p>
+<pre><code>add3nums = \x y z -&gt; x + y + z</code></pre>
+<p>To use it,</p>
+<pre><code>  10 + 4* add3nums 1 2 3
+= {put extra parenthese in to show structure}
+  10 + ( 4* (add3nums 1 2 3) )
+-- &gt;
+  10 + (4*(1+2+3) )
+-- &gt;
+  10 + (4*6)
+-- &gt;
+  10 + 24
+-- &gt;
+  34</code></pre>
+<h1 id="lists">Lists</h1>
+<h3 id="lists-1">Lists</h3>
+<ul>
+<li><p>A list is a single value that contains several other values.</p></li>
+<li><p>Syntax: the elements are written in square parentheses, separated by commas.</p></li>
+</ul>
+<pre><code>[&#39;3&#39;, &#39;a&#39;]
+[2.718, 50.0, -1.0]</code></pre>
+<h3 id="function-returning-several-results">Function returning several results</h3>
+<ul>
+<li><p>Actually, a function can return only one result.</p></li>
+<li><p>However, lists allow you to package up several values into one object, which can be returned by a function.</p></li>
+<li><p>Here is a function \(minmax\) that returns both the smaller and the larger of two numbers:</p></li>
+</ul>
+<pre><code>minmax = \x y -&gt; [min x y, max x y]</code></pre>
+<pre><code>minmax 3 8  -- &gt; [3,8]
+minmax 8 3  -- &gt; [3,8]</code></pre>
+<h3 id="the-elements-are-evaluated">The elements are evaluated</h3>
+<p>You can write a constant list</p>
+<pre><code>mylist = [2,4,6,8]</code></pre>
+<p>But the elements can be expressions, which are evaluated. Suppose you define:</p>
+<pre><code>answer = 42
+yourlist = [7, answer+1, 7*8]</code></pre>
+<p>Then</p>
+<pre><code>  yourlist
+-- &gt;
+  [7, 43, 56]</code></pre>
+<h2 id="constructing-lists">Constructing lists</h2>
+<h3 id="append-the-operator">Append: the \((++)\) operator</h3>
+<ul>
+<li><p>The \((++)\) operator takes two existing lists, and gives you a new one containing all the elements.</p></li>
+<li><p>The operator is pronounced <em>append</em>, and written as two consecutive + characters.</p></li>
+</ul>
+<pre><code>  [23, 29] ++ [48, 41, 44]
+-- &gt;
+  [23, 29, 48, 41, 44]</code></pre>
+<p>A couple of useful properties:</p>
+<ul>
+<li><p>The length of the result is always the sum of the lengths of the original lists.</p></li>
+<li><p>If \(xs\) is a list, then \([] ++ xs = xs = xs ++ []\).</p></li>
+</ul>
+<h3 id="sequences">Sequences</h3>
+<ul>
+<li><p>Sometimes it’s useful to have a sequence of numbers.</p></li>
+<li><p>In standard mathematical notation, you can write \(0, 1,
+  \ldots, n\).</p></li>
+<li><p>Haskell has a sequence notation for lists.</p></li>
+<li><p>Write the sequence in square brackets, with start value, the operator <code>..</code>, and end value.</p>
+<ul>
+<li><p><code>[0 .. 5] - &gt; [0,1,2,3,4,5]</code></p></li>
+<li><p><code>[100 .. 103] - &gt; [100,101,102,103]</code></p></li>
+</ul></li>
+<li><p>The elements are incremented by 1</p></li>
+</ul>
+<h3 id="sequences-arent-limited-to-numbers">Sequences aren’t limited to numbers</h3>
+<ul>
+<li><p>There are many <em>enumerable types</em> where there is a natural way to increment a value.</p></li>
+<li><p>You can use sequences on any such type.</p></li>
+<li><p>Characters are enumerable: there is a successor to each character.</p>
+<ul>
+<li><p><code>[’a’ .. ’z’] - &gt; [’a’,’b’,’c’,’d’,’e’,’f’,’g’,’h’,’i’,’j’,’k’, ’l’,’m’,’n’,’o’,’p’,’q’,’r’,’s’,’t’,’u’,’v’, ’w’,’x’,’y’,’z’]</code></p></li>
+<li><p><code>[’0’ .. ’9’] - &gt; [’0’,’1’,’2’,’3’,’4’,’5’,’6’,’7’,’8”9’]</code> is a list of characters (which happen to be the digit characters)</p></li>
+<li><p><code>[0 .. 9] - &gt; [0,1,2,3,4,5,6,7,8,9]</code> is a list of numbers</p></li>
+</ul></li>
+</ul>
+<h3 id="list-comprehensions">List comprehensions</h3>
+<ul>
+<li><p>A list comprehension is a high level notation for specifying the computation of a list</p></li>
+<li><p>The compiler automatically transforms a list comprehensions into an expression using a family of basic functions that operate on lists</p></li>
+<li><p>List comprehensions were inspired by the mathematical notation <em>set comprehension</em>.</p></li>
+<li><p>Examples of set comprehensions:</p>
+<ul>
+<li><p>A set obtained by multiplying the elements of another set by 3 is \(\{3 \times x \;|\;x \leftarrow \{1, \ldots, 10\}\}\).</p></li>
+<li><p>The set of even numbers is \(\{2 \times x \;|\; x
+    \leftarrow N \}\).</p></li>
+<li><p>The set of odd numbers is \(\{2 \times x + 1 \;|\; x
+    \leftarrow N \}\).</p></li>
+<li><p>The cross product of two sets \(A\) and \(B\) is \(\{(a,b) \;|\;a \leftarrow A, b \leftarrow B\}\).</p></li>
+</ul></li>
+</ul>
+<h3 id="examples-of-list-comprehensions">Examples of list comprehensions</h3>
+<pre><code>  [3*x | x &lt;- [1..10]]
+-- &gt;
+  [3,6,9,12,15,18,21,24,27,30]</code></pre>
+<pre><code>  [2*x | x &lt;- [0..10]]
+-- &gt;
+  [0,2,4,6,8,10,12,14,16,18,20]</code></pre>
+<pre><code>  [2*x + 1 | x &lt;- [0..10]]
+-- &gt;
+  [1,3,5,7,9,11,13,15,17,19,21]</code></pre>
+<pre><code>  [[a,b] | a &lt;- [10,11,12] , b &lt;- [20,21]]
+-- &gt;
+  [[10,20],[10,21],[11,20],[11,21],[12,20],[12,21]]</code></pre>
+<h2 id="operating-on-lists">Operating on lists</h2>
+<h3 id="indexing-a-list">Indexing a list</h3>
+<ul>
+<li><p>We can index a list by numbering the elements, starting with 0.</p></li>
+<li><p>Thus a canonical form of a list with \(n\) elements is \([x_0,
+  x_1, .. x_{n-1}]\).</p></li>
+<li><p>The \(!!\) operator takes a list and an index, and returns the corresponding element.</p>
+<pre><code>[5,3,8,7]  !! 2    -- &gt; 8
+[0 .. 100]  !! 81  -- &gt; 81
+[&#39;a&#39;..&#39;z&#39;] !! 13  -- &gt; &#39;n&#39;
+  </code></pre></li>
+<li><p>If the index is negative, or too large, <em>undefined</em> is returned.</p></li>
+<li><p>For robust programming, we need to ensure either that all expressions are well defined, or else that all exceptions are caught and handled.</p></li>
+<li><p>Later, we’ll look at how to follow both of those approaches.</p></li>
+</ul>
+<h3 id="head-and-tail"><em>head</em> and <em>tail</em></h3>
+<ul>
+<li><p>There are standard library functions to give the head of a list (its first element) or the tail (all the rest of the list)</p></li>
+<li><p>The result of applying \(head\) or \(tail\) to the empty list is <em>undefined</em>.</p>
+<pre><code>head :: [a] -&gt; a
+head [4,5,6] -- &gt; 4
+tail :: [a] -&gt; [a]
+tail [4,5,6] -- &gt; [5,6]</code></pre></li>
+<li><p>Recommendation: avoid using \(head\) and \(tail\), because you want to avoid undefined values so your programs are robust. Unless you’re doing something really sophisticated, you’re better off with pattern matching. There are, however, some cases where they are appropriate.</p></li>
+</ul>
+
+</body>
+</html>

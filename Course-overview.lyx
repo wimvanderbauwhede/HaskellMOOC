@@ -73,11 +73,11 @@ Introduction to Functional Programming in Haskell -- Course Overview
 \end_layout
 
 \begin_layout Section
-L1.1 Introduction
+L1.0 Introduction
 \end_layout
 
 \begin_layout Standard
-JS+WV
+JS
 \end_layout
 
 \begin_layout Enumerate
@@ -98,6 +98,14 @@ Programming paradigms
 
 \begin_layout Enumerate
 Functional Languages
+\end_layout
+
+\begin_layout Section
+L1.1 Expressions and Equations
+\end_layout
+
+\begin_layout Standard
+WV
 \end_layout
 
 \begin_layout Enumerate

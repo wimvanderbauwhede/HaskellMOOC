@@ -1,4 +1,3 @@
-
 *.aux
 
 *.log
@@ -14,3 +13,14 @@
 *.toc
 
 *.vrb
+
+*~
+
+FPH-lectures/tmp.html
+
+FPH-lectures/tmpp
+
+tmp*
+
+FPH-lectures/*.pdf
+
