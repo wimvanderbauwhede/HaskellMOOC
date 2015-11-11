@@ -1,13 +1,23 @@
+Examples of good FutureLearn flagship videos:
+
+https://www.futurelearn.com/courses/electrify [wacky]
+https://www.futurelearn.com/courses/real-world-calculus  [applications, action]
+https://www.futurelearn.com/courses/data-to-insight [slow, boring, professional]
+https://www.futurelearn.com/courses/begin-programming [very personal, bit geeky]
+
+
 ideas for flagship video
 
 - why are there so many programming languages?
 
 [ scrolling list of languages, or shot of programming languages timeline
-poster ] 
+poster from http://www.levenez.com/lang/ ] 
+Mention some stats - hundreds of languages ... 
 
 
 - what is functional programming?
 
+[shots of computer processors, of lambda calculus, of category theory]
 [ talk about lang paradigms, hardware developments, mathematical formalisms
 underlying FP ]
 
@@ -15,11 +25,12 @@ underlying FP ]
 
 [shots of Glasgow University] 
 [shots of People]
-
+Mention that Haskell was born at Glasgow, developed here over 20 years. Now used across all sectors of CS (examples from the Haskell Report?)
 
 - why should you learn Haskell?
 
-motivation. 
+[shots of us teaching Haskell to UG classes ]
+motivation.
 
 
 
