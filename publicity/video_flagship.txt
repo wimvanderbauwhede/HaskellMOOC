@@ -1,0 +1,26 @@
+ideas for flagship video
+
+- why are there so many programming languages?
+
+[ scrolling list of languages, or shot of programming languages timeline
+poster ] 
+
+
+- what is functional programming?
+
+[ talk about lang paradigms, hardware developments, mathematical formalisms
+underlying FP ]
+
+- history of Haskell
+
+[shots of Glasgow University] 
+[shots of People]
+
+
+- why should you learn Haskell?
+
+motivation. 
+
+
+
+
