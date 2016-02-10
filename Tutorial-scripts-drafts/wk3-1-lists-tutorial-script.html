@@ -1,0 +1,165 @@
+
+<h3>3.1 Lists tutorial</h3>
+<!-- step 1 -->
+<h3>Computing with lists</h3>
+    <p>There are two approaches to working with lists:</p>
+<ul>
+        <li>Write functions to do what you want, using recursive definitions that traverse the list structure.</li>
+        <li>Write combinations of the standard list processing functions.</li>
+</ul>
+    <p>The second approach is preferred, but the standard list processing functions do need to be defined, and those definitions use the first approach (recursive definitions).
+    We’ll cover both methods.    </p>
+<!-- step 2 -->
+<h3>Recursion on lists</h3>
+
+<p>As we have already seen, a list is built from the empty list <tt>[]</tt> and the function <tt>cons</tt> or in operator form <tt>(:)</tt>.
+
+    <p>Every list must be either<br>
+
+        <tt>[]</tt> or<br>
+        <tt>(x:xs)</tt> for some <tt>x</tt> (the head of the list) and <tt>xs</tt> (the tail).<br>
+
+    where <tt>(x:xs)</tt> is an alternative syntax for <tt>cons x xs</tt></p>
+
+<p>The recursive definition follows the structure of the data:<br>
+
+        Base case of the recursion is <tt>[]</tt>.<br>
+
+        Recursion (or induction) case is <tt>(x:xs)</tt>.</p>
+
+<p>However, in order to create such recursive definitions, we must first see how we can create conditional functions: functions that define both the base case and the induction case.</p>
+
+<!-- step 3 -->
+<h3>Defining conditional functions</h3>
+
+<p>In Haskell, there are several ways to define conditional functions. The easiest way is to write a definition for each case, as is done in the notes, e.g. <br>
+
+<tt>length [] = 0</tt><br>
+<tt>length x:xs = 1 + length xs</tt><br>
+
+<p>Unfortunately, this style does not work in the web-based environment because it only supports <i>single-line expressions</i>. However, there are other ways. The most straightforward is to use an <i>if-then-else</i> expression:</p>
+<pre>
+length lst =
+  if lst == []
+    then 0
+    else let x:xs = lst in 1 + length xs
+</pre>
+<p>Alternatively, you can use what is known as "guards", e.g. </p>
+<pre>
+length lst
+  | lst == [] = 0
+  | otherwise = let x:xs = lst in 1 + length xs
+</pre>
+<p>This is particularly useful if you have many conditions (similar to a "case" statement in other languages)</p>
+
+<p>Finally, you can use multi-line functions use the where-clause and semicolons:</p>
+<pre>
+f = f' where f' 1 = 0; f' x = x + f' (x-1)
+</pre>
+<p>All of these can be written on a single line so you can use them n the web-based environment. So ho ahead and define your own <tt>length</tt> function, and try it out: <code> length ['a','c' .. 'w']</p>
+<!-- step 4 -->
+
+
+<h3>Recursive definition of <tt>filter</tt></h3>
+
+  <p>The function  <tt>filter</tt> is given a predicate (a function that gives a Boolean result) and a list, and returns a list of the elements that satisfy the predicate.</p>
+
+<p>Filtering is useful for the “generate and test” programming paradigm. </p>
+
+<code>filter (<5) [3,9,2,12,6,4]</code><tt> -- > [3,2,4]</tt>
+
+See if you can define filter in so that if correctly filters the example list.
+
+<!-- test,
+trigger:function(result){
+             return true;
+       },
+if (result.value == "[]") {
+//if it is correct say
+-->
+"<p>Well done, your filter produced the correct result!</p>" otherwise say
+<!--
+} else {
+
+
+}
+
+-->
+
+<p>The recursive definition is straightforward:</p>
+
+<code>
+filter pred lst | null lst = [] | otherwise = if pred x then x:filter pred xs else filter pred xs where x:xs=lst
+</code>
+
+<h3>Computations over lists</h3>
+
+    <p>Many computatations that would be for/while loops in an imperative language are naturally expressed as list computations in a functional language.</p>
+
+  <p>There are some common cases:</p>
+<ul>
+        <li>Perform a computation on each element of a list: <tt>map</tt></li>
+
+        <li>Iterate over a list, from left to right: <tt>foldl</tt></li>
+
+        <li>Iterate over a list, from right to left: <tt>foldr</tt></li>
+</ul>
+    <p>It’s good practice to use functions like <tt>filter</tt> and these three functions when applicable.
+
+    Let's look at maps and folds in some more detail.</p>
+
+<h3>Function composition</h3>
+
+    <p>As explained in the notes, we can express a large compution by “chaining together” a sequence of functions that perform smaller computations using the <tt>(.)</tt>operator, e.g. <tt>f . g</tt>. This operation is particularly useful in the composition of <tt>map</tt> operations.
+    A common style is to define a set of simple computations using <tt>map</tt>, and to compose them.</p>
+    <p>The following relationship is very useful to refactor your code:</p>
+    <pre>
+      map f (map g xs) = map (f . g) xs
+    </pre>
+<p>This theorem is frequently used, in both directions. For example, if we want to take a list of numbers and perform two operations on each number, we could write:</p>
+<code> map (+5) (map (*3) [1..10])</code>
+<p>But we could equally write:</p>
+<code> map ((+5) . (*3)) [1..10]</code>
+<!--
+<h3>Recursive definition of <tt>map</tt></h3>
+
+We can define <tt>map</tt> recursively as follows:
+<pre>
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+</pre>
+-->
+
+<h3>Folding a list (reduction)</h3>
+
+    <p>An iteration over a list to produce a singleton value is called a <tt>fold</tt>.
+    There are several variations: folding from the left, folding from the right, several variations having to do with “initialisation”, and some more advanced variations.</p>
+
+    <p>Folds may look tricky at first, but they are extremely powerful, and they are used a lot! And they aren’t actually very complicated.</p>
+
+<p>The left fold (<tt>foldl</tt>) processes the list from the left.
+
+    Think of it as an iteration across a list, going left to right.
+
+    A typical example is e.g. <code>foldl (\acc elt -> elt:acc) "" "Reversing a string"</code> which unsurprisingly reverts a string.</p>
+<p>Now go ahead and define your own example using <tt>foldl</tt>.</p>
+
+<p>The right fold (<tt>foldr</tt>) is similar to foldl, but it works from right to left. Some typical examples are:</p>
+
+
+
+<code>sum xs = foldr (+) 0 xs</code> and
+<code>product xs = foldr (*) 1 xs</code>
+
+<p>What happens if you replace <tt>foldl</tt> with <tt>foldr</tt> in the above string reversal example?</p>
+
+<p>The result is an error, because foldr and foldl expect different types of functions: foldl expects a function that takes as first argument the accumulator and as second argument the element of the list; foldr expects them in the opposite order. So go ahead, change the order and try again. What do you get?</p>
+
+<p>As you can see, you get the same string back, no reversal occured. Can you change the definition to get a reversed string with foldr?</p>
+
+<p>We can actually “factor out” the xs that appears at the right of each side of the equation, and write:</p>
+<p><code>sum      = foldr (+) 0</code></p>
+<p><code>product  = foldr (*) 1</code></p>
+
+<p>This is called “point free” style, it means that you’re programming solely with the functions; the data isn’t mentioned directly.</p>

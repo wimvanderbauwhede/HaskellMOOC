@@ -1,5 +1,7 @@
 Tutorial: Expressions
 
+TODO WV 11/11/2015 add some discussion on types
+
 1. Integer Expressions
 
 1.1 Type an integer number, e.g. 42,  and observe that it evaluates to itself

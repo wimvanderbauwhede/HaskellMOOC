@@ -1,0 +1,243 @@
+<h3>3.1 Lists tutorial</h3>
+
+"<h4>Computing with lists</h4>
+    <p>There are two approaches to working with lists:</p>
+<ul>
+        <li>Write functions to do what you want, using recursive definitions that traverse the list structure.</li>
+        <li>Write combinations of the standard list processing functions.</li>
+</ul>
+    <p>The second approach is preferred, but the standard list processing functions do need to be defined, and those definitions use the first approach (recursive definitions).
+    We’ll cover both methods.    </p>"
+
+"<h4>Recursion on lists</h4>
+
+<p>As we have already seen, a list is built from the empty list <tt>[]</tt> and the function <tt>cons</tt> or in operator form <tt>(:)</tt>. 
+
+    <p>Every list must be either<br>
+
+        <tt>[]</tt> or<br>
+        <tt>(x:xs)</tt> for some <tt>x</tt> (the head of the list) and <tt>xs</tt> (the tail).<br>
+
+    where <tt>(x:xs)</tt> is an alternative syntax for <tt>cons x xs</tt></p>
+
+<p>The recursive definition follows the structure of the data:<br>
+
+        Base case of the recursion is <tt>[]</tt>.<br>
+
+        Recursion (or induction) case is <tt>(x:xs)</tt>.</p>
+
+<p>However, in order to create such recursive definitions, we must first see how we can create conditional functions: functions that define both the base case and the induction case.</p>"
+
+
+"<h4>Defining conditional functions</h4> 
+
+<p>In Haskell, there are several ways to define conditional functions. The easiest way is to write a definition for each case, as is done in the notes, e.g. <br>
+
+<tt>length [] = 0</tt><br>
+<tt>length x:xs = 1 + length xs</tt><br>
+
+<p>Unfortunately, this style does not work in the web-based environment because it only supports <i>single-line expressions</i>. However, there are other ways. The most straightforward is to use an <i>if-then-else</i> expression:</p>
+<pre>
+length lst = 
+  if lst == [] 
+    then 0 
+    else let x:xs = lst in 1 + length xs
+</pre>
+Alternatively, you can use what is known as "guards", e.g. 
+
+length lst 
+  | lst == [] = 0 
+  | otherwise = let x:xs = lst in 1 + length xs
+
+This is particularly useful if you have many conditions (similar to a "case" statement in other languages)
+
+Finally, you can use multi-line functions use the where-clause:
+
+f = f' where f' 1 = 0; f' x = x + f' (x-1)
+
+All of these can be written on a single line so you can use them n the web-based environment. So ho ahead and define your own length function. 
+
+
+Map
+
+Filter
+
+Fold l & r
+
+
+
+The length of a list can be computed recursively as follows:
+
+# length :: [a] -> Int
+length [] = 0                  # the base case
+length (x:xs) = 1 + length xs  # recursion case
+
+Recursive definition of filter
+
+    filter is given a predicate (a function that gives a Boolean result) and a list, and returns a list of the elements that satisfy the predicate.
+
+filter :: (a->Bool) -> [a] -> [a]
+
+Filtering is useful for the “generate and test” programming paradigm.
+
+filter (<5) [3,9,2,12,6,4] -- > [3,2,4]
+
+The recursive definition is straightforward:
+
+filter :: (a -> Bool) -> [a] -> [a]
+filter pred []    = []
+filter pred (x:xs)
+  | pred x         = x : filter pred xs
+  | otherwise      = filter pred xs
+
+Computations over lists
+
+    Many computatations that would be for/while loops in an imperative language are naturally expressed as list computations in a functional language.
+
+    There are some common cases:
+
+        Perform a computation on each element of a list: map
+
+        Iterate over a list, from left to right: foldl
+
+        Iterate over a list, from right to left: foldr
+
+    It’s good practice to use these three functions when applicable
+
+    And there are some related functions that we’ll see later
+
+Function composition
+
+    We can express a large compution by “chaining together” a sequence of functions that perform smaller computations
+
+        Start with an argument of type a
+
+        Apply a function g::a−>b to it, getting an intermediate result of type b
+
+        Then apply a function f::b−>c to the intermediate result, getting the final result of type c
+
+    The entire computation (first g, then f) is written as f∘g.
+
+    This is traditional mathematical notation; just remember that in f∘g, the functions are used in right to left order.
+
+    Haskell uses . as the function composition operator
+
+ (.) :: (b->c) -> (a->b) -> a -> c
+(f . g) x = f (g x)
+
+Performing an operation on every element of a list: map
+
+    map applies a function to every element of a list
+
+map f [x0,x1,x2] -- > [f x0, f x1, f x2]
+
+Composition of maps
+
+    map is one of the most commonly used tools in your functional toolkit
+
+    A common style is to define a set of simple computations using map, and to compose them.
+
+map f (map g xs) = map (f ∘ g) xs
+
+This theorem is frequently used, in both directions.
+Recursive definition of map
+
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+
+Folding a list (reduction)
+
+    An iteration over a list to produce a singleton value is called a fold
+
+    By convention, we will have a list with elements of type b, and the singleton value will have type a
+
+    There are several variations: folding from the left, folding from the right, several variations having to do with “initialisation”, and some more advanced variations.
+
+    Folds may look tricky at first, but they are extremely powerful, and they are used a lot! And they aren’t actually very complicated.
+
+Left fold: foldl
+
+    foldl is fold from the left
+
+    Think of it as an iteration across a list, going left to right.
+
+    A typical application is foldlfaxs
+
+    The xs::[b] argument is a list
+
+    A useful intuition: think of the a::a argument is an “accumulator”.
+
+    The function takes the current value of the accumulator and a list element, and gives the new value of the accumulator.
+
+foldl :: (a->b->a) -> a -> [b] -> a
+
+Examples of foldl with function notation
+
+𝚏𝚘𝚕𝚍𝚕𝚏𝚊[]𝚏𝚘𝚕𝚍𝚕𝚏𝚊[𝚡𝟶]𝚏𝚘𝚕𝚍𝚕𝚏𝚊[𝚡𝟶,𝚡𝟷]𝚏𝚘𝚕𝚍𝚕𝚏𝚊[𝚡𝟶,𝚡𝟷,𝚡𝟸]⇝⇝⇝⇝afax0f(fax0)x1f(f(fax0)x1)x2
+Examples of foldl with infix notation
+
+In this example, + denotes an arbitrary operator for f; it isn’t supposed to mean specifically addition.
+
+foldl (+) a []          -- > a
+foldl (+) a [x0]        -- > a + x0
+foldl (+) a [x0,x1]     -- > (a + x0) + x1
+foldl (+) a [x0,x1,x2]  -- > ((a + x0) + x1) + x2
+
+Recursive definition of foldl
+
+foldl        :: (b -> a -> b) -> b -> [a] -> b
+foldl f z0 xs0 = lgo z0 xs0
+             where
+                lgo z []     =  z
+                lgo z (x:xs) = lgo (f z x) xs
+
+Right fold: foldr
+
+    Similar to foldl, but it works from right to left
+
+foldr :: (a -> b -> b) -> b -> [a] -> b
+
+Examples of foldr with function notation
+
+𝚏𝚘𝚕𝚍𝚛𝚏𝚊[]𝚏𝚘𝚕𝚍𝚛𝚏𝚊[𝚡𝟶]𝚏𝚘𝚕𝚍𝚛𝚏𝚊[𝚡𝟶,𝚡𝟷]𝚏𝚘𝚕𝚍𝚛𝚏𝚊[𝚡𝟶,𝚡𝟷,𝚡𝟸]⇝⇝⇝⇝afx0afx0(fx1a)fx0(fx1(fx2a))
+Examples of foldr with operator notation
+
+foldr (+) a []          -- > a
+foldr (+) a [x0]        -- > x0 + a
+foldr (+) a [x0,x1]     -- > x0 + (x1 + a)
+foldr (+) a [x0,x1,x2]  -- > x0 + (x1 + (x2 + a))
+
+Recursive definition of foldr
+
+foldr            :: (a -> b -> b) -> b -> [a] -> b
+foldr k z = go
+          where
+            go []     = z
+            go (y:ys) = y `k` go ys
+
+Relationship between foldr and list structure
+
+We have seen that a list [x0,x1,x2] can also be written as
+
+    x0 :  x1 : x2 : []
+
+Folding cons (:) over a list using the empty list [] as accumulator gives:
+
+foldr (:)  [] [x0,x1,x2]
+  -- > x0 :  x1 : x2 : []
+
+This is identical to constructing the list using (:) and [] ! We can formalise this relationship as follows:
+
+foldrcons[]xs=xs
+Some applications of folds
+
+sum xs = foldr (+) 0 xs
+product xs = foldr (*) 1 xs
+
+We can actually “factor out” the xs that appears at the right of each side of the equation, and write:
+
+sum      = foldr (+) 0
+product  = foldr (*) 1
+
+(This is sometimes called “point free” style because you’re programming solely with the functions; the data isn’t mentioned directly.)

@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/screen.css">
+  <link rel="stylesheet" type="text/css" media="print" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/print.css">
+  <script type='text/x-mathjax-config'>
+  MathJax.Hub.Config({messageStyle: "none"});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe"></script>
+</head>
+<body>
+
+<h1 id="lists">Data Structures: Lists</h1>
+<h2 id="computing-with-lists">Computing with lists</h2>
+<ul>
+<li><p>There are two approaches to working with lists:</p>
+<ul>
+<li><p>Write functions to do what you want, using recursive definitions that traverse the list structure.</p></li>
+<li><p>Write combinations of the standard list processing functions.</p></li>
+</ul></li>
+<li><p>The second approach is preferred, but the standard list processing functions do need to be defined, and those definitions use the first approach (recursive definitions).</p></li>
+<li><p>We’ll cover both methods.</p></li>
+</ul>
+<h2 id="recursion-on-lists">Recursion on lists</h2>
+<ul>
+<li><p>A list is built from the empty list \([]\) and the function \(cons\; :: \; a\rightarrow [a] \rightarrow [a] \). The function \(cons\) is usually written as the operator \((:)\) , in other words <em>:</em> is the same as <em>`cons`</em>.</p></li>
+<li><p>Every list must be either</p>
+<ul>
+<li><p>\([]\) or</p></li>
+<li><p>\((x : xs)\) for some \(x\) (the head of the list) and \(xs\) (the tail).</p></li>
+</ul>
+<p>where \((x :xs)\) is an alternative syntax for \(cons\,x\, xs\)</p></li>
+<li><p>The recursive definition follows the structure of the data:</p>
+<ul>
+<li><p>Base case of the recursion is \([]\).</p></li>
+<li><p>Recursion (or induction) case is \((x : xs)\).</p></li>
+</ul></li>
+</ul>
+<h2 id="ex-recursion-on-lists">Some examples of recursion on lists</h2>
+<h3 id="recursive-definition-of-length">Recursive definition of <em>length</em></h3>
+The length of a list can be computed recursively as follows:
+<pre><code># length :: [a] -&gt; Int
+length [] = 0                  # the base case
+length (x:xs) = 1 + length xs  # recursion case</code></pre>
+<h3 id="filter">Recursive definition of <em>filter</em></h3>
+
+<ul>
+<li><p>filter is given a <em>predicate</em> (a function that gives a Boolean result) and a list, and returns a list of the elements that satisfy the predicate.</p></li>
+</ul>
+<pre><code>filter :: (a-&gt;Bool) -&gt; [a] -&gt; [a]</code></pre>
+<p>Filtering is useful for the “generate and test” programming paradigm.</p>
+<pre><code>filter (&lt;5) [3,9,2,12,6,4] -- &gt; [3,2,4]</code></pre>
+
+The recursive definition is straightforward:
+
+<pre><code>filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+filter pred []    = []
+filter pred (x:xs)
+  | pred x         = x : filter pred xs
+  | otherwise      = filter pred xs</code></pre>
+<h2 id="computations-over-lists">Computations over lists</h2>
+
+<ul>
+<li><p>Many computatations that would be for/while loops in an imperative language are naturally expressed as list computations in a functional language.</p></li>
+<li><p>There are some common cases:</p>
+<ul>
+<li><p>Perform a computation on each element of a list: \(map\)</p></li>
+<li><p>Iterate over a list, from left to right: \(foldl\)</p></li>
+<li><p>Iterate over a list, from right to left: \(foldr\)</p></li>
+</ul></li>
+<li><p>It’s good practice to use these three functions when applicable</p></li>
+<li><p>And there are some related functions that we’ll see later</p></li>
+</ul>
+<h3 id="function-composition">Function composition</h3>
+<ul>
+<li><p>We can express a large compution by “chaining together” a sequence of functions that perform smaller computations</p>
+<ol>
+<li><p>Start with an argument of type \(a\)</p></li>
+<li><p>Apply a function \(g :: a-&gt;b\) to it, getting an intermediate result of type \(b\)</p></li>
+<li><p>Then apply a function \(f :: b-&gt;c\) to the intermediate result, getting the final result of type \(c\)</p></li>
+</ol></li>
+<li><p>The entire computation (first \(g\), then \(f\)) is written as \(f
+  \circ g\).</p></li>
+<li><p>This is traditional mathematical notation; just remember that in \(f \circ g\), the functions are used in right to left order.</p></li>
+<li><p>Haskell uses <code>.</code> as the function composition operator</p></li>
+</ul>
+<pre><code> (.) :: (b-&gt;c) -&gt; (a-&gt;b) -&gt; a -&gt; c
+(f . g) x = f (g x)</code></pre>
+<h2 id="map">Performing an operation on every element of a list: <em>map</em></h2>
+
+<ul>
+<li><p>map applies a function to every element of a list</p></li>
+</ul>
+<pre><code>map f [x0,x1,x2] -- &gt; [f x0, f x1, f x2]</code></pre>
+<h3 id="composition-of-maps">Composition of maps</h3>
+<ul>
+<li><p><em>map</em> is one of the most commonly used tools in your functional toolkit</p></li>
+<li><p>A common style is to define a set of simple computations using map, and to compose them.</p></li>
+</ul>
+<p>map f (map g xs) = map (f \(\circ\) g) xs</p>
+<p>This theorem is frequently used, in both directions.</p>
+<h3 id="recursive-definition-of-map">Recursive definition of map</h3>
+<pre><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs</code></pre>
+
+<h2 id="folding-a-list">Folding a list (reduction)</h2>
+<ul>
+<li><p>An iteration over a list to produce a singleton value is called a <em>fold</em></p></li>
+<li><p>By convention, we will have a list with elements of type \(b\), and the singleton value will have type \(a\)</p></li>
+<li><p>There are several variations: folding from the left, folding from the right, several variations having to do with “initialisation”, and some more advanced variations.</p></li>
+<li><p>Folds may look tricky at first, but they are extremely powerful, and they are used a lot! And they aren’t actually very complicated.</p></li>
+</ul>
+<h3 id="foldl-1">Left fold: <em>foldl</em></h3>
+<ul>
+<li><p>foldl is <em>fold from the left</em></p></li>
+<li><p>Think of it as an iteration across a list, going left to right.</p></li>
+<li><p>A typical application is \(foldl\, f\, a\, xs\)</p></li>
+<li><p>The \(xs :: [b]\) argument is a list</p></li>
+<li><p>A useful intuition: think of the \(a :: a\) argument is an “accumulator”.</p></li>
+<li><p>The function takes the current value of the accumulator and a list element, and gives the new value of the accumulator.</p></li>
+</ul>
+<pre><code>foldl :: (a-&gt;b-&gt;a) -&gt; a -&gt; [b] -&gt; a</code></pre>
+<h3 id="examples-of-foldl-with-function-notation">Examples of <em>foldl</em> with function notation</h3>
+<p>\( \begin{aligned}
+\mathtt{foldl\,f\,a\,[]} &amp; \rightsquigarrow &amp; a\\
+\mathtt{foldl\,f\,a\,[x0]} &amp; \rightsquigarrow  &amp; f\,a\,x0\\
+\mathtt{foldl\,f\,a\,[x0,x1]} &amp; \rightsquigarrow  &amp; f\,(f\,a\,x0)\,x1\\
+\mathtt{foldl\,f\,a\,[x0,x1,x2]} &amp; \rightsquigarrow  &amp; f\,(f\,(f\,a\,x0)\,x1)\, x2\end{aligned} \)</p>
+<h3 id="examples-of-foldl-with-infix-notation">Examples of <em>foldl</em> with infix notation</h3>
+<p>In this example, + denotes an arbitrary operator for f; it isn’t supposed to mean specifically addition.</p>
+<pre><code>foldl (+) a []          -- &gt; a
+foldl (+) a [x0]        -- &gt; a + x0
+foldl (+) a [x0,x1]     -- &gt; (a + x0) + x1
+foldl (+) a [x0,x1,x2]  -- &gt; ((a + x0) + x1) + x2</code></pre>
+<h3 id="recursive-definition-of-foldl">Recursive definition of <em>foldl</em></h3>
+<pre><code>foldl        :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b
+foldl f z0 xs0 = lgo z0 xs0
+             where
+                lgo z []     =  z
+                lgo z (x:xs) = lgo (f z x) xs</code></pre>
+<h3 id="foldr-1">Right fold: <em>foldr</em></h3>
+<ul>
+<li><p>Similar to \(foldl\), but it works from right to left</p></li>
+</ul>
+<pre><code>foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</code></pre>
+<h3 id="examples-of-foldr-with-function-notation">Examples of <em>foldr</em> with function notation</h3>
+<p>\( \begin{aligned}
+\mathtt{foldr\,f\, a\, []            } &amp; \rightsquigarrow &amp; a\\
+\mathtt{foldr\, f\, a\, [x0]          } &amp; \rightsquigarrow &amp; f\, x0\, a\\
+\mathtt{foldr\, f\, a\, [x0,x1]       } &amp; \rightsquigarrow &amp;  f\, x0\, (f\, x1\, a)\\
+\mathtt{foldr\, f\, a\, [x0,x1,x2]   } &amp; \rightsquigarrow &amp; f\, x0\, (f\, x1\, (f\, x2\, a))\end{aligned} \)</p>
+<h3 id="examples-of-foldr-with-operator-notation">Examples of <em>foldr</em> with operator notation</h3>
+<pre><code>foldr (+) a []          -- &gt; a
+foldr (+) a [x0]        -- &gt; x0 + a
+foldr (+) a [x0,x1]     -- &gt; x0 + (x1 + a)
+foldr (+) a [x0,x1,x2]  -- &gt; x0 + (x1 + (x2 + a))</code></pre>
+<h3 id="recursive-definition-of-foldr">Recursive definition of <em>foldr</em></h3>
+<pre><code>foldr            :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+foldr k z = go
+          where
+            go []     = z
+            go (y:ys) = y `k` go ys</code></pre>
+<h3 id="relationship-between-foldr-and-list-structure">Relationship between <em>foldr</em> and list structure</h3>
+<p>We have seen that a list <code>[x0,x1,x2]</code> can also be written as</p>
+<pre><code>    x0 :  x1 : x2 : []</code></pre>
+<p>Folding \(cons\) (:) over a list using the empty list [] as accumulator gives:</p>
+<pre><code>foldr (:)  [] [x0,x1,x2]
+  -- &gt; x0 :  x1 : x2 : []</code></pre>
+<p>This is identical to constructing the list using (:) and [] ! We can formalise this relationship as follows:</p>
+<p>\(foldr \; cons \; [] \; xs \; = \; xs\)</p>
+<h3 id="some-applications-of-folds">Some applications of folds</h3>
+<pre><code>sum xs = foldr (+) 0 xs
+product xs = foldr (*) 1 xs</code></pre>
+<p>We can actually “factor out” the \(xs\) that appears at the right of each side of the equation, and write:</p>
+<pre><code>sum      = foldr (+) 0
+product  = foldr (*) 1</code></pre>
+<p>(This is sometimes called “point free” style because you’re programming solely with the functions; the data isn’t mentioned directly.)</p>
+
+</body>
+</html>

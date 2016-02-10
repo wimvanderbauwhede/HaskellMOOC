@@ -7,61 +7,80 @@ We have already encountered some of them in the previous tutorial, e.g. abs, max
 
 But the essence of functional programming is defining your own functions to solve your problems!
 
-A function is defined by an equation.
+A function is defined by an equation. There are two ways. You can either define a named function, e.g.
 
-f = \x -> x+1  -- lambda function
--- or
-f x = x+1 -- named function
-
+	f x = x+1
 
 The left hand side of the equation looks like a variable – and that’s what it is
-The right hand side is an expression that uses the local variables listen in parentheses and defines the result of the expression.
-Function application
+The right hand side is an expression that uses the local variables listen in parentheses and defines the result of the expression. To use the function, you apply it to an argument, e.g.
 
+	f 3
 
+You can of also define functions with multiple arguments, e.g.
 
-  f 3
-
-Functions with several arguments
-
-Define a function with three arguments:
-
-add3nums = \x y z -> x + y + z
+	add3nums x y z = x + y + z
 
 To use it, e.g.
 
   10 + 4* add3nums 1 2 3
 
-Lists
+Lambda Functions
+
+But you can also define a function without a name, known as a "lambda function" (or "anonymous function" in other languages), for example
+
+  \x -> x+1
+
+On the LHS of the arrow you list the arguments, on the RHS the expression. You can use this function straightaway, for example:
+
+	(  \x -> x+1 ) 4
+
+Or you can use an equation to assign the lambda function to a variable:
+
+	fl = \x -> x+1
+
+and use it later:
+
+	fl 4
+
+You can of course also define lambda functions with multiple arguments, e.g.
+
+	add3numsl = \x y z -> x + y + z
+
+To use it, e.g.
+
+  10 + 4* add3numsl 1 2 3
 
 
-A list is a single value that contains several other values.
-Syntax: the elements are written in square parentheses, separated by commas.
-['3', 'a']
-[2.718, 50.0, -1.0]
+<h3>Lists</h3>
 
-Function returning several results
+<p>A list is a single value that contains several other values. The elements are written in square parentheses, separated by commas, e.g.
+<code>[2.718, 50.0, -1.0]</code> or <code>[1,2,4,8]</code> or <code>["A","list","of","strings"]</code>.</p>
 
-Actually, a function can return only one result.
-However, lists allow you to package up several values into one object, which can be returned by a function.
-Here is a function minmax that returns both the smaller and the larger of two numbers:
-minmax = \x y -> [min x y, max x y]
-minmax 3 8  -- > [3,8]
-minmax 8 3  -- > [3,8]
-The elements are evaluated
+*** Here simply detect a number or a string (so Char or String) and carry on
 
-You can write a constant list
+<h3>Function returning several results</h3>
 
-mylist = [2,4,6,8]
-But the elements can be expressions, which are evaluated. Suppose you define:
+<p>Actually, a function can return only one result.</p>
+<p>However, lists allow you to package up several values into one object, which can be returned by a function.
+Here is a function <tt>minmax</tt> that returns both the smaller and the larger of two numbers:</p>
+<p><code>minmax = \x y -> [min x y, max x y]</code></p>
+<p>So, for example <code>minmax 3 8</code> and <code>minmax 8 3</code> both return the list [3,8].</p>
 
-answer = 42
-yourlist = [7, answer+1, 7*8]
-Then
+*** Here check if they did run that function and return the result, if they didn't just carry on
 
-  yourlist
--- >
-  [7, 43, 56]
+<p>You can write a constant list, e.g. <code>[2,4,6,8]</code>, and as this is a valid expression you can assign it to a variable, e.g.
+<code>mylist = [2,4,6,8]</code></p>
+<p>But the elements of a list can also be expressions, which are evaluated when they are accessed. Suppose you define:</p>
+
+<p><code>answer = 42</code></p>
+<p><code>yourlist = [7, answer+1, 7*8]</code></p>
+
+*** Here need to check that they actually did something like that, if they did return the result
+
+<p>Then when you evalue <code>yourlist</code> you get <code>[7, 43, 56]</code>.</p>
+
+*** If they did something else, just carry on
+
 Constructing lists
 
 Append: the (++) operator

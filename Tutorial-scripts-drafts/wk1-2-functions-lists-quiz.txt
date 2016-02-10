@@ -1,0 +1,61 @@
+Quiz for Lecture on Reduction, Functions and Lists
+
+8 Questions, multiple choice. 
+
+1. Reduction
+
+The Church-Rosser Theorem states that "Every terminating reduction path gives the same result"
+
+Are the following statements correct or incorrect?
+
+1.1 Correctness does depend on order of evaluation. (incorrect)
+1.2 The compilercan change the order freely to improve performance, without affecting the result. (correct)
+1.3 Expressions can be evaluated in parallel or sequentially, without affecting the result. (correct)
+
+
+2. Functions
+
+2.1 What is the difference in use (application) between a named function and a lambda function assigned to a variable?
+For example
+	f x = x + 1
+	f = \x -> x+1
+
+2.1.a There is no difference (correct)
+2.1.b You need to put parenthesis around the lambda function before application 
+
+2.2 Function application
+
+Given the lambda function
+
+	sum_ratio = \x y z -> (x + y) / z
+
+What is the value of
+
+	1 + 4* sum_ratio 4 2 3
+2.2.a 5
+2.2.b 9 (correct)
+
+3. Lists
+
+3.1 What does the following sequence evaluate to?
+
+	['a','d' .. 'z']
+
+3.1.a "adz"
+3.1.b "adgjmpsvy"
+Constructing lists
+
+3.2 Given a list xs, what does the following expression evaluate to:
+
+	[]++xs == xs++[]
+
+3.2.a True (correct)
+3.2.b False
+
+3.3 In Haskell, lists are lazy. As a consequence you can construct infinite lists, e.g. [ 1 .. ]. Why are lazy lists a good idea?
+
+3.3.a Lazy lists are much faster than strict lists used in other languages
+3.3.b Lazy lists make many algorithms easier to express (correct)
+
+
+

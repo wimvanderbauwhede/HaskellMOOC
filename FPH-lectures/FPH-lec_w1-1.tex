@@ -193,6 +193,28 @@ abs (((5)))
 \end{frame}
 
 %-----------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Functions and Operators}
+
+\begin{itemize}
+\item So far, we've used operators in expressions and introduced functions.
+\item You might wonder: what is the difference between an operator and a function?
+\item And the answer is, in Haskell there is fundamentally no difference: you can use an operator as a function and a function as an operator: 
+\item To use an operator as a function, enclose it in parentheses:
+
+\begin{verbatim}
+(+) 5 6 -- same as 5 + 6
+\end{verbatim}
+\item To use a function as an operator, enclose it in backticks:
+
+\begin{verbatim}
+ 5 `max` 6 -- same as max 5 6
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------------------------------
 \section{Equations}
 
 \begin{frame}[fragile]

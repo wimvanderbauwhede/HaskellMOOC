@@ -9,7 +9,7 @@
 <body>
 
 <h1 id="reduction">Reduction</h1>
-<h3 id="model-of-program-execution">Model of program execution</h3>
+<h3 id="model-of-program-execution">A model of program execution</h3>
 <ul>
 <li><p>A programmer needs a concrete model for how a program is executed.</p></li>
 <li><p>For imperative programs, we can execute statement by statement, keeping track of the values of variables (the stack) and where we are in the program (the program counter).</p></li>
@@ -17,13 +17,13 @@
 <li><p>The mechanism for executing functional programs is <em>reduction</em>.</p></li>
 </ul>
 <h3 id="reduction-1">Reduction</h3>
-<p>An expression is reduced, by simplifying one <em>reducible expression</em> (called “redex”). Each step is called a reduction, and we’ll use <code>-- &gt;</code> to show the result.</p>
+<p>Reduction is the process of converting an expression to s simpler form. Conceptually, an expression is reduced by simplifying one <em>reducible expression</em> (called “redex”) at a time. Each step is called a reduction, and we’ll use <code>-- &gt;</code> to show the result.</p>
 <pre><code>  3 + (4*5)
 -- &gt;
   3 + 20
 -- &gt;
   23</code></pre>
-<p>Reduction is important because it is the sole means of execution of a functional program. There are no statements, as in imperative languages; all computation is achieved solely by reducing expressions.</p>
+<p>Reduction is important because it is the sole means of execution of a functional program. There are no statements, as in imperative languages; all computation is achieved purely by reducing expressions.</p>
 <h3 id="unique-reduction-path">Unique reduction path</h3>
 <p>When a reduction is performed, there is only one possible answer. In this example, the computation has only one possible path:</p>
 <pre><code>  3 + (5 * (8-2))
@@ -36,15 +36,17 @@
 <p>There is only one possible reduction path in that example, because in each step the current expression contains only one redex.</p>
 <h3 id="multiple-reduction-paths">Multiple reduction paths</h3>
 <p>If an expression contains several redexes, there will be several reduction paths.</p>
-<p><span>5cm</span></p>
+
+<table width="100%">
+<tr><td>
 <pre><code>  (3+4) * (15-9)
 -- &gt;
-  7 * (15-9)    
+  7 * (15-9)
 -- &gt;
-  7 * 6         
+  7 * 6
 -- &gt;
- 42            </code></pre>
-<p><span>5cm</span></p>
+ 42</code></pre>
+</td><td>
 <pre><code>  (3+4) * (15-9)
 -- &gt;
   (3+4) * 6
@@ -52,8 +54,12 @@
   7 * 6
 -- &gt;
   42</code></pre>
-<h3 id="result-doesnt-depend-on-reduction-path">Result doesn’t depend on reduction path!</h3>
+</td></tr></table>
+
+<h3 id="result-doesnt-depend-on-reduction-path">The result doesn’t depend on reduction path!</h3>
 <p>A fundamental theorem (the Church-Rosser theorem):</p>
+
+<p style="border: solid 1px blue; text-align: center">Every terminating reduction path gives the same result</p>
 <p>This means that</p>
 <ul>
 <li><p>Correctness doesn’t depend on order of evaluation.</p></li>
@@ -61,7 +67,9 @@
 <li><p>Different expressions can be evaluated in parallel, without affecting the result. <span><em>As a result, functional languages are leading contenders for programming future parallel systems.</em></span></p></li>
 </ul>
 <h1 id="functions">Functions</h1>
-<h2 id="function-definitions">Function definitions</h2>
+<p>Haskell is a functional language so the function concept is the essential to the language. A function takes one or more arguments and computes a result. Given the same arguments, the result will always be the same. This is similar to a mathematical function and it means that in Haskell there are no side-effects.</p>
+<p>There are two fundamental operations on functions: function definition (creating a function) and function application (using a function to compute a result).</p>
+
 <h3 id="function-definitions-1">Function definitions</h3>
 <ul>
 <li><p>In Haskell, many functions are pre-defined in a standard library called the <em>prelude</em>.</p></li>
@@ -117,7 +125,7 @@ f x = x+1 -- named function</code></pre>
 -- &gt;
   34</code></pre>
 <h1 id="lists">Lists</h1>
-<h3 id="lists-1">Lists</h3>
+<h3 id="lists-1">A key datastructure: the list</h3>
 <ul>
 <li><p>A list is a single value that contains several other values.</p></li>
 <li><p>Syntax: the elements are written in square parentheses, separated by commas.</p></li>
@@ -133,16 +141,17 @@ f x = x+1 -- named function</code></pre>
 <pre><code>minmax = \x y -&gt; [min x y, max x y]</code></pre>
 <pre><code>minmax 3 8  -- &gt; [3,8]
 minmax 8 3  -- &gt; [3,8]</code></pre>
-<h3 id="the-elements-are-evaluated">The elements are evaluated</h3>
+<h3 id="the-elements-are-evaluated">The elements are evaluated lazily</h3>
 <p>You can write a constant list</p>
 <pre><code>mylist = [2,4,6,8]</code></pre>
-<p>But the elements can be expressions, which are evaluated. Suppose you define:</p>
+<p>But the elements can be expressions. They are evaluated only when they are used. Suppose you define:</p>
 <pre><code>answer = 42
 yourlist = [7, answer+1, 7*8]</code></pre>
 <p>Then</p>
 <pre><code>  yourlist
 -- &gt;
   [7, 43, 56]</code></pre>
+<p>But as long as you do not access the expression, it is not evaluated.</p>
 <h2 id="constructing-lists">Constructing lists</h2>
 <h3 id="append-the-operator">Append: the \((++)\) operator</h3>
 <ul>
@@ -181,6 +190,8 @@ yourlist = [7, answer+1, 7*8]</code></pre>
 <li><p><code>[0 .. 9] - &gt; [0,1,2,3,4,5,6,7,8,9]</code> is a list of numbers</p></li>
 </ul></li>
 </ul>
+
+
 <h3 id="list-comprehensions">List comprehensions</h3>
 <ul>
 <li><p>A list comprehension is a high level notation for specifying the computation of a list</p></li>
@@ -209,8 +220,11 @@ yourlist = [7, answer+1, 7*8]</code></pre>
 <pre><code>  [[a,b] | a &lt;- [10,11,12] , b &lt;- [20,21]]
 -- &gt;
   [[10,20],[10,21],[11,20],[11,21],[12,20],[12,21]]</code></pre>
+
 <h2 id="operating-on-lists">Operating on lists</h2>
+
 <h3 id="indexing-a-list">Indexing a list</h3>
+
 <ul>
 <li><p>We can index a list by numbering the elements, starting with 0.</p></li>
 <li><p>Thus a canonical form of a list with \(n\) elements is \([x_0,
@@ -235,5 +249,21 @@ tail [4,5,6] -- &gt; [5,6]</code></pre></li>
 <li><p>Recommendation: avoid using \(head\) and \(tail\), because you want to avoid undefined values so your programs are robust. Unless you’re doing something really sophisticated, you’re better off with pattern matching. There are, however, some cases where they are appropriate.</p></li>
 </ul>
 
+<h2 id="lists-are-lazy">Lists are lazy</h2>
+
+<p>We have mentioned before that Haskell is "lazy", meaning that it only evaluates expressions when they are required for the evaluation of another expression.</p><p>This behaviour extends to lists, so the we can actually define infinite lists using sequences, for example <code>[1 .. ]</code> is the list of all positive integers. Another example is the <code>primes</code> function (from the Data.Numbers.Primes package) which returns an infinite list of prime numbers.</p>
+<p>A consequence of laziness in lists is that you can define lists containing very complex and time consuming expressions, and as long as you never access them they will not be evaluated. The same is true for an incorrect expression, for example defining <code>xs = [1,2,xs !! 5,4]</code> will not result in an error as long as you don't access the third element.</p>
+
+<p>Keep in mind that lists are also immutable. As a result, if you define <code>xs2 = xs ++ xs</code> and try to access the third element <code>xs2 !! 2</code> will still result in an error because <code>xs</code> has not been modified:</p>
+
+<pre><code>xs2 !! 2 -- > *** Exception: Prelude.(!!): index too large</code></pre>
+
+<p>Interestingly, if we change the definition of <code>xs</code> to <code>xs = [1,2,xs2 !! 5,4]</code>, then both <code>xs !! 2</code> and <code>xs2 !! 2</code> will return  <code>2</code>:</p>
+<pre><code>xs = [1,2,xs2 !! 5,4]
+xs2 = xs ++ xs
+xs2 !! 2 -- > 2
+xs !! 2 -- > 2</code>
+</pre>
+<p>This is a consequence of Haskell's expression evaluation through reduction: the order of the expressions does not matter.</p>
 </body>
 </html>

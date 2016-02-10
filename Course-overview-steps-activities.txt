@@ -1,0 +1,67 @@
+Introduction to Functional Programming in Haskell -- Course Overview
+
+Week 1
+L1.0 Introduction JS
+
+L1.1 Expressions and Equations WV
+- Intro video
+- Lecture notes
+- Interactive tutorial
+- Quiz
+
+L1.2 Reduction, Functions, and Lists WV
+- Intro video
+- Lecture notes
+- Interactive tutorial
+- Quiz
+
+Week 2
+L2.1 Text Input/Output JS
+
+L2.2 Computations and Polymorphism JS
+
+Week 3
+L3.1 Data Structures WV
+- Intro video
+- Lecture notes
+- Interactive tutorial
+- Quiz
+
+L3.2 Computations and Types JS
+
+L3.3 Equational Reasoning [optional extra]
+- Lecture notes
+- Quiz
+
+Week 4
+L4.1 Returning Functions as Values – Parsing WV
+- Intro video
+- Lecture notes
+- Tutorial (Camtasia)
+- Quiz
+
+L4.2 Program Structure JS
+
+Week 5
+L5.1 Strictness JS
+
+L5.2 Types WV
+- Intro video
+- Lecture notes
+- Tutorial (Camtasia)
+- Quiz
+
+Week 6
+L6.1 Type classes and Lambda Calculus WV
+- Intro video
+- Lecture notes
+- Tutorial (Camtasia)
+- Quiz
+
+L6.2 Monads JS+WV
+
+L6.3 There really are only functions [optional extra]
+- Video
+- Lecture notes
+
+
