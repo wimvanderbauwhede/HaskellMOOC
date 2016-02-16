@@ -1,0 +1,50 @@
+Quiz for Lecture on Data Structures: Lists
+
+5 Questions, multiple choice. 
+
+1. A recursive function must have to cases to test against. Are these:
+
+(a) base case and general case
+(b) general case and specific case
+(c) base case and induction case
+(d) general case and recursion case
+
+
+2. What is wrong with the following definition of filter:
+
+    filter :: (a -> Bool) -> [a] -> [a]
+    filter pred []    = []
+    filter pred (x:xs)
+      | pred x         = x : filter pred xs
+      | otherwise      = filter pred (x:xs)
+
+(a) The base case is wrong
+(b) The predicate should work on xs, not on x
+(c) The recursion for the non-matching case should work on xs, not on (x:xs)
+(d) The recursion for the matching case should work on (x:xs), not on xs
+
+3. The function `map` takes a function and a list as arguments. In what way does it transform this list?
+
+(a) Into a map of keys and values
+(b) Into a scalar value 
+(c) Into a another list on an element-by-element basis
+(d) Into a another list by combining elements
+
+4. What is the effect of the following fold:
+
+    foldl (\acc elt -> acc++[elt]) "" "A string"
+
+(a) It will reverse the string
+(b) It will return the string 
+(c) It will return the string except its last character
+(d) It will return the string except its first character
+
+5. What is the wrong with the following map/fold-based computation:
+
+    foldl (+) (map (*2) [1..8])
+
+(a) The map and foldl functions should be swapped
+(b) foldl needs an accumulator
+(c) map needs an accumulator
+(d) map should take a function like (*), not (*2)
+
