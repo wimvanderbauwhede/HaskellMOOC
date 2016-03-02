@@ -63,5 +63,3 @@ L6.2 Monads JS+WV
 L6.3 There really are only functions [optional extra]
 - Video
 - Lecture notes
-
-
