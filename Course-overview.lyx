@@ -72,7 +72,7 @@
 Introduction to Functional Programming in Haskell -- Course Overview
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L1.0 Introduction
 \end_layout
 
@@ -100,7 +100,7 @@ Programming paradigms
 Functional Languages
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L1.1 Expressions and Equations
 \end_layout
 
@@ -116,7 +116,7 @@ Expressions
 Equations
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L1.2 Reduction, Functions, and Lists 
 \end_layout
 
@@ -160,7 +160,7 @@ Operating on lists
 \end_layout
 
 \end_deeper
-\begin_layout Section
+\begin_layout Section*
 L2.1 Text Input/Output
 \end_layout
 
@@ -208,7 +208,7 @@ Calculating the result
 Interaction with game player
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L2.2 Computations and Polymorphism
 \end_layout
 
@@ -246,7 +246,7 @@ Polymorphic types
 Using ghci
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L3.1 Data Structures
 \end_layout
 
@@ -278,7 +278,7 @@ foldl
 foldr
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L3.2 Computations and Types
 \end_layout
 
@@ -326,7 +326,7 @@ L3.3 Equational Reasoning [optional extra]
 Equational Reasoning
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L4.1 Returning Functions as Values – Parsing
 \end_layout
 
@@ -354,7 +354,7 @@ Parsing text
 Parsec: monadic parsing combinators
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L4.2 Program Structure
 \end_layout
 
@@ -398,7 +398,7 @@ Maybe
 Documentation
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L5.1 Strictness
 \end_layout
 
@@ -436,7 +436,7 @@ Real world parsing examples
 Unassessed exercises
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L5.2 Types
 \end_layout
 
@@ -474,7 +474,7 @@ Type classes
 Type inference
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L6.1 Type classes and Lambda Calculus
 \end_layout
 
@@ -508,7 +508,7 @@ More standard typeclasses
 Introduction to Lambda Calculus
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 L6.2 Monads
 \end_layout
 
