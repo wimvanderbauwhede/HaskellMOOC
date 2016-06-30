@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/screen.css">
+  <link rel="stylesheet" type="text/css" media="print" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/print.css">
+    <script type='text/x-mathjax-config'>
+    MathJax.Hub.Config({messageStyle: "none"});
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe"></script>
+</head>
+<body>
+
+<h1 id="function-types">Function types</h1>
+<h3 id="function-types-1">Function types</h3>
+<ul>
+<li><p>Ordinary data types are for primitive data (like \(Int\) and \(Char\)) and basic data structures (like \([Int]\) and \([Char]\)).</p></li>
+<li><p>Functions have types containing an arrow, e.g. \(Int \rightarrow
+  String\).</p></li>
+<li><p>We now look at function types in more detail.</p></li>
+</ul>
+<h2 id="lambda-expressions">Lambda expressions</h2>
+<h3 id="named-and-anonymous-expressions">Named and anonymous expressions</h3>
+<p>You can give a name \(sum\) to an expression \(2+2\):</p>
+<pre><code>sum = 2+2</code></pre>
+<p>But you can also write <em>anonymous expressions</em> — expressions that just appear, but are not given names.</p>
+<pre><code>(-b) + sqrt (b^2 - 4*a*c)</code></pre>
+<p>Without anonymous expressions, writing this would almost be like assembly language:</p>
+<pre><code>e1 = (-b)
+e2 = b^2
+e3 = 4*a
+e4 = e3*c
+e5 = e2-e4
+e6 = e1+e5</code></pre>
+<h3 id="some-background">Some background</h3>
+<ul>
+<li><p>Sometimes in a mathematics or physics book, there are statements like “the function \(x^2\) is continuous\(\ldots\)”</p></li>
+<li><p>This is ok when the context makes it clear what \(x\) is.</p></li>
+<li><p>But it can lead to problems. What does \(x*y\) mean?</p>
+<ul>
+<li><p>Is it a constant, because both \(x\) and \(y\) have fixed values?</p></li>
+<li><p>Is it a function of \(x\), with a fixed value of \(y\)?</p></li>
+<li><p>Is it a function of \(y\), with a fixed value of \(x\)?</p></li>
+<li><p>Is it a function of both \(x\) and \(y\)?</p></li>
+</ul></li>
+<li><p>In mathematical logic (and computer programming) we need to be precise about this!</p></li>
+<li><p>A lambda expression \(\backslash x \rightarrow e\) contains</p>
+<ul>
+<li><p>An explicit statement that the formal parameter is \(x\), and</p></li>
+<li><p>the expression \(e\) that defines the value of the function.</p></li>
+</ul></li>
+</ul>
+<h3 id="anonymous-functions">Anonymous functions</h3>
+<p>A function can be defined and given a name using an equation:</p>
+<pre><code>f :: Int -&gt; Int
+f x = x+1</code></pre>
+<ul>
+<li><p>Since functions are “first class”, they are ubiquitous, and it’s often useful to denote a function anonymously.</p></li>
+<li><p>This is done using <em>lambda expressions</em>.</p></li>
+</ul>
+<pre><code>\x -&gt; x+1</code></pre>
+<p>Pronounced “lambda x arrow x+1”.</p>
+<p>There may be any number of arguments:</p>
+<pre><code>\x y z -&gt; 2*x + y*z</code></pre>
+<h3 id="using-a-lambda-expression">Using a lambda expression</h3>
+<p>Functions are first class: you can use a lambda expression anywhere a function is needed. Thus</p>
+<pre><code>f = \x -&gt; x+1</code></pre>
+<p>is equivalent to</p>
+<pre><code>f x = x+1</code></pre>
+<p>But lambda expressions are most useful when they appear inside larger expressions.</p>
+<pre><code>map (\x -&gt; 2*x + 1) xs</code></pre>
+<h2 id="monomorphic-functions">Monomorphic functions</h2>
+<h3 id="monomorphic-functions-1">Monomorphic functions</h3>
+<p>Monomorphic means “having one form”.</p>
+<pre><code>f :: Int -&gt; Char
+f i = &quot;abcdefghijklmnopqrstuvwxyz&quot; !! i</code></pre>
+<pre><code>x :: Int
+x = 3</code></pre>
+<pre><code>f x :: Char
+f x -- &gt; &#39;c&#39;</code></pre>
+<h2 id="polymorphic-functions">Polymorphic functions</h2>
+<h3 id="polymorphic-functions-1">Polymorphic functions</h3>
+<p>Polymorphic means “having many forms”.</p>
+<pre><code>fst :: (a,b) -&gt; a
+fst (x,y) = x</code></pre>
+<pre><code>snd :: (a,b) -&gt; b
+snd (x,y) = y</code></pre>
+<pre><code>fst :: (a,b) -&gt; a
+fst (a,b) = a</code></pre>
+<pre><code>snd :: (a,b) -&gt; b
+snd (a,b) = b</code></pre>
+<h2 id="currying">Currying</h2>
+<h3 id="currying-1">Currying</h3>
+<ul>
+<li><p>Most programming languages allow functions to have any number of arguments.</p></li>
+<li><p>But this turns out to be unnecessary: we can restrict all functions to have just one argument, <em>without losing any expressiveness</em>.</p></li>
+<li><p>This process is called <em>Currying</em>, in honor of Haskell Curry.</p>
+<ul>
+<li><p>The technique makes essential use of higher order functions.</p></li>
+<li><p>It has many advantages, both practical and theoretical.</p></li>
+</ul></li>
+</ul>
+<h3 id="a-function-with-two-arguments">A function with two arguments</h3>
+<p>You can write a definition like this, which appears to have two arguments:</p>
+<pre><code>f :: Int -&gt; Int -&gt; Int
+f x y = 2*x + y</code></pre>
+<p>But it actually means the following:</p>
+<pre><code>f :: Int -&gt; (Int -&gt; Int)
+f 5 :: Int -&gt; Int</code></pre>
+<p>The function takes its arguments one at a time:</p>
+<pre><code>f 3 4 = (f 3) 4</code></pre>
+<pre><code>g :: Int -&gt; Int
+g = f 3
+g 10 -- &gt; (f 3) 10 -- &gt; 2*3 + 10</code></pre>
+<h3 id="grouping-arrow-to-the-right-application-left">Grouping: arrow to the right, application left</h3>
+<ul>
+<li><p>The arrow operator takes two types \(a \rightarrow b\), and gives the type of a function with argument type \(a\) and result type \(b\)</p></li>
+<li><p>An application \(e_1\; e_2\) applies a function \(e_1\) to an argument \(e_2\)</p></li>
+<li><p>Note that for both types and applications, <em>a function has only one argument</em></p></li>
+<li><p>To make the notation work smoothly, arrows group to the right, and application groups to the left.</p></li>
+</ul>
+<pre><code>f :: a -&gt; b -&gt; c -&gt; d
+f :: a -&gt; (b -&gt; (c -&gt; d))</code></pre>
+<pre><code>f x y z = ((f x) y) z</code></pre>
+<h2 id="type-classes">Type classes</h2>
+<h3 id="the-type-of">The type of (+)</h3>
+<p>Note that \(fst\) has the following type, and there is no restriction on what types \(a\) and \(b\) could be.</p>
+<pre><code>fst :: (a,b) -&gt; a</code></pre>
+<p>What is the type of \((+)\)? Could it be\(\ldots\)</p>
+<pre><code>(+) :: Int -&gt; Int -&gt; Int
+(+) :: Integer -&gt; Integer -&gt; Integer
+(+) :: Ratio Integer -&gt; Ratio Integer -&gt; Ratio Integer
+(+) :: Double -&gt; Double -&gt; Double</code></pre>
+<pre><code>(+) :: a -&gt; a -&gt; a  -- Wrong! has to be a number</code></pre>
+<h3 id="type-classes-1">Type classes</h3>
+<p>Answer: \((+)\) has type \(a \rightarrow a \rightarrow a\) for any type \(a\) that is a member of the type class \(Num\).</p>
+<pre><code>(+) :: Num a =&gt; a -&gt; a -&gt; a</code></pre>
+<ul>
+<li><p>The class \(Num\) is a set of types for which \((+)\) is defined</p></li>
+<li><p>It includes \(Int\), \(Integer\), \(Double\), and many more.</p></li>
+<li><p>But \(Num\) does <em>not</em> contain types like \(Bool\), \([Char]\), \(Int-&gt;Double\), and many more.</p></li>
+</ul>
+<h3 id="two-kinds-of-polymorphism">Two kinds of polymorphism</h3>
+<ul>
+<li><p><em>Parametric polymorphism.</em></p>
+<ul>
+<li><p>A polymorphic type that can be instantiated to <em>any</em> type.</p></li>
+<li><p>Represented by a type variable. It is conventional to use \(a\), \(b\), \(c\), \(\ldots\)</p></li>
+<li><p>Example: \(length :: [a] \rightarrow Int\) can take the length of a list whose elements could have any type.</p></li>
+</ul></li>
+<li><p><em>Ad hoc polymorphism.</em></p>
+<ul>
+<li><p>A polymorphic type that can be instantiated to any type chosen from a set, called a “<em>type class</em>”</p></li>
+<li><p>Represented by a type variable that is constrained using the \(\Rightarrow\) notation.</p></li>
+<li><p>Example: \((+) :: Num a \Rightarrow a \rightarrow a \rightarrow a\) says that \((+)\) can add values of any type \(a\), provided that \(a\) is an element of the type class \(Num\).</p></li>
+</ul></li>
+</ul>
+<h1 id="type-inference">Type inference</h1>
+<h3 id="type-inference-1">Type inference</h3>
+<ul>
+<li><p><em>Type checking</em> takes a type declaration and some code, and determines whether the code actually has the type declared.</p></li>
+<li><p><em>Type inference</em> is the analysis of code in order to infer its type.</p></li>
+<li><p>Type inference works by</p>
+<ul>
+<li><p>Using a set of <em>type inference rules</em> that generate typings based on the program text</p></li>
+<li><p>Combining all the information obtained from the rules to produce the types.</p></li>
+</ul></li>
+</ul>
+<h3 id="type-inference-rules">Type inference rules</h3>
+<p>The type system contains a number of <em>type inference rules</em>, with the form</p>
+<h3 id="context">Context</h3>
+<ul>
+<li><p>Statements about types are written in the form similar to \(\Gamma \vdash e :: \alpha\)</p></li>
+<li><p>This means ``if you are given a set \(\Gamma\) of types, then it is proven that \(e\) has type \(\alpha\).</p></li>
+</ul>
+<h3 id="type-of-constant">Type of constant</h3>
+<p><span>c :: T</span></p>
+<p>If we know the type \(T\) of a constant \(c\) (for example, we know that \(&#39;a&#39;
+:: Char\)), then this is expressed by saying that there is a given theorem that \(c :: T\). Furthermore, this holds given <em>any</em> context \(\Gamma\).</p>
+<h3 id="type-of-application">Type of application</h3>
+<p><span>(e<sub>1</sub>  e<sub>2</sub>) :: </span></p>
+<p>If \(e_1\) is a function with type \(\alpha \rightarrow \beta\), then the application of \(e_1\) to an argument of type \(\alpha\) gives a result of type \(\beta\).</p>
+<h3 id="type-of-lambda-expression">Type of lambda expression</h3>
+<p><span>(x e) :: ()</span></p>
+<p>We have a context \(\Gamma\). Suppose that if we’re also given that \(x :: \alpha\), then it can be proven that an expression \(e ::
+\beta\). Then we can infer that the function \(\lambda x \rightarrow
+e\) has type \(\alpha \rightarrow \beta\).</p>
+
+</body>
+</html>

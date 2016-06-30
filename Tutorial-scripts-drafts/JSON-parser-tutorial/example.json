@@ -1,0 +1,21 @@
+
+{
+      "people": [
+              { "person": {
+                                       "firstName": "Charles",
+                                                    "lastName": "Schulz"
+                                                                 }
+                  },
+              { "person": {
+                                       "firstName": "Walt",
+                                                "middleName": "Elias",
+                                                         "lastName": null
+                                                                      }
+                  },
+                  { "person": {
+                                           "firstName": "Gary",
+                                                    "lastName": 42
+                                                                 }
+                      }
+        ]
+}
