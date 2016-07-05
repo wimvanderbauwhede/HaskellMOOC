@@ -91,3 +91,13 @@ No, it is a syntax error
 
 
 
+Final text of questions:
+
+1 	What is the difference between an expression and a statement in an imperative programming language 	Edit Delete
+2 	What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: `sqrt 16+9` 	Edit Delete
+3 	What is the result of the following expression in Haskell, where sqrt returns the square root of its argument: 	Edit Delete
+4 	Give one reason why the following code is incorrect in Haskell: 	Edit Delete
+5 	What is the term for variables that can be assigned to an expression only once? 	Edit Delete
+6 	What is the result of the expression `abs -6` in Haskell, where abs returns the absolute value of its argument. 	Edit Delete
+7 	In Haskell, what is the name for the type of expression 	Edit Delete
+8 	Is it valid to write `n = n + 1` in Haskell 	Edit Delete

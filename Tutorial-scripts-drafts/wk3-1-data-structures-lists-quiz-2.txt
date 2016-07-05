@@ -1,0 +1,90 @@
+Quiz: filter, map, foldl, foldr
+
+Recursion on lists
+
+length and filter
+
+Computations over lists
+
+
+
+Function composition
+
+We can express a large compution by “chaining together” a sequence of functions that perform smaller computations. Haskell uses . as the function composition operator.
+
+What is the correct definition of function composition?
+
+~~~haskell
+ (.) :: (a->b) -> (c->d) -> a -> d
+(f . g) x = f (g x)
+~~~
+
+~~~haskell
+ (.) :: (b->c) -> (a->b) -> a -> c
+(f . g) x = f (g x)
+~~~
+
+~~~haskell
+ (.) :: (b->c) -> (a->b) -> a -> c
+(f . g) x = g (f x)
+~~~
+
+~~~haskell
+ (.) :: (c->d) -> (a->b) -> a -> c
+(f . g) x = f (g x)
+~~~
+
+
+
+map, foldl, foldr
+
+What is the correct recursive definition of map?
+
+~~~haskell
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = map f xs : f x 
+~~~
+
+~~~haskell
+map :: (a -> b) -> a -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+~~~
+
+~~~haskell
+map :: (a -> b) -> [a] -> [b]
+map lst []     = lst
+map f (x:xs) = f x : map f xs
+~~~
+
+~~~haskell
+map :: (a -> b) -> [a] -> [b]
+map _ []     = []
+map f (x:xs) = f x : map f xs
+~~~
+
+What is the result of 
+
+~~~haskell
+foldr (/) 1 [2,4,8]
+~~~
+
+0.25
+0.5
+2
+4
+
+
+What is the result of 
+
+~~~haskell
+foldl (/) 16 [8,4,2,1]
+~~~
+
+0.25
+0.5
+2
+4
+
+

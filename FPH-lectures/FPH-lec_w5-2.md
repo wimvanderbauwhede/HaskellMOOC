@@ -1,5 +1,4 @@
-Function types
---------------
+## Function types
 
 -   Ordinary data types are for primitive data (like $$Int$$ and $$Char$$)
     and basic data structures (like $$[Int]$$ and $$[Char]$$).
@@ -8,10 +7,10 @@ Function types
 
 -   We now look at function types in more detail.
 
-Lambda expressions
-------------------
+### Lambda expressions
 
-### Named and anonymous expressions
+
+#### Named and anonymous expressions
 
 You can give a name $$sum$$ to an expression $$2+2$$:
 
@@ -38,7 +37,7 @@ assembly language:
     e6 = e1+e5
 ~~~
 
-### Some background
+#### Some background
 
 -   Sometimes in a mathematics or physics book, there are statements
     like “the function $$x^2$$ is continuous$$\ldots$$”
@@ -65,7 +64,7 @@ assembly language:
     -   the expression $$e$$ that defines the value of the function.
 
 
-### Anonymous functions
+#### Anonymous functions
 
 A function can be defined and given a name using an equation:
 
@@ -91,7 +90,7 @@ There may be any number of arguments:
     \x y z -> 2*x + y*z
 ~~~
 
-### Using a lambda expression
+#### Using a lambda expression
 
 Functions are first class: you can use a lambda expression wherever a
 function is needed. Thus
@@ -113,10 +112,10 @@ expressions.
     map (\x -> 2*x + 1) xs
 ~~~
 
-Monomorphic and polymorphic functions
--------------------------------------
+### Monomorphic and polymorphic functions
 
-### Monomorphic functions
+
+#### Monomorphic functions
 
 Monomorphic means “having one form”.
 
@@ -131,7 +130,7 @@ Monomorphic means “having one form”.
     f x -- > 'c'
 ~~~
 
-### Polymorphic functions
+#### Polymorphic functions
 
 Polymorphic means “having many forms”.
 
@@ -150,9 +149,7 @@ Polymorphic means “having many forms”.
 
 ~~~
 
-Currying
---------
-
+### Currying
 
 -   Most programming languages allow functions to have any number of
     arguments.
@@ -167,7 +164,7 @@ Currying
     -   It has many advantages, both practical and theoretical.
 
 
-### A function with two arguments
+#### A function with two arguments
 
 You can write a definition like this, which appears to have two
 arguments:
@@ -195,7 +192,7 @@ The function takes its arguments one at a time:
 ~~~
 
 
-### Grouping: arrow to the right, application left
+#### Grouping: arrow to the right, application left
 
 -   The arrow operator takes two types $$a \rightarrow b$$, and gives the
     type of a function with argument type $$a$$ and result type $$b$$
@@ -209,8 +206,6 @@ The function takes its arguments one at a time:
 -   To make the notation work smoothly, arrows group to the right, and
     application groups to the left.
 
-<!-- -->
-
 ~~~haskell
     f :: a -> b -> c -> d
     f :: a -> (b -> (c -> d))
@@ -218,11 +213,9 @@ The function takes its arguments one at a time:
     f x y z = ((f x) y) z
 ~~~
 
-Type classes and ad-hoc polymorphism
-------------------------------------
+### Type classes and ad-hoc polymorphism
 
-
-### The type of $$(+)$$
+#### The type of $$(+)$$
 
 Note that $$fst$$ has the following type, and there is no restriction on
 what types $$a$$ and $$b$$ could be.
@@ -243,7 +236,7 @@ What is the type of $$(+)$$? Could it be$$\ldots$$
 ~~~
 
 
-### Type classes
+#### Type classes
 
 Answer: $$(+)$$ has type $$a \rightarrow a \rightarrow a$$ for any type $$a$$
 that is a member of the type class $$Num$$.
@@ -257,10 +250,10 @@ that is a member of the type class $$Num$$.
 -   It includes $$Int$$, $$Integer$$, $$Double$$, and many more.
 
 -   But $$Num$$ does *not* contain types like $$Bool$$, $$[Char]$$,
-    $$Int\rightarrowDouble$$, and many more.
+    $$Int\rightarrow Double$$, and many more.
 
 
-### Two kinds of polymorphism
+#### Two kinds of polymorphism
 
 -   *Parametric polymorphism.*
 
@@ -281,15 +274,11 @@ that is a member of the type class $$Num$$.
         $$\Rightarrow$$ notation.
 
     -   Example:
-        $$(+) :: Num a \Rightarrow a \rightarrow a \rightarrow a$$ says
+        $$(+) :: Num\, a \Rightarrow a \rightarrow a \rightarrow a$$ says
         that $$(+)$$ can add values of any type $$a$$, provided that $$a$$ is
         an element of the type class $$Num$$.
 
-Type inference
-==============
-
-
-### Type inference
+## Type inference
 
 -   *Type checking* takes a type declaration and some code, and
     determines whether the code actually has the type declared.
@@ -369,3 +358,5 @@ We have a context $$\Gamma$$. Suppose that if we’re also given that
 $$x :: \alpha$$, then it can be proven that an expression $$e ::
 \beta$$. Then we can infer that the function $$\lambda x \rightarrow
 e$$ has type $$\alpha \rightarrow \beta$$.
+
+

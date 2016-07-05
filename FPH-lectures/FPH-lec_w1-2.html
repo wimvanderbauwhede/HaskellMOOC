@@ -1,12 +1,3 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/screen.css">
-  <link rel="stylesheet" type="text/css" media="print" href="http://www.dcs.gla.ac.uk/~wim/HaskellMOOC/css/print.css">
-</head>
-<body>
 
 <h1 id="reduction">Reduction</h1>
 <h3 id="model-of-program-execution">A model of program execution</h3>
@@ -45,8 +36,8 @@
 -- &gt;
   7 * 6
 -- &gt;
- 42</code></pre>
-</td><td>
+ 42            </code></pre>
+    </td><td>
 <pre><code>  (3+4) * (15-9)
 -- &gt;
   (3+4) * 6
@@ -54,7 +45,7 @@
   7 * 6
 -- &gt;
   42</code></pre>
-</td></tr></table>
+    </td></tr></table>
 
 <h3 id="result-doesnt-depend-on-reduction-path">The result doesn’t depend on reduction path!</h3>
 <p>A fundamental theorem (the Church-Rosser theorem):</p>
@@ -265,5 +256,4 @@ xs2 !! 2 -- > 2
 xs !! 2 -- > 2</code>
 </pre>
 <p>This is a consequence of Haskell's expression evaluation through reduction: the order of the expressions does not matter.</p>
-</body>
-</html>
+

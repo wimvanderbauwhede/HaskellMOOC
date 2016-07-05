@@ -1,6 +1,13 @@
-##The Parsing Problem
+## The Parsing Problem
 
-Parsing is the mechanism we use to make sense of structured information, e.g. written or spoken language. In the case of written language, it involves recognizing the characters of the writing system, then identifying words, then sentences, paragraphs etc.<p>To do so we need to know the writing system, spelling and gramar of the language in which the document is written.
+Parsing is the mechanism we use to make sense of structured information, e.g. written or spoken language. In the case of written language, it involves several steps:
+
+- recognizing the characters of the writing system, 
+- identifying words, 
+- identifying sentences, 
+- identifying paragraphs etc.
+
+To be able to do so we need to know the writing system, spelling and grammar of the language in which the document is written.
 
 For parsing structured text such as program source code, HTML or JSON, the problem is similar.
 
@@ -434,3 +441,5 @@ parens          = P.parens lexer
 commaSep        = P.commaSep lexer
 -- and many more
 ~~~
+
+
