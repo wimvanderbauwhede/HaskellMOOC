@@ -1,7 +1,5 @@
-{-# LANGUAGE OverloadedStrings        #-}
 module JSONParser where
 import JSONTypes
---import Text.ParserCombinators.Parsec
 import Text.Parsec
 import Text.Parsec.String (Parser)
 
