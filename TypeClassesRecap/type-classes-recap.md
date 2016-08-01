@@ -1,4 +1,4 @@
-Type classes are a way to overload functions or operators by putting constraints on poymorphism
+Type classes are a way to overload functions or operators by putting constraints on polymorphism
 
 For example, we have seen that
 
