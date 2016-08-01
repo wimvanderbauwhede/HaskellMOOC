@@ -1,0 +1,80 @@
+\subsection{Partial Application and
+Currying}\label{partial-application-and-currying}
+
+\subsubsection{Currying}\label{currying}
+
+Consider a type signature of a function with three arguments:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{    f ::} \DataTypeTok{X} \OtherTok{->} \DataTypeTok{Y} \OtherTok{->} \DataTypeTok{Z} \OtherTok{->} \DataTypeTok{A}
+\end{Highlighting}
+\end{Shaded}
+
+The arrow ``-\textgreater{}'' is right-associative, so this is the same
+as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{    f ::} \DataTypeTok{X} \OtherTok{->} \NormalTok{(}\DataTypeTok{Y} \OtherTok{->} \NormalTok{(}\DataTypeTok{Z} \OtherTok{->} \DataTypeTok{A}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+What this means is that we can consider \texttt{f} as a function with a
+single argument of type \texttt{X} which returns a function of type
+\texttt{Y-\textgreater{}Z-\textgreater{}A}.
+
+The technique of rewriting a function of multiple arguments into a
+sequence of functions with a single argument is called \emph{currying}.
+We can illustrate this best using a lambda function:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \NormalTok{\textbackslash{}x y z }\OtherTok{->} \FunctionTok{...}
+    \NormalTok{\textbackslash{}x }\OtherTok{->} \NormalTok{(\textbackslash{}y z }\OtherTok{->} \FunctionTok{...}\NormalTok{)}
+    \NormalTok{\textbackslash{}x }\OtherTok{->} \NormalTok{(\textbackslash{}y }\OtherTok{->} \NormalTok{(\textbackslash{}z }\OtherTok{->} \FunctionTok{...} \NormalTok{))  }
+\end{Highlighting}
+\end{Shaded}
+
+The name ``currying'', is a reference to logician Haskell Curry. The
+concept was actually proposed originally by another logician, Moses
+Schönfinkel, but his name was not so catchy.
+
+\subsubsection{Partial application}\label{partial-application}
+
+Partial application means that we don't need to provide all arguments to
+a function. For example, given
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \NormalTok{sq x y }\FunctionTok{=} \NormalTok{x}\FunctionTok{*}\NormalTok{x}\FunctionTok{+}\NormalTok{y}\FunctionTok{*}\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+We note that function application associates to the left, so the
+following equivalence holds
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \NormalTok{sq x y }\FunctionTok{=} \NormalTok{(sq x) y}
+\end{Highlighting}
+\end{Shaded}
+
+We can therefore create a specialised function by partial application of
+x:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \NormalTok{sq4 }\FunctionTok{=} \NormalTok{sq }\DecValTok{4} \CommentTok{-- = \textbackslash{}y -> 16+y*y}
+    \NormalTok{sq4 }\DecValTok{3} \CommentTok{-- = (sq 4) 3 = sq 4 3 = 25}
+\end{Highlighting}
+\end{Shaded}
+
+This is why you can write things like:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \NormalTok{doubles }\FunctionTok{=} \NormalTok{map (}\FunctionTok{*}\DecValTok{2}\NormalTok{) [}\DecValTok{1} \FunctionTok{..} \NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+

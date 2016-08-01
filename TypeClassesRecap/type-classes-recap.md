@@ -1,6 +1,6 @@
-Type classes are a way to overload functions or operators by putting constraints on polymorphism
+Type classes are a way to overload functions or operators by putting constraints on polymorphism.
 
-For example, we have seen that
+For example, we have seen that:
 
 ~~~haskell
 (+) :: a -> a -> a 
@@ -16,7 +16,7 @@ Likewise,
 
 is not OK because it is not clear a priory how to compare to arbitrary types.
 
-To address this issue Haskell provides type classes. These restrict the polymorphism. For example
+To address this issue Haskell provides type classes. These restrict the polymorphism. For example:
 
 ~~~haskell
     (+) :: Num a => a -> a -> a 

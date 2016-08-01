@@ -1,0 +1,42 @@
+Type classes are a way to overload functions or operators by putting
+constraints on polymorphism.
+
+For example, we have seen that:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{(+) ::} \NormalTok{a }\OtherTok{->} \NormalTok{a }\OtherTok{->} \NormalTok{a }
+\end{Highlighting}
+\end{Shaded}
+
+is not OK because we want to restrict addition to numbers.
+
+Likewise,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{    (<) ::} \NormalTok{a }\OtherTok{->} \NormalTok{a }\OtherTok{->} \DataTypeTok{Bool}
+\end{Highlighting}
+\end{Shaded}
+
+is not OK because it is not clear a priory how to compare to arbitrary
+types.
+
+To address this issue Haskell provides type classes. These restrict the
+polymorphism. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{    (+) ::} \DataTypeTok{Num} \NormalTok{a }\OtherTok{=>} \NormalTok{a }\OtherTok{->} \NormalTok{a }\OtherTok{->} \NormalTok{a }
+\end{Highlighting}
+\end{Shaded}
+
+says that the type a must be a numeric type, and
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{    (<) ::} \DataTypeTok{Ord} \NormalTok{a }\OtherTok{=>} \NormalTok{a }\OtherTok{->} \NormalTok{a }\OtherTok{->} \DataTypeTok{Bool}
+\end{Highlighting}
+\end{Shaded}
+
+says that a must be orderable.
