@@ -1,6 +1,4 @@
-## Example: The *Maybe* Monad
-
-
+<!-- ## Example: The *Maybe* Monad -->
 
 - We've already seen the Maybe type. Let's look at the Maybe monad, which makes using the Maybe type a lot easier.
 
@@ -9,7 +7,7 @@
 You already know the definition of the *Maybe* type:
 
 ~~~haskell
-    data Maybe a = Just a | Nothing 
+    data Maybe a = Just a | Nothing
 ~~~
 
 ### Example use of Maybe: Safe *head* and *tail*
@@ -51,6 +49,8 @@ There are a few additional functions defined in the *MonadPlus* type class:
 ~~~
 
 That's it, we now have a *Maybe* monad!
+
+*Note*: for users of `ghc 7.10` and higher, we need to do [a little bit more work](https://ghc.haskell.org/trac/ghc/wiki/Migration/7.10).  
 
 Explicit Maybe versus the Maybe Monad
 ----------------------------------
@@ -103,6 +103,7 @@ Thanks to the associativity law, we can also remove unnecessary parentheses:
 ~~~
 
 This is already a lot cleaner, but finally we can use the `do`-notation:
+
 ~~~haskell
     bar3 :: [a] -> Maybe a
     bar3 xs = do
@@ -196,4 +197,3 @@ Clearly, the final monadic code is a lot more readable than the original non-mon
 
         Just 7
 ~~~
-
