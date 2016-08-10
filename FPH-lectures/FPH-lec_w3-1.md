@@ -52,7 +52,7 @@ filter pred (x:xs)
 
 ## Computations over lists
 
-- Many computatations that would be for/while loops in an imperative language are naturally expressed as list computations in a functional language.
+- Many computations that would be for/while loops in an imperative language are naturally expressed as list computations in a functional language.
 - There are some common cases:
 
   - Perform a computation on each element of a list: $$map$$
@@ -65,7 +65,7 @@ filter pred (x:xs)
 
 ### Function composition
 
-- We can express a large compution by “chaining together” a sequence of functions that perform smaller computations
+- We can express a large computation by “chaining together” a sequence of functions that perform smaller computations
 
 1. Start with an argument of type $$a$$
 2. Apply a function $$g :: a->b$$ to it, getting an intermediate result of type $$b$$
@@ -81,7 +81,6 @@ filter pred (x:xs)
   ~~~
 
 ## Performing an operation on every element of a list: _map_
-
 
 - _map_ applies a function to every element of a list
 

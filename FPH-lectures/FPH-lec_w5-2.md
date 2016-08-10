@@ -2,30 +2,41 @@
 
 -   Ordinary data types are for primitive data (like $$Int$$ and $$Char$$)
     and basic data structures (like $$[Int]$$ and $$[Char]$$).
+-   Algebraic data types are types that combine other types either as records ('products'), e.g.
+
+    ~~~haskell
+      data Pair = Pair Int Double
+    ~~~
+
+    or as _variants_ ('sums'), e.g.
+
+    ~~~haskell
+      data Bool = False | True
+    ~~~    
 
 -   Functions have types containing an arrow, e.g. $$Int \rightarrow String$$.
-
 -   We now look at function types in more detail.
 
 ### Lambda expressions
 
+* Lambda expressions (named after the greek letter $$\lambda$$) play a very important role in functional programming in general and Haskell in particular.
 
 #### Named and anonymous expressions
 
-You can give a name $$sum$$ to an expression $$2+2$$:
+- You can give a name $$sum$$ to an expression $$2+2$$:
 
 ~~~haskell
     sum = 2+2
 ~~~
 
-But you can also write *anonymous expressions* — expressions that just
+- But you can also write *anonymous expressions* — expressions that just
 appear, but are not given names.
 
 ~~~haskell
     (-b) + sqrt (b^2 - 4*a*c)
 ~~~
 
-Without anonymous expressions, writing this would almost be like
+- Without anonymous expressions, writing this would almost be like
 assembly language:
 
 ~~~haskell
@@ -66,7 +77,7 @@ assembly language:
 
 #### Anonymous functions
 
-A function can be defined and given a name using an equation:
+* A function can be defined and given a name using an equation:
 
 ~~~haskell
     f :: Int -> Int
@@ -213,9 +224,9 @@ The function takes its arguments one at a time:
     f x y z = ((f x) y) z
 ~~~
 
-### Type classes and ad-hoc polymorphism
+## Type classes and ad-hoc polymorphism
 
-#### The type of $$(+)$$
+### The type of $$(+)$$
 
 Note that $$fst$$ has the following type, and there is no restriction on
 what types $$a$$ and $$b$$ could be.
@@ -235,8 +246,7 @@ What is the type of $$(+)$$? Could it be$$\ldots$$
     (+) :: a -> a -> a  -- Wrong! has to be a number
 ~~~
 
-
-#### Type classes
+### Type classes
 
 Answer: $$(+)$$ has type $$a \rightarrow a \rightarrow a$$ for any type $$a$$
 that is a member of the type class $$Num$$.
@@ -253,7 +263,7 @@ that is a member of the type class $$Num$$.
     $$Int\rightarrow Double$$, and many more.
 
 
-#### Two kinds of polymorphism
+### Two kinds of polymorphism
 
 -   *Parametric polymorphism.*
 
@@ -360,3 +370,8 @@ $$x :: \alpha$$, then it can be proven that an expression $$e ::
 e$$ has type $$\alpha \rightarrow \beta$$.
 
 
+$$
+{\large
+  {\hbox{$c$ is a constant with a fixed type $T$}}
+}
+$$
