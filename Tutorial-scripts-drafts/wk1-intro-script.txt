@@ -1,0 +1,60 @@
+WIM:
+Hi, and welcome to the Introduction to Functional
+Programming in Haskell course.
+We want to supercharge your coding, making you more
+effective by helping you to think about computer
+programming in a new way.
+
+My name's Wim
+
+JEREMY:
+and I'm Jeremy.
+
+We are from the University of Glasgow, which was a
+prominent research contributor to the development of
+the Haskell programming language.
+
+WIM:
+Admittedly, Haskell was born a long time ago - back in
+the late eighties
+
+JEREMY:
+- when we were only students.
+
+WIM:
+But - the language has grown massively in
+popularity. If you look at online programming language
+charts, Haskell is high in the top 50. And it's a
+frequent topic of geek conversation - if you know
+Haskell - people give you respect! Or maybe a job,
+which could be more useful!
+
+JEREMY:
+In essence though, the point of this course isn't
+really about learning the Haskell language. It's about
+learning functional programming - which is a much
+broader aim. All languages are becoming functional -
+lambdas are the latest, must-have programming language
+feature. Check out lambdas in C++ and Java, for
+instance.
+
+WIM:
+Before we leave you to learn some Haskell, let's
+introduce the man after whom the language was
+named. Haskell B. Curry was a US logician in the 20th
+Century. The Haskell language committee sought (and
+gained!) his widow's approval to use his first name for
+this exciting language. I guess that's a clue that the
+principles of Haskell are deeply rooted in Maths.
+
+JEREMY:
+But enough talking - let's get coding! We're really
+excited about this course - and we hope you will be
+too!  This week, there are several interactive
+web-based programming exercises to ground you in the
+basic concepts and syntax of Haskell. Happy coding!
+Do keep in touch via the comments to let us know 
+how you are getting on.
+
+
+
