@@ -1,3 +1,6 @@
+(standing outside School of Computing Science - 
+then walking through revolving doors)
+
 WIM:
 Hi, and welcome to the Introduction to Functional
 Programming in Haskell course.
@@ -31,7 +34,8 @@ which could be more useful!
 
 JEREMY:
 In essence though, the point of this course isn't
-really about learning the Haskell language. It's about
+really about learning the intricacies of the 
+Haskell language. It's about
 learning functional programming - which is a much
 broader aim. All languages are becoming functional -
 lambdas are the latest, must-have programming language
