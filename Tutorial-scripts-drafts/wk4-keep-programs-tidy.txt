@@ -93,3 +93,4 @@ However there are some important differences:
 * where clauses are not expressions; they can be used only to provide some local variables for a top level equation.
 
 
+In what circumstances do you think it might it be better to use let instead of where? Or the other way round? Please write suggestions in the comments below.
