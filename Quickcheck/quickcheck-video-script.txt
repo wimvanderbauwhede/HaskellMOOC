@@ -4,17 +4,71 @@ In this video, we are going to find out about a powerful
 automated testing tool called QuickCheck.
 This allows us to run random tests on our code, to check
 it meets certain properties that we specify
+QuickCheck comes as part of the Haskell platform, so you 
+should already have access to it on your own machine.
 
 It's a powerful testing technique, used in the software
 industry  (examples ...)
+
+
 
 OK - suppose we want to implement a substitution cipher - 
 let's do Caesar's cipher - where we encode letters by moving
 them a certain number of spaces along in the alphabet
 
+import Data.Char
+
+wrongcipher :: [Char] -> Int -> [Char]
+wrongcipher [] shift = []
+wrongcipher (c:cs) shift 
+  | isLetter(c)&&isAscii(c)  = let shiftedChar = ord(c) + shift
+                               in chr(shiftedChar):(wrongcipher cs shift)
+  | otherwise = c:(wrongcipher cs shift)
+
+
+great, we have shifted the letters along the right number of places...
+
+e.g. let's try encipher "hello" 1
+encipher "veni vidi vici" 4
+
+(I know , I know,  this isn't correct code because it doesn't wrap around the alphabet, 
+but bear with me for now...)
+
+now - for the decipher, we want to shift letters back the same number of places - 
+
+let decipher = \x y-> (encipher x (-y))
+
+Now, we want to check this works - (check).
+Rather than devise a number of test cases, we will randomly generate input data 
+(test case data) and check whether the property holds (an invariant)
+
+for all x, y . decipher((encipher x y) y) = x
+
+first we import the QuickCheck module
+
+import Test.QuickCheck
+
+then we ask to check our invariant
+
+quickCheck ((\s->(\n -> ((decipher (wrongcipher s n) n)==s))) :: [Char] -> Int -> Bool)
+
+This is the call to quickcheck - note that we have to write a lambda expression that takes two arguments - the string s and the int n - we need to supply the types for these, then 
+
+
+OK - run quickcheck
+(defaults to 100 tests) - 
+
+and we can trace them
+
+run more than 100 ...
+
+doesn't guarantee the code works - (Dijkstra quote) - but not a bad way to test...
+
+
+
 encipher :: [Char] -> Int -> [Char]
 encipher [] shift = []
-encipher c:cs shift 
+encipher (c:cs) shift 
   | isUpper(c) = let shiftedChar = ord(c) + shift
                      adjustedChar = if shiftedChar > ord('Z') then
 shiftedChar-26 else shiftedChar
@@ -25,21 +79,3 @@ shiftedChar-26 else shiftedChar
                  in chr(adjustedChar):(encipher cs shift)
   | otherwise = c:(encipher cs shift)
 
-
-
-let decipher = \x y-> (encipher x (26-y))
-
-Now, we want to check this works - (check).
-Rather than devise a number of test cases, we will randomly generate input data 
-(test case data) and check whether the property holds (an invariant)
-
-for all x, y . decipher((encipher x y) y) = x
-
-OK - run quickcheck
-(defaults to 100 tests) - 
-
-and we can trace them
-
-run more than 100 ...
-
-doesn't guarantee the code works - (Dijkstra quote) - but not a bad way to test...
