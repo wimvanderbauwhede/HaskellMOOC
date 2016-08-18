@@ -340,7 +340,7 @@ q = Node "animals" x (Leaf "dog")
     $Node$.
   \end{itemize}
 \item Therefore to process such a value we need several different
-  pieces of code, one for each possibile form.
+  pieces of code, one for each possible form.
 \item The $case$ expression examines the constructor, and chooses
   the corresponding piece of code.
 \end{itemize}
@@ -348,9 +348,9 @@ q = Node "animals" x (Leaf "dog")
 \begin{verbatim}
 f :: Tree String -> String
 f x =
-  case y of
+  case x of
     Leaf s -> "Leaf " ++ s
-    Node n left right = "Node " ++ s
+    Node n left right -> "Node " ++ s
 
 f p -- > "Leaf cat"
 f q -- > "Node dog"
