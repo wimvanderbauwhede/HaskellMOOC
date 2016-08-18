@@ -1,0 +1,56 @@
+
+
+Now let's have a go at using quickcheck for ourselves, presuming 
+you have already watched the video about it in the previous step.
+
+OK - let's run this in GHCi - so we can type things interactively and
+see how we get on.
+
+Let's start by checking some properties of the abs function, that returns the
+absolute value of a number
+
+for positive numbers, the absolute value of a number is equal to itself - 
+we could try to check this property.
+
+import Test.QuickChec
+
+quickCheck ((\n->(abs(n) == n))::Int->Bool)
+
+it's helpful to put the types in here. We have created a lambda function 
+that takes a single integer parameter then checks to see whether it is equal
+to its absolute value - 
+when we run, we see this fails quickly - for negative numbers!
+This is a problem with our property specification - not with the abs function.
+
+ok - so let's write another check - say a value is always equal to its absolute value, or 0 - its absolute value
+
+quickCheck ((\n->(abs(n) == n) || (0-abs(n) ==n))::Int->Bool)
+
+
+great! - what else could we check?
+
+Maybe that the first element of a sorted list is its minimum, or that the last element is its maximum?
+
+import Data.List
+
+quickCheck ((\l->((minimum l) == (sort l)!!0))::[Int]->Bool)
+
+hmmm, this fails for empty lists - right - let's refine our definition so 
+it's always true for empty lists
+
+quickCheck ((\l->(if l==[] then True else (minimum l) == (sort l)!!0))::[Int]->Bool)
+
+Yay! it works - at least, it passes 100 tests  - shall we see what these tests are... use verboseCheck instead of quickCheck
+
+Now we see why we had to put the type in for the list - so quickCheck generates list of the right type - let's try character lists instead...
+
+
+ok - it works, but most of the characters are unprintable...
+
+I guess you might want to use quickcheck for some of your own code - it's very helpful for prototyping!
+
+The QuViC company makes money using QuickCheck for various telecoms projects - see their website for details http://www.quviq.com/successes/
+
+
+
+ 
