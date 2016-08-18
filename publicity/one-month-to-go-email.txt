@@ -1,0 +1,27 @@
+subject: Functional Programming in Haskell – we’re starting in a month
+
+Hello [first name]
+
+We're looking forward to welcoming you to [Functional Programming in Haskell](https://www.futurelearn.com/courses/functional-programming-haskell/1/) next month.
+
+The course will take place online and will consist of a variety of videos, articles, guest interviews, interactive tutorials and assignments. We'll start off with the basic building blocks of the Haskell language, so don't worry if you haven't used it before. Throughout the six week course, we will introduce the main concepts of functional programming. These will be applicable to a wide range of programming languages. 
+
+In the meantime, you may find it helpful to:
+* have a sneak peek of Haskell at [tryhaskell](http://tryhaskell.org)
+* check out an [online guide](http://learnyouahaskell.com)
+* follow us on [twitter](https://twitter.com/HaskellMOOC)
+* ensure you have access to a computer on which you can install the [Haskell platform](https://www.haskell.org/platform/)
+
+There is still time to invite friends and colleagues to enrol on the course and take part alongside you. Having the support of people you know can really enrich the experience of studying online. As a reminder, the course page where they can enrol can be found [here](https://www.futurelearn.com/courses/functional-programming-haskell/1)
+
+There will be plenty of opportunity to interact with other learners within the course, which we strongly encourage. In the meantime, please take a moment to introduce yourself to your fellow learners in the discussion on the [course welcome page](https://www.futurelearn.com/courses/functional-programming-haskell/1/welcome). You can also use the hashtag [#FLhaskell](https://www.twitter.com/hashtag/FLhaskell) to find and contribute to any discussions on social networks.
+
+The course is due to begin on Monday 19 September. We will contact you again a week or so before the course starts, and will also send a welcome note as soon as we get underway.
+
+If you have any queries or feedback in the meantime, we won’t personally be able to answer them, but please take a look at [FutureLearn’s extensive FAQ page](https://about.futurelearn.com/faq/).
+
+Best wishes,
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers at the School of Computing Science
+University of Glasgow
