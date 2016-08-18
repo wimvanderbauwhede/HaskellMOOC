@@ -1,0 +1,117 @@
+Guards, guards
+
+[pic of guard in Carlisle castle]
+
+Haskell provides a notation for defining functions based on 
+predicate values.
+
+f x
+  | predicate1 = expression1
+  | predicate2 = expression2
+  | predicate3 = expression3
+
+
+The absolute value of a number is its magnitude, i.e. ignoring its sign. You could define a function to calculate the absolute value
+with an if/then/else conditional
+
+abs x = if (x<0) then (-x) else x
+
+or with guards
+
+abs x
+  | x<0 = -x
+  | otherwise = x
+
+Notice how there is no equals sign on the first line
+of the function definition - but one equals sign
+after each guard.
+
+The 'otherwise' guard should always be last, it's like the
+'default' case in a C-style switch statement.
+
+Guards are easier to read than if/then/else if there are 
+more than two conditional outcomes
+
+For instance, think about scoring in Golf. For a single
+hole, a player takes a number of strokes. There is a 
+'par' score for the hole, which is the expected number of
+strokes.
+
+holeScore :: Int -> Int -> String
+holeScore strokes par
+  | strokes < par = show (par-strokes) ++ " under par"
+  | strokes == par = "level par"
+  | strokes > par = show(strokes-par) ++ " over par"
+
+how could we tidy this up?
+Maybe turn the final guard into 'otherwise'?
+and also refactor with a where clause.
+
+holescore :: Int -> Int -> String
+holeScore strokes par
+  | score < 0 = show (abs score) ++ " under par"
+  | score == 0 = "level par"
+  | otherwise = show(score) ++ " over par"
+ where score = strokes-par
+
+Notice that the score variable defined in the where clause is in 
+scope for all three guards.
+
+
+
+Case expressions
+
+Recall from (link back) how we defined algebraic data types,
+like Trees. A value with an algebraic data type may have one of
+several different forms - such as a Leaf or a Node, in the case of
+Trees. Therefore to process such a value we need several different pieces of code, one for each possible form.
+The case expression examines the constructor, and chooses the corresponding piece of code. A bit like a guard, but it selects based on 
+the form of the value - cf. pattern matching.
+
+data Pet = Cat | Dog | Fish
+
+hello :: Pet -> String
+hello x = 
+  case x of
+    Cat -> "meeow"
+    Dog -> "woof"
+    Fish -> "bubble"
+
+
+OK - now suppose we want to make the data type a bit more sophisticated  - add a parrot with a String name.
+
+
+data Pet = Cat | Dog | Fish | Parrot String
+
+hello :: Pet -> String
+hello x = 
+  case x of
+    Cat -> "meeow"
+    Dog -> "woof"
+    Fish -> "bubble"
+    Parrot name -> "pretty " ++ name
+
+
+hello (Parrot "polly")
+returns "pretty polly"
+
+In the same way as there is a catch-all case for guards (remember otherwise) we can have a catch-all pattern for a case - it's the underscore - which means 'don't care' or 'match anything'
+
+so we could rewrite hello as:
+
+hello :: Pet -> String
+hello x =
+  case x of
+    Parrot name -> "pretty " ++ name
+    _ -> "grunt"
+
+
+Things to think about:
+how would you rewrite an if expression as a case expression?
+In fact, this is what happens in the core language - the if
+expression is just syntactic sugar. What is syntactic sugar, can 
+you think of any more examples in Haskell? Please write your
+thoughts in the comments section below.
+
+
+
