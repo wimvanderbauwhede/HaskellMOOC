@@ -1,0 +1,55 @@
+
+Dealing with uncertainty
+
+Do you want to know something upsetting? ...
+programs fail - yes - computation often goes wrong - 
+Haskell provides several mechanisms for handling computations that 
+fail - the first - and simplest - such mechanism is called Maybe ...
+
+let's think about how a computation might fail...
+imagine trying to process a list somehow, say take the first element of the list ... and you are given an empty list - 
+or imagine dividing two numbers and the divisor is 0 
+
+We need a way to capture whether or not such a computation
+has succeeded or failed - this is the job of Maybe
+
+Let's have a look at this algebraic datatype - it's defined in
+the Haskell Prelude - effectively the standard library for Haskell
+
+(google search)
+
+right - let's have a play with Maybe ...
+
+imagine we want a function to find the maximum value in a list
+
+let's start of with the maxhelper routine ...
+
+now let's define maxinlist ... in terms of maxhelper ...
+
+for empty list - no max - return Nothing...
+
+for non-empty list - return just the max value
+
+
+Great - this works fine. The Maybe type means that the typechecker
+guarantees client code will check the result of the computation
+with a case expression - much more robust than C error codes.
+
+
+right - what can we do with Maybes - how do we propagate them in
+programs - lots of case statements - surely there must be a better
+way? ... and there is ... at this point I will mumble the word
+monads ... but we will cover this in more detail in week 6.
+
+for now, let me show you how you can map functions over Maybe values
+
+(1+)  1
+
+(1+) (Just 1)
+
+fmap (1+) (Just 1)
+... (Just 2)
+
+(Nothing) ...
+
+Great - let's leave Maybes there for now ... we'll come back to them later.
