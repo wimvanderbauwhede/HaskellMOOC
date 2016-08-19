@@ -59,7 +59,8 @@ the next few weeks.
 
 Optionally, if you want to learn more 
 about the history of Haskell, please check these links:
-* read the [History of Haskell paper](https://wiki.haskell.org/History_of_Haskell)
-* watch this [lecture by Simon Peyton Jones](https://www.youtube.com/watch?v=3bjXGrycMhQ)
+
+*  read the [History of Haskell paper](https://wiki.haskell.org/History_of_Haskell)
+*  watch this [lecture by Simon Peyton Jones](https://www.youtube.com/watch?v=3bjXGrycMhQ)
 
 
