@@ -1,4 +1,6 @@
 
+# Summary of the key concepts covered in this activity
+
 # Week 1: Haskell First Steps
 
 ### Haskell Basics: Expressions and Equations
@@ -21,7 +23,8 @@ $$
 \begin{eqnarray}
 & & \LARGE{\color{navy}{\mathsf{\bullet \;\hbox{ Haskell programs compute by } \mathit{reduction} \hbox{.}}}} \\
 & & \Large{\color{navy}{\mathsf{\; \; \hbox{ i.e. gradually replacing expressions by their values.}}}} \\
-& & \LARGE{\color{navy}{\mathsf{\bullet \;\hbox{ A function takes one or more arguments and computes a result.}}}} \\
+& & \LARGE{\color{navy}{\mathsf{\bullet \;\hbox{ A function takes one or more } \mathit{arguments} \hbox{ }}}} \\
+& & \LARGE{\color{navy}{\mathsf{\; \; \hbox{   and computes a } \mathit{result} \hbox{.}}}} \\
 & & \Large{\color{navy}{\mathsf{\; \; \hbox{ Given the same arguments, the result will always be the same.}}}} \\
 & & \Large{\color{navy}{\mathsf{\; \; \hbox{ In Haskell there are no side-effects.}}}} \\
 & & \LARGE{\color{navy}{\mathsf{\bullet \;\hbox{ The list is the key datastructure.}}}} \\

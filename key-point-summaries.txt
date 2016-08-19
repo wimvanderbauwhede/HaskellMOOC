@@ -1,3 +1,5 @@
+# Summary of the key concepts covered in this activity
+
 # Week 1: Haskell First Steps
 
 ### Haskell Basics: Expressions and Equations
@@ -12,7 +14,8 @@ Summary (three key points)
 Summary (three key points)
 * Haskell programs compute by _reduction_.
 - i.e. gradually replacing expressions by their values.
-* A function takes one or more arguments and computes a result.
+* A function takes one or more _arguments_ 
+  and computes a _result_.
 - Given the same arguments, the result will always be the same.
 - In Haskell there are no side-effects.
 * The list is the key datastructure.
@@ -85,7 +88,7 @@ Summary (three key points)
 * Haskell, as other functional languages,
   is based on the lambda calculus
 * The reduction rules from the lambda calculus
-  are use to reduce expressions in Haskell.
+  are used to reduce expressions in Haskell.
 
 ### The M-word
 
