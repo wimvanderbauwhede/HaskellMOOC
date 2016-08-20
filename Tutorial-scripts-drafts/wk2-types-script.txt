@@ -1,0 +1,109 @@
+Let's talk about data types.
+
+A type is a set of values that are related - 
+a family of values that belong together.
+
+So far, we have seen the Bool  data type,
+which consists of values True and False
+We have also used the Int data type, which
+consists of whole number values, from some minimum 
+to some maximum - these min and max bounds may differbased on whether your OS is
+32-bit or 64-bit.
+
+What else have we looked at? Characters, and Lists.
+- more details? tuples? ...
+
+And then there are function types, that describe arguments and return values.
+
+Now we want to think about user-defined types, - 
+creating custom data types for our own programs.
+
+First we'll consider a simple type that consists of a finite set of alternative values. 
+Apparently, somewhere in the Amazon Jungle there is a tribe who count 'one', 'two', 'many' - i.e. they have
+no distinct words for larger integers than 2. 
+
+We could represent this type in Haskell as follows
+
+data SimpleNum = One | Two | Many
+
+(If you have ghci open, maybe type this into your 
+interactive session right now)
+
+The keyword data indicates we are defining a new type.
+The name of the type and the name of the values should start with capital letters. The alternative values 
+are separated with a vertical bar character
+
+Let's look at some of these values
+
+One 
+
+aargh -can't see it. Need to be able to print it out.
+add "deriving Show" to type definition. Show is a type class - more details later - for now, just remember that any type must derive Show if we are to print out its values.
+
+data SimpleNum = One|Two|Many deriving Show
+
+ok  
+
+One 
+(yes!)
+
+:t One 
+(yes!)
+
+Great - now let's write a function to convert from Ints to SimpleNums
+
+first I'm going to turn on multiline support so I can format my function definition
+over several lines.
+
+:set +m
+
+OK - let's go for it!
+
+let convert 1 = One
+    convert 2 = Two
+    convert _ = Many
+
+
+fine convert takes an Int input (well, really a value that has a type belonging to the Num type class - more later) and returns a SimpleNum.
+
+Let's try it out...
+
+map convert [1..5]
+
+perfect!
+
+-----
+
+Right - that is a custom data type with alternative 
+values. Now let's think about a record datatype - storing a portfolio of values.
+
+Hmmm, how about cricket scores. When a team bats in cricket, you need
+to know two integer values. The first is the number of runs scored by
+the team, the second is the number of players who are out -
+eliminated.  So, a good score for the New Zealand team might be 350 for 4 - 350 runs scored for
+the loss of 4 players. We can represent this as a product datatype
+
+data CricketScore = Score [Char] Int Int deriving Show
+
+
+let x = Score "New Zealand" 350 4
+
+x
+
+:t x
+
+Score is a type constructor that takes a String and two integer arguments and returns a
+CricketScore value
+
+:t Score
+
+In general, these kinds of custom data types are called algebraic data types. The alternative values relate to algebraic sums, and the record values relate to algebraic products. I'll spare you the hairy type theory for now - but at least you know to google for 
+algebraic data types if you are keen to discover more about type theory.
+
+
+Let's conclude with what we have learnt in this video:
+
+- we use the data keyword to define a new custom type
+- we use vertical bars to specify alternatives
+- and we use type constructors to build record types - like Score values in cricket.
+

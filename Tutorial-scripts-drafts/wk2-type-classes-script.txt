@@ -1,0 +1,26 @@
+In any high-level programming language, there are various number-like types-
+In Haskell, we have seen Ints so far. There are also Floats and infinite precision Integers (like BigIntegers in Java), to name another two.
+
+Now - here is a key insight. Many arithmetic functions can be applied values from _any_ number-like
+type - for example addition or multiplication. 2+2 or 2*pi
+
+This is where the notion of type classes comes in handy. A type class specifies a class of types that provide implementations for common functions.
+
+talk about Num a
+
+Other type classes - Eq, Ord,
+
+Show, Read
+
+deriving clause
+
+
+Type class - constrains types to specify functions that conform to certain type signatures -
+a bit like a common API.
+
+Also a bit like object-oriented programming, but don't confuse the two.
+Type class is more meta-level .... - more details!!
+Type class - like an interface in Java?
+
+
+
