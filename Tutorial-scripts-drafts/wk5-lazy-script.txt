@@ -1,0 +1,70 @@
+
+In real life, laziness is frowned upon (a vice?). However in programming 
+languages, laziness is a feature / design decision (a virtue?).
+Haskell is a lazy language - this means that the evaluation
+of expressions is delayed until their values are actually needed.
+
+This is the opposite of eager evaluation, which is what most 
+languages implement. (e.g. C, Java, Python, ML)
+
+For instance, consider this expression f(1+1)
+
+and this definition of
+f : Int->Int
+f x = 0
+
+in an eager language, the calculation 1+1 is done when the
+function f is invoked (call-by-value) whereas in a lazy language
+like Haskell, the calculation 1+1 is only done when the parameter
+value is used in the function body (call-by-need).
+
+So in a lazy language, if a parameter value is never needed, then
+the parameter is never evaluated. 
+Consider 
+
+f: Int -> Int -> Int
+f x y = y
+
+f (1+1) (2+2)
+
+has value 4 - calculation 1+1 is never done
+
+Strict in its second argument, not its first...
+(Should this be a tuple rather than a curried function?)
+(Should we talk about non-termination - bottom?)
+
+
+Laziness is very useful when dealing with infinite data.
+for instance, think of the infinite list of 1 values...
+
+let ones = 1 : ones
+
+recursive definition
+
+what is returned by head(ones)
+
+(1)
+
+what is returned by tail(ones)  ??? or length(ones)  
+
+(never terminates!) - if you are trying this in ghc - press ctrl-c
+
+or tail (ones)
+
+
+
+Show [1..] notation?
+take n ones
+
+...
+
+if computations are not needed, then they won't be computed.
+if you pass value into a function, is it computed immediately or later?
+if you put things in a let - evaluation is deferred.
+
+Contrast with scheme - thunk.
+
+
+
+
+recursive data structure - infinite data structure
