@@ -1,0 +1,48 @@
+
+
+what is wrong with this line of code, to return 
+the number of characters typed by a user?
+
+let x = getLine in length(x)
+
+
+- nothing - it should work fine
+- getLine is a function, so it needs arguments
+- the variable x is bound to the getLine function, rather than 
+receiving a line of input from the user - and we can't take 
+length of a function
+- the program will loop for ever
+
+
+What is the type of this function:
+
+f name = putStrLn ("hello " ++ name)
+
+- [Char] -> IO ()
+- IO [Char]
+- [Char] -> ()
+- IO () -> [Char]
+
+How do you find the type of a defined function f in ghci?
+
+:type f
+:show f
+:load f
+:? f
+
+
+What kind of syntactic construct must a x<-... definition occur in?
+* a do block
+* a let expression
+* a function parameter
+* 
+
+
+Why do you think pseudo-random number generation should
+occur inside a monad?
+
+- because the sequence of random numbers is important,
+need to control it
+- because it is an interaction with 'the outside world'
+- because it is defined in the Haskell Prelude library
+- because it is too complex for simple users.
