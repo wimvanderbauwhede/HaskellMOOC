@@ -7,19 +7,21 @@ So far, we have seen the Bool  data type,
 which consists of values True and False
 We have also used the Int data type, which
 consists of whole number values, from some minimum 
-to some maximum - these min and max bounds may differbased on whether your OS is
+to some maximum - these min and max bounds may differ
+based on whether your OS is
 32-bit or 64-bit.
 
 What else have we looked at? Characters, and Lists.
-- more details? tuples? ...
+Oh yes, and pairs as well.
 
-And then there are function types, that describe arguments and return values.
+Then there are function types, that describe arguments and return values.
 
 Now we want to think about user-defined types, - 
 creating custom data types for our own programs.
 
 First we'll consider a simple type that consists of a finite set of alternative values. 
-Apparently, somewhere in the Amazon Jungle there is a tribe who count 'one', 'two', 'many' - i.e. they have
+Apparently, somewhere in the Amazon Jungle there is a
+tribe who count 'one', 'two', 'many' - i.e. they have
 no distinct words for larger integers than 2. 
 
 We could represent this type in Haskell as follows
@@ -29,7 +31,7 @@ data SimpleNum = One | Two | Many
 (If you have ghci open, maybe type this into your 
 interactive session right now)
 
-The keyword data indicates we are defining a new type.
+The keyword 'data' indicates we are defining a new type.
 The name of the type and the name of the values should start with capital letters. The alternative values 
 are separated with a vertical bar character
 
@@ -37,7 +39,7 @@ Let's look at some of these values
 
 One 
 
-aargh -can't see it. Need to be able to print it out.
+aargh - we can't see it. We need to be able to print it out.
 add "deriving Show" to type definition. Show is a type class - more details later - for now, just remember that any type must derive Show if we are to print out its values.
 
 data SimpleNum = One|Two|Many deriving Show
@@ -64,7 +66,7 @@ let convert 1 = One
     convert _ = Many
 
 
-fine convert takes an Int input (well, really a value that has a type belonging to the Num type class - more later) and returns a SimpleNum.
+So convert takes an Int input (well, really a value that has a type belonging to the Num type class - more later) and returns a SimpleNum.
 
 Let's try it out...
 
@@ -75,13 +77,16 @@ perfect!
 -----
 
 Right - that is a custom data type with alternative 
-values. Now let's think about a record datatype - storing a portfolio of values.
+values - otherwise known as a SUM datatype.
+
+Now let's think about a record datatype - storing a portfolio of values.
 
 Hmmm, how about cricket scores. When a team bats in cricket, you need
 to know two integer values. The first is the number of runs scored by
 the team, the second is the number of players who are out -
-eliminated.  So, a good score for the New Zealand team might be 350 for 4 - 350 runs scored for
-the loss of 4 players. We can represent this as a product datatype
+i.e. have been eliminated.
+So, a good score for the New Zealand team might be 350 for 4 - 350 runs scored for
+the loss of 4 players. We can represent this as a PRODUCT datatype
 
 data CricketScore = Score [Char] Int Int deriving Show
 
@@ -104,6 +109,7 @@ algebraic data types if you are keen to discover more about type theory.
 Let's conclude with what we have learnt in this video:
 
 - we use the data keyword to define a new custom type
+- types must derive the Show typeclass if we want to see their values printed out
 - we use vertical bars to specify alternatives
-- and we use type constructors to build record types - like Score values in cricket.
+- and we use type constructors to build record types, like Score values in cricket.
 
