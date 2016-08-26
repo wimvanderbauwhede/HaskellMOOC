@@ -5,82 +5,106 @@ Guards, guards
 Haskell provides a notation for defining functions based on 
 predicate values.
 
+~~~ haskell
 f x
   | predicate1 = expression1
   | predicate2 = expression2
   | predicate3 = expression3
+~~~
 
-
-The absolute value of a number is its magnitude, i.e. ignoring its sign. You could define a function to calculate the absolute value
+The *absolute* value of a number is its magnitude, i.e. ignoring its sign.
+You could define a function to calculate the absolute value
 with an if/then/else conditional
 
+~~~ haskell
 abs x = if (x<0) then (-x) else x
+~~~
 
 or with guards
 
+~~~ haskell
 abs x
   | x<0 = -x
   | otherwise = x
+~~~
 
 Notice how there is no equals sign on the first line
-of the function definition - but one equals sign
+of the function definition --- but there is an equals sign
 after each guard.
 
-The 'otherwise' guard should always be last, it's like the
-'default' case in a C-style switch statement.
+The `otherwise` guard should always be last, it's like the
+`default` case in a C-style `switch` statement.
 
 Guards are easier to read than if/then/else if there are 
 more than two conditional outcomes
 
-For instance, think about scoring in Golf. For a single
+For instance, think about scoring in the sport of Golf. For a single
 hole, a player takes a number of strokes. There is a 
 'par' score for the hole, which is the expected number of
 strokes.
 
+~~~ haskell
 holeScore :: Int -> Int -> String
 holeScore strokes par
   | strokes < par = show (par-strokes) ++ " under par"
   | strokes == par = "level par"
   | strokes > par = show(strokes-par) ++ " over par"
+~~~
 
-how could we tidy this up?
-Maybe turn the final guard into 'otherwise'?
-and also refactor with a where clause.
+How could we tidy this up?
+Maybe we could turn the final guard into `otherwise`
+and also refactor with a `where` clause.
 
+~~~ haskell
 holescore :: Int -> Int -> String
 holeScore strokes par
   | score < 0 = show (abs score) ++ " under par"
   | score == 0 = "level par"
   | otherwise = show(score) ++ " over par"
  where score = strokes-par
+~~~
 
-Notice that the score variable defined in the where clause is in 
+Notice that the `score` variable defined in the `where` clause is in 
 scope for all three guards.
 
 
 
-Case expressions
+### Case expressions
 
-Recall from (link back) how we defined algebraic data types,
-like Trees. A value with an algebraic data type may have one of
-several different forms - such as a Leaf or a Node, in the case of
-Trees. Therefore to process such a value we need several different pieces of code, one for each possible form.
-The case expression examines the constructor, and chooses the corresponding piece of code. A bit like a guard, but it selects based on 
-the form of the value - cf. pattern matching.
+Recall from last week how we defined algebraic data types
+like binary trees. A value with an algebraic data type may have one of
+several different forms --- such as a `Leaf` or a `Node`, in the case of
+`Tree` structures. Therefore to process such a value we need several
+segments of code, one for each possible form.
+The `case` expression examines the value, and chooses the corresponding
+clause. It's like a guard, but it selects based on 
+the form of the value, i.e. it does pattern matching.
 
+Here is a sum data type for my pets.
+
+~~~ haskell
 data Pet = Cat | Dog | Fish
+~~~
 
+And here is how I greet my pets.
+
+~~~ haskell
 hello :: Pet -> String
 hello x = 
   case x of
     Cat -> "meeow"
     Dog -> "woof"
     Fish -> "bubble"
+~~~
 
+Note that each pattern is followed by an arrow and then a value.
+Also note that each pattern is vertically aligned. Indentation
+really matters in Haskell!
 
-OK - now suppose we want to make the data type a bit more sophisticated  - add a parrot with a String name.
+OK, now suppose we want to make the data type a bit more sophisticated .
+Let's add a `Parrot` with a `String` name.
 
-
+~~~ haskell
 data Pet = Cat | Dog | Fish | Parrot String
 
 hello :: Pet -> String
@@ -90,28 +114,38 @@ hello x =
     Dog -> "woof"
     Fish -> "bubble"
     Parrot name -> "pretty " ++ name
+~~~
 
+Now the pattern includes a variable, which is
+associated with the concrete value for the
+Parrot's name.
 
-hello (Parrot "polly")
-returns "pretty polly"
+    hello (Parrot "polly")
 
-In the same way as there is a catch-all case for guards (remember otherwise) we can have a catch-all pattern for a case - it's the underscore - which means 'don't care' or 'match anything'
+will return 
 
-so we could rewrite hello as:
+    "pretty polly"
 
+In the same way as there is a catch-all case for guards (`otherwise`),
+we can have a catch-all pattern for a `case`.
+It's the underscore character, `_` which means 'don't care' or 'match anything'
+
+So we could redefine `hello` as:
+
+~~~ haskell
 hello :: Pet -> String
 hello x =
   case x of
     Parrot name -> "pretty " ++ name
     _ -> "grunt"
+~~~
 
 
-Things to think about:
-how would you rewrite an if expression as a case expression?
-In fact, this is what happens in the core language - the if
-expression is just syntactic sugar. What is syntactic sugar, can 
-you think of any more examples in Haskell? Please write your
-thoughts in the comments section below.
+How would you rewrite an `if` expression as a `case` expression?
+In fact, this is what happens in the core language. The `if`
+expression is just *syntactic sugar* that is rewritten automatically.
+Can you think of any more examples of syntactic sugar in Haskell?
+Please add your thoughts in the comments section below.
 
 
 
