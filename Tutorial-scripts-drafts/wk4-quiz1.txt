@@ -1,0 +1,70 @@
+1.
+
+~~~ haskell
+let x = y + 2
+    y = x/3
+in x+y
+~~~
+
+This code defines a pair of *simultaneous* equations.
+Will this work in Haskell?
+
+- yes - it will evaluate the two values that have mutually recursive definitions
+- no - it will fail with an error
+- no it will loop for ever
+
+2.
+
+What is the missing `case` clause in the following definition 
+of a function to calculate the length of a list?
+
+mylength l = 
+case l of
+  -- MISSING CLAUSE --
+  x:xs -> 1+mylength xs
+
+
+- [] -> 0
+- Null -> 0
+- False = 0
+- [] <- 0
+
+
+3.
+
+In a guard expression, each of the guards evaluates to a `Bool` value,
+either `True` or `False`.
+What is the `Bool` value for the `otherwise` case:
+
+- False
+- True
+- Maybe True
+
+
+4. 
+
+Which of the following `two` let expressions will evaluate 
+to the `String` `"prime minister"`
+
+- let x = numeral ++ " minister"  where numeral = "prime" in x
+- let x = numeral ++ " minister"  in x where numeral = "prime"
+
+5. 
+
+Study the Haskell function `f` below.
+What does `f()` evaluate to?
+
+~~~ haskell
+f :: () -> String 
+f () = let x = (Just Nothing)
+       in
+        case x of
+         (Just _) -> "something"
+         Nothing -> "nothing"
+~~~
+
+- "something"
+- "nothing"
+- Nothing
+
+
