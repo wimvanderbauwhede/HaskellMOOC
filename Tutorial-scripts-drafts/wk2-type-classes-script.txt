@@ -1,0 +1,82 @@
+In any high-level programming language, 
+there are various number-like types-
+In Haskell, we have seen Ints so far. 
+There are also Floats and infinite precision Integers 
+(like BigIntegers in Java), to name another two.
+
+Now, here is a key insight. Many arithmetic 
+functions can be applied values from _any_ number-like
+type - for example addition or multiplication. 2+2 or 2*pi
+
+This is where the notion of type classes comes in handy. 
+A type class specifies a family of types that 
+provide implementations for common functions.
+
+
+Let's have a look at the type of + = :t +
+
+Num a => a->a->a
+
+given a type a (some people pronounce this as 'alpha') belonging to the Num type class,
+then the plus function 
+takes two a parameters and returns an a result.
+
+The part of the type before the => is called the context of
+the type, and this expresses type class membership for type 
+variables like a.
+
+So a type class is a generalized family of similar types.
+
+
+Let's think about some Other type classes -
+Eq - means we can compare values of this type for equality with ==
+- this is like the IEquatable interface in C#
+Ord = means we can order values of this type with relational
+operators like < and >, like IComparable in C#.
+Show - means we can generate String values that represent values of this type -  like toString() in Java
+Read - means we can generate values of this type from String values
+
+To specify that a type belongs to a type class, for now we will
+use the deriving clause in the type definition
+
+let's go back to our SimpleNum class - remember, we can only
+count One, Two and Many
+
+data SimpleNum = One | Two | Many
+deriving (Show, Read)
+
+means we can convert SimpleNum values into strings, and vice versa
+
+show(One)
+Read("Two")
+
+ok - this uses default definitions of show and read.
+
+Now let's try comparing for equality - One == One
+ - doesn't work
+
+add deriving Eq
+
+now it should work.
+
+Again, there is a default implementation of == which is being used.
+
+There is a mechanism for defining type class function implementations, but we will save this discussion for later...
+Wait for later ...
+
+### Type Classes and Programming Languages
+
+Note that type classes were one of the early innovations of the Haskell programming language.
+
+A Type class  constrains member types to provide functions that conform to certain type signatures, effectively an API constraint.
+This is a little like object-oriented programming.
+Type classes are like 'interfaces' in Java. 
+Types in the type class are like 
+concrete implementations of the interface.
+Type classes provide a neat mechanism to enable 
+operator overloading in Haskell.
+
+
+
+
+
