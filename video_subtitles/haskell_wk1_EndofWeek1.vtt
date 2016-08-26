@@ -1,0 +1,56 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.300 align:middle line:90%
+
+
+00:00:13.300 --> 00:00:14.280 align:middle line:90%
+Hey!
+
+00:00:14.280 --> 00:00:17.140 align:middle line:84%
+We're at the end of the
+first week of our functional
+
+00:00:17.140 --> 00:00:18.510 align:middle line:90%
+programming course.
+
+00:00:18.510 --> 00:00:21.080 align:middle line:90%
+I hope you've enjoyed yourself.
+
+00:00:21.080 --> 00:00:26.460 align:middle line:84%
+This week, we've looked at
+basic expressions and functions.
+
+00:00:26.460 --> 00:00:31.550 align:middle line:84%
+We've studied a model of
+evaluation called reduction.
+
+00:00:31.550 --> 00:00:36.460 align:middle line:84%
+And we've also introduced
+the list data type.
+
+00:00:36.460 --> 00:00:40.110 align:middle line:84%
+If you're a Haskell
+novice, please tell us
+
+00:00:40.110 --> 00:00:41.670 align:middle line:84%
+what you found to
+be particularly
+
+00:00:41.670 --> 00:00:45.750 align:middle line:84%
+interesting or challenging this
+week in the comments section
+
+00:00:45.750 --> 00:00:47.340 align:middle line:90%
+below.
+
+00:00:47.340 --> 00:00:50.060 align:middle line:84%
+Hope to see you back
+again next week.
+
+00:00:50.060 --> 00:00:50.870 align:middle line:90%
+Thanks.
+
+00:00:50.870 --> 00:00:52.420 align:middle line:90%
+Bye!
+
+00:00:52.420 --> 00:00:55.264 align:middle line:90%
