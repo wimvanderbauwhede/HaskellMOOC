@@ -22,9 +22,21 @@ right - let's have a play with Maybe ...
 
 imagine we want a function to find the maximum value in a list
 
-let's start of with the maxhelper routine ...
+let's start off with the maxhelper routine ...
+
+
+maxhelper :: Int -> [Int] -> Int
+maxhelper x [] = x
+maxhelper x (y:ys) = maxhelper (if x>y then x else y) ys
+
+
 
 now let's define maxinlist ... in terms of maxhelper ...
+
+maxfromlist :: [Int] -> Maybe Int
+maxfromlist [] = Nothing
+maxfromlist (x:xs) = Just (maxhelper x xs)
+
 
 for empty list - no max - return Nothing...
 
@@ -37,7 +49,7 @@ with a case expression - much more robust than C error codes.
 
 
 right - what can we do with Maybes - how do we propagate them in
-programs - lots of case statements - surely there must be a better
+programs - perhaps by using lots of case statements - surely there must be a better
 way? ... and there is ... at this point I will mumble the word
 monads ... but we will cover this in more detail in week 6.
 
