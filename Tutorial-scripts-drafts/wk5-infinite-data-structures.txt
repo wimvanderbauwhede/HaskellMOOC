@@ -1,0 +1,55 @@
+### Infinite Data Structures
+
+In the previous video, we looked at infinite lists.
+We can define the infinite list of consecutive integers as follows:
+
+~~~ haskell
+[1..]
+~~~
+
+We can evaluate this list, but it won't print out in its entirety - because
+it goes on for ever.
+
+To repeat a set of identical values, use the `repeat` function.
+
+~~~ haskell
+repeat 'a'
+~~~
+
+
+Use the `take` and `drop` functions to deal with infinite lists.
+It's fine to progress into an infinite list a finite amount, but
+not to traverse indefinitely.
+
+The reason that Haskell can process infinite lists is because it evaluates
+the lists in a lazy fashion --- it only evaluates list elements as they are
+needed.
+
+Right, let's have a look at two impressive recursively defined
+infinite lists now.
+
+### Fibonacci Numbers
+
+The nth Fibonacci number is the sum of the previous two Fibonacci
+numbers. The first two numbers are 1. Then the third is 2, then, 3.
+
+~~~ haskell
+let fibs = 1:1:(zipWith (+) fibs (tail fibs))
+~~~
+
+We can evaluate individual elements of this list using the `!!` indexed list
+selection. Or we could take the first `n` elements of the fibs list.
+
+### Prime Numbers
+
+Here is a filter expression for prime numbers:
+
+~~~ haskell
+filter (\x->((length (filter (\y->(x `mod` y == 0)) [2..(x-1)]))==0)) [1..]
+~~~
+
+Can we explain what this means?
+so we want things that have no extra factors...
+(can we explain this?)
+
+
