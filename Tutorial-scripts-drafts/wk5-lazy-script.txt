@@ -1,70 +1,86 @@
+### Lazy is Good
 
-In real life, laziness is frowned upon (a vice?). However in programming 
-languages, laziness is a feature / design decision (a virtue?).
-Haskell is a lazy language - this means that the evaluation
+In real life, laziness is frowned upon and considered to be a vice.
+However in programming languages, laziness is a feature, and may be considered
+to be a good thing.
+Haskell is a *lazy* language --- this means that the evaluation
 of expressions is delayed until their values are actually needed.
 
-This is the opposite of eager evaluation, which is what most 
-languages implement. (e.g. C, Java, Python, ML)
+This is the opposite of *eager* evaluation, which is what most 
+languages implement (e.g. C, Java, Python, ML).
 
-For instance, consider this expression f(1+1)
+For instance, consider this expression
 
-and this definition of
+~~~ haskell
+f(1+1)
+~~~
+
+given this function definition:
+
+~~~ haskell
 f : Int->Int
 f x = 0
+~~~
 
-in an eager language, the calculation 1+1 is done when the
-function f is invoked (call-by-value) whereas in a lazy language
-like Haskell, the calculation 1+1 is only done when the parameter
+In an eager language, the calculation `1+1` is done when the
+function `f` is invoked (call-by-value) whereas in a lazy language
+like Haskell, the calculation `1+1` is only done when the parameter
 value is used in the function body (call-by-need).
 
 So in a lazy language, if a parameter value is never needed, then
 the parameter is never evaluated. 
-Consider 
+Consider: 
 
+~~~ haskell
 f: Int -> Int -> Int
 f x y = y
+~~~
 
-f (1+1) (2+2)
+then
+   f (1+1) (2+2)
+has value 4, and the calculation of `1+1` is never performed.
 
-has value 4 - calculation 1+1 is never done
+Formally, we say the function `f` is *strict* in its second argument.
 
-Strict in its second argument, not its first...
-(Should this be a tuple rather than a curried function?)
+
 (Should we talk about non-termination - bottom?)
+The simplest non-terminating value is called bottom ---
+written in mathematical notation as $\bottom$.
+Here is its recursive definition:
 
+~~~ haskell
+bot :: a
+bot = bot
+~~~
 
-Laziness is very useful when dealing with infinite data.
-for instance, think of the infinite list of 1 values...
+A function is strict in its argument if, when we supply bottom
+as that argument, the function fails to terminate.
 
+### Infinite Data Structures
+
+Laziness is very useful when dealing with *infinite* data.
+For instance, think of the infinite list of 1 values.
+We can define this in ghci as:
+
+~~~ haskell
 let ones = 1 : ones
+~~~
 
-recursive definition
+What value is returned by `head(ones)`?
+What value is returned by `tail(ones)`?
 
-what is returned by head(ones)
+If you evaluate this in ghci, you will find that
+`tail(ones)` never terminates. Press CTRL+C
+to interrupt the computation.
 
-(1)
+The `take` function selects a finite number of elements from the front
+of a (potentially infinite) list.
 
-what is returned by tail(ones)  ??? or length(ones)  
+~~~ haskell
+take 5 ones
+~~~
 
-(never terminates!) - if you are trying this in ghc - press ctrl-c
-
-or tail (ones)
-
-
-
-Show [1..] notation?
-take n ones
-
-...
-
-if computations are not needed, then they won't be computed.
-if you pass value into a function, is it computed immediately or later?
-if you put things in a let - evaluation is deferred.
-
-Contrast with scheme - thunk.
-
-
-
-
-recursive data structure - infinite data structure
+To summarize:
+- if computations are not needed, then they won't be evaluated
+- you can compute with infinite data structures, so long as you don't
+   traverse the full list

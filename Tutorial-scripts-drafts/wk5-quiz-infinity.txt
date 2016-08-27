@@ -1,0 +1,48 @@
+### To infinity (but not beyond)
+
+How do we generate an infinite list of 'one' values
+
+- [1..]
+- [1..1]
+- repeat 1
+- take 1
+
+
+Which of the following functions will *not*
+loop infinitely?
+
+- length [1..]
+- tail [1..]
+- take 10 [1..]
+
+
+Can we generate an infinite tree???
+ Given a `Tree` as defined last week - with `Leaf` and `Node` values:
+  how do we define a function that makes an infinite Tree
+
+   - mkInfiniteTree = Node 0 (mkInfiniteTree) (mkInfiniteTree)
+   - mkInfiniteTree = mkInfiniteTree Node 0
+   - mkInfiniteTree = Node 0 .. (mkInfiniteTree)
+
+
+Which one of the following expressions generates an infinite list
+of factorial numbers?
+
+- let facts = map (\x-> (foldr (*) 1 [1..x])) [1..]
+- let facts = [1,2,6,...]
+- let facts = (*) [1..]
+
+
+
+Does this expression terminate?
+
+let bot= bot
+    bottomList = repeat bot
+in length(take 5 bottomList)
+
+- yes, with value 5
+- no, it loops forever
+
+
+
+
