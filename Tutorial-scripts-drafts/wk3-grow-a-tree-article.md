@@ -1,12 +1,11 @@
 Grow a Tree
 
-In Computer Science, trees grow upside-down. The unique root  
-is at the top, and the leaves are at the bottom. 
+In Computer Science, trees grow upside-down. The unique *root*  
+is at the top, and the *leaves* are at the bottom. 
 
 The binary tree data type is often used for
 storing data in a sorted order, to allow efficient
-searching.
-(example!)
+searching --- for example, a telephone directory.
 
 We are going to define a Haskell data type for trees, storing integer values.
 
@@ -33,7 +32,7 @@ Node 3 Leaf Leaf
 If you type this into ghci, you will see the values returned when you construct
 these trees, so long as your `Tree` datatype derives the `Show` type class.
 
-Look at the type of the values :
+Look at the type of this value in ghci :
 
     let l = Node 3 Leaf Leaf
     :t l
@@ -45,7 +44,7 @@ Look at the type of the constructor Node:
 This is a function: the constructor `Node` takes three arguments and 
 returns a `Tree` result.
 
-Right, now let's write a function to compute the depth of a `Tree` ---
+Now let's write a function to compute the depth of a `Tree` ---
 this is the maximum number of branches from the root to any leaf.
 To write this function, we will do pattern matching on the
 different kinds of `Tree`, i.e. `Leaf` and `Node` values.
@@ -58,7 +57,7 @@ treeDepth Leaf = 0
 treeDepth Node _ leftSubtree rightSubtree = 1 + max (treeDepth leftSubtree) (treeDepth rightSubtree)
 ~~~
 
-Notice the `_` 'don't care' value, since we discard the `Int`payload
+Notice the `_` 'don't care' value, since we discard the `Int` payload
 in each `Node`.
 
 You can imagine how to write a very similar 
@@ -69,10 +68,10 @@ Here is its type:
 
 ~~~ haskell
 treeSum :: Tree -> Int
-~~~ haskell
+~~~
 
 How about a function to check whether a tree is sorted properly?
-The invariant we want is
+The data structure invariant we want is
 that, for any `Node` storing value `x`, all values in its left subtree are
 `<= x`, and all values in its right
 subtree are `> x`.
@@ -105,7 +104,7 @@ then invoke the function from the ghci prompt:
 
     isSortedTree (Node 2 (Node 1 Leaf Leaf) (Node 3 Leaf Leaf)) minBound maxBound
 
-where `minBound` is the smallest possible `Int` value, 
+where `minBound` is defined as the smallest possible `Int` value, 
 and `maxBound` is the largest.
 
 Let's look at one more function for now.
