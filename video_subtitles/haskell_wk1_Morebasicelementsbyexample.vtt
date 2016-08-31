@@ -1,0 +1,339 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.045 align:middle line:90%
+
+
+00:00:07.045 --> 00:00:08.170 align:middle line:90%
+PROFESSOR: Hello, everyone.
+
+00:00:08.170 --> 00:00:09.920 align:middle line:84%
+In this short video,
+we're going to look
+
+00:00:09.920 --> 00:00:12.860 align:middle line:84%
+at some more basic
+elements of Haskell
+
+00:00:12.860 --> 00:00:15.180 align:middle line:84%
+by examples from
+other languages.
+
+00:00:15.180 --> 00:00:17.560 align:middle line:84%
+So we will look at
+anonymous function,
+
+00:00:17.560 --> 00:00:21.750 align:middle line:84%
+higher-order functions,
+blocks, and conditions.
+
+00:00:21.750 --> 00:00:23.340 align:middle line:90%
+First, anonymous functions.
+
+00:00:23.340 --> 00:00:25.510 align:middle line:84%
+So these are functions
+that don't have a name
+
+00:00:25.510 --> 00:00:27.910 align:middle line:84%
+and they occur in
+many languages.
+
+00:00:27.910 --> 00:00:29.160 align:middle line:90%
+For example, in JavaScript.
+
+00:00:29.160 --> 00:00:42.040 align:middle line:84%
+So in JavaScript you can
+write something like-- so
+
+00:00:42.040 --> 00:00:44.520 align:middle line:84%
+what we have here
+is a variable f that
+
+00:00:44.520 --> 00:00:47.960 align:middle line:90%
+contains a complete function.
+
+00:00:47.960 --> 00:00:49.612 align:middle line:84%
+In Haskell, these
+anonymous functions
+
+00:00:49.612 --> 00:00:52.195 align:middle line:84%
+are called lambda functions and
+they're really very important.
+
+00:00:52.195 --> 00:00:55.160 align:middle line:84%
+They are actually the
+foundation of the language.
+
+00:00:55.160 --> 00:00:57.550 align:middle line:84%
+So there is a very
+complex syntax for that.
+
+00:00:57.550 --> 00:01:00.954 align:middle line:84%
+Again, in Haskell the same
+example would look as follows.
+
+00:01:00.954 --> 00:01:05.220 align:middle line:90%
+
+
+00:01:05.220 --> 00:01:08.400 align:middle line:84%
+And again, we will talk a lot
+more about lambda functions
+
+00:01:08.400 --> 00:01:11.940 align:middle line:90%
+in the next class.
+
+00:01:11.940 --> 00:01:15.660 align:middle line:84%
+So another important element
+in many programming languages
+
+00:01:15.660 --> 00:01:19.830 align:middle line:84%
+is the block structures that
+you use to define functions.
+
+00:01:19.830 --> 00:01:21.740 align:middle line:84%
+For example, again
+in JavaScript we
+
+00:01:21.740 --> 00:01:25.280 align:middle line:84%
+could define a function
+that returns the roots
+
+00:01:25.280 --> 00:01:28.080 align:middle line:90%
+of a quadratic equation.
+
+00:01:28.080 --> 00:01:34.720 align:middle line:84%
+So-- we have a
+function that takes
+
+00:01:34.720 --> 00:01:37.240 align:middle line:84%
+the coefficients of
+the quadratic equation
+
+00:01:37.240 --> 00:01:40.940 align:middle line:84%
+and then we can compute the
+roots in the familiar way.
+
+00:01:40.940 --> 00:01:59.410 align:middle line:84%
+So we have-- so we
+have a function that
+
+00:01:59.410 --> 00:02:03.070 align:middle line:84%
+defines a block of code where
+we find a number of variables.
+
+00:02:03.070 --> 00:02:06.380 align:middle line:84%
+So first we have the
+square of the determinant.
+
+00:02:06.380 --> 00:02:09.020 align:middle line:84%
+Then we take the square root
+to get to the determinant.
+
+00:02:09.020 --> 00:02:12.565 align:middle line:84%
+Then we compute the
+root and the first root
+
+00:02:12.565 --> 00:02:14.440 align:middle line:84%
+of the quadratic equation
+and the second root
+
+00:02:14.440 --> 00:02:17.700 align:middle line:84%
+and we return them
+both in a list.
+
+00:02:17.700 --> 00:02:22.990 align:middle line:84%
+So, in Haskell, this same
+code looks very similar.
+
+00:02:22.990 --> 00:02:28.976 align:middle line:84%
+And we will just define it by
+removing some of this syntax.
+
+00:02:28.976 --> 00:02:38.570 align:middle line:90%
+
+
+00:02:38.570 --> 00:02:41.080 align:middle line:84%
+So we have a function
+of a, b, and c.
+
+00:02:41.080 --> 00:02:43.890 align:middle line:84%
+And the function is
+actually defining a block
+
+00:02:43.890 --> 00:02:45.300 align:middle line:90%
+using a let construct.
+
+00:02:45.300 --> 00:02:47.640 align:middle line:84%
+So it says let and then
+a number of variables
+
+00:02:47.640 --> 00:02:49.790 align:middle line:84%
+in the expression
+of this return.
+
+00:02:49.790 --> 00:02:51.600 align:middle line:84%
+Because the whole
+thing is an expression,
+
+00:02:51.600 --> 00:02:53.100 align:middle line:84%
+you don't need the
+return statement.
+
+00:02:53.100 --> 00:02:59.650 align:middle line:90%
+
+
+00:02:59.650 --> 00:03:03.000 align:middle line:84%
+Another very important construct
+in any programming language
+
+00:03:03.000 --> 00:03:04.550 align:middle line:90%
+is a conditional construct.
+
+00:03:04.550 --> 00:03:07.480 align:middle line:90%
+So an if-then, or if-then-else.
+
+00:03:07.480 --> 00:03:10.920 align:middle line:84%
+For example, in Python we
+might define a function
+
+00:03:10.920 --> 00:03:13.430 align:middle line:84%
+to compute the maximum of
+two numbers as follows.
+
+00:03:13.430 --> 00:03:24.100 align:middle line:90%
+
+
+00:03:24.100 --> 00:03:26.670 align:middle line:84%
+So the function max takes
+two values, x and y,
+
+00:03:26.670 --> 00:03:27.840 align:middle line:90%
+and we do a comparison.
+
+00:03:27.840 --> 00:03:29.850 align:middle line:84%
+If x is greater
+than y, we return x.
+
+00:03:29.850 --> 00:03:31.510 align:middle line:90%
+And otherwise, we return y.
+
+00:03:31.510 --> 00:03:34.840 align:middle line:90%
+So nothing special there.
+
+00:03:34.840 --> 00:03:37.760 align:middle line:84%
+Haskell has a very
+similar if-then statement,
+
+00:03:37.760 --> 00:03:40.860 align:middle line:84%
+but again it's an
+expression, not a statement.
+
+00:03:40.860 --> 00:03:43.590 align:middle line:84%
+So let's look at
+what it looks like.
+
+00:03:43.590 --> 00:03:49.860 align:middle line:90%
+
+
+00:03:49.860 --> 00:03:53.200 align:middle line:84%
+And again, we need less syntax
+in Haskell than in Python.
+
+00:03:53.200 --> 00:03:56.520 align:middle line:90%
+
+
+00:03:56.520 --> 00:03:59.820 align:middle line:84%
+So the last feature of Haskell
+that I want to illustrate
+
+00:03:59.820 --> 00:04:02.750 align:middle line:84%
+is actually a little bit less
+basic-- a little bit more
+
+00:04:02.750 --> 00:04:05.190 align:middle line:84%
+advanced-- it's called
+higher-order functions.
+
+00:04:05.190 --> 00:04:08.030 align:middle line:84%
+These are functions that
+operate on other functions,
+
+00:04:08.030 --> 00:04:11.720 align:middle line:84%
+or functions that take
+functions as arguments.
+
+00:04:11.720 --> 00:04:14.210 align:middle line:84%
+And again, we can compare
+this with other languages.
+
+00:04:14.210 --> 00:04:17.220 align:middle line:84%
+In this case, we
+compare it with Perl.
+
+00:04:17.220 --> 00:04:19.440 align:middle line:84%
+So, in Perl you
+could, for instance,
+
+00:04:19.440 --> 00:04:23.641 align:middle line:84%
+compute the double of a list
+using the following code.
+
+00:04:23.641 --> 00:04:31.430 align:middle line:90%
+
+
+00:04:31.430 --> 00:04:35.050 align:middle line:84%
+So what happens here is that we
+have an anonymous function that
+
+00:04:35.050 --> 00:04:37.040 align:middle line:84%
+takes an argument
+and doubles it,
+
+00:04:37.040 --> 00:04:40.350 align:middle line:84%
+and the map function makes
+this anonymous function work
+
+00:04:40.350 --> 00:04:43.590 align:middle line:90%
+on the list from one to 10.
+
+00:04:43.590 --> 00:04:46.620 align:middle line:84%
+So again, in Haskell,
+this is very similar.
+
+00:04:46.620 --> 00:04:52.900 align:middle line:90%
+
+
+00:04:52.900 --> 00:04:53.400 align:middle line:90%
+Like that.
+
+00:04:53.400 --> 00:04:58.716 align:middle line:84%
+So we have a map, which
+takes an anonymous function.
+
+00:04:58.716 --> 00:05:00.950 align:middle line:84%
+So we have map, which
+takes an anonymous function
+
+00:05:00.950 --> 00:05:03.970 align:middle line:84%
+and works on the list,
+and it will double
+
+00:05:03.970 --> 00:05:06.020 align:middle line:90%
+every element in the list.
+
+00:05:06.020 --> 00:05:08.760 align:middle line:84%
+So these higher-order
+functions are a lot more used
+
+00:05:08.760 --> 00:05:10.480 align:middle line:84%
+in a functional
+language like Haskell
+
+00:05:10.480 --> 00:05:12.850 align:middle line:84%
+than in an imperative
+language, but, as you can see,
+
+00:05:12.850 --> 00:05:16.170 align:middle line:84%
+they do exist in other
+languages as well.
+
+00:05:16.170 --> 00:05:25.753 align:middle line:90%

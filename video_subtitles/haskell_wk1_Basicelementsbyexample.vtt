@@ -1,0 +1,236 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.287 align:middle line:90%
+
+
+00:00:08.287 --> 00:00:09.370 align:middle line:90%
+PROFESSOR: Hello everyone.
+
+00:00:09.370 --> 00:00:13.070 align:middle line:84%
+In this short lecture, I want to
+explain some basics of Haskell
+
+00:00:13.070 --> 00:00:16.530 align:middle line:84%
+through examples from other
+languages that you might know.
+
+00:00:16.530 --> 00:00:21.560 align:middle line:84%
+I will explain expressions,
+functions, types, and lists
+
+00:00:21.560 --> 00:00:25.000 align:middle line:84%
+just through example
+without any deep detail.
+
+00:00:25.000 --> 00:00:26.840 align:middle line:90%
+So first, expressions.
+
+00:00:26.840 --> 00:00:29.210 align:middle line:84%
+In almost any
+programming language,
+
+00:00:29.210 --> 00:00:35.650 align:middle line:84%
+you can write expressions
+such as, for example--
+
+00:00:35.650 --> 00:00:38.730 align:middle line:84%
+and you can bind
+these two variables
+
+00:00:38.730 --> 00:00:44.550 align:middle line:84%
+so that this expression value
+is contained in that variable.
+
+00:00:44.550 --> 00:00:47.613 align:middle line:84%
+In Haskell, you can do the
+same thing, and what is more,
+
+00:00:47.613 --> 00:00:50.030 align:middle line:84%
+in Haskell there are
+only expressions,
+
+00:00:50.030 --> 00:00:51.930 align:middle line:84%
+whereas in most
+imperative languages
+
+00:00:51.930 --> 00:00:54.235 align:middle line:84%
+there are statements
+and expressions.
+
+00:00:54.235 --> 00:00:57.020 align:middle line:90%
+Haskell only has expressions.
+
+00:00:57.020 --> 00:00:58.820 align:middle line:84%
+So the next basic
+element of Haskell
+
+00:00:58.820 --> 00:01:00.262 align:middle line:90%
+is, of course, functions.
+
+00:01:00.262 --> 00:01:03.210 align:middle line:84%
+And we can compare functions
+in Haskell, for instance,
+
+00:01:03.210 --> 00:01:05.160 align:middle line:90%
+with functions in Python.
+
+00:01:05.160 --> 00:01:07.570 align:middle line:84%
+In Python you might
+write something
+
+00:01:07.570 --> 00:01:22.730 align:middle line:84%
+like-- so you define a function,
+hello, which takes an argument,
+
+00:01:22.730 --> 00:01:27.120 align:middle line:84%
+name, and you return a string
+composed of the string, hello,
+
+00:01:27.120 --> 00:01:29.810 align:middle line:90%
+and combined with name.
+
+00:01:29.810 --> 00:01:34.490 align:middle line:84%
+So in Haskell you can do
+something quite similar, only
+
+00:01:34.490 --> 00:01:35.202 align:middle line:90%
+a bit shorter.
+
+00:01:35.202 --> 00:01:41.730 align:middle line:90%
+
+
+00:01:41.730 --> 00:01:44.880 align:middle line:84%
+So Haskell has
+very complex syntax
+
+00:01:44.880 --> 00:01:49.490 align:middle line:84%
+where you don't need parentheses
+to identify function arguments.
+
+00:01:49.490 --> 00:01:51.360 align:middle line:90%
+You just use spaces.
+
+00:01:51.360 --> 00:01:55.267 align:middle line:84%
+And the concatenation operator
+is separate from the addition
+
+00:01:55.267 --> 00:01:55.766 align:middle line:90%
+operator.
+
+00:01:55.766 --> 00:02:13.120 align:middle line:90%
+
+
+00:02:13.120 --> 00:02:16.946 align:middle line:84%
+The next basic element
+of Haskell is types.
+
+00:02:16.946 --> 00:02:18.790 align:middle line:84%
+Types are very
+important in Haskell,
+
+00:02:18.790 --> 00:02:21.080 align:middle line:84%
+and we will talk a lot
+about it, but for now we
+
+00:02:21.080 --> 00:02:24.330 align:middle line:84%
+just want to give an example
+based on types in languages
+
+00:02:24.330 --> 00:02:26.870 align:middle line:84%
+that you might know
+like C or Java.
+
+00:02:26.870 --> 00:02:30.470 align:middle line:84%
+So for example, in C you could
+define a function like this.
+
+00:02:30.470 --> 00:02:41.580 align:middle line:90%
+
+
+00:02:41.580 --> 00:02:45.880 align:middle line:84%
+So we have a function
+that takes two integers
+
+00:02:45.880 --> 00:02:48.310 align:middle line:90%
+and returns an integer.
+
+00:02:48.310 --> 00:02:50.890 align:middle line:84%
+So in Haskell we can
+write something similar,
+
+00:02:50.890 --> 00:02:53.200 align:middle line:84%
+but the main difference
+is that the type
+
+00:02:53.200 --> 00:02:56.220 align:middle line:84%
+declarations and the function
+definitions are separate.
+
+00:02:56.220 --> 00:02:57.820 align:middle line:84%
+So we start with the
+type declaration.
+
+00:02:57.820 --> 00:03:03.840 align:middle line:84%
+That would be-- so the double
+colon indicates that a type
+
+00:03:03.840 --> 00:03:04.980 align:middle line:90%
+declaration follows.
+
+00:03:04.980 --> 00:03:08.736 align:middle line:84%
+And then we have the first
+argument is an integer.
+
+00:03:08.736 --> 00:03:11.225 align:middle line:84%
+The second argument
+is an integer.
+
+00:03:11.225 --> 00:03:14.460 align:middle line:90%
+The return value is an integer.
+
+00:03:14.460 --> 00:03:16.056 align:middle line:90%
+Then the function definition.
+
+00:03:16.056 --> 00:03:20.140 align:middle line:90%
+
+
+00:03:20.140 --> 00:03:23.600 align:middle line:84%
+So again, essentially the same
+thing but much more complex.
+
+00:03:23.600 --> 00:03:26.520 align:middle line:84%
+So the final basic element of
+Haskell that I want to discuss
+
+00:03:26.520 --> 00:03:28.070 align:middle line:90%
+is lists.
+
+00:03:28.070 --> 00:03:33.290 align:middle line:84%
+In many languages, such as
+Ruby, JavaScript, and Python,
+
+00:03:33.290 --> 00:03:35.396 align:middle line:90%
+you can write lists like this.
+
+00:03:35.396 --> 00:03:43.450 align:middle line:90%
+
+
+00:03:43.450 --> 00:03:46.430 align:middle line:84%
+And, in fact, in Haskell
+this is exactly the same.
+
+00:03:46.430 --> 00:03:49.885 align:middle line:90%
+So this is valid Haskell code.
+
+00:03:49.885 --> 00:03:53.140 align:middle line:84%
+So lists are a very
+important component
+
+00:03:53.140 --> 00:03:54.160 align:middle line:90%
+of the Haskell language.
+
+00:03:54.160 --> 00:03:58.230 align:middle line:84%
+We'll talk a lot more about
+them in future classes.
+
+00:03:58.230 --> 00:04:01.047 align:middle line:90%

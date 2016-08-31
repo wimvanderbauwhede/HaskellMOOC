@@ -1,0 +1,188 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.500 align:middle line:90%
+
+
+00:00:00.500 --> 00:00:01.494 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:01.494 --> 00:00:07.470 align:middle line:90%
+
+
+00:00:07.470 --> 00:00:09.960 align:middle line:84%
+INTERVIEWER: Simon, you've
+got a big pile of book there.
+
+00:00:09.960 --> 00:00:11.720 align:middle line:84%
+High school textbooks,
+to be precise.
+
+00:00:11.720 --> 00:00:14.230 align:middle line:84%
+Would you like to give
+us some recommendation?
+
+00:00:14.230 --> 00:00:17.770 align:middle line:84%
+SUBJECT: Yeah I've got four
+here I was going to recommend.
+
+00:00:17.770 --> 00:00:19.400 align:middle line:90%
+First is Real World Haskell.
+
+00:00:19.400 --> 00:00:21.420 align:middle line:90%
+This is long-waited.
+
+00:00:21.420 --> 00:00:23.015 align:middle line:90%
+Actually it's been out a while.
+
+00:00:23.015 --> 00:00:25.050 align:middle line:90%
+It's been out nearly 10 years.
+
+00:00:25.050 --> 00:00:28.550 align:middle line:84%
+I guess they're probably about
+to do the second edition.
+
+00:00:28.550 --> 00:00:31.130 align:middle line:90%
+Came out in 2008.
+
+00:00:31.130 --> 00:00:33.710 align:middle line:84%
+So it's a brief
+introduction, somewhat,
+
+00:00:33.710 --> 00:00:35.960 align:middle line:84%
+but they inquire a lot about
+using Haskell in practice
+
+00:00:35.960 --> 00:00:38.430 align:middle line:84%
+so I think this is the one
+that the developers will often
+
+00:00:38.430 --> 00:00:38.929 align:middle line:90%
+pick up.
+
+00:00:38.929 --> 00:00:41.210 align:middle line:84%
+It's their experienced
+programmers.
+
+00:00:41.210 --> 00:00:43.770 align:middle line:84%
+In a similar way, but it
+says A Beginner's Guide
+
+00:00:43.770 --> 00:00:46.200 align:middle line:90%
+is learning use in Haskell.
+
+00:00:46.200 --> 00:00:51.240 align:middle line:84%
+An advantage of this is that
+it's available free, online.
+
+00:00:51.240 --> 00:00:56.200 align:middle line:84%
+And because it's more recent,
+will talk about, in detail,
+
+00:00:56.200 --> 00:00:59.400 align:middle line:84%
+about things like
+monads, monoids.
+
+00:00:59.400 --> 00:01:01.150 align:middle line:84%
+I suppose all the books
+talk about monads,
+
+00:01:01.150 --> 00:01:04.650 align:middle line:84%
+but this goes into more
+detail about some of the more
+
+00:01:04.650 --> 00:01:08.250 align:middle line:90%
+mathematical end of things.
+
+00:01:08.250 --> 00:01:10.180 align:middle line:84%
+Graham Hutton's book--
+one of the advantages
+
+00:01:10.180 --> 00:01:11.990 align:middle line:90%
+is that this is nice and thin.
+
+00:01:11.990 --> 00:01:15.300 align:middle line:84%
+So you'll get it
+in 160 odd pages.
+
+00:01:15.300 --> 00:01:17.850 align:middle line:84%
+I know Graham's writing
+another edition of this.
+
+00:01:17.850 --> 00:01:22.920 align:middle line:84%
+So by the time-- this should be
+out early 2017, I would guess.
+
+00:01:22.920 --> 00:01:25.520 align:middle line:84%
+So that's about 10 years
+after this came out.
+
+00:01:25.520 --> 00:01:27.930 align:middle line:90%
+But a good basic introduction.
+
+00:01:27.930 --> 00:01:29.290 align:middle line:90%
+And I'll conclude with mine.
+
+00:01:29.290 --> 00:01:30.165 align:middle line:90%
+INTERVIEWER: [LAUGHS]
+
+00:01:30.165 --> 00:01:32.350 align:middle line:84%
+SUBJECT: Let's book a
+shameless plug just for mine.
+
+00:01:32.350 --> 00:01:35.219 align:middle line:84%
+I wrote the first edition
+of this around the late 90s.
+
+00:01:35.219 --> 00:01:36.760 align:middle line:84%
+INTERVIEWER: What's
+your book called?
+
+00:01:36.760 --> 00:01:37.750 align:middle line:84%
+SUBJECT: It's called
+Haskell: The Craft
+
+00:01:37.750 --> 00:01:38.853 align:middle line:90%
+of Functional Programming.
+
+00:01:38.853 --> 00:01:42.000 align:middle line:90%
+
+
+00:01:42.000 --> 00:01:44.070 align:middle line:90%
+This edition is from 2011.
+
+00:01:44.070 --> 00:01:47.540 align:middle line:84%
+I guess I will start thinking
+about doing another edition.
+
+00:01:47.540 --> 00:01:48.040 align:middle line:90%
+It's grown.
+
+00:01:48.040 --> 00:01:49.200 align:middle line:90%
+It's quite thick.
+
+00:01:49.200 --> 00:01:51.230 align:middle line:84%
+I might try and
+take some material
+
+00:01:51.230 --> 00:01:53.490 align:middle line:90%
+out of the new edition.
+
+00:01:53.490 --> 00:01:56.380 align:middle line:84%
+But I think covers things
+in quite a lot of depth,
+
+00:01:56.380 --> 00:01:59.040 align:middle line:84%
+quite a lot of examples that
+you can work through in there.
+
+00:01:59.040 --> 00:02:02.636 align:middle line:84%
+But all of them have a
+different take so buy them all.
+
+00:02:02.636 --> 00:02:04.030 align:middle line:90%
+INTERVIEWER: [LAUGHS] Thanks.
+
+00:02:04.030 --> 00:02:05.580 align:middle line:90%
+[MUSIC PLAYING]
+
+00:02:05.580 --> 00:02:10.172 align:middle line:90%

@@ -1,0 +1,192 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:20.336 align:middle line:90%
+
+
+00:00:20.336 --> 00:00:22.990 align:middle line:84%
+WIM VANDERBAUWHEDE: Hi and
+welcome to our Functional
+
+00:00:22.990 --> 00:00:24.808 align:middle line:90%
+Programming in Haskell course.
+
+00:00:24.808 --> 00:00:26.090 align:middle line:90%
+My name is Wim.
+
+00:00:26.090 --> 00:00:27.490 align:middle line:90%
+JEREMY SINGER: And I'm Jeremy.
+
+00:00:27.490 --> 00:00:29.781 align:middle line:84%
+WIM VANDERBAUWHEDE: We want
+to supercharge your coding.
+
+00:00:29.781 --> 00:00:32.920 align:middle line:84%
+We will help you to be more
+effective by making you think
+
+00:00:32.920 --> 00:00:35.360 align:middle line:90%
+about programming in a new way.
+
+00:00:35.360 --> 00:00:37.570 align:middle line:84%
+JEREMY SINGER: We are from
+the University of Glasgow,
+
+00:00:37.570 --> 00:00:40.560 align:middle line:84%
+which was a prominent
+research contributor
+
+00:00:40.560 --> 00:00:42.904 align:middle line:84%
+to the development of the
+Haskell programming language.
+
+00:00:42.904 --> 00:00:45.070 align:middle line:84%
+WIM VANDERBAUWHEDE: Admittedly,
+that was a long time
+
+00:00:45.070 --> 00:00:46.570 align:middle line:90%
+ago in the late eighties.
+
+00:00:46.570 --> 00:00:48.410 align:middle line:84%
+JEREMY SINGER: When
+we were only students.
+
+00:00:48.410 --> 00:00:50.660 align:middle line:84%
+WIM VANDERBAUWHEDE: But
+Haskell has grown enormously
+
+00:00:50.660 --> 00:00:52.010 align:middle line:90%
+in popularity.
+
+00:00:52.010 --> 00:00:54.530 align:middle line:84%
+If you check the online
+programming chart,
+
+00:00:54.530 --> 00:00:57.110 align:middle line:84%
+Haskell is consistently
+in the top 50,
+
+00:00:57.110 --> 00:00:59.903 align:middle line:84%
+and it's a cool topic
+of geek conversation.
+
+00:00:59.903 --> 00:01:02.184 align:middle line:84%
+If you know, Haskell, people
+will give you respect.
+
+00:01:02.184 --> 00:01:02.950 align:middle line:90%
+Who knows?
+
+00:01:02.950 --> 00:01:05.110 align:middle line:90%
+They might even give you a job.
+
+00:01:05.110 --> 00:01:06.660 align:middle line:84%
+JEREMY SINGER: In
+essence, though,
+
+00:01:06.660 --> 00:01:09.360 align:middle line:84%
+this course is about more
+than just the intricacies
+
+00:01:09.360 --> 00:01:11.860 align:middle line:84%
+of the Haskell
+programming language.
+
+00:01:11.860 --> 00:01:13.520 align:middle line:84%
+We really want you
+to become familiar
+
+00:01:13.520 --> 00:01:16.930 align:middle line:84%
+with the underlying concepts
+of functional programming.
+
+00:01:16.930 --> 00:01:19.400 align:middle line:90%
+That's a much broader aim.
+
+00:01:19.400 --> 00:01:21.950 align:middle line:84%
+You see, functional
+concepts are popping up
+
+00:01:21.950 --> 00:01:25.310 align:middle line:84%
+in all kinds of modern general
+purpose programming languages.
+
+00:01:25.310 --> 00:01:29.002 align:middle line:84%
+Think about lambdas in C++
+and Java, for instance.
+
+00:01:29.002 --> 00:01:30.460 align:middle line:84%
+WIM VANDERBAUWHEDE:
+Before we leave
+
+00:01:30.460 --> 00:01:32.209 align:middle line:84%
+you to learn some
+Haskell, we would
+
+00:01:32.209 --> 00:01:34.500 align:middle line:84%
+like to introduce you to the
+man after whom the Haskell
+
+00:01:34.500 --> 00:01:36.280 align:middle line:90%
+language was named.
+
+00:01:36.280 --> 00:01:40.160 align:middle line:84%
+Haskell Curry was a prominent
+logician in the 20th century,
+
+00:01:40.160 --> 00:01:42.360 align:middle line:84%
+and the Haskell committee
+got the approval
+
+00:01:42.360 --> 00:01:44.170 align:middle line:84%
+of his widow to
+use his first name
+
+00:01:44.170 --> 00:01:46.390 align:middle line:90%
+for their great new language.
+
+00:01:46.390 --> 00:01:49.620 align:middle line:84%
+I guess that just gives you
+an idea how deeply Glasgow
+
+00:01:49.620 --> 00:01:52.326 align:middle line:90%
+is rooted in formal logic.
+
+00:01:52.326 --> 00:01:53.200 align:middle line:90%
+JEREMY SINGER: Right.
+
+00:01:53.200 --> 00:01:55.350 align:middle line:90%
+That's enough talking.
+
+00:01:55.350 --> 00:01:57.260 align:middle line:90%
+Let's get coding.
+
+00:01:57.260 --> 00:02:00.170 align:middle line:84%
+We've really enjoyed putting
+this course together,
+
+00:02:00.170 --> 00:02:02.440 align:middle line:84%
+and we hope you're
+going to enjoy it too.
+
+00:02:02.440 --> 00:02:05.560 align:middle line:84%
+This week there are lots
+of interactive web-based
+
+00:02:05.560 --> 00:02:09.820 align:middle line:84%
+programming exercises for you
+to get a grounding in the syntax
+
+00:02:09.820 --> 00:02:12.550 align:middle line:90%
+and basic concepts of Haskell.
+
+00:02:12.550 --> 00:02:15.740 align:middle line:84%
+Do try them out, and let us know
+how you get on in the comments
+
+00:02:15.740 --> 00:02:17.340 align:middle line:90%
+section below.
+
+00:02:17.340 --> 00:02:19.420 align:middle line:90%
+Happy coding!
+
+00:02:19.420 --> 00:02:27.192 align:middle line:90%
