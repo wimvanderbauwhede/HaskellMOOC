@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:08.287 --> 00:00:09.370 align:middle line:90%
-PROFESSOR: Hello everyone.
+WIM: Hello everyone.
 
 00:00:09.370 --> 00:00:13.070 align:middle line:84%
 In this short lecture, I want to
@@ -35,7 +35,7 @@ such as, for example--
 
 00:00:35.650 --> 00:00:38.730 align:middle line:84%
 and you can bind
-these two variables
+these to variables
 
 00:00:38.730 --> 00:00:44.550 align:middle line:84%
 so that this expression value
