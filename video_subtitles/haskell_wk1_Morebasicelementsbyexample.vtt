@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:07.045 --> 00:00:08.170 align:middle line:90%
-PROFESSOR: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:08.170 --> 00:00:09.920 align:middle line:84%
 In this short video,
@@ -20,7 +20,7 @@ other languages.
 
 00:00:15.180 --> 00:00:17.560 align:middle line:84%
 So we will look at
-anonymous function,
+anonymous functions,
 
 00:00:17.560 --> 00:00:21.750 align:middle line:84%
 higher-order functions,
@@ -293,7 +293,7 @@ and the map function makes
 this anonymous function work
 
 00:04:40.350 --> 00:04:43.590 align:middle line:90%
-on the list from one to 10.
+on the list from 1 to 10.
 
 00:04:43.590 --> 00:04:46.620 align:middle line:84%
 So again, in Haskell,
