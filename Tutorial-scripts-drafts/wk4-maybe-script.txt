@@ -13,7 +13,7 @@ or imagine dividing two numbers and the divisor is 0
 We need a way to capture whether or not such a computation
 has succeeded or failed - this is the job of Maybe
 
-Let's have a look at this algebraic datatype - it's defined in
+Let's have a look at this datatype - it's defined in
 the Haskell Prelude - effectively the standard library for Haskell
 
 (google search)
