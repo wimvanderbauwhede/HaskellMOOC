@@ -1,14 +1,16 @@
-Using QuickChecl
+Using QuickCheck
 
 In this video, we are going to find out about a powerful
 automated testing tool called QuickCheck.
-This allows us to run random tests on our code, to check
+This allows us to run randomly generated
+tests on our code, to see whether
 it meets certain properties that we specify.
 QuickCheck comes as part of the Haskell platform, so you 
 should already have access to it on your own machine.
 
 It's a powerful testing technique, used in the software
-industry  (examples ...)
+industry - for instance lots of Telecoms software is
+tested with QuickCheck.
 
 
 
@@ -18,79 +20,62 @@ them a certain number of spaces along in the alphabet
 
 import Data.Char
 
-wrongcipher :: [Char] -> Int -> [Char]
-wrongcipher [] shift = []
-wrongcipher (c:cs) shift 
-  | isLetter(c)&&isAscii(c)  = let shiftedChar = ord(c) + shift
-                               in chr(shiftedChar):(wrongcipher cs shift)
-  | otherwise = c:(wrongcipher cs shift)
+(add code from ciphers.hs)
 
 
 great, we have shifted the letters along the right number of places...
 
-e.g. let's try wrongcipher "hello" 1
-wrongcipher "veni vidi vici" 4
+e.g. let's try cipher "hello" 1
+cipher "veni vidi vici" 3
 
 (I know , I know,  this isn't correct code because it doesn't wrap around the alphabet, 
 but bear with me for now...)
 
 now - for the decipher, we want to shift letters back the same number of places - 
 
-decipher = \x y-> (wrongcipher x (-y))
+decipher = \x y -> (cipher (-x) y)
 
-Now, we want to check this works - (check).
-Rather than devise a number of test cases, we will randomly generate input data 
+Now, we want to check this works properly - of course - 
+we know it shouldn't..
+Rather than devise a number of test cases, we will randomly generate 
+input data 
 (test case data) and check whether the correctness property holds.
 
-for all x, y . decipher((encipher x y) y) = x
+for all x, y . decipher( x (cipher x y)) == y
 
 first we import the QuickCheck module
 
 import Test.QuickCheck
 
-then we ask to check our invariant
+then we ask to check our property
 
-quickCheck ((\s->(\n -> ((decipher (wrongcipher s n) n)==s))) :: [Char] -> Int -> Bool)
+quickCheck ((\n->(\s -> ((decipher n (cipher n s))==s))) :: [Char] -> Int -> Bool)
 
-This is the call to quickcheck - note that we have to write a lambda expression that takes two arguments - the string s and the int n - we need to supply the types for these, then 
+This is the call to quickcheck - note that we have to write a lambda expression that takes two arguments - the string s and the int n - we have supplied the types for these, then 
 
 
 OK - run quickcheck
 (defaults to 100 tests) - 
 
-and we can trace them
+and we can trace this, to see what the randomly generated
+input data looks like
+verbosecheck
 
-run more than 100 ...
-deepcheck ???
+#run more than 100 ...
+#deepcheck ???
 
 If the property is correct for all tests, this doesn't guarantee the code works.
-Remember that Dijkstra said 'testing can only show the presence of bugs, not their
-absence'. However QuickCheck provides a nice way to generate automated random tests.
+Edsger  Dijkstra, a famous Computer Scientist,  said 'testing can only show the presence of bugs, not their absence'. 
+However QuickCheck provides a nice way to generate automated random tests.
 
 
 ok - let's write a correct Caesar's cipher program.
 We need to check that we wrap round the alphabet, from z to a ... onwards.
 
-encipher :: [Char] -> Int -> [Char]
-encipher [] shift = []
-encipher (c:cs) shift 
-  | isLetter(c)&&isAscii(c) = let shiftedChar = ord(c) + (shift `mod` 26)
-                                  adjustedChar = if shiftedChar > ord(limit) then
-                                                   shiftedChar-26 else shiftedChar
-                                   where limit = (if isUpper(c) then 'Z' else 'z')
-                              in chr(adjustedChar):(encipher cs shift)
-  | otherwise = c:(encipher cs shift)
-
-
-
-right, now let's define decipher function again ...
-
-decipher = \x y-> (encipher x (-y))
+(add in code here)
 
 and now we can run QuickCheck on this - test the property again...
 
-quickCheck ((\s->(\n -> ((decipher (wrongcipher s n) n)==s))) :: [Char] -> Int -> Bool)
 
-
-Great - we pass all the tests this time.
+Great - we pass all the tests this time!
 In the next article, we are going to explore QuickCheck in more detail.

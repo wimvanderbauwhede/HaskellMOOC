@@ -2,42 +2,37 @@ import Data.Char
 import Test.QuickCheck
 
 
--- fix this with a map function, that enciphers single char at a time
+-- is this a letter to be ciphered?
+shouldcipher :: Char -> Bool
+shouldcipher c = isLetter(c) && isAscii(c)
 
--- cipherchar :: Char -> Int -> Char
--- cipherchar c shift = ord(c) + shift
-
--- correctcipherchar :: Char -> Int -> Bool -> Char
--- correctcipherchar c shift uppercase = 
---     let shiftedchar = cipherchar c shift
---         limit = if uppercase then 'Z' else 'z'
---     in if shiftedchar < limit then chr((ord(shiftedchar)-26) else shiftedchar
-
--- mapcipher :: Char -> Int -> Char
--- mapcipher message shift = (map (cipherchar) message) -- do other way round to 
---       -- get currying correct!
-
-encipher :: [Char] -> Int -> [Char]
-encipher [] shift = []
-encipher (c:cs) shift 
-  | isLetter(c)&&isAscii(c) = let shiftedChar = ord(c) + (shift `mod` 26)
-                                  adjustedChar = if shiftedChar > ord(limit) then
-                                                   shiftedChar-26 else shiftedChar
-                                   where limit = (if isUpper(c) then 'Z' else 'z')
-                              in chr(adjustedChar):(encipher cs shift)
-  | otherwise = c:(encipher cs shift)
+-- enciphers single char at a time
+cipherchar :: Int -> Char -> Char
+cipherchar shift c
+ | shouldcipher c =  chr(ord(c) + shift)
+ | otherwise      = c
 
 
-
-wrongcipher :: [Char] -> Int -> [Char]
-wrongcipher [] shift = []
-wrongcipher (c:cs) shift 
-  | isLetter(c)&&isAscii(c)  = let shiftedChar = ord(c) + shift
-                               in chr(shiftedChar):(wrongcipher cs shift)
-  | otherwise = c:(wrongcipher cs shift)
+-- should we wrap around the alphabet
+wraparound shift c 
+ | isLower(c) && ord(c)+shift > ord 'z' = True
+ | isUpper(c) && ord(c)+shift > ord 'Z' = True
+ | otherwise = False
 
 
+bettercipherchar :: Int -> Char -> Char
+bettercipherchar shift c
+ | shouldcipher c =  chr(ord(c) + adjustedshift)
+ | otherwise      = c
+ where adjustedshift = let shift' = shift `mod` 26 in if (wraparound shift' c) then shift'-26 else shift'
 
-decipher = \x y-> (wrongcipher x (-y))
+
+-- encipher a whole string
+cipher :: Int -> [Char] -> [Char]
+cipher shift plaintext = map (bettercipherchar shift) plaintext
+
+
+decipher :: Int -> [Char] -> [Char]
+decipher = \x y-> (cipher (-x) (y))
 
 
