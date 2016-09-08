@@ -4,10 +4,10 @@ WEBVTT
 
 
 00:00:03.856 --> 00:00:04.820 align:middle line:90%
-JEREMY SINGER: Hi.
+JEREMY: Hi.
 
 00:00:04.820 --> 00:00:07.410 align:middle line:84%
-Now, if you installed
+Now, you have installed
 the Haskell platform,
 
 00:00:07.410 --> 00:00:09.524 align:middle line:90%
@@ -27,7 +27,7 @@ prompt in Windows.
 
 00:00:20.080 --> 00:00:23.560 align:middle line:84%
 And I'm going to
-type in GHCi, which
+type in 'ghci', which
 
 00:00:23.560 --> 00:00:26.800 align:middle line:84%
 is the interpreter for the
@@ -76,19 +76,19 @@ of 'hi everyone."
 
 00:01:00.030 --> 00:01:07.500 align:middle line:84%
 If I go to the start of the
-line and say colon type--
+line and say ':type' --
 
 00:01:07.500 --> 00:01:11.290 align:middle line:84%
 this is a GHCi command
-here-- colon type
+here-- ':type'
 
 00:01:11.290 --> 00:01:16.760 align:middle line:84%
-'hi everyone" tells me that "hi
+"hi everyone" tells me that "hi
 everyone" is of type character
 
 00:01:16.760 --> 00:01:20.429 align:middle line:84%
 list, which is equivalent
-to string, as you know.
+to String, as you know.
 
 00:01:20.429 --> 00:01:21.720 align:middle line:90%
 I can type in numbers, as well.
@@ -272,7 +272,7 @@ And then, we'll go back to GHCi.
 
 00:04:21.350 --> 00:04:26.095 align:middle line:84%
 There we go-- GHCi,
-load factorial.hs.
+:load factorial.hs.
 
 00:04:26.095 --> 00:04:29.040 align:middle line:90%
 
@@ -319,11 +319,11 @@ I can work up the
 type for fact2.
 
 00:04:57.970 --> 00:05:02.180 align:middle line:84%
-It takes an integer argument
+It takes an integer argument and
 returns integer results.
 
 00:05:02.180 --> 00:05:06.520 align:middle line:84%
-Notice the colon t is
+Notice the ':t' is
 shorthand for the type command.
 
 00:05:06.520 --> 00:05:08.385 align:middle line:90%
@@ -358,7 +358,7 @@ to make it a little bit neater.
 
 00:05:36.490 --> 00:05:46.000 align:middle line:84%
 Let's try and save this and then
-reload fact2-- load factorial--
+:reload fact2-- load factorial--
 
 00:05:46.000 --> 00:05:47.150 align:middle line:90%
 it's loaded again.
@@ -438,8 +438,8 @@ And hopefully, this should
 stop the computation.
 
 00:06:45.670 --> 00:06:49.370 align:middle line:84%
-To quit GFCi, I
-type in colon quit,
+To quit GHCi, I
+type in ':quit',
 
 00:06:49.370 --> 00:06:52.830 align:middle line:84%
 and I drop back into
@@ -499,8 +499,8 @@ But actually, I wasn't
 able to do that.
 
 00:07:35.280 --> 00:07:42.640 align:middle line:84%
-I need to say, set plus
-m, in the GFCi environment
+I need to say, set 
++m, in the GHCi environment
 
 00:07:42.640 --> 00:07:45.500 align:middle line:90%
 to allow multi-line statements.
@@ -553,7 +553,7 @@ And I'm going to write
 myself a new function, which
 
 00:08:39.950 --> 00:08:44.310 align:middle line:90%
-I'm going to call norules.hs.
+I'm going to call nobles.hs.
 
 00:08:44.310 --> 00:08:48.450 align:middle line:90%
 
@@ -575,7 +575,7 @@ name, then I'm going
 
 00:09:05.260 --> 00:09:11.930 align:middle line:84%
 to return "Sir" plus that name
-plus plus for concatenation.
+++ for concatenation.
 
 00:09:11.930 --> 00:09:14.040 align:middle line:90%
 OK, let's save this.
@@ -619,7 +619,7 @@ parameter a name, female.
 
 00:09:51.490 --> 00:10:05.112 align:middle line:84%
 If female-- sorry-- then "Dame"
-else "Sir" plus plus name.
+else "Sir" ++ name.
 
 00:10:05.112 --> 00:10:06.070 align:middle line:90%
 That's all on one line.
@@ -703,7 +703,7 @@ we defined here.
 
 00:11:03.750 --> 00:11:06.890 align:middle line:84%
 We can see the type of the
-function, type mknoble,
+function, :type mknoble,
 
 00:11:06.890 --> 00:11:08.880 align:middle line:84%
 and now, it takes a
