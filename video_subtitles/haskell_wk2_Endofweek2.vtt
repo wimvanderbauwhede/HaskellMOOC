@@ -1,0 +1,104 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.896 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:01.896 --> 00:00:07.590 align:middle line:90%
+
+
+00:00:07.590 --> 00:00:09.390 align:middle line:84%
+SPEAKER: Here we are
+at the end of Week 2
+
+00:00:09.390 --> 00:00:12.310 align:middle line:84%
+of the functional
+programming course.
+
+00:00:12.310 --> 00:00:16.250 align:middle line:84%
+This week, we thought about
+some more building blocks
+
+00:00:16.250 --> 00:00:17.430 align:middle line:90%
+in the Haskell language.
+
+00:00:17.430 --> 00:00:20.900 align:middle line:84%
+We looked at things like if
+statements and the Boolean data
+
+00:00:20.900 --> 00:00:21.970 align:middle line:90%
+type.
+
+00:00:21.970 --> 00:00:26.100 align:middle line:84%
+We have also had
+some more exploration
+
+00:00:26.100 --> 00:00:30.350 align:middle line:84%
+of lists and how to manipulate
+list data structures.
+
+00:00:30.350 --> 00:00:35.190 align:middle line:84%
+Then we moved on to considering
+monads, particularly getting
+
+00:00:35.190 --> 00:00:38.790 align:middle line:84%
+user input from the keyboard
+and outputting characters
+
+00:00:38.790 --> 00:00:40.190 align:middle line:90%
+to the terminal.
+
+00:00:40.190 --> 00:00:44.410 align:middle line:84%
+Next week, we're going to move
+on to more advanced constructs
+
+00:00:44.410 --> 00:00:45.550 align:middle line:90%
+in Haskell.
+
+00:00:45.550 --> 00:00:49.430 align:middle line:84%
+But for now, I want to leave
+you with an implementation
+
+00:00:49.430 --> 00:00:51.840 align:middle line:90%
+challenge.
+
+00:00:51.840 --> 00:00:56.880 align:middle line:84%
+Can you think of some more
+guessing games-- like Guess
+
+00:00:56.880 --> 00:00:59.990 align:middle line:84%
+the Number or
+Mastermind, if you're
+
+00:00:59.990 --> 00:01:03.330 align:middle line:90%
+familiar with that board game?
+
+00:01:03.330 --> 00:01:08.000 align:middle line:84%
+Post your ideas and links
+to your implementations
+
+00:01:08.000 --> 00:01:10.310 align:middle line:90%
+in the comments section below.
+
+00:01:10.310 --> 00:01:12.910 align:middle line:84%
+And I'll have fun
+reading through those.
+
+00:01:12.910 --> 00:01:15.376 align:middle line:84%
+I hope you have
+Haskell fun, too.
+
+00:01:15.376 --> 00:01:17.980 align:middle line:84%
+And I'm looking forward
+to seeing you again
+
+00:01:17.980 --> 00:01:21.300 align:middle line:84%
+next week when we'll carry on
+with our functional programming
+
+00:01:21.300 --> 00:01:21.900 align:middle line:90%
+adventure.
+
+00:01:21.900 --> 00:01:24.350 align:middle line:90%
+[MUSIC PLAYING]
+
+00:01:24.350 --> 00:01:25.890 align:middle line:90%

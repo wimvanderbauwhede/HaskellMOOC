@@ -1,0 +1,736 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.856 align:middle line:90%
+
+
+00:00:03.856 --> 00:00:04.820 align:middle line:90%
+JEREMY SINGER: Hi.
+
+00:00:04.820 --> 00:00:07.410 align:middle line:84%
+Now, if you installed
+the Haskell platform,
+
+00:00:07.410 --> 00:00:09.524 align:middle line:90%
+let's start using it.
+
+00:00:09.524 --> 00:00:15.630 align:middle line:84%
+I'm in a terminal window
+here on my Mac OS laptop.
+
+00:00:15.630 --> 00:00:18.130 align:middle line:84%
+You could do something
+similar on your Linux machine
+
+00:00:18.130 --> 00:00:20.080 align:middle line:84%
+or maybe a DOS
+prompt in Windows.
+
+00:00:20.080 --> 00:00:23.560 align:middle line:84%
+And I'm going to
+type in GHCi, which
+
+00:00:23.560 --> 00:00:26.800 align:middle line:84%
+is the interpreter for the
+classical Haskell compiler.
+
+00:00:26.800 --> 00:00:27.810 align:middle line:90%
+Press Enter.
+
+00:00:27.810 --> 00:00:30.000 align:middle line:90%
+And look, it loads up.
+
+00:00:30.000 --> 00:00:31.700 align:middle line:90%
+I'm running version 7.10 here.
+
+00:00:31.700 --> 00:00:33.533 align:middle line:84%
+You might have a slightly
+different version,
+
+00:00:33.533 --> 00:00:35.950 align:middle line:84%
+but hopefully, everything
+should work out fine.
+
+00:00:35.950 --> 00:00:38.350 align:middle line:84%
+Notice that the prompt here,
+the interactive prompt,
+
+00:00:38.350 --> 00:00:42.650 align:middle line:84%
+it says Prelude, which indicates
+that the standard Haskell
+
+00:00:42.650 --> 00:00:46.300 align:middle line:84%
+library, Prelude,
+has been loaded.
+
+00:00:46.300 --> 00:00:51.790 align:middle line:84%
+First of all, I'm going to type
+in a string-- "hi everyone."
+
+00:00:51.790 --> 00:00:56.200 align:middle line:84%
+And this string value
+is returned for me.
+
+00:00:56.200 --> 00:01:00.030 align:middle line:84%
+I can see the type
+of 'hi everyone."
+
+00:01:00.030 --> 00:01:07.500 align:middle line:84%
+If I go to the start of the
+line and say colon type--
+
+00:01:07.500 --> 00:01:11.290 align:middle line:84%
+this is a GHCi command
+here-- colon type
+
+00:01:11.290 --> 00:01:16.760 align:middle line:84%
+'hi everyone" tells me that "hi
+everyone" is of type character
+
+00:01:16.760 --> 00:01:20.429 align:middle line:84%
+list, which is equivalent
+to string, as you know.
+
+00:01:20.429 --> 00:01:21.720 align:middle line:90%
+I can type in numbers, as well.
+
+00:01:21.720 --> 00:01:23.190 align:middle line:90%
+Here's 42.
+
+00:01:23.190 --> 00:01:26.856 align:middle line:84%
+Arithmetic expression--
+here's 1 plus 1.
+
+00:01:26.856 --> 00:01:30.581 align:middle line:84%
+I can also use variables
+like x equals 3.
+
+00:01:30.581 --> 00:01:36.640 align:middle line:84%
+And from now on, I can use x
+or use x inside arithmetic.
+
+00:01:36.640 --> 00:01:37.140 align:middle line:90%
+Good.
+
+00:01:37.140 --> 00:01:40.500 align:middle line:84%
+I could also call
+functions on strings.
+
+00:01:40.500 --> 00:01:45.570 align:middle line:84%
+So let's find out the
+length of "hi everyone."
+
+00:01:45.570 --> 00:01:51.210 align:middle line:84%
+We can also reverse
+"hi everyone,"
+
+00:01:51.210 --> 00:01:56.210 align:middle line:84%
+which shows that that "enoyreve
+ih" is "hi everyone" written
+
+00:01:56.210 --> 00:01:57.350 align:middle line:90%
+backwards.
+
+00:01:57.350 --> 00:01:59.700 align:middle line:84%
+These standard functions,
+length and reverse,
+
+00:01:59.700 --> 00:02:01.920 align:middle line:84%
+are defined for us in
+the Haskell Prelude.
+
+00:02:01.920 --> 00:02:06.120 align:middle line:90%
+
+
+00:02:06.120 --> 00:02:09.600 align:middle line:84%
+Now, we're going to
+define a function.
+
+00:02:09.600 --> 00:02:12.420 align:middle line:84%
+Just inside the GHCi
+interactive prompt
+
+00:02:12.420 --> 00:02:14.620 align:middle line:84%
+we can define the
+factorial function.
+
+00:02:14.620 --> 00:02:17.570 align:middle line:84%
+Let fact n equal--
+remember this is
+
+00:02:17.570 --> 00:02:22.410 align:middle line:84%
+the product of the first
+n positive numbers.
+
+00:02:22.410 --> 00:02:27.170 align:middle line:84%
+If n==0, then fact
+of 0 is 1 else.
+
+00:02:27.170 --> 00:02:32.340 align:middle line:84%
+We want to compute n
+times fact n minus 1.
+
+00:02:32.340 --> 00:02:35.630 align:middle line:84%
+So if I say fact of 0,
+that should give us back 1.
+
+00:02:35.630 --> 00:02:36.530 align:middle line:90%
+That's the then case.
+
+00:02:36.530 --> 00:02:39.660 align:middle line:84%
+If I say fact of
+3, that gives us
+
+00:02:39.660 --> 00:02:43.110 align:middle line:90%
+3 times 2 times 1, which is 6.
+
+00:02:43.110 --> 00:02:48.630 align:middle line:90%
+Fact of 5 is 120 and so on.
+
+00:02:48.630 --> 00:02:51.790 align:middle line:84%
+So you see that we can
+define functions using let
+
+00:02:51.790 --> 00:02:55.000 align:middle line:84%
+and then give the single
+line function definition here
+
+00:02:55.000 --> 00:02:55.930 align:middle line:90%
+inside GHCi.
+
+00:02:55.930 --> 00:02:58.439 align:middle line:90%
+
+
+00:02:58.439 --> 00:02:59.980 align:middle line:84%
+It might be the case
+that we actually
+
+00:02:59.980 --> 00:03:03.590 align:middle line:84%
+want to define a function in
+a Haskell source code file.
+
+00:03:03.590 --> 00:03:05.770 align:middle line:90%
+So let's do that now.
+
+00:03:05.770 --> 00:03:11.840 align:middle line:84%
+I'm going to start up
+the gedit text editor,
+
+00:03:11.840 --> 00:03:15.510 align:middle line:84%
+and I'm going to
+create a new file.
+
+00:03:15.510 --> 00:03:18.980 align:middle line:84%
+I'm going to save this
+file in the folder I'm in,
+
+00:03:18.980 --> 00:03:22.650 align:middle line:84%
+which is-- let's
+find it quickly.
+
+00:03:22.650 --> 00:03:25.020 align:middle line:90%
+I'm in the right folder now.
+
+00:03:25.020 --> 00:03:31.690 align:middle line:84%
+And I'm going to call this file
+factorial.hs Haskell source
+
+00:03:31.690 --> 00:03:34.320 align:middle line:90%
+code.
+
+00:03:34.320 --> 00:03:44.470 align:middle line:84%
+So simple factorial
+definition-- so I
+
+00:03:44.470 --> 00:03:48.490 align:middle line:84%
+can say fact2-- let's
+give this a different name
+
+00:03:48.490 --> 00:03:53.100 align:middle line:84%
+to the previous one-- takes an
+integer and returns an integer.
+
+00:03:53.100 --> 00:03:55.880 align:middle line:84%
+That's the signature
+for the function.
+
+00:03:55.880 --> 00:04:03.830 align:middle line:84%
+Fact2 n equals-- and I can use
+the same definition of n==0
+
+00:04:03.830 --> 00:04:12.531 align:middle line:84%
+then 1 else n times
+fact2 of n minus 1.
+
+00:04:12.531 --> 00:04:13.030 align:middle line:90%
+Great.
+
+00:04:13.030 --> 00:04:18.490 align:middle line:90%
+So let's save this file-- save.
+
+00:04:18.490 --> 00:04:21.350 align:middle line:90%
+And then, we'll go back to GHCi.
+
+00:04:21.350 --> 00:04:26.095 align:middle line:84%
+There we go-- GHCi,
+load factorial.hs.
+
+00:04:26.095 --> 00:04:29.040 align:middle line:90%
+
+
+00:04:29.040 --> 00:04:29.850 align:middle line:90%
+And it loads.
+
+00:04:29.850 --> 00:04:31.880 align:middle line:84%
+So you can use
+relative pathnames--
+
+00:04:31.880 --> 00:04:35.160 align:middle line:84%
+relative to the directory
+that GHCi is running in--
+
+00:04:35.160 --> 00:04:37.810 align:middle line:84%
+or you can use an absolute
+pathname, as well, if you
+
+00:04:37.810 --> 00:04:41.210 align:middle line:84%
+have the full name of
+the directory where
+
+00:04:41.210 --> 00:04:43.330 align:middle line:90%
+the file is stored.
+
+00:04:43.330 --> 00:04:45.890 align:middle line:84%
+I've loaded the
+factorial file now.
+
+00:04:45.890 --> 00:04:48.380 align:middle line:84%
+And it's loaded OK
+without any problems.
+
+00:04:48.380 --> 00:04:52.250 align:middle line:84%
+So now, I can say
+fact2 of 10, while it
+
+00:04:52.250 --> 00:04:54.780 align:middle line:90%
+calculates the factorial.
+
+00:04:54.780 --> 00:04:57.970 align:middle line:84%
+I can work up the
+type for fact2.
+
+00:04:57.970 --> 00:05:02.180 align:middle line:84%
+It takes an integer argument
+returns integer results.
+
+00:05:02.180 --> 00:05:06.520 align:middle line:84%
+Notice the colon t is
+shorthand for the type command.
+
+00:05:06.520 --> 00:05:08.385 align:middle line:90%
+There we go-- same again.
+
+00:05:08.385 --> 00:05:13.990 align:middle line:84%
+And I could map
+fact2 over 1 to 10.
+
+00:05:13.990 --> 00:05:15.760 align:middle line:90%
+And there we go.
+
+00:05:15.760 --> 00:05:17.900 align:middle line:84%
+Now, let's go and
+have another look
+
+00:05:17.900 --> 00:05:19.690 align:middle line:90%
+at the definition of fact2.
+
+00:05:19.690 --> 00:05:23.670 align:middle line:90%
+
+
+00:05:23.670 --> 00:05:27.029 align:middle line:84%
+We could actually
+rewrite this definition
+
+00:05:27.029 --> 00:05:28.320 align:middle line:90%
+to make it a little bit neater.
+
+00:05:28.320 --> 00:05:36.490 align:middle line:90%
+
+
+00:05:36.490 --> 00:05:46.000 align:middle line:84%
+Let's try and save this and then
+reload fact2-- load factorial--
+
+00:05:46.000 --> 00:05:47.150 align:middle line:90%
+it's loaded again.
+
+00:05:47.150 --> 00:05:49.600 align:middle line:84%
+And now, we can rerun
+the same command
+
+00:05:49.600 --> 00:05:51.012 align:middle line:90%
+and get the same results.
+
+00:05:51.012 --> 00:05:55.450 align:middle line:84%
+And perhaps, the function
+looks a bit more elegant now.
+
+00:05:55.450 --> 00:06:00.470 align:middle line:84%
+What happens if I
+say fact2 of minus 1?
+
+00:06:00.470 --> 00:06:02.280 align:middle line:90%
+Oh, sorry.
+
+00:06:02.280 --> 00:06:05.410 align:middle line:84%
+I need to put minus
+1 inside brackets.
+
+00:06:05.410 --> 00:06:07.070 align:middle line:84%
+Otherwise, it's
+trying to subtract 1
+
+00:06:07.070 --> 00:06:08.530 align:middle line:90%
+from the fact2 function.
+
+00:06:08.530 --> 00:06:10.990 align:middle line:90%
+Let's try this again.
+
+00:06:10.990 --> 00:06:13.510 align:middle line:84%
+It starts running, and
+It runs and carries
+
+00:06:13.510 --> 00:06:15.280 align:middle line:90%
+on running for a long time.
+
+00:06:15.280 --> 00:06:20.230 align:middle line:84%
+This doesn't match the first
+case because the input isn't 0.
+
+00:06:20.230 --> 00:06:22.320 align:middle line:84%
+So it matches the
+second case, which
+
+00:06:22.320 --> 00:06:24.980 align:middle line:84%
+multiplies the number by
+one less than the number.
+
+00:06:24.980 --> 00:06:28.480 align:middle line:84%
+So we get minus 1 times minus
+2 times minus 3 times minus 4,
+
+00:06:28.480 --> 00:06:30.680 align:middle line:90%
+ad infinitum.
+
+00:06:30.680 --> 00:06:32.370 align:middle line:84%
+We may get a stack
+overflow eventually,
+
+00:06:32.370 --> 00:06:34.690 align:middle line:84%
+but I can't afford
+to wait that long.
+
+00:06:34.690 --> 00:06:40.000 align:middle line:84%
+So I'm going to press
+Control-C and then Enter.
+
+00:06:40.000 --> 00:06:45.670 align:middle line:84%
+And hopefully, this should
+stop the computation.
+
+00:06:45.670 --> 00:06:49.370 align:middle line:84%
+To quit GFCi, I
+type in colon quit,
+
+00:06:49.370 --> 00:06:52.830 align:middle line:84%
+and I drop back into
+my command prompt.
+
+00:06:52.830 --> 00:06:55.480 align:middle line:90%
+Let's start again.
+
+00:06:55.480 --> 00:06:58.510 align:middle line:84%
+I could also quit by typing
+Control-D. That gets me out,
+
+00:06:58.510 --> 00:06:59.010 align:middle line:90%
+as well.
+
+00:06:59.010 --> 00:07:02.320 align:middle line:90%
+
+
+00:07:02.320 --> 00:07:07.800 align:middle line:84%
+Let's do some IO--
+putStrLn "hello."
+
+00:07:07.800 --> 00:07:09.600 align:middle line:84%
+It might be the case
+that I want to read
+
+00:07:09.600 --> 00:07:13.180 align:middle line:84%
+in some input from the
+keyboard and then print out
+
+00:07:13.180 --> 00:07:14.530 align:middle line:90%
+to the output.
+
+00:07:14.530 --> 00:07:16.580 align:middle line:90%
+So I'm going to say, do.
+
+00:07:16.580 --> 00:07:21.360 align:middle line:90%
+And x is getLine.
+
+00:07:21.360 --> 00:07:23.587 align:middle line:84%
+Look, I get error
+message here, which
+
+00:07:23.587 --> 00:07:26.170 align:middle line:84%
+says "The last statement in 'do'
+block must be an expression."
+
+00:07:26.170 --> 00:07:27.960 align:middle line:84%
+What I wanted to do
+there was write myself
+
+00:07:27.960 --> 00:07:32.350 align:middle line:90%
+a multi-line do statement.
+
+00:07:32.350 --> 00:07:35.280 align:middle line:84%
+But actually, I wasn't
+able to do that.
+
+00:07:35.280 --> 00:07:42.640 align:middle line:84%
+I need to say, set plus
+m, in the GFCi environment
+
+00:07:42.640 --> 00:07:45.500 align:middle line:90%
+to allow multi-line statements.
+
+00:07:45.500 --> 00:07:54.570 align:middle line:84%
+Now, I can say, do x is getLine,
+line up the do commands.
+
+00:07:54.570 --> 00:08:03.880 align:middle line:84%
+And now, I'm going to
+say, putStrLn "hello,"
+
+00:08:03.880 --> 00:08:07.160 align:middle line:90%
+concatenated with x.
+
+00:08:07.160 --> 00:08:08.000 align:middle line:90%
+Right.
+
+00:08:08.000 --> 00:08:11.830 align:middle line:84%
+I pressed Enter twice, and that
+got me out of the do construct.
+
+00:08:11.830 --> 00:08:14.429 align:middle line:84%
+And now, GHCi is
+waiting for my input.
+
+00:08:14.429 --> 00:08:15.970 align:middle line:84%
+So I'm just going
+to type in my name,
+
+00:08:15.970 --> 00:08:20.890 align:middle line:84%
+Jeremy, Enter, and back
+comes "hello Jeremy."
+
+00:08:20.890 --> 00:08:23.621 align:middle line:90%
+So the do has been evaluated.
+
+00:08:23.621 --> 00:08:29.440 align:middle line:90%
+
+
+00:08:29.440 --> 00:08:32.130 align:middle line:84%
+Let's write ourselves
+one more function.
+
+00:08:32.130 --> 00:08:34.330 align:middle line:90%
+I'm going to go back to get it.
+
+00:08:34.330 --> 00:08:39.950 align:middle line:84%
+And I'm going to write
+myself a new function, which
+
+00:08:39.950 --> 00:08:44.310 align:middle line:90%
+I'm going to call norules.hs.
+
+00:08:44.310 --> 00:08:48.450 align:middle line:90%
+
+
+00:08:48.450 --> 00:08:56.190 align:middle line:84%
+Make people noble--
+so mknoble is
+
+00:08:56.190 --> 00:09:00.020 align:middle line:84%
+going to take a string parameter
+and return a string result.
+
+00:09:00.020 --> 00:09:03.250 align:middle line:90%
+And I'm going to say mknoble.
+
+00:09:03.250 --> 00:09:05.260 align:middle line:84%
+If I receive a
+name, then I'm going
+
+00:09:05.260 --> 00:09:11.930 align:middle line:84%
+to return "Sir" plus that name
+plus plus for concatenation.
+
+00:09:11.930 --> 00:09:14.040 align:middle line:90%
+OK, let's save this.
+
+00:09:14.040 --> 00:09:15.610 align:middle line:84%
+And now, we should
+be able to load it
+
+00:09:15.610 --> 00:09:21.435 align:middle line:90%
+into GHCi-- load nobles.
+
+00:09:21.435 --> 00:09:28.530 align:middle line:84%
+And now, I can say, mknoble
+"Alex Ferguson," and "Sir Alex
+
+00:09:28.530 --> 00:09:29.980 align:middle line:90%
+Ferguson" returns.
+
+00:09:29.980 --> 00:09:32.870 align:middle line:84%
+That's great--
+just go back here.
+
+00:09:32.870 --> 00:09:38.360 align:middle line:84%
+I wonder what happens if I want
+to make a female person noble.
+
+00:09:38.360 --> 00:09:40.920 align:middle line:84%
+Well, I really need
+another argument here,
+
+00:09:40.920 --> 00:09:46.060 align:middle line:84%
+Boolean, that allows
+me to say, if-- well,
+
+00:09:46.060 --> 00:09:48.450 align:middle line:84%
+let's give this
+parameter a name, female.
+
+00:09:48.450 --> 00:09:51.490 align:middle line:90%
+
+
+00:09:51.490 --> 00:10:05.112 align:middle line:84%
+If female-- sorry-- then "Dame"
+else "Sir" plus plus name.
+
+00:10:05.112 --> 00:10:06.070 align:middle line:90%
+That's all on one line.
+
+00:10:06.070 --> 00:10:07.240 align:middle line:90%
+It just looks a bit messy.
+
+00:10:07.240 --> 00:10:12.910 align:middle line:84%
+Perhaps I should move this along
+a bit so it's on the next line.
+
+00:10:12.910 --> 00:10:17.020 align:middle line:84%
+I need to indent it more
+than the if statement.
+
+00:10:17.020 --> 00:10:21.150 align:middle line:84%
+OK, so now, I'm going
+to save that file
+
+00:10:21.150 --> 00:10:24.830 align:middle line:90%
+and go and load it again.
+
+00:10:24.830 --> 00:10:28.730 align:middle line:84%
+Colon l is short for
+load-- nobles.hs.
+
+00:10:28.730 --> 00:10:31.209 align:middle line:90%
+Now, I can mknoble.
+
+00:10:31.209 --> 00:10:32.750 align:middle line:84%
+If I try and mknoble
+"Alex Ferguson,"
+
+00:10:32.750 --> 00:10:34.030 align:middle line:84%
+it's going to complain
+because I haven't said
+
+00:10:34.030 --> 00:10:35.690 align:middle line:90%
+whether he's male or female.
+
+00:10:35.690 --> 00:10:38.840 align:middle line:84%
+So look, it says now,
+"Couldn't match expected type
+
+00:10:38.840 --> 00:10:43.686 align:middle line:84%
+of 'Bool' with the actual
+type 'Char'" because the first
+
+00:10:43.686 --> 00:10:46.060 align:middle line:84%
+parameter should be a Boolean
+where I would have given it
+
+00:10:46.060 --> 00:10:47.010 align:middle line:90%
+a string.
+
+00:10:47.010 --> 00:10:50.970 align:middle line:84%
+So we need to say mknoble False
+because "Alex Ferguson" is not
+
+00:10:50.970 --> 00:10:51.830 align:middle line:90%
+a female.
+
+00:10:51.830 --> 00:10:53.750 align:middle line:84%
+And now, it says,
+"Sir Alex Ferguson."
+
+00:10:53.750 --> 00:10:59.520 align:middle line:84%
+And then, I say mknoble
+True "Helen Mirren."
+
+00:10:59.520 --> 00:11:01.670 align:middle line:84%
+That becomes "Dame
+Helen Mirren."
+
+00:11:01.670 --> 00:11:02.209 align:middle line:90%
+Great.
+
+00:11:02.209 --> 00:11:03.750 align:middle line:84%
+So that's a function
+we defined here.
+
+00:11:03.750 --> 00:11:06.890 align:middle line:84%
+We can see the type of the
+function, type mknoble,
+
+00:11:06.890 --> 00:11:08.880 align:middle line:84%
+and now, it takes a
+Bool, then a string,
+
+00:11:08.880 --> 00:11:10.830 align:middle line:90%
+and then returns a string.
+
+00:11:10.830 --> 00:11:11.580 align:middle line:90%
+Great.
+
+00:11:11.580 --> 00:11:12.670 align:middle line:90%
+Let's quit.
+
+00:11:12.670 --> 00:11:15.270 align:middle line:84%
+And I hope you have
+fun playing with GHCi.
+
+00:11:15.270 --> 00:11:18.390 align:middle line:84%
+And again, if you have
+any problems or questions,
+
+00:11:18.390 --> 00:11:20.760 align:middle line:84%
+let us know in the
+comments section below.
+
+00:11:20.760 --> 00:11:22.310 align:middle line:90%
+Thanks.
+
+00:11:22.310 --> 00:11:24.757 align:middle line:90%

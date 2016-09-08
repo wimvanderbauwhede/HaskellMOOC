@@ -1,0 +1,84 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.908 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:01.908 --> 00:00:08.090 align:middle line:90%
+
+
+00:00:08.090 --> 00:00:08.590 align:middle line:90%
+SPEAKER: Hi!
+
+00:00:08.590 --> 00:00:11.470 align:middle line:84%
+We hope you enjoyed the
+first week of our functional
+
+00:00:11.470 --> 00:00:13.220 align:middle line:90%
+programming course.
+
+00:00:13.220 --> 00:00:16.550 align:middle line:84%
+This week, we're going to be
+looking at more basic building
+
+00:00:16.550 --> 00:00:19.890 align:middle line:90%
+blocks of the Haskell language.
+
+00:00:19.890 --> 00:00:23.690 align:middle line:84%
+We'll explore programs
+that have side effects.
+
+00:00:23.690 --> 00:00:27.740 align:middle line:84%
+This is moderately complex in
+a pure language like Haskell.
+
+00:00:27.740 --> 00:00:31.450 align:middle line:84%
+We'll also be telling you
+how to install the GHC tool
+
+00:00:31.450 --> 00:00:35.360 align:middle line:84%
+chain on your local
+machine so you won't
+
+00:00:35.360 --> 00:00:38.700 align:middle line:84%
+need to be logged into our
+online Haskell interpreter
+
+00:00:38.700 --> 00:00:42.110 align:middle line:84%
+in order to run your
+Haskell programs.
+
+00:00:42.110 --> 00:00:45.670 align:middle line:84%
+Let me leave you with a
+funny joke about Haskell
+
+00:00:45.670 --> 00:00:49.500 align:middle line:90%
+from the XKCD webcomic.
+
+00:00:49.500 --> 00:00:52.260 align:middle line:84%
+One person says, "Code
+written in Haskell
+
+00:00:52.260 --> 00:00:55.590 align:middle line:84%
+is guaranteed to have
+no side effects."
+
+00:00:55.590 --> 00:00:58.430 align:middle line:84%
+And the other person
+quizzically replies,
+
+00:00:58.430 --> 00:01:01.350 align:middle line:84%
+"Because no one
+will ever run it?"
+
+00:01:01.350 --> 00:01:04.629 align:middle line:84%
+We hope that you'll all be
+running lots of Haskell code
+
+00:01:04.629 --> 00:01:07.270 align:middle line:84%
+this week on the functional
+programming course.
+
+00:01:07.270 --> 00:01:09.720 align:middle line:90%
+[MUSIC PLAYING]
+
+00:01:09.720 --> 00:01:11.054 align:middle line:90%
