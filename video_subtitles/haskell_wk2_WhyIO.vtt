@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:07.950 --> 00:00:11.330 align:middle line:84%
-SPEAKER: How do computer
+JEREMY: How do computer
 programs interact
 
 00:00:11.330 --> 00:00:12.780 align:middle line:90%
@@ -49,11 +49,11 @@ on the screen
 
 00:00:48.540 --> 00:00:53.440 align:middle line:84%
 or, perhaps, where a file is
-written back to [? disk. ?]
+written back to disk.
 
 00:00:53.440 --> 00:00:58.580 align:middle line:84%
 Haskell programs use
-something called the I/O monad
+something called the IO monad
 
 00:00:58.580 --> 00:01:02.410 align:middle line:90%
 to interact with input/output.
@@ -63,7 +63,7 @@ We'll go into more
 detail about I/O
 
 00:01:04.739 --> 00:01:07.570 align:middle line:84%
-and monad later
+and monads later
 on in the course.
 
 00:01:07.570 --> 00:01:11.420 align:middle line:84%
@@ -76,10 +76,10 @@ is using input or output,
 
 00:01:18.290 --> 00:01:24.880 align:middle line:84%
 its type must contain
-I/O. And number two,
+IO. And number two,
 
 00:01:24.880 --> 00:01:29.680 align:middle line:84%
-the I/O monad ensures that
+the IO monad ensures that
 input/output operations
 
 00:01:29.680 --> 00:01:32.680 align:middle line:90%
@@ -115,19 +115,19 @@ We'll just be writing
 strings to the console using
 
 00:01:59.420 --> 00:02:02.900 align:middle line:84%
-Put [INAUDIBLE] and
+putStrLn  and
 reading character
 
 00:02:02.900 --> 00:02:09.600 align:middle line:84%
 input from the standard terminal
-using Get [? command. ?]
+using getChar.
 
 00:02:09.600 --> 00:02:12.430 align:middle line:84%
 As you do the tutorial,
 watch out and see
 
 00:02:12.430 --> 00:02:15.450 align:middle line:90%
-where the I/O type pops up.
+where the IO type pops up.
 
 00:02:15.450 --> 00:02:16.050 align:middle line:90%
 Thanks.
