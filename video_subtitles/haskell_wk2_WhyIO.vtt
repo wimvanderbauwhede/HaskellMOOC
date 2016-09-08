@@ -1,0 +1,138 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.984 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:01.984 --> 00:00:07.950 align:middle line:90%
+
+
+00:00:07.950 --> 00:00:11.330 align:middle line:84%
+JEREMY: How do computer
+programs interact
+
+00:00:11.330 --> 00:00:12.780 align:middle line:90%
+with the outside world?
+
+00:00:12.780 --> 00:00:15.290 align:middle line:90%
+
+
+00:00:15.290 --> 00:00:18.250 align:middle line:90%
+Using input and output.
+
+00:00:18.250 --> 00:00:23.060 align:middle line:84%
+In this dissected
+PC hardware here, we
+
+00:00:23.060 --> 00:00:26.770 align:middle line:84%
+see the input might arrive
+when the user presses keys
+
+00:00:26.770 --> 00:00:29.456 align:middle line:84%
+on the keyboard or
+wiggles the mouse
+
+00:00:29.456 --> 00:00:34.920 align:middle line:84%
+or, perhaps, when the file is
+read into memory from the disk.
+
+00:00:34.920 --> 00:00:40.140 align:middle line:84%
+Outputs are visible to
+the external surroundings
+
+00:00:40.140 --> 00:00:45.680 align:middle line:84%
+of the PC when the program
+writes data to the graphics
+
+00:00:45.680 --> 00:00:48.540 align:middle line:84%
+card to be displayed
+on the screen
+
+00:00:48.540 --> 00:00:53.440 align:middle line:84%
+or, perhaps, where a file is
+written back to disk.
+
+00:00:53.440 --> 00:00:58.580 align:middle line:84%
+Haskell programs use
+something called the IO monad
+
+00:00:58.580 --> 00:01:02.410 align:middle line:90%
+to interact with input/output.
+
+00:01:02.410 --> 00:01:04.739 align:middle line:84%
+We'll go into more
+detail about I/O
+
+00:01:04.739 --> 00:01:07.570 align:middle line:84%
+and monads later
+on in the course.
+
+00:01:07.570 --> 00:01:11.420 align:middle line:84%
+But for now, we just
+need to know two things.
+
+00:01:11.420 --> 00:01:18.290 align:middle line:84%
+Number one, when a function
+is using input or output,
+
+00:01:18.290 --> 00:01:24.880 align:middle line:84%
+its type must contain
+IO. And number two,
+
+00:01:24.880 --> 00:01:29.680 align:middle line:84%
+the IO monad ensures that
+input/output operations
+
+00:01:29.680 --> 00:01:32.680 align:middle line:90%
+occur in a fixed sequence.
+
+00:01:32.680 --> 00:01:36.420 align:middle line:84%
+For example, we must check
+the red button is pressed
+
+00:01:36.420 --> 00:01:37.923 align:middle line:90%
+before we launch the missiles.
+
+00:01:37.923 --> 00:01:41.100 align:middle line:90%
+
+
+00:01:41.100 --> 00:01:44.650 align:middle line:84%
+I'm going to invite you to
+look at the next interactive
+
+00:01:44.650 --> 00:01:48.670 align:middle line:84%
+tutorial, now, which
+covers I/O in Haskell.
+
+00:01:48.670 --> 00:01:51.220 align:middle line:84%
+Our I/O operations
+are much more mundane
+
+00:01:51.220 --> 00:01:53.230 align:middle line:90%
+than launching missiles.
+
+00:01:53.230 --> 00:01:59.420 align:middle line:84%
+We'll just be writing
+strings to the console using
+
+00:01:59.420 --> 00:02:02.900 align:middle line:84%
+putStrLn  and
+reading character
+
+00:02:02.900 --> 00:02:09.600 align:middle line:84%
+input from the standard terminal
+using getChar.
+
+00:02:09.600 --> 00:02:12.430 align:middle line:84%
+As you do the tutorial,
+watch out and see
+
+00:02:12.430 --> 00:02:15.450 align:middle line:90%
+where the IO type pops up.
+
+00:02:15.450 --> 00:02:16.050 align:middle line:90%
+Thanks.
+
+00:02:16.050 --> 00:02:18.500 align:middle line:90%
+[MUSIC PLAYING]
+
+00:02:18.500 --> 00:02:22.943 align:middle line:90%
