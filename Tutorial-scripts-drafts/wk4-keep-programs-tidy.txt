@@ -33,10 +33,9 @@ Note that the variable names line up
 underneath one another
 This is good formatting practice, but is also needed
 for Haskell to interpret the code correctly.
-Like Python, whitespace is important in Haskell,
+Like Python, *whitespace is important* in Haskell,
 certainly in `let` expressions anyway!
 
-(whitespace matters placard)
 
 Sometimes in a `let`, one of the variables might
 depend on another --- in the function below, gallons depends on
