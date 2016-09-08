@@ -41,25 +41,35 @@ Rather than devise a number of test cases, we will randomly generate
 input data 
 (test case data) and check whether the correctness property holds.
 
-for all x, y . decipher( x (cipher x y)) == y
+for all integers x, strings y . decipher( x (cipher x y)) == y
 
 first we import the QuickCheck module
 
 import Test.QuickCheck
 
 then we ask to check our property
+We need to rewrite the property as a lambda abstraction 
+that takes two parameters  - the integer shift and the
+plaintext string  - and returns a boolean - which is True
+when the decryption of the encryption is the same as the 
+original message.
 
 quickCheck ((\n->(\s -> ((decipher n (cipher n s))==s))) :: [Char] -> Int -> Bool)
 
-This is the call to quickcheck - note that we have to write a lambda expression that takes two arguments - the string s and the int n - we have supplied the types for these, then 
-
+Then we can call to the quickcheck tool - note that 
+we need to type the expression so quickCheck knows what
+types of values to randomly generate ...
 
 OK - run quickcheck
 (defaults to 100 tests) - 
 
-and we can trace this, to see what the randomly generated
+Aargh! this fails -on the xth test.
+
+we can actually trace quickCheck, to see what the randomly generated
 input data looks like
 verbosecheck
+
+Look at the problem...
 
 #run more than 100 ...
 #deepcheck ???
