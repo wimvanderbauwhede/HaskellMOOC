@@ -20,6 +20,7 @@ in x*x
 ~~~
 
 What will this expression evaluate to?
+
 Multiple variables can be defined in a single let
 
 ~~~ haskell
@@ -29,6 +30,7 @@ in x+y
 ~~~
 
 What will this expression evaluate to?
+
 Note that the variable names line up 
 underneath one another
 This is good formatting practice, but is also needed
@@ -38,8 +40,8 @@ certainly in `let` expressions anyway!
 
 
 Sometimes in a `let`, one of the variables might
-depend on another --- in the function below, gallons depends on
-milespergallon:
+depend on another --- in the function below, `gallons` depends on
+`milespergallon`:
 
 ~~~ haskell
 journeycost :: Float -> Float -> Float
@@ -58,14 +60,14 @@ let diameter = 2*radius
 in (diameter, circumference)
 ~~~
 
-By the way, pi is a defined constant in the Prelude.
+By the way, `pi` is a defined constant in the Haskell Prelude.
 
 
 ### Where clauses
 
 There is another syntax for introducing local variables, called
 the `where` clause.
-As we have seen, Haskell is a Swiss army knife of a programming langauage, there are lots of ways of doing things.
+As we have seen, Haskell is the Swiss army knife of programming languages: there are lots of ways of doing things.
 
 The `where` keyword, inside an equation, provides
 definitions for variables that are used in the equation.
@@ -74,8 +76,8 @@ Here are a couple of examples
 
 ~~~ haskell
 squareplusone :: Int -> Int
-sumsquares x = xsquared + 1
-  where xsquared = x*x
+squareplusone x = xsquared + 1
+ where xsquared = x*x
 ~~~
 
 Note that `where` must be indented more than the start of the
@@ -87,8 +89,8 @@ clause. Look at this temperature conversion function:
 ~~~ haskell
 cel2fahr :: Float -> Float
 cel2fahr x = (x*scalingfactor) + freezingpoint
-  where scalingfactor = 9.0/5.0
-        freezingpoint = 32
+ where scalingfactor = 9.0/5.0
+       freezingpoint = 32
 ~~~
 
 Again, notice that the variables defined in the `where` clause all
@@ -107,5 +109,5 @@ However there are some important *differences*:
 * `where` clauses are not expressions; they can be used only to provide some local variables for a top level equation.
 
 
-In what circumstances do you think it might it be better to use `let` instead of `where`?
+In which circumstances do you think it might it be better to use `let` instead of `where`?
 Or the other way round? Please write suggestions in the comments below.
