@@ -12,18 +12,18 @@ f x
   | predicate3 = expression3
 ~~~
 
-The *absolute* value of a number is its magnitude, i.e. ignoring its sign.
+For instance, the *absolute* value of a number is its magnitude, i.e. ignoring its sign.
 You could define a function to calculate the absolute value
 with an if/then/else conditional
 
 ~~~ haskell
-abs x = if (x<0) then (-x) else x
+absolute x = if (x<0) then (-x) else x
 ~~~
 
 or with guards
 
 ~~~ haskell
-abs x
+absolute x
   | x<0 = -x
   | otherwise = x
 ~~~
