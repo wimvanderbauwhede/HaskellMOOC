@@ -1,0 +1,31 @@
+We are looking forward to welcoming you to 
+[Functional Programming in Haskell](https://www.futurelearn.com/courses/functional-programming-haskell/1/) 
+next week. The course will take place online and 
+will consist of a variety of videos, articles, 
+interactive programming tasks and discussions.
+
+We will introduce Haskell by comparing its features
+with other programming languages that you might have seen before,
+like Python, Java or Ruby.
+
+Over the six weeks of the course, we will explore a wide
+range of concepts and constructs so you should be able to read and
+write meaningful Haskell programs. Our key advice is: *don't try
+to absorb all the information passively* --- the best way to start
+learning a programming language is to write your own code.
+
+The programming tasks during the first two weeks will use a 
+browser-based environment. After this, we will move to the 
+[Haskell platform](https://www.haskell.org/downloads) on your
+own machine --- ideally a desktop or laptop running Windows, Linux
+or macOS. You might want to check that you have access to a
+machine on which you can install Haskell tools.
+
+See you next week, when the course begins.
+Best wishes,
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
+
+
