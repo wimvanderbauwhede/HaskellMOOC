@@ -1,4 +1,3 @@
-### Infinite Data Structures
 
 In the previous video, we looked at infinite lists.
 We can define an infinite list of consecutive 
@@ -30,7 +29,7 @@ We will study their  recursive definitions.
 
 ### Fibonacci Numbers
 
-The $n$th Fibonacci number is the sum of the previous two Fibonacci
+The nth Fibonacci number is the sum of the previous two Fibonacci
 numbers. The first two numbers are both 1. 
 Then the third is 2, followed by 3, 5, etc.
 
@@ -53,7 +52,7 @@ Below is a series of `filter` expressions to calculate an
 infinite list of prime numbers.
 
 ~~~ haskell
-properfactors :: Int -> Int
+properfactors :: Int -> [Int]
 properfactors x = filter (\y->(x `mod` y == 0)) [2..(x-1)]
 
 numproperfactors :: Int -> Int
