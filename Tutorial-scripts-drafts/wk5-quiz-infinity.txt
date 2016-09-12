@@ -1,6 +1,6 @@
 ### To infinity (but not beyond)
 
-How do we generate an infinite list of 'one' values
+How do we generate an infinite list of integer `1` values?
 
 - [1..]
 - [1..1]
@@ -8,7 +8,7 @@ How do we generate an infinite list of 'one' values
 - take 1
 
 
-Which of the following functions will *not*
+Which one of the following functions will *not*
 loop infinitely?
 
 - length [1..]
