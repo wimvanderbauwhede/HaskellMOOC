@@ -10,7 +10,6 @@ integers as follows:
 
 We can evaluate this list, but it won't print out in its entirety 
 --- because it goes on for ever.
-
 To repeat a set of identical values, use the `repeat` function.
 
 ~~~ haskell
@@ -18,16 +17,15 @@ repeat 'a'
 ~~~
 
 Again, this list is infinite.
-
 Use the `take` and `drop` functions to deal with infinite lists.
-It's fine to do a finite amount of processing in an infinite list,
+It's permitted to do a finite amount of processing in an infinite list,
 but not to traverse it infinitely.
 
-The reason that Haskell can process infinite lists is because 
+The reason why Haskell can process infinite lists is because 
 it evaluates the lists in a *lazy* fashion --- i.e. it 
 only evaluates list elements as they are needed.
 
-Right, let's have a look at two well-known integer lists now.
+Now let's have a look at two well-known integer lists.
 We will study their  recursive definitions.
 
 ### Fibonacci Numbers
@@ -36,7 +34,9 @@ The $n$th Fibonacci number is the sum of the previous two Fibonacci
 numbers. The first two numbers are both 1. 
 Then the third is 2, followed by 3, 5, etc.
 
-This can be expressed in Haskell using the zipWith function, 
+    1, 1, 2, 3, 5, 8, 13, 21, ...
+
+This can be expressed in Haskell using the `zipWith` function, 
 combining pairs of elements with the addition operator.
 
 ~~~ haskell
@@ -45,11 +45,11 @@ let fibs = 1:1:(zipWith (+) fibs (tail fibs))
 
 We can evaluate individual elements of this 
 list using the `!!` indexed list
-selection. Or we could take the first `n` elements of the fibs list.
+selection. Or we could take the first `n` elements of the `fibs` list.
 
 ### Prime Numbers
 
-Here is a series of `filter` expressions to calculate an
+Below is a series of `filter` expressions to calculate an
 infinite list of prime numbers.
 
 ~~~ haskell
@@ -63,15 +63,18 @@ primes :: [Int]
 primes = filter (\x-> (numproperfactors x == 0)) [2..]
 ~~~
 
-Let's analyse what this definition means.
-The `properfactors` function takes an integer x and returns
-a list of proper factors for x. These are numbers that divide x and
-leave no remainder.
-selects factors of $x$ in the range 2 to $x-1$ inclusive. 
-The outer `filter` expression selects integers that have no factors 
-in the range 2 to $x-1$ inclusive.
+Let's analyse how this definition works:
 
-so we want things that have no extra factors...
-(can we explain this?)
+1. The `properfactors` function takes an integer value x and returns
+a list of proper factors for x. Factors are numbers that divide x and
+leave no remainder. Proper factors for an integer x do not include 1 or x.
+1. The `numproperfactors` function simply counts how many proper factors
+there are for `x`, by returning the length of the `properfactors x` list.
+1. Finally, `primes` list uses the `filter` function to select integers `x` 
+that have no factors  in the range 2 to `(x-1)` inclusive.
 
 
+
+
+Can you think of other interesting infinite lists we might explore?
+Please leave your suggestions (and Haskell source code!) in the comments below.
