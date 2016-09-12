@@ -1,7 +1,9 @@
 
 
-Now let's have a go at using QuickCheck for ourselves, presuming 
-you have already watched the video about it in the previous step.
+Now let's have a go at using QuickCheck for ourselves.
+We presume
+you have already watched the video about 
+QuickCheck in the previous step.
 
 We'll run this session in GHCi --- so we can type things interactively and
 see how we get on.
@@ -17,11 +19,11 @@ import Test.QuickCheck
 quickCheck ((\n->(abs(n) == n))::Int->Bool)
 ~~~
 
-it's helpful to put the types in here. We have created a lambda function 
+It's helpful to put the types in here. We have created a lambda function 
 that takes a single integer parameter then checks to see whether it is equal
 to its absolute value.
-When we run QuickCheck, we see this fails quickly - for negative numbers!
-This is a problem with our property specification - not with the `abs` function.
+When we run QuickCheck, we see this fails quickly --- for negative numbers!
+This is a problem with our property specification, not with the `abs` function itself.
 
 OK --- so let's write another check.
 We want to say that a value is always equal to its absolute value, or (0 - its absolute value)
@@ -48,8 +50,8 @@ it's always true for empty lists.
 quickCheck ((\l->(if l==[] then True else (minimum l) == (sort l)!!0))::[Int]->Bool)
 ~~~
 
-Yay! it works --- at least, it passes 100 tests.
-We can actually see what these tests are --- use `verboseCheck` instead of `quickCheck`.
+Now it works --- at least, it passes 100 tests.
+We can actually discover what these tests are --- use `verboseCheck` instead of `quickCheck`.
 
 Now we see why we had to specify the type for the list. This means QuickCheck generates random
 lists of the right type. Let's try `Char` lists instead:
@@ -58,7 +60,7 @@ lists of the right type. Let's try `Char` lists instead:
 verboseCheck ((\l->(if l==[] then True else (minimum l) == (sort l)!!0))::[Char]->Bool)
 ~~~
 
-This works fine, but most of the characters are unprintable.
+This works fine, although most of the characters are unprintable.
 
 I guess you might want to use QuickCheck for some of your own code --- it's very helpful for prototyping!
 
