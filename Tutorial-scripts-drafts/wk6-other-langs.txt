@@ -1,0 +1,74 @@
+this is the last screencast of the course - here we are ...
+
+what's happening - I'm starting the python interpreter instead of
+ghci! No - after all this Haskell, I'm reverting to python!!
+(Python 3 to be precise!)
+
+Let me explain - what I want to do in this final screencast 
+is to show you that functional concepts pop up in mainstream
+languages.
+
+I admit - Haskell isn't a mainstream language yet - and it's
+probably true that no functional programming language is in
+the same league as Python, Java or C++.
+
+However - functional ideas and constructs are being incorporated
+into imperative and object-oriented languages.
+So - let's have a little look at Python.
+
+Here's a lambda expression:
+
+lambda x: x+1
+
+and here it is applied to an argument
+
+(lambda x: x+1) (2)
+
+notice the parentheses - I think Python would complain without these.
+
+Now, here is a map in Python
+
+map ((lambda x: "hello " + str(x)), [1,2,3])
+
+this is an iterable object, I can show it by converting
+it to a list
+
+list ( ... )
+
+and, because Python is dynamically typed, we can have
+values of different types in the list
+
+map ((lambda x: "hello " + str(x)), [1,False,"jeremy"])
+
+At this point you are probably 
+feeling unhappy - now you know Haskell this
+dynamically typed list seems wrong...
+
+Let's do a filter as well ...
+
+filter((lambda x:   x%2==1), range(1,10))
+
+In fact, I could have used a list comprehension here instead
+
+[x for x in range(1,10) if x%2==1]
+
+
+and here's a simple fold, for good measure
+
+import functools
+functools.reduce (lambda a,b: a*b, range(1,5), 1)
+
+
+this is the produce of the integers 1 to 4 inclusive - 
+effectively a factorial computation.
+
+
+
+Other mainstream languages now incorporate lambdas, and first class
+functions. Examples include Java 8 (released in 2014) and C++ 11 
+(released in 2011).
+
+
+In the comments section below, please let us know which languages you 
+are using, and whether you think there is scope to write in a functional style
+in these other languages.
