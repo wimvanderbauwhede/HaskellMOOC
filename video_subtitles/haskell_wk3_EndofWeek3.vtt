@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.765 align:middle line:90%
+
+
+00:00:08.765 --> 00:00:15.720 align:middle line:84%
+PROFESSOR: Algorithms plus data
+structures equals programs.
+
+00:00:15.720 --> 00:00:18.610 align:middle line:84%
+This famous equation
+was introduced
+
+00:00:18.610 --> 00:00:23.260 align:middle line:90%
+by Niklaus Wirth in the 1970s.
+
+00:00:23.260 --> 00:00:26.220 align:middle line:84%
+In terms of Haskell
+programming, you now
+
+00:00:26.220 --> 00:00:30.260 align:middle line:84%
+know enough about algorithms
+and data structures
+
+00:00:30.260 --> 00:00:35.530 align:middle line:84%
+in order to create
+meaningful Haskell programs.
+
+00:00:35.530 --> 00:00:39.130 align:middle line:84%
+As far as algorithms
+go, you have
+
+00:00:39.130 --> 00:00:44.920 align:middle line:84%
+looked at recursion and also
+at mapping simple functions
+
+00:00:44.920 --> 00:00:48.470 align:middle line:90%
+over lists of data elements.
+
+00:00:48.470 --> 00:00:50.870 align:middle line:84%
+And in terms of data
+structures, we've
+
+00:00:50.870 --> 00:00:53.430 align:middle line:84%
+spent lots of time
+exploring lists.
+
+00:00:53.430 --> 00:00:57.800 align:middle line:84%
+And this week we also introduced
+the tree data structure
+
+00:00:57.800 --> 00:01:00.230 align:middle line:84%
+as well as giving
+you the apparatus
+
+00:01:00.230 --> 00:01:05.480 align:middle line:84%
+to define your own custom
+algebraic data types.
+
+00:01:05.480 --> 00:01:10.590 align:middle line:84%
+Next week we are going to think
+about cannibal programs that
+
+00:01:10.590 --> 00:01:14.450 align:middle line:84%
+eat other programs
+as their input data.
+
+00:01:14.450 --> 00:01:17.970 align:middle line:90%
+These are called parsers.
+
+00:01:17.970 --> 00:01:19.070 align:middle line:90%
+Well done.
+
+00:01:19.070 --> 00:01:24.270 align:middle line:84%
+We're now halfway through the
+functional programming course.
+
+00:01:24.270 --> 00:01:25.750 align:middle line:90%
+You're doing really well.
+
+00:01:25.750 --> 00:01:27.540 align:middle line:90%
+We've got three weeks left.
+
+00:01:27.540 --> 00:01:31.190 align:middle line:84%
+Please leave your comments
+in the section below,
+
+00:01:31.190 --> 00:01:34.310 align:middle line:84%
+and I look forward to
+seeing you again next week.
+
+00:01:34.310 --> 00:01:35.560 align:middle line:90%
+Bye
+
+00:01:35.560 --> 00:01:38.755 align:middle line:90%

@@ -1,0 +1,78 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.388 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.388 --> 00:00:07.630 align:middle line:90%
+
+
+00:00:07.630 --> 00:00:09.630 align:middle line:84%
+WIM VANDERBAUWHEDE: Hi,
+and welcome to week five
+
+00:00:09.630 --> 00:00:10.700 align:middle line:90%
+of the Haskell course.
+
+00:00:10.700 --> 00:00:13.850 align:middle line:84%
+As Larry Wall once said,
+one of the main virtues
+
+00:00:13.850 --> 00:00:17.475 align:middle line:90%
+of the programmer is laziness.
+
+00:00:17.475 --> 00:00:20.270 align:middle line:84%
+Laziness is also a key
+feature of Haskell.
+
+00:00:20.270 --> 00:00:23.720 align:middle line:84%
+And this week, you will learn
+what laziness and strictness
+
+00:00:23.720 --> 00:00:25.060 align:middle line:90%
+really mean.
+
+00:00:25.060 --> 00:00:27.870 align:middle line:84%
+So far, we have used
+types in our programs
+
+00:00:27.870 --> 00:00:31.250 align:middle line:84%
+but we have actually
+glossed over the details.
+
+00:00:31.250 --> 00:00:34.350 align:middle line:84%
+And in Haskell, types are
+a really essential part
+
+00:00:34.350 --> 00:00:38.230 align:middle line:84%
+of the language and the type
+system is very powerful.
+
+00:00:38.230 --> 00:00:42.220 align:middle line:84%
+This week, you will learn about
+function types, type variables,
+
+00:00:42.220 --> 00:00:43.890 align:middle line:90%
+and type classes.
+
+00:00:43.890 --> 00:00:45.916 align:middle line:84%
+We will also show
+you Haskell can
+
+00:00:45.916 --> 00:00:48.501 align:middle line:84%
+infer the types of
+expressions in a program
+
+00:00:48.501 --> 00:00:50.750 align:middle line:84%
+so that you don't have to
+provide the type information
+
+00:00:50.750 --> 00:00:53.400 align:middle line:90%
+for every single expression.
+
+00:00:53.400 --> 00:00:55.050 align:middle line:90%
+Enjoy and see you next week.
+
+00:00:55.050 --> 00:00:58.100 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:58.100 --> 00:00:59.258 align:middle line:90%

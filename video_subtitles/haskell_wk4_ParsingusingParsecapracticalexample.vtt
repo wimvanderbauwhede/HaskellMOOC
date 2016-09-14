@@ -1,0 +1,691 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.290 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.290 --> 00:00:05.170 align:middle line:90%
+
+
+00:00:05.170 --> 00:00:07.100 align:middle line:84%
+SPEAKER: In this
+tutorial, I want
+
+00:00:07.100 --> 00:00:10.320 align:middle line:84%
+to explain how you can use
+the Parsec parser combinator
+
+00:00:10.320 --> 00:00:12.950 align:middle line:84%
+library for practical
+parsing task.
+
+00:00:12.950 --> 00:00:16.059 align:middle line:90%
+
+
+00:00:16.059 --> 00:00:19.360 align:middle line:84%
+You have learned before how
+to use the Show typeclass
+
+00:00:19.360 --> 00:00:24.120 align:middle line:84%
+and the Show function to print
+out Haskell data structures.
+
+00:00:24.120 --> 00:00:26.540 align:middle line:84%
+So in this tutorial,
+I want to show you
+
+00:00:26.540 --> 00:00:28.760 align:middle line:84%
+how you can create a
+parser for the output
+
+00:00:28.760 --> 00:00:32.585 align:middle line:84%
+from the Show function and then
+turn it into XML, for example.
+
+00:00:32.585 --> 00:00:35.620 align:middle line:90%
+
+
+00:00:35.620 --> 00:00:38.100 align:middle line:84%
+So let's start by creating
+a few data structures.
+
+00:00:38.100 --> 00:00:43.240 align:middle line:90%
+
+
+00:00:43.240 --> 00:00:46.250 align:middle line:84%
+So we create a data
+structure PersonRecord just
+
+00:00:46.250 --> 00:00:48.510 align:middle line:84%
+as an example, where
+we have the name
+
+00:00:48.510 --> 00:00:51.620 align:middle line:84%
+of the person, the
+address, some integer
+
+00:00:51.620 --> 00:00:54.980 align:middle line:90%
+identifier, and a few labels.
+
+00:00:54.980 --> 00:01:00.170 align:middle line:84%
+So the Address is a data
+structure in its own right
+
+00:01:00.170 --> 00:01:01.500 align:middle line:90%
+and so are the labels.
+
+00:01:01.500 --> 00:01:04.989 align:middle line:84%
+They are an algebraic
+data structure like this.
+
+00:01:04.989 --> 00:01:07.490 align:middle line:90%
+
+
+00:01:07.490 --> 00:01:09.340 align:middle line:84%
+Note that we have
+used deriving Show
+
+00:01:09.340 --> 00:01:13.080 align:middle line:84%
+so that you don't have to
+write your own Show function.
+
+00:01:13.080 --> 00:01:16.410 align:middle line:84%
+By using this
+deriving clause, JHC
+
+00:01:16.410 --> 00:01:18.640 align:middle line:84%
+will automatically
+create the Show function
+
+00:01:18.640 --> 00:01:20.670 align:middle line:90%
+for these data structures.
+
+00:01:20.670 --> 00:01:24.320 align:middle line:84%
+And it is the output of this
+automatically created Show
+
+00:01:24.320 --> 00:01:28.130 align:middle line:84%
+function that we
+are going to parse.
+
+00:01:28.130 --> 00:01:32.130 align:middle line:84%
+So let's create a few
+instances of this data type
+
+00:01:32.130 --> 00:01:33.155 align:middle line:90%
+that we have here.
+
+00:01:33.155 --> 00:01:38.430 align:middle line:84%
+So let's say record
+1 is, and record 2.
+
+00:01:38.430 --> 00:01:50.410 align:middle line:84%
+And now we can use Show
+on these two records,
+
+00:01:50.410 --> 00:01:53.330 align:middle line:84%
+and this is the output
+that Show gives us.
+
+00:01:53.330 --> 00:01:55.850 align:middle line:84%
+So it's this output
+that we now want
+
+00:01:55.850 --> 00:02:01.370 align:middle line:84%
+to transform into XML
+using the Parsec library.
+
+00:02:01.370 --> 00:02:04.570 align:middle line:84%
+So let's go and build a parser
+using the Parsec library.
+
+00:02:04.570 --> 00:02:16.510 align:middle line:90%
+
+
+00:02:16.510 --> 00:02:18.050 align:middle line:84%
+I'm creating a
+module showParser,
+
+00:02:18.050 --> 00:02:21.240 align:middle line:84%
+which exports a single
+function ParseShow, which
+
+00:02:21.240 --> 00:02:25.240 align:middle line:84%
+is going to parse the output
+from Show and turn it into XML.
+
+00:02:25.240 --> 00:02:28.240 align:middle line:84%
+To use Parsec in
+practice, there are
+
+00:02:28.240 --> 00:02:30.820 align:middle line:84%
+a number of modules
+that you usually need.
+
+00:02:30.820 --> 00:02:34.460 align:middle line:84%
+First, we have the actual
+parser combinators,
+
+00:02:34.460 --> 00:02:39.290 align:middle line:84%
+then we have a library
+of token parsers,
+
+00:02:39.290 --> 00:02:43.280 align:middle line:84%
+and then we have a handy support
+library called Parsec.Language,
+
+00:02:43.280 --> 00:02:47.170 align:middle line:84%
+which defines the basics
+of the programming language
+
+00:02:47.170 --> 00:02:50.050 align:middle line:84%
+by defining what is an
+identifier, what is a comment,
+
+00:02:50.050 --> 00:02:50.940 align:middle line:90%
+and things like that.
+
+00:02:50.940 --> 00:02:55.650 align:middle line:84%
+But the Parsec.Token
+library exports
+
+00:02:55.650 --> 00:02:58.910 align:middle line:84%
+a function makeTokenParser
+and this function
+
+00:02:58.910 --> 00:03:00.582 align:middle line:90%
+takes a language definition.
+
+00:03:00.582 --> 00:03:03.040 align:middle line:84%
+Now, because we're not really
+having a programming language
+
+00:03:03.040 --> 00:03:05.180 align:middle line:84%
+where we use
+emptyDef, if you want
+
+00:03:05.180 --> 00:03:07.100 align:middle line:84%
+to know more about the
+language definitions,
+
+00:03:07.100 --> 00:03:10.560 align:middle line:84%
+I suggest you read
+the Parsec manual.
+
+00:03:10.560 --> 00:03:13.520 align:middle line:84%
+So then, given this
+lexer, so basically,
+
+00:03:13.520 --> 00:03:15.430 align:middle line:84%
+the definition of
+what are identifies
+
+00:03:15.430 --> 00:03:20.070 align:middle line:84%
+and so on in our system, we can
+now build a number of parsers
+
+00:03:20.070 --> 00:03:22.110 align:middle line:90%
+very conveniently like this.
+
+00:03:22.110 --> 00:03:27.550 align:middle line:84%
+So the library finds a number
+of parsers for a given lexer,
+
+00:03:27.550 --> 00:03:31.660 align:middle line:84%
+and now you can actually parse
+parentheses, brackets, braces,
+
+00:03:31.660 --> 00:03:34.510 align:middle line:84%
+comma-separate
+lists, white spaces,
+
+00:03:34.510 --> 00:03:38.680 align:middle line:84%
+symbols being
+predefined strings,
+
+00:03:38.680 --> 00:03:43.080 align:middle line:84%
+identifiers being whatever is
+an identifier in your language,
+
+00:03:43.080 --> 00:03:44.187 align:middle line:90%
+integers, and so on.
+
+00:03:44.187 --> 00:03:46.020 align:middle line:84%
+There are a lot more
+of them, and again, you
+
+00:03:46.020 --> 00:03:48.100 align:middle line:90%
+can look at the Parsec library.
+
+00:03:48.100 --> 00:03:52.250 align:middle line:84%
+So with this boilerplate, we can
+start making the actual parser,
+
+00:03:52.250 --> 00:03:54.720 align:middle line:84%
+and this will be a parser
+that takes a string, being
+
+00:03:54.720 --> 00:03:58.370 align:middle line:84%
+the output from
+the Show function,
+
+00:03:58.370 --> 00:04:00.550 align:middle line:84%
+and it produces a
+new string, which
+
+00:04:00.550 --> 00:04:04.850 align:middle line:84%
+is the XML representation
+of this input string.
+
+00:04:04.850 --> 00:04:10.080 align:middle line:84%
+So we have a function with
+signature, ParseShow, string
+
+00:04:10.080 --> 00:04:12.300 align:middle line:90%
+to string.
+
+00:04:12.300 --> 00:04:15.710 align:middle line:84%
+And the way this
+works is that we
+
+00:04:15.710 --> 00:04:20.120 align:middle line:84%
+have a function that creates--
+that is our actual parser,
+
+00:04:20.120 --> 00:04:22.970 align:middle line:84%
+and this parser is a monadic
+parser, which means, basically,
+
+00:04:22.970 --> 00:04:27.640 align:middle line:84%
+that it consists of functions
+that you put together.
+
+00:04:27.640 --> 00:04:31.810 align:middle line:84%
+So you actually produce
+one big combined function,
+
+00:04:31.810 --> 00:04:35.910 align:middle line:84%
+and then you apply that
+function to the string.
+
+00:04:35.910 --> 00:04:37.620 align:middle line:84%
+And to apply this
+function to the string,
+
+00:04:37.620 --> 00:04:41.460 align:middle line:84%
+we use another
+function, run_parser,
+
+00:04:41.460 --> 00:04:43.230 align:middle line:90%
+that looks as follows.
+
+00:04:43.230 --> 00:04:47.820 align:middle line:84%
+So run_parser is independent of
+the actual input of the parser.
+
+00:04:47.820 --> 00:04:52.290 align:middle line:84%
+So you have a parser of a
+certain data type and a string,
+
+00:04:52.290 --> 00:04:56.750 align:middle line:84%
+and it produces this output
+data type that you desire.
+
+00:04:56.750 --> 00:04:59.370 align:middle line:84%
+So in our case, the data type
+that we desire is a string,
+
+00:04:59.370 --> 00:05:01.840 align:middle line:90%
+so c here is a string.
+
+00:05:01.840 --> 00:05:07.620 align:middle line:84%
+And what it does is it applies
+our parser to an input string,
+
+00:05:07.620 --> 00:05:10.700 align:middle line:84%
+and then if there's an
+error, it reports an error.
+
+00:05:10.700 --> 00:05:14.630 align:middle line:84%
+Or if there's no error,
+it returns the result.
+
+00:05:14.630 --> 00:05:17.250 align:middle line:84%
+So this function, run_parser,
+is kind of generic.
+
+00:05:17.250 --> 00:05:19.140 align:middle line:90%
+So you can always reuse it.
+
+00:05:19.140 --> 00:05:22.550 align:middle line:84%
+In our case, the parser
+that we want to build,
+
+00:05:22.550 --> 00:05:26.540 align:middle line:84%
+we will call showParser, and
+that's a parser of string.
+
+00:05:26.540 --> 00:05:28.260 align:middle line:90%
+So it returns a string.
+
+00:05:28.260 --> 00:05:30.710 align:middle line:84%
+So with this showParser
+and run_parser,
+
+00:05:30.710 --> 00:05:34.400 align:middle line:84%
+we can now build our
+actual ParseShow function.
+
+00:05:34.400 --> 00:05:44.160 align:middle line:84%
+So we say, ParseShow
+equals simply like this.
+
+00:05:44.160 --> 00:05:48.010 align:middle line:84%
+So maybe we want to make this
+a little bit more complete.
+
+00:05:48.010 --> 00:05:52.690 align:middle line:84%
+To emit valid XML, we can tag
+this with an actual XML header
+
+00:05:52.690 --> 00:05:53.300 align:middle line:90%
+string.
+
+00:05:53.300 --> 00:05:58.850 align:middle line:84%
+So let's say, we define
+the XML header string as,
+
+00:05:58.850 --> 00:06:01.832 align:middle line:84%
+and then we can actually change
+this function a little bit.
+
+00:06:01.832 --> 00:06:06.469 align:middle line:90%
+
+
+00:06:06.469 --> 00:06:08.010 align:middle line:84%
+In the opening type,
+we must actually
+
+00:06:08.010 --> 00:06:09.700 align:middle line:84%
+create, not just the
+name of the type,
+
+00:06:09.700 --> 00:06:12.110 align:middle line:90%
+but also the list of attributes.
+
+00:06:12.110 --> 00:06:14.470 align:middle line:84%
+So the list of
+attributes is a list
+
+00:06:14.470 --> 00:06:17.720 align:middle line:84%
+of tuples for the
+name of the attribute
+
+00:06:17.720 --> 00:06:21.280 align:middle line:90%
+and the value of the attribute.
+
+00:06:21.280 --> 00:06:27.740 align:middle line:84%
+And so what we do is we apply
+a map of a function that turns
+
+00:06:27.740 --> 00:06:33.190 align:middle line:84%
+this tuple into a string,
+where we have the key,
+
+00:06:33.190 --> 00:06:36.050 align:middle line:84%
+and then equals
+quote, , value, quote.
+
+00:06:36.050 --> 00:06:39.710 align:middle line:84%
+Now, so this approach here for
+string concatenation is very
+
+00:06:39.710 --> 00:06:43.410 align:middle line:84%
+convenient, rather than using
+the ++ in terms of readability.
+
+00:06:43.410 --> 00:06:45.650 align:middle line:84%
+So concat c will
+simply concatenate
+
+00:06:45.650 --> 00:06:47.560 align:middle line:90%
+all of the elements of a list.
+
+00:06:47.560 --> 00:06:49.750 align:middle line:84%
+With these [INAUDIBLE]
+manipulation functions,
+
+00:06:49.750 --> 00:06:52.230 align:middle line:84%
+we are almost ready to
+create the actual parses.
+
+00:06:52.230 --> 00:06:55.220 align:middle line:84%
+There's another function
+that is very handy to use.
+
+00:06:55.220 --> 00:06:57.430 align:middle line:84%
+It's a function that
+will join elements
+
+00:06:57.430 --> 00:07:01.140 align:middle line:90%
+of a list using newline.
+
+00:07:01.140 --> 00:07:04.860 align:middle line:90%
+So let's build that function.
+
+00:07:04.860 --> 00:07:07.180 align:middle line:90%
+We have join.
+
+00:07:07.180 --> 00:07:08.850 align:middle line:84%
+And I use the
+function intercalate.
+
+00:07:08.850 --> 00:07:10.760 align:middle line:84%
+So intercalate is
+a function that
+
+00:07:10.760 --> 00:07:14.270 align:middle line:84%
+takes all the elements of a
+list and joins them together,
+
+00:07:14.270 --> 00:07:16.680 align:middle line:84%
+interspersed with the
+particular character that
+
+00:07:16.680 --> 00:07:19.220 align:middle line:84%
+is the first argument
+of this function.
+
+00:07:19.220 --> 00:07:21.320 align:middle line:84%
+But this function
+intercalate is not
+
+00:07:21.320 --> 00:07:23.690 align:middle line:84%
+part of the standard
+prelude, so we
+
+00:07:23.690 --> 00:07:26.530 align:middle line:84%
+have to add it to
+our import list here.
+
+00:07:26.530 --> 00:07:29.170 align:middle line:84%
+With all this machinery
+ready, we can now
+
+00:07:29.170 --> 00:07:32.100 align:middle line:90%
+create the rest of our parses.
+
+00:07:32.100 --> 00:07:36.180 align:middle line:84%
+For instance, if we
+want to parse a list,
+
+00:07:36.180 --> 00:07:40.490 align:middle line:84%
+so we parse brackets, and
+then a comma-separated value
+
+00:07:40.490 --> 00:07:42.770 align:middle line:84%
+of whatever can
+be inside the list
+
+00:07:42.770 --> 00:07:44.960 align:middle line:90%
+till we call showParser again.
+
+00:07:44.960 --> 00:07:50.820 align:middle line:84%
+And the result is the list of
+the elements that we parsed.
+
+00:07:50.820 --> 00:07:54.950 align:middle line:84%
+What we do then is we tag
+this list with the type list,
+
+00:07:54.950 --> 00:07:56.870 align:middle line:84%
+and then we join
+them with newlines,
+
+00:07:56.870 --> 00:08:01.370 align:middle line:84%
+and each element is surrounded
+by a type list element.
+
+00:08:01.370 --> 00:08:03.840 align:middle line:84%
+The other parsers
+are quite similar.
+
+00:08:03.840 --> 00:08:06.760 align:middle line:90%
+So I'll just put them all here.
+
+00:08:06.760 --> 00:08:10.200 align:middle line:84%
+We have a tuple_parser,
+which parses parentheses
+
+00:08:10.200 --> 00:08:11.310 align:middle line:90%
+and then comma-separated.
+
+00:08:11.310 --> 00:08:15.420 align:middle line:84%
+So that's a tuple, and then
+drops it into tuple tags.
+
+00:08:15.420 --> 00:08:17.110 align:middle line:84%
+We have the
+record_parser, which first
+
+00:08:17.110 --> 00:08:19.970 align:middle line:84%
+parses the name of the
+record, and then it has bases,
+
+00:08:19.970 --> 00:08:22.040 align:middle line:84%
+and then it has a
+comma-separated list
+
+00:08:22.040 --> 00:08:22.990 align:middle line:90%
+of key values.
+
+00:08:22.990 --> 00:08:26.790 align:middle line:84%
+So for key values, I have an
+additional parser, kvparser,
+
+00:08:26.790 --> 00:08:30.450 align:middle line:84%
+here, which parses an
+identifier, equal sign,
+
+00:08:30.450 --> 00:08:31.970 align:middle line:90%
+and then whatever.
+
+00:08:31.970 --> 00:08:35.570 align:middle line:84%
+And then it returns this
+wrapped in a tag element,
+
+00:08:35.570 --> 00:08:37.770 align:middle line:90%
+and then it has keys and values.
+
+00:08:37.770 --> 00:08:39.789 align:middle line:84%
+And finally, we parse
+the type_identifier.
+
+00:08:39.789 --> 00:08:44.670 align:middle line:84%
+So type_identifiers
+are defined as strings
+
+00:08:44.670 --> 00:08:47.500 align:middle line:84%
+that start with an uppercase
+letter and then one
+
+00:08:47.500 --> 00:08:49.420 align:middle line:90%
+or more [INAUDIBLE] letters.
+
+00:08:49.420 --> 00:08:53.004 align:middle line:84%
+This is our Parsec that we
+use to parse the labels.
+
+00:08:53.004 --> 00:08:54.420 align:middle line:84%
+So with all these
+things together,
+
+00:08:54.420 --> 00:08:59.650 align:middle line:84%
+we can actually parse a Show
+output and turn it into XML.
+
+00:08:59.650 --> 00:09:02.970 align:middle line:84%
+So of course, we need to change
+our main program a little bit
+
+00:09:02.970 --> 00:09:04.680 align:middle line:90%
+to make that happen.
+
+00:09:04.680 --> 00:09:09.660 align:middle line:84%
+First of all, we must import
+the parser that we just wrote.
+
+00:09:09.660 --> 00:09:13.420 align:middle line:84%
+And then, obviously, we must
+use it, but that's very simple.
+
+00:09:13.420 --> 00:09:18.257 align:middle line:84%
+So we change the main
+program just a little bit.
+
+00:09:18.257 --> 00:09:21.730 align:middle line:90%
+
+
+00:09:21.730 --> 00:09:25.530 align:middle line:84%
+So we call Show on
+the records that we
+
+00:09:25.530 --> 00:09:28.010 align:middle line:84%
+created and put the result
+in the record string.
+
+00:09:28.010 --> 00:09:30.300 align:middle line:84%
+We call ParseShow
+on the record string
+
+00:09:30.300 --> 00:09:31.542 align:middle line:90%
+and that's our main proof.
+
+00:09:31.542 --> 00:09:35.150 align:middle line:90%
+
+
+00:09:35.150 --> 00:09:38.790 align:middle line:90%
+So now we can try this out.
+
+00:09:38.790 --> 00:09:42.840 align:middle line:84%
+And, indeed, we have
+created an XML document
+
+00:09:42.840 --> 00:09:47.970 align:middle line:84%
+that represents the output of
+Show called on our custom data
+
+00:09:47.970 --> 00:09:48.680 align:middle line:90%
+structure.
+
+00:09:48.680 --> 00:09:51.570 align:middle line:84%
+So this is an example
+of how you can
+
+00:09:51.570 --> 00:09:56.880 align:middle line:84%
+use Parsec to easily transform
+strings into different strings,
+
+00:09:56.880 --> 00:09:59.210 align:middle line:90%
+for instance, XML documents.
+
+00:09:59.210 --> 00:10:02.791 align:middle line:90%

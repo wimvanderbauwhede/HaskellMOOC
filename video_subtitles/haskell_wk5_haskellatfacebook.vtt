@@ -1,0 +1,779 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.964 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:02.964 --> 00:00:07.410 align:middle line:90%
+
+
+00:00:07.410 --> 00:00:10.270 align:middle line:84%
+INTERVIEWER: Katie, thank you
+for inviting me to Facebook
+
+00:00:10.270 --> 00:00:11.074 align:middle line:90%
+to meet you and--
+
+00:00:11.074 --> 00:00:11.990 align:middle line:90%
+KATIE: You're welcome.
+
+00:00:11.990 --> 00:00:13.781 align:middle line:84%
+INTERVIEWER: --to see
+the sights of London.
+
+00:00:13.781 --> 00:00:15.122 align:middle line:90%
+It's great being here.
+
+00:00:15.122 --> 00:00:16.580 align:middle line:84%
+I want you to tell
+me a little bit,
+
+00:00:16.580 --> 00:00:19.330 align:middle line:84%
+please, about how you got
+into Haskell programming,
+
+00:00:19.330 --> 00:00:23.150 align:middle line:84%
+where you found out about it,
+and why you like it so much.
+
+00:00:23.150 --> 00:00:23.990 align:middle line:90%
+KATIE: OK.
+
+00:00:23.990 --> 00:00:27.310 align:middle line:84%
+So I learned about Haskell from
+a professor at my university.
+
+00:00:27.310 --> 00:00:29.950 align:middle line:84%
+Like most universities,
+we have that one professor
+
+00:00:29.950 --> 00:00:31.570 align:middle line:90%
+who's really crazy about it.
+
+00:00:31.570 --> 00:00:32.024 align:middle line:90%
+INTERVIEWER: Oh, right.
+
+00:00:32.024 --> 00:00:32.523 align:middle line:90%
+Good.
+
+00:00:32.523 --> 00:00:34.800 align:middle line:84%
+KATIE: But unlike most people,
+I didn't learn about it
+
+00:00:34.800 --> 00:00:36.580 align:middle line:90%
+in official classes.
+
+00:00:36.580 --> 00:00:38.389 align:middle line:84%
+The classes that
+included Haskell
+
+00:00:38.389 --> 00:00:40.180 align:middle line:84%
+were unfortunately cut
+from the curriculum.
+
+00:00:40.180 --> 00:00:41.221 align:middle line:90%
+INTERVIEWER: Oh, how sad.
+
+00:00:41.221 --> 00:00:43.500 align:middle line:84%
+KATIE: And this
+professor-- very, very sad.
+
+00:00:43.500 --> 00:00:45.000 align:middle line:84%
+This professor
+was so passionate,
+
+00:00:45.000 --> 00:00:47.920 align:middle line:84%
+he offered to teach
+interested students
+
+00:00:47.920 --> 00:00:49.350 align:middle line:90%
+in the library on his own time.
+
+00:00:49.350 --> 00:00:51.850 align:middle line:84%
+So we had little secret
+sessions in the library
+
+00:00:51.850 --> 00:00:54.330 align:middle line:84%
+to learn about functional
+programming and also
+
+00:00:54.330 --> 00:00:55.160 align:middle line:90%
+logic programming.
+
+00:00:55.160 --> 00:00:57.406 align:middle line:84%
+So he taught about a bit
+of Scheme, a bit of Prolog,
+
+00:00:57.406 --> 00:00:58.780 align:middle line:84%
+and also some
+Haskell, and that's
+
+00:00:58.780 --> 00:01:00.156 align:middle line:90%
+how I was first exposed to it.
+
+00:01:00.156 --> 00:01:02.155 align:middle line:84%
+INTERVIEWER: Wow, the
+secret functional society.
+
+00:01:02.155 --> 00:01:03.750 align:middle line:90%
+That's good, isn't it?
+
+00:01:03.750 --> 00:01:06.950 align:middle line:84%
+Haskell is used quite
+extensively at Facebook,
+
+00:01:06.950 --> 00:01:07.470 align:middle line:90%
+isn't it?
+
+00:01:07.470 --> 00:01:09.053 align:middle line:84%
+Can you tell us a
+little bit about how
+
+00:01:09.053 --> 00:01:12.310 align:middle line:84%
+you use Haskell in your
+day-to-day software
+
+00:01:12.310 --> 00:01:12.910 align:middle line:90%
+development?
+
+00:01:12.910 --> 00:01:13.410 align:middle line:90%
+KATIE: Yes.
+
+00:01:13.410 --> 00:01:17.520 align:middle line:84%
+I work on a system called
+Sigma, which is basically
+
+00:01:17.520 --> 00:01:20.630 align:middle line:84%
+a rules engine for catching
+bad things on the site, things
+
+00:01:20.630 --> 00:01:22.800 align:middle line:90%
+like spam, for example.
+
+00:01:22.800 --> 00:01:26.940 align:middle line:84%
+And it's a C++ Haskell hybrid,
+but it runs rules that are
+
+00:01:26.940 --> 00:01:31.350 align:middle line:84%
+written in Haskell in EDSL,
+embedded domain-specific
+
+00:01:31.350 --> 00:01:34.780 align:middle line:84%
+language, called Haxl, which is
+open source so people can check
+
+00:01:34.780 --> 00:01:35.690 align:middle line:90%
+that out.
+
+00:01:35.690 --> 00:01:36.410 align:middle line:84%
+INTERVIEWER: How
+do you spell Haxl?
+
+00:01:36.410 --> 00:01:36.909 align:middle line:90%
+Sorry.
+
+00:01:36.909 --> 00:01:38.104 align:middle line:90%
+KATIE: It's H-A-X-L.
+
+00:01:38.104 --> 00:01:38.770 align:middle line:90%
+INTERVIEWER: OK.
+
+00:01:38.770 --> 00:01:39.670 align:middle line:90%
+We'll [INAUDIBLE] it.
+
+00:01:39.670 --> 00:01:40.170 align:middle line:90%
+KATIE: Haxl.
+
+00:01:40.170 --> 00:01:40.950 align:middle line:90%
+INTERVIEWER: Cool.
+
+00:01:40.950 --> 00:01:44.700 align:middle line:84%
+KATIE: And this system runs more
+than a million queries a second
+
+00:01:44.700 --> 00:01:46.480 align:middle line:90%
+to fight badness on the site.
+
+00:01:46.480 --> 00:01:50.770 align:middle line:84%
+So Haskell is being used in
+the real world in production
+
+00:01:50.770 --> 00:01:54.562 align:middle line:84%
+to help make Facebook
+a nicer place.
+
+00:01:54.562 --> 00:01:56.270 align:middle line:84%
+INTERVIEWER: And there
+are lots of people
+
+00:01:56.270 --> 00:01:57.740 align:middle line:90%
+using Haskell at Facebook.
+
+00:01:57.740 --> 00:02:00.750 align:middle line:90%
+KATIE: Yeah, not just me.
+
+00:02:00.750 --> 00:02:02.640 align:middle line:84%
+We have dozens of
+people here who
+
+00:02:02.640 --> 00:02:06.390 align:middle line:84%
+are writing these rules
+in Haskell and also people
+
+00:02:06.390 --> 00:02:09.160 align:middle line:84%
+that are working on this
+project, of course, as well.
+
+00:02:09.160 --> 00:02:10.868 align:middle line:84%
+INTERVIEWER: Can you
+tell us a little bit
+
+00:02:10.868 --> 00:02:13.870 align:middle line:84%
+about the Commercial Users
+of Functional Programming
+
+00:02:13.870 --> 00:02:14.440 align:middle line:90%
+Conference?
+
+00:02:14.440 --> 00:02:15.960 align:middle line:84%
+You're involved
+with that, I think,
+
+00:02:15.960 --> 00:02:19.560 align:middle line:84%
+and that's something
+that showcases
+
+00:02:19.560 --> 00:02:22.180 align:middle line:84%
+functional programming in what
+you might call the real world,
+
+00:02:22.180 --> 00:02:23.070 align:middle line:90%
+I suppose.
+
+00:02:23.070 --> 00:02:23.570 align:middle line:90%
+KATIE: Yes.
+
+00:02:23.570 --> 00:02:25.900 align:middle line:84%
+And it's been going for
+quite a number of years now,
+
+00:02:25.900 --> 00:02:27.660 align:middle line:90%
+I think over a decade.
+
+00:02:27.660 --> 00:02:30.360 align:middle line:84%
+So this is run as part of
+our ICFP, the International
+
+00:02:30.360 --> 00:02:32.870 align:middle line:84%
+Conference of
+Functional Programming,
+
+00:02:32.870 --> 00:02:36.930 align:middle line:84%
+and I've been co-chairing
+it for this year
+
+00:02:36.930 --> 00:02:38.502 align:middle line:90%
+and the previous year.
+
+00:02:38.502 --> 00:02:40.210 align:middle line:84%
+And we've got some
+great talks coming up,
+
+00:02:40.210 --> 00:02:42.804 align:middle line:84%
+so if anyone wants
+to head to Japan.
+
+00:02:42.804 --> 00:02:43.970 align:middle line:90%
+INTERVIEWER: A nice holiday.
+
+00:02:43.970 --> 00:02:45.570 align:middle line:84%
+A nice functional
+holiday in Japan.
+
+00:02:45.570 --> 00:02:46.720 align:middle line:90%
+Very good.
+
+00:02:46.720 --> 00:02:47.340 align:middle line:90%
+OK.
+
+00:02:47.340 --> 00:02:48.962 align:middle line:84%
+KATIE: But it's to
+the stage now where
+
+00:02:48.962 --> 00:02:50.170 align:middle line:90%
+it's no longer a niche thing.
+
+00:02:50.170 --> 00:02:56.399 align:middle line:84%
+I think when CFP started it was
+people just finding camaraderie
+
+00:02:56.399 --> 00:02:58.440 align:middle line:84%
+in other people having
+the frustrating experience
+
+00:02:58.440 --> 00:03:00.600 align:middle line:84%
+of trying to get FP
+into their workplace
+
+00:03:00.600 --> 00:03:04.060 align:middle line:84%
+and trying to make it work
+and convince their employers.
+
+00:03:04.060 --> 00:03:05.940 align:middle line:84%
+I think we're well
+past that now.
+
+00:03:05.940 --> 00:03:08.570 align:middle line:84%
+INTERVIEWER: So kind of the
+battle is almost half won,
+
+00:03:08.570 --> 00:03:09.860 align:middle line:90%
+you're saying already.
+
+00:03:09.860 --> 00:03:12.460 align:middle line:84%
+KATIE: Well, certainly there
+are lots of big companies
+
+00:03:12.460 --> 00:03:15.014 align:middle line:84%
+like Facebook that people
+can point to to say, well,
+
+00:03:15.014 --> 00:03:16.430 align:middle line:84%
+why can't we use
+it at my company?
+
+00:03:16.430 --> 00:03:17.870 align:middle line:90%
+Facebook's using it.
+
+00:03:17.870 --> 00:03:20.140 align:middle line:90%
+And there are other big names.
+
+00:03:20.140 --> 00:03:23.420 align:middle line:84%
+So a lot of that
+battle is won now.
+
+00:03:23.420 --> 00:03:26.350 align:middle line:84%
+And the event has changed
+focus as a result of that.
+
+00:03:26.350 --> 00:03:28.050 align:middle line:84%
+INTERVIEWER: On
+our course, Katie,
+
+00:03:28.050 --> 00:03:30.550 align:middle line:90%
+we're learning about monads.
+
+00:03:30.550 --> 00:03:35.100 align:middle line:84%
+We've looked at Maybe
+and the IO monad so far.
+
+00:03:35.100 --> 00:03:39.320 align:middle line:84%
+I'd like you to try and convince
+that monads aren't scary.
+
+00:03:39.320 --> 00:03:41.430 align:middle line:90%
+KATIE: Oh, OK.
+
+00:03:41.430 --> 00:03:43.840 align:middle line:84%
+So why do people even think
+monads are scary, right?
+
+00:03:43.840 --> 00:03:45.740 align:middle line:84%
+Maybe, firstly,
+because that have
+
+00:03:45.740 --> 00:03:47.730 align:middle line:90%
+an unfamiliar name-- monad.
+
+00:03:47.730 --> 00:03:50.054 align:middle line:84%
+People probably haven't
+heard that word before, sure.
+
+00:03:50.054 --> 00:03:51.970 align:middle line:84%
+And also because there's
+this bit of a cottage
+
+00:03:51.970 --> 00:03:54.180 align:middle line:84%
+industry of writing monad
+tutorials on the internet,
+
+00:03:54.180 --> 00:03:56.430 align:middle line:84%
+and people think, oh, if it
+needs all these tutorials,
+
+00:03:56.430 --> 00:03:57.480 align:middle line:90%
+it must be hard.
+
+00:03:57.480 --> 00:03:59.150 align:middle line:90%
+Not true, not true at all.
+
+00:03:59.150 --> 00:04:01.275 align:middle line:84%
+All monads are are
+basically a pattern.
+
+00:04:01.275 --> 00:04:03.380 align:middle line:84%
+It's the simplest way of
+explaining what it is.
+
+00:04:03.380 --> 00:04:04.370 align:middle line:90%
+INTERVIEWER: OK.
+
+00:04:04.370 --> 00:04:06.540 align:middle line:84%
+KATIE: Monads are useful,
+because we believe
+
+00:04:06.540 --> 00:04:09.170 align:middle line:84%
+in the DRY principle as
+good programmers-- Don't
+
+00:04:09.170 --> 00:04:10.340 align:middle line:90%
+Repeat Yourself.
+
+00:04:10.340 --> 00:04:13.490 align:middle line:84%
+And monads are simply a way
+of not repeating yourself.
+
+00:04:13.490 --> 00:04:17.579 align:middle line:84%
+It happens to be that there
+are many quite disparate things
+
+00:04:17.579 --> 00:04:22.502 align:middle line:84%
+actually, as disparate as Maybe
+and IO and Lists and a number
+
+00:04:22.502 --> 00:04:23.210 align:middle line:90%
+of other things--
+
+00:04:23.210 --> 00:04:25.126 align:middle line:84%
+INTERVIEWER: But we'll
+come to that next week.
+
+00:04:25.126 --> 00:04:27.340 align:middle line:84%
+KATIE: --yes, yes-- that
+fit a particular pattern.
+
+00:04:27.340 --> 00:04:30.334 align:middle line:84%
+And that means that
+you can write code once
+
+00:04:30.334 --> 00:04:32.000 align:middle line:84%
+for all the things
+that fit that pattern
+
+00:04:32.000 --> 00:04:32.890 align:middle line:90%
+and not repeat yourself.
+
+00:04:32.890 --> 00:04:34.360 align:middle line:84%
+And that's basically
+it in a nutshell.
+
+00:04:34.360 --> 00:04:36.620 align:middle line:84%
+And monad, of course, is only
+one of these abstractions
+
+00:04:36.620 --> 00:04:37.390 align:middle line:90%
+that we have in Haskell.
+
+00:04:37.390 --> 00:04:38.350 align:middle line:90%
+There are many others too.
+
+00:04:38.350 --> 00:04:38.690 align:middle line:90%
+INTERVIEWER: OK.
+
+00:04:38.690 --> 00:04:39.869 align:middle line:90%
+KATIE: And they're useful.
+
+00:04:39.869 --> 00:04:40.452 align:middle line:90%
+And that's it.
+
+00:04:40.452 --> 00:04:41.650 align:middle line:84%
+That's really all
+there is to it.
+
+00:04:41.650 --> 00:04:43.483 align:middle line:84%
+INTERVIEWER: I feel
+slightly reassured then.
+
+00:04:43.483 --> 00:04:44.000 align:middle line:90%
+Thank you.
+
+00:04:44.000 --> 00:04:44.305 align:middle line:90%
+OK.
+
+00:04:44.305 --> 00:04:45.570 align:middle line:84%
+KATIE: Glad I could
+be of service.
+
+00:04:45.570 --> 00:04:47.090 align:middle line:84%
+INTERVIEWER: We're going to
+go into a lot more detail
+
+00:04:47.090 --> 00:04:48.020 align:middle line:90%
+next week.
+
+00:04:48.020 --> 00:04:50.280 align:middle line:84%
+But you've got a great
+video about monads
+
+00:04:50.280 --> 00:04:52.490 align:middle line:90%
+are superheroes online.
+
+00:04:52.490 --> 00:04:54.640 align:middle line:84%
+Can you ever give us a
+two-bit picture of that,
+
+00:04:54.640 --> 00:04:57.920 align:middle line:84%
+and we'll post a YouTube
+link on our website below.
+
+00:04:57.920 --> 00:04:58.950 align:middle line:90%
+KATIE: OK, sure.
+
+00:04:58.950 --> 00:05:01.436 align:middle line:84%
+First, I should clarify when
+I say monads are superheroes,
+
+00:05:01.436 --> 00:05:03.060 align:middle line:84%
+I'm not trying to
+add another analogy--
+
+00:05:03.060 --> 00:05:03.860 align:middle line:90%
+INTERVIEWER: Oh, right.
+
+00:05:03.860 --> 00:05:06.270 align:middle line:84%
+KATIE: --to all the analogies
+you already see out there
+
+00:05:06.270 --> 00:05:08.210 align:middle line:84%
+about monads, because
+I believe it's better
+
+00:05:08.210 --> 00:05:11.697 align:middle line:84%
+to go from the concrete
+and see lots of examples
+
+00:05:11.697 --> 00:05:13.530 align:middle line:84%
+and then build up your
+own intuition of what
+
+00:05:13.530 --> 00:05:14.700 align:middle line:90%
+the abstraction means.
+
+00:05:14.700 --> 00:05:17.270 align:middle line:84%
+So you're not going to know
+what monads are just by hearing
+
+00:05:17.270 --> 00:05:18.890 align:middle line:90%
+that they're like superheroes.
+
+00:05:18.890 --> 00:05:22.040 align:middle line:84%
+But in the talk, I basically
+just talk about what
+
+00:05:22.040 --> 00:05:24.418 align:middle line:90%
+the key aspects of a monad are.
+
+00:05:24.418 --> 00:05:27.134 align:middle line:84%
+So monads are basically--
+there's a type class.
+
+00:05:27.134 --> 00:05:28.800 align:middle line:84%
+I understand you've
+already taught that.
+
+00:05:28.800 --> 00:05:29.120 align:middle line:90%
+INTERVIEWER: Yes.
+
+00:05:29.120 --> 00:05:29.730 align:middle line:90%
+KATIE: So you can say this.
+
+00:05:29.730 --> 00:05:30.438 align:middle line:90%
+INTERVIEWER: Yes.
+
+00:05:30.438 --> 00:05:32.856 align:middle line:84%
+KATIE: A type class that has
+two-- there's another way
+
+00:05:32.856 --> 00:05:34.230 align:middle line:84%
+to define it with
+three-- but two
+
+00:05:34.230 --> 00:05:36.000 align:middle line:90%
+or three key functions on it.
+
+00:05:36.000 --> 00:05:38.290 align:middle line:84%
+And it needs to
+follow some laws,
+
+00:05:38.290 --> 00:05:40.160 align:middle line:90%
+the way that you implement this.
+
+00:05:40.160 --> 00:05:41.614 align:middle line:90%
+That's really the crux of it.
+
+00:05:41.614 --> 00:05:42.280 align:middle line:90%
+INTERVIEWER: OK.
+
+00:05:42.280 --> 00:05:43.390 align:middle line:90%
+More next week.
+
+00:05:43.390 --> 00:05:44.114 align:middle line:90%
+KATIE: Yes, sure.
+
+00:05:44.114 --> 00:05:45.780 align:middle line:84%
+I'm sure you'll go
+into all the details.
+
+00:05:45.780 --> 00:05:47.790 align:middle line:84%
+INTERVIEWER: We will,
+yes, excruciatingly.
+
+00:05:47.790 --> 00:05:49.190 align:middle line:90%
+Thank you.
+
+00:05:49.190 --> 00:05:50.810 align:middle line:90%
+Good.
+
+00:05:50.810 --> 00:05:53.430 align:middle line:84%
+If someone on our course
+came along and said,
+
+00:05:53.430 --> 00:05:57.350 align:middle line:84%
+right, will
+functional programming
+
+00:05:57.350 --> 00:06:00.480 align:middle line:90%
+make me more employable?
+
+00:06:00.480 --> 00:06:01.810 align:middle line:90%
+What would you say?
+
+00:06:01.810 --> 00:06:04.300 align:middle line:90%
+KATIE: This is a good question.
+
+00:06:04.300 --> 00:06:06.623 align:middle line:84%
+I think that a lot of
+employers out there
+
+00:06:06.623 --> 00:06:11.590 align:middle line:84%
+are starting to twig to the fact
+that people who are interested
+
+00:06:11.590 --> 00:06:15.010 align:middle line:84%
+enough in programming to
+learn something that's not
+
+00:06:15.010 --> 00:06:17.180 align:middle line:84%
+the mainstream paradigm
+like functional programming
+
+00:06:17.180 --> 00:06:19.600 align:middle line:84%
+tend to be good-quality
+programmers.
+
+00:06:19.600 --> 00:06:22.110 align:middle line:84%
+So I think, in general,
+it serves you well
+
+00:06:22.110 --> 00:06:25.990 align:middle line:84%
+to have those skills as
+part of your toolset.
+
+00:06:25.990 --> 00:06:28.790 align:middle line:84%
+There aren't as many purely
+functional programming jobs
+
+00:06:28.790 --> 00:06:30.740 align:middle line:84%
+out there as there are
+other jobs, for sure,
+
+00:06:30.740 --> 00:06:31.720 align:middle line:90%
+but they do exist.
+
+00:06:31.720 --> 00:06:34.596 align:middle line:84%
+And it seems that their
+numbers are growing.
+
+00:06:34.596 --> 00:06:35.970 align:middle line:84%
+So, yeah, I think
+it's definitely
+
+00:06:35.970 --> 00:06:37.435 align:middle line:90%
+a benefit to have those skills.
+
+00:06:37.435 --> 00:06:38.810 align:middle line:84%
+Most importantly,
+though, I think
+
+00:06:38.810 --> 00:06:40.510 align:middle line:84%
+it's great to learn
+functional programming just
+
+00:06:40.510 --> 00:06:42.812 align:middle line:84%
+to learn how to think in a
+different way about problems.
+
+00:06:42.812 --> 00:06:43.430 align:middle line:90%
+INTERVIEWER: Yeah.
+
+00:06:43.430 --> 00:06:43.650 align:middle line:90%
+Good.
+
+00:06:43.650 --> 00:06:45.733 align:middle line:84%
+We've been trying to
+emphasize that on our course.
+
+00:06:45.733 --> 00:06:48.343 align:middle line:84%
+Thinking functionally
+is a good skill to have,
+
+00:06:48.343 --> 00:06:50.450 align:middle line:84%
+even if you don't use
+functional languages.
+
+00:06:50.450 --> 00:06:53.945 align:middle line:84%
+Katie, tell us about the
+big gong that's next to you.
+
+00:06:53.945 --> 00:06:54.902 align:middle line:90%
+What's this for?
+
+00:06:54.902 --> 00:06:56.360 align:middle line:84%
+KATIE: So this is
+a tradition here,
+
+00:06:56.360 --> 00:06:57.990 align:middle line:84%
+that when you ship
+something, you
+
+00:06:57.990 --> 00:07:01.431 align:middle line:84%
+get to come and hit the gong
+so the whole office can hear
+
+00:07:01.431 --> 00:07:02.680 align:middle line:90%
+that something's been shipped.
+
+00:07:02.680 --> 00:07:04.440 align:middle line:90%
+INTERVIEWER: It's quite loud.
+
+00:07:04.440 --> 00:07:05.140 align:middle line:90%
+KATIE: It is.
+
+00:07:05.140 --> 00:07:07.500 align:middle line:90%
+Do you want me to demonstrate?
+
+00:07:07.500 --> 00:07:10.510 align:middle line:84%
+INTERVIEWER: Well, why
+don't we ship our interview,
+
+00:07:10.510 --> 00:07:13.162 align:middle line:84%
+and you can whack the gong to
+tell everyone we've done it.
+
+00:07:13.162 --> 00:07:13.870 align:middle line:90%
+KATIE: All right.
+
+00:07:13.870 --> 00:07:17.220 align:middle line:84%
+I don't know how I'm going to
+explain this one, but sure.
+
+00:07:17.220 --> 00:07:34.183 align:middle line:90%

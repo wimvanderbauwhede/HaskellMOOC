@@ -1,0 +1,55 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.650 align:middle line:90%
+
+
+00:00:07.650 --> 00:00:11.470 align:middle line:84%
+SPEAKER: Hi, and welcome back
+to week three of the Functional
+
+00:00:11.470 --> 00:00:14.450 align:middle line:90%
+Programming in Haskell course.
+
+00:00:14.450 --> 00:00:17.780 align:middle line:84%
+This week, we'll be
+exploring the list data
+
+00:00:17.780 --> 00:00:21.410 align:middle line:90%
+structure in even more detail.
+
+00:00:21.410 --> 00:00:26.560 align:middle line:84%
+Then, we'll move on to defining
+custom data structures.
+
+00:00:26.560 --> 00:00:30.100 align:middle line:84%
+This is an important part of
+any high-level programming
+
+00:00:30.100 --> 00:00:31.690 align:middle line:90%
+language.
+
+00:00:31.690 --> 00:00:36.410 align:middle line:84%
+Finally, we'll dig into
+the history of Haskell.
+
+00:00:36.410 --> 00:00:38.500 align:middle line:90%
+Where did it come from?
+
+00:00:38.500 --> 00:00:41.030 align:middle line:90%
+Why does it look like it does?
+
+00:00:41.030 --> 00:00:45.710 align:middle line:84%
+We'll be asking one of the
+main architects of the Haskell
+
+00:00:45.710 --> 00:00:49.760 align:middle line:84%
+language to answer some
+of these questions for us.
+
+00:00:49.760 --> 00:00:51.480 align:middle line:90%
+Hope you enjoy the week.
+
+00:00:51.480 --> 00:00:53.290 align:middle line:90%
+See you later.
+
+00:00:53.290 --> 00:00:55.659 align:middle line:90%

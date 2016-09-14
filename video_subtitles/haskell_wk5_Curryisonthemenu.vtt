@@ -1,0 +1,330 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.019 align:middle line:90%
+
+
+00:00:07.019 --> 00:00:08.060 align:middle line:90%
+SPEAKER: Hello, everyone.
+
+00:00:08.060 --> 00:00:09.982 align:middle line:84%
+In this short
+video, we are going
+
+00:00:09.982 --> 00:00:13.380 align:middle line:84%
+to introduce two
+new concepts that
+
+00:00:13.380 --> 00:00:14.950 align:middle line:90%
+are slightly more advanced.
+
+00:00:14.950 --> 00:00:19.070 align:middle line:84%
+And they are currying
+and partial application.
+
+00:00:19.070 --> 00:00:23.965 align:middle line:84%
+So consider the
+function signature
+
+00:00:23.965 --> 00:00:30.170 align:middle line:84%
+like this, where we
+have a type X, Y, Z,
+
+00:00:30.170 --> 00:00:36.570 align:middle line:84%
+and return value of type A.
+So this is a function that
+
+00:00:36.570 --> 00:00:38.810 align:middle line:84%
+takes three arguments
+of three different types
+
+00:00:38.810 --> 00:00:42.750 align:middle line:84%
+and produces a return
+value of type A.
+
+00:00:42.750 --> 00:00:49.250 align:middle line:84%
+However, the arrow here in this
+type signature is meaningful.
+
+00:00:49.250 --> 00:00:52.220 align:middle line:84%
+And also, it has a
+certain associativity.
+
+00:00:52.220 --> 00:00:55.300 align:middle line:84%
+In fact, it associates
+to the right.
+
+00:00:55.300 --> 00:00:56.700 align:middle line:84%
+And that means
+that, actually, we
+
+00:00:56.700 --> 00:01:02.280 align:middle line:84%
+can write this expression
+also like this,
+
+00:01:02.280 --> 00:01:06.570 align:middle line:84%
+which means that we actually can
+consider f as a function that
+
+00:01:06.570 --> 00:01:10.940 align:middle line:84%
+takes an element of type X
+and returns a function of Y
+
+00:01:10.940 --> 00:01:13.820 align:middle line:90%
+to function of Z to A.
+
+00:01:13.820 --> 00:01:16.740 align:middle line:84%
+Similar, this
+return function, Y,
+
+00:01:16.740 --> 00:01:20.780 align:middle line:84%
+can be considered both as
+a function of Y and Z to A
+
+00:01:20.780 --> 00:01:27.440 align:middle line:84%
+or as a function of Y
+to Z to A. So this idea
+
+00:01:27.440 --> 00:01:30.960 align:middle line:84%
+that you can always
+rewrite the function
+
+00:01:30.960 --> 00:01:33.950 align:middle line:84%
+of a single argument
+returning another function
+
+00:01:33.950 --> 00:01:35.550 align:middle line:90%
+is called currying.
+
+00:01:35.550 --> 00:01:38.290 align:middle line:84%
+To illustrate this on
+an actual function,
+
+00:01:38.290 --> 00:01:40.660 align:middle line:84%
+it's easiest to use
+longer functions.
+
+00:01:40.660 --> 00:01:46.114 align:middle line:84%
+So suppose we have a longer
+function of X, Y, and Z,
+
+00:01:46.114 --> 00:01:49.550 align:middle line:84%
+and function [INAUDIBLE]
+is completely irrelevant.
+
+00:01:49.550 --> 00:01:51.590 align:middle line:84%
+Then to rewrite
+this, [INAUDIBLE]
+
+00:01:51.590 --> 00:01:54.620 align:middle line:84%
+this becomes a function
+of a single argument.
+
+00:01:54.620 --> 00:01:58.700 align:middle line:84%
+We create a new lambda
+function, which is this one.
+
+00:01:58.700 --> 00:02:02.725 align:middle line:84%
+So the body remains
+completely [INAUDIBLE]
+
+00:02:02.725 --> 00:02:05.250 align:middle line:84%
+And we can rewrite this
+inner function once more.
+
+00:02:05.250 --> 00:02:09.226 align:middle line:90%
+
+
+00:02:09.226 --> 00:02:12.350 align:middle line:84%
+And in this way, we
+have created a function
+
+00:02:12.350 --> 00:02:13.860 align:middle line:84%
+of a single argument
+which returns
+
+00:02:13.860 --> 00:02:15.570 align:middle line:84%
+a function of a
+single argument which
+
+00:02:15.570 --> 00:02:18.920 align:middle line:84%
+returns a function of a single
+argument, which eventually
+
+00:02:18.920 --> 00:02:20.860 align:middle line:90%
+returns the following.
+
+00:02:20.860 --> 00:02:24.210 align:middle line:84%
+So this is the typical
+technique known
+
+00:02:24.210 --> 00:02:26.550 align:middle line:84%
+as currying you
+use to transform--
+
+00:02:26.550 --> 00:02:29.680 align:middle line:90%
+move the argument [INAUDIBLE]
+
+00:02:29.680 --> 00:02:31.920 align:middle line:84%
+So it's named after the
+logician Haskell Curry.
+
+00:02:31.920 --> 00:02:35.640 align:middle line:84%
+But actually, he wasn't
+the first to invent this.
+
+00:02:35.640 --> 00:02:38.135 align:middle line:84%
+The first one to
+invent this technique
+
+00:02:38.135 --> 00:02:40.330 align:middle line:84%
+was called Moses Schonfinkel,
+another logician.
+
+00:02:40.330 --> 00:02:43.520 align:middle line:84%
+But well, his name
+wasn't so catchy,
+
+00:02:43.520 --> 00:02:46.700 align:middle line:84%
+so they decided to
+go with currying.
+
+00:02:46.700 --> 00:02:49.710 align:middle line:84%
+Another concept closely
+related to currying
+
+00:02:49.710 --> 00:02:52.130 align:middle line:90%
+is that of partial application.
+
+00:02:52.130 --> 00:02:56.065 align:middle line:84%
+For example, consider
+the function Sq,
+
+00:02:56.065 --> 00:03:02.020 align:middle line:84%
+which takes X and Y and
+returns the sum of the squares.
+
+00:03:02.020 --> 00:03:04.570 align:middle line:90%
+
+
+00:03:04.570 --> 00:03:06.050 align:middle line:84%
+This function can
+actually, again,
+
+00:03:06.050 --> 00:03:14.000 align:middle line:84%
+be slightly rewritten
+as-- because the function
+
+00:03:14.000 --> 00:03:18.210 align:middle line:84%
+application, actually,
+is left associative.
+
+00:03:18.210 --> 00:03:21.690 align:middle line:84%
+That means that
+what we have here is
+
+00:03:21.690 --> 00:03:24.590 align:middle line:84%
+a function in its own
+right that operates on Y.
+
+00:03:24.590 --> 00:03:28.850 align:middle line:84%
+So we can do other things
+like, for instance, say OK.
+
+00:03:28.850 --> 00:03:35.090 align:middle line:90%
+Let's find Sq4 as Sq4.
+
+00:03:35.090 --> 00:03:38.030 align:middle line:84%
+And now Sq4 is a new function
+which just takes one argument.
+
+00:03:38.030 --> 00:03:46.370 align:middle line:84%
+If we now call Sq4 value
+three, it will return 95.
+
+00:03:46.370 --> 00:03:48.190 align:middle line:84%
+This is an example of
+partial application.
+
+00:03:48.190 --> 00:03:54.970 align:middle line:84%
+So basically, we've applied
+four to the function argument X,
+
+00:03:54.970 --> 00:03:56.935 align:middle line:84%
+but we have multiplied
+anything to Y,
+
+00:03:56.935 --> 00:03:58.310 align:middle line:84%
+and the result is
+a new function.
+
+00:03:58.310 --> 00:04:00.385 align:middle line:84%
+And then we can use
+this new function
+
+00:04:00.385 --> 00:04:02.175 align:middle line:90%
+for doing our computation.
+
+00:04:02.175 --> 00:04:06.130 align:middle line:90%
+
+
+00:04:06.130 --> 00:04:08.280 align:middle line:84%
+So this technique of
+partial application
+
+00:04:08.280 --> 00:04:11.210 align:middle line:84%
+is really used a lot in
+functional programming
+
+00:04:11.210 --> 00:04:14.270 align:middle line:84%
+in Haskell, and it's the reason
+why you can write things,
+
+00:04:14.270 --> 00:04:15.722 align:middle line:90%
+for instance, like this.
+
+00:04:15.722 --> 00:04:20.051 align:middle line:90%
+
+
+00:04:20.051 --> 00:04:23.910 align:middle line:84%
+So here, the times two
+is partial application
+
+00:04:23.910 --> 00:04:27.810 align:middle line:84%
+of the function multiplication
+that we use as an operator
+
+00:04:27.810 --> 00:04:30.235 align:middle line:84%
+here, so it takes two arguments
+and returns an argument.
+
+00:04:30.235 --> 00:04:32.600 align:middle line:84%
+We have applied it
+partially, using the two.
+
+00:04:32.600 --> 00:04:35.630 align:middle line:84%
+We get a new function,
+which we can use in the map,
+
+00:04:35.630 --> 00:04:38.240 align:middle line:84%
+because map requires functions
+with a single argument.
+
+00:04:38.240 --> 00:04:41.760 align:middle line:84%
+And so we have a function that
+doubles the elements of a list.
+
+00:04:41.760 --> 00:04:45.576 align:middle line:90%
+
+
+00:04:45.576 --> 00:04:49.000 align:middle line:84%
+So this was just to give
+you a quick intuition
+
+00:04:49.000 --> 00:04:52.260 align:middle line:84%
+on these key concepts
+of currying and partial
+
+00:04:52.260 --> 00:04:53.810 align:middle line:90%
+application.
+
+00:04:53.810 --> 00:04:58.307 align:middle line:90%

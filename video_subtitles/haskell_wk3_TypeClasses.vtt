@@ -1,0 +1,478 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.200 align:middle line:90%
+
+
+00:00:05.200 --> 00:00:06.030 align:middle line:90%
+INSTRUCTOR: Hi.
+
+00:00:06.030 --> 00:00:09.340 align:middle line:84%
+In any high-level
+programming language,
+
+00:00:09.340 --> 00:00:13.030 align:middle line:84%
+there are various
+number like types.
+
+00:00:13.030 --> 00:00:18.850 align:middle line:84%
+In Haskell, for instance,
+we have seen Int so far.
+
+00:00:18.850 --> 00:00:23.580 align:middle line:84%
+There are also float and
+infinite precision integers,
+
+00:00:23.580 --> 00:00:29.820 align:middle line:84%
+like big integers in Java
+to name a few more types.
+
+00:00:29.820 --> 00:00:33.440 align:middle line:90%
+Now, here is a key insight.
+
+00:00:33.440 --> 00:00:37.980 align:middle line:84%
+Many arithmetic functions
+can be applied to values
+
+00:00:37.980 --> 00:00:41.770 align:middle line:84%
+from any number like type,
+for example, addition
+
+00:00:41.770 --> 00:00:43.950 align:middle line:90%
+or multiplication.
+
+00:00:43.950 --> 00:00:47.390 align:middle line:90%
+Here's 2 + 2, which makes 4.
+
+00:00:47.390 --> 00:00:54.940 align:middle line:84%
+Here is 2 + pi, which
+makes 5.1415, and so on.
+
+00:00:54.940 --> 00:00:58.800 align:middle line:90%
+Here's 2 * 2, which makes 4.
+
+00:00:58.800 --> 00:01:08.010 align:middle line:84%
+And here's 2 * pi, which
+makes 6.2831, so on.
+
+00:01:08.010 --> 00:01:13.430 align:middle line:84%
+This is where the notion of
+type classes comes in handy.
+
+00:01:13.430 --> 00:01:16.740 align:middle line:84%
+A type class specifies
+a family of types
+
+00:01:16.740 --> 00:01:22.070 align:middle line:84%
+that provide implementations
+for common functions.
+
+00:01:22.070 --> 00:01:25.466 align:middle line:84%
+Let's have a look
+at the type of (+).
+
+00:01:25.466 --> 00:01:31.690 align:middle line:90%
+
+
+00:01:31.690 --> 00:01:35.540 align:middle line:84%
+Sorry, I need to put
+(+) inside brackets
+
+00:01:35.540 --> 00:01:36.840 align:middle line:90%
+because it's an infix operator.
+
+00:01:36.840 --> 00:01:40.410 align:middle line:90%
+
+
+00:01:40.410 --> 00:01:44.080 align:middle line:84%
+This says, given a type
+a-- some people pronounce
+
+00:01:44.080 --> 00:01:48.430 align:middle line:84%
+this as alpha-- given a type
+a belonging to the Num type
+
+00:01:48.430 --> 00:01:55.550 align:middle line:84%
+class, then the + function takes
+two a parameters and returns an
+
+00:01:55.550 --> 00:02:02.550 align:middle line:90%
+a result. a is a type variable.
+
+00:02:02.550 --> 00:02:07.320 align:middle line:84%
+The part of the type
+before the double arrow
+
+00:02:07.320 --> 00:02:13.630 align:middle line:84%
+here is called the
+context of the type.
+
+00:02:13.630 --> 00:02:16.130 align:middle line:84%
+This expresses type
+class membership
+
+00:02:16.130 --> 00:02:21.700 align:middle line:90%
+for type variables like a.
+
+00:02:21.700 --> 00:02:27.046 align:middle line:84%
+So a type class is a generalized
+family of similar types.
+
+00:02:27.046 --> 00:02:33.180 align:middle line:90%
+
+
+00:02:33.180 --> 00:02:36.750 align:middle line:84%
+Let's think about some
+other the type classes.
+
+00:02:36.750 --> 00:02:42.950 align:middle line:84%
+The Eq type class means we can
+compare values of such types
+
+00:02:42.950 --> 00:02:45.317 align:middle line:90%
+equality with the (==) operator.
+
+00:02:45.317 --> 00:02:49.550 align:middle line:90%
+
+
+00:02:49.550 --> 00:02:54.090 align:middle line:84%
+We see that given the context
+of the type a that's is
+
+00:02:54.090 --> 00:02:57.570 align:middle line:84%
+an instance of
+the Eq type class,
+
+00:02:57.570 --> 00:03:03.630 align:middle line:84%
+then the (==) function takes two
+parameters of type a and return
+
+00:03:03.630 --> 00:03:08.730 align:middle line:90%
+to Boolean result.
+
+00:03:08.730 --> 00:03:14.920 align:middle line:84%
+So we can see that ints are an
+instance of the Eq type class.
+
+00:03:14.920 --> 00:03:19.040 align:middle line:90%
+
+
+00:03:19.040 --> 00:03:23.800 align:middle line:84%
+The Ord type class means we
+can order values of such types
+
+00:03:23.800 --> 00:03:27.720 align:middle line:84%
+with relational operators like
+less than and greater than.
+
+00:03:27.720 --> 00:03:32.760 align:middle line:90%
+
+
+00:03:32.760 --> 00:03:36.825 align:middle line:84%
+This is like the
+IComparable interface in C#.
+
+00:03:36.825 --> 00:03:44.940 align:middle line:90%
+
+
+00:03:44.940 --> 00:03:49.096 align:middle line:84%
+For strings, less than
+implements a lexicographic
+
+00:03:49.096 --> 00:03:49.595 align:middle line:90%
+ordering.
+
+00:03:49.595 --> 00:03:54.060 align:middle line:90%
+
+
+00:03:54.060 --> 00:04:00.210 align:middle line:84%
+The show type class means we
+can generate string values that
+
+00:04:00.210 --> 00:04:06.950 align:middle line:84%
+represent values of such
+types, like two string in Java.
+
+00:04:06.950 --> 00:04:11.440 align:middle line:84%
+So if I say, show
+42 integer values,
+
+00:04:11.440 --> 00:04:13.535 align:middle line:90%
+then I get back the string 42.
+
+00:04:13.535 --> 00:04:16.329 align:middle line:90%
+
+
+00:04:16.329 --> 00:04:21.775 align:middle line:84%
+If I say show false, I
+get back the string false.
+
+00:04:21.775 --> 00:04:28.180 align:middle line:90%
+
+
+00:04:28.180 --> 00:04:36.070 align:middle line:84%
+The Read type class means we can
+generate values of such types
+
+00:04:36.070 --> 00:04:39.350 align:middle line:90%
+from string values.
+
+00:04:39.350 --> 00:04:46.070 align:middle line:84%
+So I'm going to say
+read "1" so string.
+
+00:04:46.070 --> 00:04:48.700 align:middle line:84%
+Now, this doesn't
+work at the moment
+
+00:04:48.700 --> 00:04:51.950 align:middle line:84%
+because I need to say
+that the thing I'm reading
+
+00:04:51.950 --> 00:04:55.050 align:middle line:90%
+should be of type Int.
+
+00:04:55.050 --> 00:04:56.850 align:middle line:90%
+Now, it works.
+
+00:04:56.850 --> 00:05:04.080 align:middle line:84%
+Again, I could say read "True,"
+which should be of type Bool,
+
+00:05:04.080 --> 00:05:08.810 align:middle line:84%
+and I get back a
+Boolean type-- rather,
+
+00:05:08.810 --> 00:05:10.580 align:middle line:90%
+a value of a Boolean type.
+
+00:05:10.580 --> 00:05:17.940 align:middle line:90%
+
+
+00:05:17.940 --> 00:05:23.190 align:middle line:84%
+To specify that a type belongs
+to a type class, for now,
+
+00:05:23.190 --> 00:05:30.100 align:middle line:84%
+we will use the deriving
+clause in the type definition.
+
+00:05:30.100 --> 00:05:33.370 align:middle line:84%
+Let's go back to
+our SimpleNum class.
+
+00:05:33.370 --> 00:05:38.240 align:middle line:84%
+Remember, we can only count
+values One, Two, and Many.
+
+00:05:38.240 --> 00:05:48.650 align:middle line:90%
+Data SimpleNum = One, Two, Many.
+
+00:05:48.650 --> 00:05:53.410 align:middle line:84%
+And this type is
+deriving (Show, Read).
+
+00:05:53.410 --> 00:05:58.660 align:middle line:90%
+
+
+00:05:58.660 --> 00:06:04.550 align:middle line:84%
+The set of type classes that
+this type is an instance of
+
+00:06:04.550 --> 00:06:09.820 align:middle line:84%
+are in parentheses in
+the deriving clause.
+
+00:06:09.820 --> 00:06:13.280 align:middle line:84%
+Now, this means we can convert
+SimpleNum values into strings
+
+00:06:13.280 --> 00:06:16.500 align:middle line:84%
+using the show function,
+and vice versa using
+
+00:06:16.500 --> 00:06:18.270 align:middle line:90%
+the read function.
+
+00:06:18.270 --> 00:06:26.220 align:middle line:84%
+Let's say show One,
+show Two, show Many.
+
+00:06:26.220 --> 00:06:30.101 align:middle line:84%
+And in each case,
+we return a string.
+
+00:06:30.101 --> 00:06:33.320 align:middle line:90%
+
+
+00:06:33.320 --> 00:06:38.450 align:middle line:90%
+Let's try to read "One".
+
+00:06:38.450 --> 00:06:40.510 align:middle line:84%
+We get an error
+because read doesn't
+
+00:06:40.510 --> 00:06:43.900 align:middle line:84%
+know what the type of One
+to be-- the string One
+
+00:06:43.900 --> 00:06:45.090 align:middle line:90%
+to be-- when we read it.
+
+00:06:45.090 --> 00:06:48.320 align:middle line:84%
+So let's say we want this
+to be of type SimpleNum,
+
+00:06:48.320 --> 00:06:49.133 align:middle line:90%
+and how it works.
+
+00:06:49.133 --> 00:06:53.430 align:middle line:90%
+
+
+00:06:53.430 --> 00:06:57.340 align:middle line:84%
+Let's try comparing SimpleNum
+values for equality.
+
+00:06:57.340 --> 00:07:01.680 align:middle line:90%
+
+
+00:07:01.680 --> 00:07:04.620 align:middle line:90%
+Does One == One?
+
+00:07:04.620 --> 00:07:05.730 align:middle line:90%
+No.
+
+00:07:05.730 --> 00:07:08.040 align:middle line:90%
+Look at the error message.
+
+00:07:08.040 --> 00:07:15.880 align:middle line:84%
+SimpleNum types are not
+instances of the Eq type class.
+
+00:07:15.880 --> 00:07:22.430 align:middle line:84%
+So let's add the Eq type
+class to the deriving clause
+
+00:07:22.430 --> 00:07:25.950 align:middle line:84%
+in the SimpleNum
+type definition.
+
+00:07:25.950 --> 00:07:30.870 align:middle line:84%
+Look, now, we have three type
+classes (Show, Read, Eq).
+
+00:07:30.870 --> 00:07:34.280 align:middle line:90%
+
+
+00:07:34.280 --> 00:07:37.540 align:middle line:90%
+Does One == One now?
+
+00:07:37.540 --> 00:07:39.961 align:middle line:90%
+Yes, it does.
+
+00:07:39.961 --> 00:07:42.580 align:middle line:90%
+Does One == Two?
+
+00:07:42.580 --> 00:07:44.550 align:middle line:90%
+No, it doesn't.
+
+00:07:44.550 --> 00:07:48.410 align:middle line:90%
+Does One == "One"?
+
+00:07:48.410 --> 00:07:53.890 align:middle line:84%
+No, because SimpleNums
+are of a different type
+
+00:07:53.890 --> 00:07:57.260 align:middle line:84%
+two strings, which
+a character lists.
+
+00:07:57.260 --> 00:08:02.940 align:middle line:90%
+
+
+00:08:02.940 --> 00:08:06.170 align:middle line:84%
+Again, there's a default
+implementation of ==,
+
+00:08:06.170 --> 00:08:08.210 align:middle line:84%
+which is being used
+to compare SimpleNums.
+
+00:08:08.210 --> 00:08:11.190 align:middle line:90%
+
+
+00:08:11.190 --> 00:08:14.410 align:middle line:84%
+There is a mechanism for
+defining type class function
+
+00:08:14.410 --> 00:08:18.502 align:middle line:84%
+implementations, but we'll
+save this discussion for later
+
+00:08:18.502 --> 00:08:19.210 align:middle line:90%
+on in the course.
+
+00:08:19.210 --> 00:08:22.280 align:middle line:90%
+
+
+00:08:22.280 --> 00:08:25.370 align:middle line:84%
+Note that type classes were
+one of the early innovations
+
+00:08:25.370 --> 00:08:29.200 align:middle line:84%
+of the high school
+programming language.
+
+00:08:29.200 --> 00:08:31.760 align:middle line:84%
+The type class
+constrained member types
+
+00:08:31.760 --> 00:08:34.840 align:middle line:84%
+to provide functions that
+conform to certain types
+
+00:08:34.840 --> 00:08:39.870 align:middle line:84%
+signatures effectively,
+API constraints.
+
+00:08:39.870 --> 00:08:43.330 align:middle line:84%
+This is a little like
+object-oriented programming.
+
+00:08:43.330 --> 00:08:48.620 align:middle line:84%
+Type classes are like
+interfaces in C# and Java.
+
+00:08:48.620 --> 00:08:52.520 align:middle line:84%
+Types in the type class are
+like concrete implementations
+
+00:08:52.520 --> 00:08:54.990 align:middle line:90%
+of the interface.
+
+00:08:54.990 --> 00:08:57.270 align:middle line:84%
+Type classes provide
+a neat mechanism
+
+00:08:57.270 --> 00:09:03.050 align:middle line:84%
+to enable operator overloading
+in the high school language.
+
+00:09:03.050 --> 00:09:06.930 align:middle line:84%
+We've seen this with
+functions like ==,
+
+00:09:06.930 --> 00:09:14.550 align:middle line:84%
+and relational operators, and
+the Show and Read functions.
+
+00:09:14.550 --> 00:09:16.480 align:middle line:84%
+We'll explore type
+classes in more detail
+
+00:09:16.480 --> 00:09:18.040 align:middle line:90%
+later on in the course.
+
+00:09:18.040 --> 00:09:20.440 align:middle line:90%
+But for now, goodbye.
+
+00:09:20.440 --> 00:09:23.827 align:middle line:90%

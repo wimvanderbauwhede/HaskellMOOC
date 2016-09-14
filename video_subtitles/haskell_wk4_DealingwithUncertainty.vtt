@@ -1,0 +1,618 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.952 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:02.952 --> 00:00:06.400 align:middle line:90%
+
+
+00:00:06.400 --> 00:00:09.400 align:middle line:84%
+PROFESSOR: Do you want to
+know something upsetting?
+
+00:00:09.400 --> 00:00:11.340 align:middle line:90%
+Programs fail.
+
+00:00:11.340 --> 00:00:15.670 align:middle line:84%
+Yes, computation
+often goes wrong.
+
+00:00:15.670 --> 00:00:18.210 align:middle line:84%
+Haskell provides
+several mechanisms
+
+00:00:18.210 --> 00:00:21.090 align:middle line:84%
+for handling
+computations that fail.
+
+00:00:21.090 --> 00:00:24.150 align:middle line:84%
+The first-- probably the
+simplest such mechanism--
+
+00:00:24.150 --> 00:00:25.517 align:middle line:90%
+is called Maybe.
+
+00:00:25.517 --> 00:00:28.200 align:middle line:90%
+
+
+00:00:28.200 --> 00:00:31.290 align:middle line:84%
+Let's think about how a
+computation might fail.
+
+00:00:31.290 --> 00:00:34.030 align:middle line:84%
+Imagine trying to
+process a list somehow.
+
+00:00:34.030 --> 00:00:36.870 align:middle line:84%
+Say, take the first
+element of the list.
+
+00:00:36.870 --> 00:00:40.380 align:middle line:90%
+And you are given an empty list.
+
+00:00:40.380 --> 00:00:42.540 align:middle line:90%
+There isn't any first element.
+
+00:00:42.540 --> 00:00:48.700 align:middle line:84%
+Or imagine dividing two
+integers and the divisor is 0.
+
+00:00:48.700 --> 00:00:51.280 align:middle line:90%
+
+
+00:00:51.280 --> 00:00:53.440 align:middle line:84%
+We need a way to
+capture whether or not
+
+00:00:53.440 --> 00:00:57.950 align:middle line:84%
+such a computation has succeeded
+or whether it's failed.
+
+00:00:57.950 --> 00:00:59.555 align:middle line:90%
+This is the job of Maybe.
+
+00:00:59.555 --> 00:01:02.330 align:middle line:90%
+
+
+00:01:02.330 --> 00:01:04.890 align:middle line:84%
+Let's have a look
+at this data type.
+
+00:01:04.890 --> 00:01:08.150 align:middle line:84%
+It's defined in the
+Haskell prelude.
+
+00:01:08.150 --> 00:01:11.300 align:middle line:84%
+The standard
+library for Haskell.
+
+00:01:11.300 --> 00:01:12.640 align:middle line:90%
+So here I am in Google.
+
+00:01:12.640 --> 00:01:18.520 align:middle line:84%
+I'm going to type in
+Haskell prelude and Maybe.
+
+00:01:18.520 --> 00:01:19.560 align:middle line:90%
+Wait for the results.
+
+00:01:19.560 --> 00:01:23.050 align:middle line:84%
+And the first hit
+is the Hackage site
+
+00:01:23.050 --> 00:01:25.680 align:middle line:84%
+which is the official
+documentation for the Haskell
+
+00:01:25.680 --> 00:01:26.900 align:middle line:90%
+platform.
+
+00:01:26.900 --> 00:01:29.480 align:middle line:90%
+Let's click on that.
+
+00:01:29.480 --> 00:01:30.670 align:middle line:90%
+And here we are.
+
+00:01:30.670 --> 00:01:35.290 align:middle line:84%
+Documentation for the
+prelude standard module.
+
+00:01:35.290 --> 00:01:37.830 align:middle line:90%
+Let's search in here for Maybe.
+
+00:01:37.830 --> 00:01:39.040 align:middle line:90%
+Here we are.
+
+00:01:39.040 --> 00:01:42.470 align:middle line:84%
+And we see that Maybe
+represents or encapsulates
+
+00:01:42.470 --> 00:01:44.660 align:middle line:90%
+an optional value.
+
+00:01:44.660 --> 00:01:48.840 align:middle line:84%
+So the value might either
+be just a, for some a.
+
+00:01:48.840 --> 00:01:51.600 align:middle line:90%
+Or it's empty which is nothing.
+
+00:01:51.600 --> 00:01:54.050 align:middle line:84%
+The documentation goes
+on to say, using Maybe
+
+00:01:54.050 --> 00:01:56.780 align:middle line:84%
+is a good way to deal with
+errors or exceptional cases.
+
+00:01:56.780 --> 00:02:00.070 align:middle line:90%
+
+
+00:02:00.070 --> 00:02:01.860 align:middle line:84%
+So these are the
+type constructors.
+
+00:02:01.860 --> 00:02:05.100 align:middle line:90%
+Either nothing or just a.
+
+00:02:05.100 --> 00:02:06.740 align:middle line:84%
+We can look at the
+source as well.
+
+00:02:06.740 --> 00:02:09.850 align:middle line:84%
+Let's click here and have a
+look at the source for Maybe.
+
+00:02:09.850 --> 00:02:16.170 align:middle line:84%
+And this is very familiar to
+us as an algebraic data type.
+
+00:02:16.170 --> 00:02:19.020 align:middle line:84%
+Similar to the ones that
+we defined earlier on
+
+00:02:19.020 --> 00:02:19.880 align:middle line:90%
+in the course.
+
+00:02:19.880 --> 00:02:24.136 align:middle line:84%
+Maybe is either
+nothing or just a.
+
+00:02:24.136 --> 00:02:26.880 align:middle line:90%
+For the type variable a.
+
+00:02:26.880 --> 00:02:30.470 align:middle line:84%
+And again, we have
+these two type clusters
+
+00:02:30.470 --> 00:02:31.960 align:middle line:90%
+that Maybe deprives.
+
+00:02:31.960 --> 00:02:33.500 align:middle line:90%
+Eq for equality.
+
+00:02:33.500 --> 00:02:35.970 align:middle line:90%
+And Ord for comparison.
+
+00:02:35.970 --> 00:02:36.880 align:middle line:90%
+Right.
+
+00:02:36.880 --> 00:02:39.630 align:middle line:90%
+Let's have a play with Maybe.
+
+00:02:39.630 --> 00:02:41.870 align:middle line:84%
+Imagine we want a
+function to find
+
+00:02:41.870 --> 00:02:45.400 align:middle line:90%
+the maximum value in the list.
+
+00:02:45.400 --> 00:02:47.330 align:middle line:90%
+Perhaps a list of integers.
+
+00:02:47.330 --> 00:02:49.846 align:middle line:84%
+Let's start off by defining
+the maxhelper routine.
+
+00:02:49.846 --> 00:02:57.010 align:middle line:90%
+
+
+00:02:57.010 --> 00:03:01.590 align:middle line:84%
+So maxhelper is going to take
+an integer value which is
+
+00:03:01.590 --> 00:03:03.910 align:middle line:90%
+the maximum we've seen so far.
+
+00:03:03.910 --> 00:03:05.820 align:middle line:84%
+And an integer list
+which is the rest
+
+00:03:05.820 --> 00:03:07.320 align:middle line:84%
+of the list we still
+have to process
+
+00:03:07.320 --> 00:03:08.600 align:middle line:90%
+to look to the maximum value.
+
+00:03:08.600 --> 00:03:10.980 align:middle line:84%
+And it's going to
+return an int, which
+
+00:03:10.980 --> 00:03:15.800 align:middle line:84%
+is the maximum value
+over the whole list.
+
+00:03:15.800 --> 00:03:18.130 align:middle line:90%
+So maxhelper.
+
+00:03:18.130 --> 00:03:20.052 align:middle line:84%
+If we're given an
+interim maximum
+
+00:03:20.052 --> 00:03:21.760 align:middle line:84%
+and there's nothing
+else left to look at,
+
+00:03:21.760 --> 00:03:23.930 align:middle line:90%
+the list just returns x.
+
+00:03:23.930 --> 00:03:25.980 align:middle line:90%
+That is the maximum.
+
+00:03:25.980 --> 00:03:33.420 align:middle line:84%
+Maxhelper with an interim value
+x and a nonempty input list
+
+00:03:33.420 --> 00:03:35.005 align:middle line:84%
+is going to call
+itself recursively.
+
+00:03:35.005 --> 00:03:38.210 align:middle line:90%
+
+
+00:03:38.210 --> 00:03:40.340 align:middle line:84%
+And the interim
+maximum is either
+
+00:03:40.340 --> 00:03:46.380 align:middle line:84%
+going to be x or y depending
+on which one is larger.
+
+00:03:46.380 --> 00:03:48.330 align:middle line:84%
+And then we'll process
+the rest of the list.
+
+00:03:48.330 --> 00:03:51.250 align:middle line:90%
+
+
+00:03:51.250 --> 00:03:57.780 align:middle line:84%
+So let's just try this
+code to see if it works.
+
+00:03:57.780 --> 00:04:00.230 align:middle line:90%
+Sorry.
+
+00:04:00.230 --> 00:04:02.795 align:middle line:84%
+I'm going to start an
+interactive prompt inside
+
+00:04:02.795 --> 00:04:08.484 align:middle line:84%
+my emax session and
+I"m going to run ghci.
+
+00:04:08.484 --> 00:04:11.010 align:middle line:84%
+And I'm going to
+load max.hs which
+
+00:04:11.010 --> 00:04:13.320 align:middle line:90%
+is where that code is stored.
+
+00:04:13.320 --> 00:04:17.440 align:middle line:90%
+So I can say type maxhelper.
+
+00:04:17.440 --> 00:04:18.880 align:middle line:90%
+There we go there.
+
+00:04:18.880 --> 00:04:21.050 align:middle line:90%
+And I can run it-- maxhelper.
+
+00:04:21.050 --> 00:04:24.134 align:middle line:84%
+So if I give it a
+value to an empty list,
+
+00:04:24.134 --> 00:04:25.925 align:middle line:84%
+it should return that
+value as the maximum.
+
+00:04:25.925 --> 00:04:28.620 align:middle line:90%
+
+
+00:04:28.620 --> 00:04:32.440 align:middle line:84%
+If I give it a value that's
+small, then I give it the list.
+
+00:04:32.440 --> 00:04:33.210 align:middle line:90%
+Right.
+
+00:04:33.210 --> 00:04:34.580 align:middle line:90%
+I've said minus 1.
+
+00:04:34.580 --> 00:04:37.300 align:middle line:84%
+So I need to put
+that inside bracket.
+
+00:04:37.300 --> 00:04:40.520 align:middle line:84%
+That's interpreted correctly
+as an integer value.
+
+00:04:40.520 --> 00:04:43.190 align:middle line:84%
+So maxhelper with an interim
+maximum of minus 1 and I list
+
+00:04:43.190 --> 00:04:48.440 align:middle line:90%
+1, 2, 3 returns 3, and so on.
+
+00:04:48.440 --> 00:04:52.090 align:middle line:84%
+Let's go back to
+the source code now
+
+00:04:52.090 --> 00:04:54.655 align:middle line:84%
+and define a second function,
+which is called maxfromlist.
+
+00:04:54.655 --> 00:04:57.990 align:middle line:90%
+
+
+00:04:57.990 --> 00:05:00.980 align:middle line:84%
+This is only going to
+take an integer list
+
+00:05:00.980 --> 00:05:05.540 align:middle line:84%
+and it's going to return the
+maximum value in that list.
+
+00:05:05.540 --> 00:05:11.090 align:middle line:84%
+It's going to use maxhelper
+to find the maximum value.
+
+00:05:11.090 --> 00:05:13.870 align:middle line:90%
+So maxfromlist.
+
+00:05:13.870 --> 00:05:17.010 align:middle line:84%
+If it's supplied with an empty
+list what's it going to return?
+
+00:05:17.010 --> 00:05:18.050 align:middle line:90%
+I've got a problem here.
+
+00:05:18.050 --> 00:05:20.140 align:middle line:90%
+There is no maximum to return.
+
+00:05:20.140 --> 00:05:22.970 align:middle line:90%
+So let's return nothing.
+
+00:05:22.970 --> 00:05:28.550 align:middle line:84%
+And let's say our return time
+has now become Maybe int.
+
+00:05:28.550 --> 00:05:31.350 align:middle line:84%
+Because we can only return
+an int if there is a maximum.
+
+00:05:31.350 --> 00:05:35.490 align:middle line:84%
+And if there isn't, we'll
+have to return nothing.
+
+00:05:35.490 --> 00:05:37.260 align:middle line:90%
+Maxfromlist.
+
+00:05:37.260 --> 00:05:41.390 align:middle line:84%
+If there are
+elements in list then
+
+00:05:41.390 --> 00:05:45.470 align:middle line:90%
+it's going to return maxhelper.
+
+00:05:45.470 --> 00:05:46.720 align:middle line:90%
+I need an equal sign there.
+
+00:05:46.720 --> 00:05:47.219 align:middle line:90%
+Sorry.
+
+00:05:47.219 --> 00:05:50.620 align:middle line:90%
+Equals maxhelper x.
+
+00:05:50.620 --> 00:05:55.490 align:middle line:84%
+The interim maximum xs--
+the rest of the list.
+
+00:05:55.490 --> 00:05:57.740 align:middle line:84%
+And I need to wrap this
+up inside the Maybe.
+
+00:05:57.740 --> 00:06:02.750 align:middle line:84%
+So I need to say it's going to
+return just this integer value.
+
+00:06:02.750 --> 00:06:03.490 align:middle line:90%
+Good.
+
+00:06:03.490 --> 00:06:07.500 align:middle line:84%
+So let's go back to
+our ghci session.
+
+00:06:07.500 --> 00:06:09.480 align:middle line:90%
+And let's say, reload.
+
+00:06:09.480 --> 00:06:13.990 align:middle line:84%
+Which will reload the
+edited max.hs source code.
+
+00:06:13.990 --> 00:06:20.310 align:middle line:84%
+And now I should be able
+to say maxfromlist 1 2, 3,
+
+00:06:20.310 --> 00:06:22.210 align:middle line:90%
+And that returns just 3.
+
+00:06:22.210 --> 00:06:22.890 align:middle line:90%
+Good.
+
+00:06:22.890 --> 00:06:28.760 align:middle line:84%
+If I say maxfromlist empty
+list it returns nothing.
+
+00:06:28.760 --> 00:06:29.680 align:middle line:90%
+Great.
+
+00:06:29.680 --> 00:06:32.690 align:middle line:90%
+This works fine.
+
+00:06:32.690 --> 00:06:34.940 align:middle line:84%
+The Maybe type means
+that the type checker
+
+00:06:34.940 --> 00:06:39.420 align:middle line:84%
+guarantee client code will check
+the result of the computation.
+
+00:06:39.420 --> 00:06:41.650 align:middle line:90%
+Probably with a case expression.
+
+00:06:41.650 --> 00:06:45.220 align:middle line:84%
+This is much more robust
+than c error codes.
+
+00:06:45.220 --> 00:06:48.090 align:middle line:90%
+
+
+00:06:48.090 --> 00:06:48.950 align:middle line:90%
+Right.
+
+00:06:48.950 --> 00:06:51.750 align:middle line:84%
+Once we've generated
+Maybe values,
+
+00:06:51.750 --> 00:06:54.670 align:middle line:84%
+how do we propagate
+them in programs?
+
+00:06:54.670 --> 00:06:57.410 align:middle line:84%
+Perhaps by using lots
+of case statements.
+
+00:06:57.410 --> 00:07:00.060 align:middle line:84%
+But surely there
+must be a better way.
+
+00:07:00.060 --> 00:07:01.380 align:middle line:90%
+And there is.
+
+00:07:01.380 --> 00:07:04.550 align:middle line:84%
+At this point I will
+mumble the word monads.
+
+00:07:04.550 --> 00:07:08.870 align:middle line:84%
+But we'll cover these in
+more detail in week six.
+
+00:07:08.870 --> 00:07:13.170 align:middle line:84%
+For now let me show you how you
+can map functions over Maybe
+
+00:07:13.170 --> 00:07:15.460 align:middle line:90%
+values.
+
+00:07:15.460 --> 00:07:22.070 align:middle line:84%
+So let's say let function
+inc equal one plus.
+
+00:07:22.070 --> 00:07:24.630 align:middle line:90%
+
+
+00:07:24.630 --> 00:07:32.910 align:middle line:84%
+So the type of inc in the
+context of the type variable a
+
+00:07:32.910 --> 00:07:36.430 align:middle line:84%
+that is an instance of
+the number type class.
+
+00:07:36.430 --> 00:07:42.340 align:middle line:84%
+Then inc takes an
+a and returns an a.
+
+00:07:42.340 --> 00:07:48.360 align:middle line:84%
+So if I say inc 1 it
+returns the value 2.
+
+00:07:48.360 --> 00:07:53.540 align:middle line:90%
+How about if I say inc just 1?
+
+00:07:53.540 --> 00:07:54.120 align:middle line:90%
+Look.
+
+00:07:54.120 --> 00:07:56.390 align:middle line:90%
+It doesn't work.
+
+00:07:56.390 --> 00:08:02.620 align:middle line:84%
+So inc can't be applied
+to Maybe values.
+
+00:08:02.620 --> 00:08:06.280 align:middle line:84%
+However, if I use
+the fmap function--
+
+00:08:06.280 --> 00:08:12.300 align:middle line:84%
+this is a higher order
+function here-- inc just 1.
+
+00:08:12.300 --> 00:08:15.250 align:middle line:90%
+I get back just 2.
+
+00:08:15.250 --> 00:08:22.140 align:middle line:84%
+So fmap allows inc to be applied
+to the value inside the Maybe.
+
+00:08:22.140 --> 00:08:25.230 align:middle line:90%
+The 1 inside the just 1.
+
+00:08:25.230 --> 00:08:32.812 align:middle line:90%
+Fmap inc just 2 return just 3.
+
+00:08:32.812 --> 00:08:34.270 align:middle line:84%
+And now you're
+saying, what happens
+
+00:08:34.270 --> 00:08:38.110 align:middle line:90%
+if I apply inc 2 nothing?
+
+00:08:38.110 --> 00:08:40.169 align:middle line:90%
+Guess.
+
+00:08:40.169 --> 00:08:43.000 align:middle line:90%
+I get back nothing.
+
+00:08:43.000 --> 00:08:43.919 align:middle line:90%
+Great.
+
+00:08:43.919 --> 00:08:45.910 align:middle line:84%
+Let's leave Maybes
+there for now.
+
+00:08:45.910 --> 00:08:48.650 align:middle line:84%
+We'll come back
+to them and monads
+
+00:08:48.650 --> 00:08:51.584 align:middle line:90%
+in general later in the course.
+
+00:08:51.584 --> 00:08:52.720 align:middle line:90%
+Thanks.
+
+00:08:52.720 --> 00:08:53.300 align:middle line:90%
+Bye.
+
+00:08:53.300 --> 00:08:57.520 align:middle line:90%
+[MUSIC PLAYING]

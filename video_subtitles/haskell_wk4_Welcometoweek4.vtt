@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.934 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:02.934 --> 00:00:07.830 align:middle line:90%
+
+
+00:00:07.830 --> 00:00:11.260 align:middle line:84%
+SUBJECT: Hi, and welcome to
+week four of our Haskell course.
+
+00:00:11.260 --> 00:00:13.230 align:middle line:84%
+And this week we
+have two topics.
+
+00:00:13.230 --> 00:00:15.970 align:middle line:84%
+First, we will look at
+some more advanced patterns
+
+00:00:15.970 --> 00:00:20.040 align:middle line:84%
+of computation based on the
+user functions as value.
+
+00:00:20.040 --> 00:00:22.651 align:middle line:84%
+As an example we
+will look at parsing.
+
+00:00:22.651 --> 00:00:24.650 align:middle line:84%
+Parsing is the
+process of analyzing
+
+00:00:24.650 --> 00:00:27.680 align:middle line:84%
+text of a natural language
+or programming language
+
+00:00:27.680 --> 00:00:31.030 align:middle line:84%
+according to the rules
+of the formal grammar.
+
+00:00:31.030 --> 00:00:32.833 align:middle line:90%
+You will learn to use parsing.
+
+00:00:32.833 --> 00:00:35.210 align:middle line:84%
+This is a Haskell
+library built out
+
+00:00:35.210 --> 00:00:37.860 align:middle line:84%
+of what is called monadic
+parser combinators.
+
+00:00:37.860 --> 00:00:39.660 align:middle line:84%
+And this might sound
+very complicated,
+
+00:00:39.660 --> 00:00:43.210 align:middle line:84%
+but it's really just a way of
+combining tiny building blocks
+
+00:00:43.210 --> 00:00:44.980 align:middle line:90%
+into very powerful parts.
+
+00:00:44.980 --> 00:00:49.150 align:middle line:84%
+The other topic of week
+four is program structure.
+
+00:00:49.150 --> 00:00:51.810 align:middle line:84%
+When you start building
+more complicated programs,
+
+00:00:51.810 --> 00:00:55.290 align:middle line:84%
+then you have to start thinking
+a bit more carefully about how
+
+00:00:55.290 --> 00:00:57.120 align:middle line:90%
+you structure your program.
+
+00:00:57.120 --> 00:00:58.810 align:middle line:84%
+We will first look
+at a program scope.
+
+00:00:58.810 --> 00:01:02.070 align:middle line:84%
+And Scoping is the
+real key feature
+
+00:01:02.070 --> 00:01:04.920 align:middle line:84%
+that you use to create
+module programs.
+
+00:01:04.920 --> 00:01:07.470 align:middle line:84%
+And then we will
+look at conditionals.
+
+00:01:07.470 --> 00:01:10.670 align:middle line:84%
+You have already learned the
+if-then-else conditional,
+
+00:01:10.670 --> 00:01:13.860 align:middle line:84%
+but sometimes that's not really
+the best way to structure
+
+00:01:13.860 --> 00:01:15.950 align:middle line:84%
+your program with
+conditional expressions,
+
+00:01:15.950 --> 00:01:17.780 align:middle line:84%
+and therefore
+Haskell provides you
+
+00:01:17.780 --> 00:01:19.360 align:middle line:84%
+with a large number
+of alternatives,
+
+00:01:19.360 --> 00:01:21.886 align:middle line:90%
+and we will visit all of them.
+
+00:01:21.886 --> 00:01:25.300 align:middle line:84%
+Hope you like this
+week and see you soon.
+
+00:01:25.300 --> 00:01:27.934 align:middle line:90%

@@ -1,0 +1,516 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.010 align:middle line:90%
+
+
+00:00:05.010 --> 00:00:06.390 align:middle line:90%
+INSTRUCTOR: Hello everyone.
+
+00:00:06.390 --> 00:00:09.300 align:middle line:84%
+Time for some more
+functional programming.
+
+00:00:09.300 --> 00:00:10.060 align:middle line:90%
+Let's go.
+
+00:00:10.060 --> 00:00:12.940 align:middle line:90%
+
+
+00:00:12.940 --> 00:00:16.800 align:middle line:84%
+You know, the zip is a
+remarkable invention.
+
+00:00:16.800 --> 00:00:19.440 align:middle line:84%
+The two rows of
+interlocking teeth
+
+00:00:19.440 --> 00:00:22.280 align:middle line:90%
+are combined using the zipper.
+
+00:00:22.280 --> 00:00:25.380 align:middle line:84%
+Well today, we're going to
+think about the Haskell zip
+
+00:00:25.380 --> 00:00:30.050 align:middle line:84%
+function, which combines
+not interlocking teeth,
+
+00:00:30.050 --> 00:00:32.810 align:middle line:90%
+but distinct lists of elements.
+
+00:00:32.810 --> 00:00:40.590 align:middle line:90%
+
+
+00:00:40.590 --> 00:00:45.180 align:middle line:84%
+Here, I'm drawing a list
+of strings, different food
+
+00:00:45.180 --> 00:00:47.990 align:middle line:84%
+stuffs here-- fish, bread, and
+salt-- represented the Haskell
+
+00:00:47.990 --> 00:00:48.500 align:middle line:90%
+strings.
+
+00:00:48.500 --> 00:00:51.400 align:middle line:84%
+Second list-- chips,
+butter, and pepper.
+
+00:00:51.400 --> 00:00:54.090 align:middle line:84%
+And what we see is that
+the first two elements
+
+00:00:54.090 --> 00:00:55.650 align:middle line:84%
+from each list really
+belong together
+
+00:00:55.650 --> 00:00:57.645 align:middle line:90%
+as a pair-- fish and chips.
+
+00:00:57.645 --> 00:01:01.100 align:middle line:90%
+
+
+00:01:01.100 --> 00:01:04.709 align:middle line:84%
+It's the same with the second
+two elements from the list.
+
+00:01:04.709 --> 00:01:06.896 align:middle line:84%
+Bread and butter belong
+together as a pair.
+
+00:01:06.896 --> 00:01:09.600 align:middle line:90%
+
+
+00:01:09.600 --> 00:01:13.990 align:middle line:84%
+And indeed the last element
+from each list, salt and pepper,
+
+00:01:13.990 --> 00:01:17.380 align:middle line:84%
+they also belong
+together as a pair.
+
+00:01:17.380 --> 00:01:19.760 align:middle line:84%
+So from a pair of
+lists, I now have
+
+00:01:19.760 --> 00:01:22.610 align:middle line:84%
+a list of pairs,
+which is precisely
+
+00:01:22.610 --> 00:01:24.270 align:middle line:84%
+the behavior of
+the zip function.
+
+00:01:24.270 --> 00:01:27.770 align:middle line:90%
+
+
+00:01:27.770 --> 00:01:29.410 align:middle line:90%
+Hi.
+
+00:01:29.410 --> 00:01:33.370 align:middle line:84%
+Now, we're going to
+evaluate some zip function
+
+00:01:33.370 --> 00:01:37.325 align:middle line:84%
+calls inside the Haskell
+interpreter, GHCi.
+
+00:01:37.325 --> 00:01:40.050 align:middle line:90%
+
+
+00:01:40.050 --> 00:01:45.480 align:middle line:84%
+If you haven't installed GHCi
+on your system yet, don't worry.
+
+00:01:45.480 --> 00:01:47.610 align:middle line:84%
+You can evaluate
+all the code I'm
+
+00:01:47.610 --> 00:01:51.150 align:middle line:84%
+going to show you
+using the Try Haskell
+
+00:01:51.150 --> 00:01:53.450 align:middle line:84%
+online environment,
+which you should
+
+00:01:53.450 --> 00:01:56.780 align:middle line:90%
+have used for your tutorials.
+
+00:01:56.780 --> 00:02:01.530 align:middle line:84%
+First, let's zip together
+two lists of integers.
+
+00:02:01.530 --> 00:02:04.460 align:middle line:84%
+We've got a list containing
+elements 1, 2, 3,
+
+00:02:04.460 --> 00:02:07.490 align:middle line:84%
+and another list containing
+elements 4, 5, 6.
+
+00:02:07.490 --> 00:02:10.080 align:middle line:84%
+And when I zip these
+two lists together,
+
+00:02:10.080 --> 00:02:14.490 align:middle line:84%
+I'll end up with a new
+list of pairs of integers.
+
+00:02:14.490 --> 00:02:16.750 align:middle line:84%
+The first element
+from the first list
+
+00:02:16.750 --> 00:02:19.950 align:middle line:84%
+is in a pair with the first
+element from the second list
+
+00:02:19.950 --> 00:02:20.670 align:middle line:90%
+and so on.
+
+00:02:20.670 --> 00:02:24.110 align:middle line:90%
+
+
+00:02:24.110 --> 00:02:28.660 align:middle line:84%
+I can zip together two
+lists of different types.
+
+00:02:28.660 --> 00:02:30.460 align:middle line:90%
+There is an integer list.
+
+00:02:30.460 --> 00:02:32.510 align:middle line:84%
+And here is a string,
+which, as you know,
+
+00:02:32.510 --> 00:02:35.360 align:middle line:84%
+in Haskell is represented
+as a character list.
+
+00:02:35.360 --> 00:02:37.010 align:middle line:84%
+So this should give
+me a list of pairs
+
+00:02:37.010 --> 00:02:39.180 align:middle line:84%
+where the first element
+of each pair is an integer
+
+00:02:39.180 --> 00:02:42.540 align:middle line:84%
+and the second element of
+each pair is a character.
+
+00:02:42.540 --> 00:02:45.790 align:middle line:90%
+Indeed, 1, a pair together.
+
+00:02:45.790 --> 00:02:47.300 align:middle line:90%
+2 and b are paired together.
+
+00:02:47.300 --> 00:02:49.250 align:middle line:90%
+And 3 and c are paired together.
+
+00:02:49.250 --> 00:02:52.850 align:middle line:90%
+
+
+00:02:52.850 --> 00:02:54.620 align:middle line:84%
+You might be asking,
+what if I want
+
+00:02:54.620 --> 00:02:58.890 align:middle line:84%
+to zip together three lists to
+get a single list of triples?
+
+00:02:58.890 --> 00:03:00.240 align:middle line:90%
+And that too is possible.
+
+00:03:00.240 --> 00:03:03.860 align:middle line:90%
+Let's use the zip3 function.
+
+00:03:03.860 --> 00:03:09.460 align:middle line:84%
+So there is a character
+list, string Glasgow.
+
+00:03:09.460 --> 00:03:12.470 align:middle line:84%
+String Beijing is
+another character list.
+
+00:03:12.470 --> 00:03:15.470 align:middle line:84%
+And the string Nairobi is
+another character list.
+
+00:03:15.470 --> 00:03:19.160 align:middle line:84%
+And indeed, when I evaluate
+this zip3 function,
+
+00:03:19.160 --> 00:03:21.890 align:middle line:84%
+I'm going to end up with
+a single list of triples.
+
+00:03:21.890 --> 00:03:26.850 align:middle line:84%
+The first triple has the first
+letter of each of those cities.
+
+00:03:26.850 --> 00:03:30.180 align:middle line:84%
+And the last triple has the last
+letter of each of those triples
+
+00:03:30.180 --> 00:03:30.770 align:middle line:90%
+and so on.
+
+00:03:30.770 --> 00:03:34.430 align:middle line:90%
+
+
+00:03:34.430 --> 00:03:38.790 align:middle line:84%
+Conveniently, the strings
+Glasgow, Beijing, and Nairobi
+
+00:03:38.790 --> 00:03:42.810 align:middle line:84%
+are all of seven
+characters in length.
+
+00:03:42.810 --> 00:03:46.180 align:middle line:84%
+What happens if I
+try to zip together
+
+00:03:46.180 --> 00:03:49.860 align:middle line:84%
+lists that have different
+number of elements?
+
+00:03:49.860 --> 00:03:53.320 align:middle line:84%
+So here's the list of
+integers from 1 to 10
+
+00:03:53.320 --> 00:03:56.320 align:middle line:90%
+inclusive, which has length 10.
+
+00:03:56.320 --> 00:04:01.270 align:middle line:84%
+And here is the list of
+lowercase letters from A to Z
+
+00:04:01.270 --> 00:04:05.960 align:middle line:90%
+inclusive, which has length 26.
+
+00:04:05.960 --> 00:04:08.410 align:middle line:84%
+I'm going to try
+and zip together
+
+00:04:08.410 --> 00:04:16.820 align:middle line:84%
+the list of integers 1 to 10 and
+the list of characters A to Z.
+
+00:04:16.820 --> 00:04:23.080 align:middle line:84%
+Look, the output is as long as
+the shorter of the two inputs.
+
+00:04:23.080 --> 00:04:26.400 align:middle line:84%
+So I've produced
+a list of 10 pairs
+
+00:04:26.400 --> 00:04:31.430 align:middle line:84%
+and used up all the input
+from the integers 1 to 10,
+
+00:04:31.430 --> 00:04:35.600 align:middle line:84%
+but only the first elements
+from the alphabet A to Z.
+
+00:04:35.600 --> 00:04:38.370 align:middle line:84%
+So the length of the
+output is the same
+
+00:04:38.370 --> 00:04:41.279 align:middle line:84%
+as the length of the
+shorter of the two inputs.
+
+00:04:41.279 --> 00:04:45.680 align:middle line:90%
+
+
+00:04:45.680 --> 00:04:49.050 align:middle line:84%
+Now, let's think about the
+zipWith function, which
+
+00:04:49.050 --> 00:04:51.400 align:middle line:90%
+is a generalization of zip.
+
+00:04:51.400 --> 00:04:55.250 align:middle line:84%
+Whereas zip can only combine
+elements from two input lists
+
+00:04:55.250 --> 00:04:57.570 align:middle line:84%
+by creating pairs
+of those elements,
+
+00:04:57.570 --> 00:05:02.870 align:middle line:84%
+zipWith allows us to
+provide a function that
+
+00:05:02.870 --> 00:05:07.000 align:middle line:84%
+tells us how to combine the
+elements from the input lists.
+
+00:05:07.000 --> 00:05:11.660 align:middle line:84%
+So let's do zipWith using
+the max function, which
+
+00:05:11.660 --> 00:05:15.520 align:middle line:84%
+will allow us to combine input
+elements of integer lists.
+
+00:05:15.520 --> 00:05:18.310 align:middle line:90%
+
+
+00:05:18.310 --> 00:05:19.850 align:middle line:84%
+And in the output
+list, we'll have
+
+00:05:19.850 --> 00:05:23.520 align:middle line:84%
+the maximum of the corresponding
+two entries in the input lists.
+
+00:05:23.520 --> 00:05:26.170 align:middle line:90%
+
+
+00:05:26.170 --> 00:05:31.630 align:middle line:84%
+So you see the two integer lists
+there, 1, 2, 3 and 0, 2, 4.
+
+00:05:31.630 --> 00:05:36.510 align:middle line:84%
+Well, the max element in
+each of the list locations
+
+00:05:36.510 --> 00:05:40.380 align:middle line:84%
+will be in the output list
+when zipWith is evaluated here.
+
+00:05:40.380 --> 00:05:42.860 align:middle line:84%
+And indeed, we see
+the first element
+
+00:05:42.860 --> 00:05:46.620 align:middle line:84%
+1 is the greater of the
+two corresponding elements
+
+00:05:46.620 --> 00:05:48.230 align:middle line:90%
+in the input list.
+
+00:05:48.230 --> 00:05:50.950 align:middle line:84%
+And for the last
+element, 4 is the greater
+
+00:05:50.950 --> 00:05:53.820 align:middle line:84%
+of the two elements in the
+corresponding input lists.
+
+00:05:53.820 --> 00:05:56.580 align:middle line:90%
+
+
+00:05:56.580 --> 00:05:59.300 align:middle line:90%
+Let's try another zipWith.
+
+00:05:59.300 --> 00:06:04.310 align:middle line:84%
+Recall that if we specify an
+infix operator in parentheses,
+
+00:06:04.310 --> 00:06:06.410 align:middle line:90%
+it becomes a prefix function.
+
+00:06:06.410 --> 00:06:07.930 align:middle line:84%
+So we're going to
+combine elements
+
+00:06:07.930 --> 00:06:14.860 align:middle line:84%
+from 1, 2, 3 and 0, 2, 4
+by adding them together,
+
+00:06:14.860 --> 00:06:19.150 align:middle line:84%
+which should give us
+the list of the sums.
+
+00:06:19.150 --> 00:06:20.610 align:middle line:90%
+1 and 0 makes 1.
+
+00:06:20.610 --> 00:06:22.070 align:middle line:90%
+2 add 2 makes 4.
+
+00:06:22.070 --> 00:06:23.345 align:middle line:90%
+3 add 4 makes 7.
+
+00:06:23.345 --> 00:06:26.350 align:middle line:90%
+
+
+00:06:26.350 --> 00:06:29.785 align:middle line:84%
+Now, let's replicate the
+behavior of the zip function
+
+00:06:29.785 --> 00:06:33.820 align:middle line:84%
+we saw earlier using
+the more general zipWith
+
+00:06:33.820 --> 00:06:35.330 align:middle line:90%
+function we know about now.
+
+00:06:35.330 --> 00:06:41.090 align:middle line:90%
+
+
+00:06:41.090 --> 00:06:46.160 align:middle line:84%
+Remember, zip took an
+element from the first input
+
+00:06:46.160 --> 00:06:54.200 align:middle line:84%
+list and then an element
+from the second input list
+
+00:06:54.200 --> 00:06:57.540 align:middle line:84%
+and then produced in the
+corresponding element
+
+00:06:57.540 --> 00:07:01.100 align:middle line:84%
+in the output list
+the pair of those two
+
+00:07:01.100 --> 00:07:04.800 align:middle line:90%
+elements from the input list.
+
+00:07:04.800 --> 00:07:07.620 align:middle line:84%
+What I've written is
+a lambda expression
+
+00:07:07.620 --> 00:07:10.280 align:middle line:90%
+to perform this operation.
+
+00:07:10.280 --> 00:07:13.150 align:middle line:84%
+Take one element,
+another element,
+
+00:07:13.150 --> 00:07:14.850 align:middle line:84%
+then produces a
+pair of elements.
+
+00:07:14.850 --> 00:07:17.490 align:middle line:90%
+
+
+00:07:17.490 --> 00:07:19.810 align:middle line:84%
+We'll look at lambda
+expressions in more detail later
+
+00:07:19.810 --> 00:07:21.500 align:middle line:90%
+in the course.
+
+00:07:21.500 --> 00:07:25.700 align:middle line:84%
+But for now, don't
+worry about the details.
+
+00:07:25.700 --> 00:07:28.940 align:middle line:84%
+So let's try this
+zipWith function here
+
+00:07:28.940 --> 00:07:32.540 align:middle line:84%
+with this lambda
+expression using a pair
+
+00:07:32.540 --> 00:07:36.920 align:middle line:90%
+the lists we looked at earlier.
+
+00:07:36.920 --> 00:07:40.550 align:middle line:84%
+And we see that the output
+is the same list of pairs.
+
+00:07:40.550 --> 00:07:43.424 align:middle line:90%

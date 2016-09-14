@@ -1,0 +1,1027 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.486 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.486 --> 00:00:06.972 align:middle line:90%
+
+
+00:00:06.972 --> 00:00:11.100 align:middle line:84%
+INTERVIEWER: Hey, so Simon,
+welcome back to Glasgow.
+
+00:00:11.100 --> 00:00:13.067 align:middle line:84%
+How many years did you
+spend working here?
+
+00:00:13.067 --> 00:00:14.650 align:middle line:84%
+SIMON PEYTON JONES:
+It was about nine,
+
+00:00:14.650 --> 00:00:16.370 align:middle line:84%
+but it felt much
+longer at the time.
+
+00:00:16.370 --> 00:00:18.110 align:middle line:84%
+This is also the time my
+children were being born
+
+00:00:18.110 --> 00:00:20.290 align:middle line:84%
+and it was a very important time
+of change for the department.
+
+00:00:20.290 --> 00:00:21.580 align:middle line:90%
+So it was a very exciting time.
+
+00:00:21.580 --> 00:00:23.871 align:middle line:84%
+INTERVIEWER: Well, as well
+as your children being born,
+
+00:00:23.871 --> 00:00:25.655 align:middle line:84%
+the Haskell movement,
+I suppose, was born.
+
+00:00:25.655 --> 00:00:26.780 align:middle line:90%
+SIMON PEYTON JONES: It was.
+
+00:00:26.780 --> 00:00:28.571 align:middle line:84%
+It slightly predated
+my children, actually.
+
+00:00:28.571 --> 00:00:30.744 align:middle line:84%
+So they refer to Haskell
+as my first child.
+
+00:00:30.744 --> 00:00:31.660 align:middle line:90%
+INTERVIEWER: Oh I see.
+
+00:00:31.660 --> 00:00:32.500 align:middle line:90%
+Very good.
+
+00:00:32.500 --> 00:00:34.860 align:middle line:84%
+Now I think in the
+past you've said
+
+00:00:34.860 --> 00:00:40.195 align:middle line:84%
+Glasgow is a kind of
+spiritual home for Haskell.
+
+00:00:40.195 --> 00:00:41.994 align:middle line:90%
+Are those your precise words?
+
+00:00:41.994 --> 00:00:44.410 align:middle line:84%
+SIMON PEYTON JONES: I don't
+know, but I kind of feel that.
+
+00:00:44.410 --> 00:00:49.490 align:middle line:84%
+Because Haskell was the fruit
+of an international committee
+
+00:00:49.490 --> 00:00:50.800 align:middle line:90%
+of about 20 people.
+
+00:00:50.800 --> 00:00:53.257 align:middle line:84%
+But it just so happened
+that several members
+
+00:00:53.257 --> 00:00:54.840 align:middle line:84%
+of the committee
+were here at Glasgow.
+
+00:00:54.840 --> 00:00:58.625 align:middle line:84%
+So it was John Hughes, Phil
+Wadler, myself, Kevin Hammond,
+
+00:00:58.625 --> 00:01:01.500 align:middle line:84%
+who became an editor
+of the report.
+
+00:01:01.500 --> 00:01:04.135 align:middle line:84%
+And Will Partain became
+involved a little later.
+
+00:01:04.135 --> 00:01:06.510 align:middle line:84%
+So there was quite a few
+members of the Haskell Committee
+
+00:01:06.510 --> 00:01:07.890 align:middle line:90%
+who were just here at Glasgow.
+
+00:01:07.890 --> 00:01:09.440 align:middle line:84%
+So it was a sort of
+epicenter, if you like.
+
+00:01:09.440 --> 00:01:11.398 align:middle line:84%
+INTERVIEWER: The epicenter,
+that's a nice word.
+
+00:01:11.398 --> 00:01:12.520 align:middle line:90%
+Very good, yes.
+
+00:01:12.520 --> 00:01:14.250 align:middle line:84%
+Now you spoke about
+the committee.
+
+00:01:14.250 --> 00:01:19.190 align:middle line:84%
+And I think in terms of
+programming languages, being
+
+00:01:19.190 --> 00:01:22.370 align:middle line:84%
+designed by committee is
+not always a good thing.
+
+00:01:22.370 --> 00:01:23.870 align:middle line:84%
+SIMON PEYTON JONES:
+It's not usually
+
+00:01:23.870 --> 00:01:25.690 align:middle line:90%
+regarded as being an advantage.
+
+00:01:25.690 --> 00:01:27.890 align:middle line:84%
+Because all of the languages
+that you hear about,
+
+00:01:27.890 --> 00:01:31.350 align:middle line:84%
+Ruby, and Perl, and Python,
+and so forth, they all
+
+00:01:31.350 --> 00:01:35.204 align:middle line:84%
+have quite clearly distinct
+individual closure.
+
+00:01:35.204 --> 00:01:37.120 align:middle line:84%
+They have individual
+people who designed them.
+
+00:01:37.120 --> 00:01:38.840 align:middle line:90%
+Or Pascal even longer ago.
+
+00:01:38.840 --> 00:01:41.600 align:middle line:84%
+So Haskell's very unusual
+in being, A, designed
+
+00:01:41.600 --> 00:01:44.850 align:middle line:84%
+by a group, but B, nevertheless
+being quite successful
+
+00:01:44.850 --> 00:01:46.117 align:middle line:90%
+over the long term.
+
+00:01:46.117 --> 00:01:47.700 align:middle line:84%
+INTERVIEWER: There's
+a wonderful quote
+
+00:01:47.700 --> 00:01:49.840 align:middle line:84%
+from Tony Hoare-- you
+were reminding me of it
+
+00:01:49.840 --> 00:01:51.630 align:middle line:84%
+before-- where he
+said he thought
+
+00:01:51.630 --> 00:01:55.690 align:middle line:90%
+Haskell was doomed to succeed.
+
+00:01:55.690 --> 00:01:59.840 align:middle line:84%
+Would you care to measure
+the success of Haskell?
+
+00:01:59.840 --> 00:02:01.920 align:middle line:84%
+Do you think it's exceeded
+your wildest dream?
+
+00:02:01.920 --> 00:02:02.880 align:middle line:84%
+SIMON PEYTON JONES:
+Oh, it certainly has.
+
+00:02:02.880 --> 00:02:05.220 align:middle line:84%
+So I think what was in Tony's
+mind is that Tony really
+
+00:02:05.220 --> 00:02:09.220 align:middle line:84%
+likes very small, conceptually
+pure languages that are sort of
+
+00:02:09.220 --> 00:02:11.090 align:middle line:90%
+stripped down to their essence.
+
+00:02:11.090 --> 00:02:13.530 align:middle line:84%
+And Haskell, right
+from the beginning,
+
+00:02:13.530 --> 00:02:15.686 align:middle line:84%
+it has a conceptual
+core that's very small,
+
+00:02:15.686 --> 00:02:17.810 align:middle line:84%
+but it has quite a lot of
+stuff around the outside.
+
+00:02:17.810 --> 00:02:19.700 align:middle line:84%
+There's more than one
+syntax for doing this.
+
+00:02:19.700 --> 00:02:21.260 align:middle line:90%
+There's lets as well as wheres.
+
+00:02:21.260 --> 00:02:23.468 align:middle line:84%
+There's pattern matching as
+well as case expressions.
+
+00:02:23.468 --> 00:02:25.080 align:middle line:84%
+And we thought
+that was important.
+
+00:02:25.080 --> 00:02:28.910 align:middle line:84%
+So I think he felt it was
+doomed to succeed because it
+
+00:02:28.910 --> 00:02:30.320 align:middle line:90%
+was made by a larger group.
+
+00:02:30.320 --> 00:02:32.350 align:middle line:84%
+But in fact no language
+is doomed to succeed.
+
+00:02:32.350 --> 00:02:35.310 align:middle line:84%
+I think my expectation was
+that Haskell would become
+
+00:02:35.310 --> 00:02:38.442 align:middle line:84%
+a useful research vehicle for
+a number of research groups
+
+00:02:38.442 --> 00:02:40.400 align:middle line:84%
+who were working on lazy
+functional programming
+
+00:02:40.400 --> 00:02:42.740 align:middle line:84%
+at the time and maybe
+no more than that.
+
+00:02:42.740 --> 00:02:45.970 align:middle line:84%
+But in fact, it's been
+solidly influential
+
+00:02:45.970 --> 00:02:47.734 align:middle line:90%
+over 2 and 1/2 decades.
+
+00:02:47.734 --> 00:02:49.400 align:middle line:84%
+And it's become a
+kind of thought leader
+
+00:02:49.400 --> 00:02:53.430 align:middle line:84%
+in a way that has definitely
+exceeded my expectations.
+
+00:02:53.430 --> 00:02:55.200 align:middle line:84%
+INTERVIEWER: You
+mentioned laziness there.
+
+00:02:55.200 --> 00:02:57.850 align:middle line:84%
+And I think that's one of the
+unusual things about Haskell
+
+00:02:57.850 --> 00:03:01.110 align:middle line:84%
+compared to most mainstream
+programming languages.
+
+00:03:01.110 --> 00:03:03.340 align:middle line:84%
+Can you give us a
+kind of Idiot's Guide
+
+00:03:03.340 --> 00:03:04.749 align:middle line:90%
+to Laziness, please?
+
+00:03:04.749 --> 00:03:06.790 align:middle line:84%
+SIMON PEYTON JONES: So
+laziness was, if you like,
+
+00:03:06.790 --> 00:03:09.040 align:middle line:84%
+the thing that brought that
+particular group of people
+
+00:03:09.040 --> 00:03:12.180 align:middle line:84%
+together, was the single war
+cry that sort of identified
+
+00:03:12.180 --> 00:03:13.780 align:middle line:90%
+what Haskell was at the time.
+
+00:03:13.780 --> 00:03:16.590 align:middle line:84%
+So lazy evaluation means,
+let's procrastinate as much as
+
+00:03:16.590 --> 00:03:17.090 align:middle line:90%
+possible.
+
+00:03:17.090 --> 00:03:19.070 align:middle line:84%
+Let's not do any work unless
+we absolutely have to.
+
+00:03:19.070 --> 00:03:21.570 align:middle line:84%
+So if you call a function and
+you're passing it an argument,
+
+00:03:21.570 --> 00:03:23.850 align:middle line:84%
+well, let's not evaluate
+the argument yet.
+
+00:03:23.850 --> 00:03:26.770 align:middle line:84%
+Let's pass to the function, the
+kind of recipe or suspension,
+
+00:03:26.770 --> 00:03:28.590 align:middle line:84%
+which when the function
+needs the argument,
+
+00:03:28.590 --> 00:03:29.720 align:middle line:90%
+it can evaluate it.
+
+00:03:29.720 --> 00:03:32.260 align:middle line:84%
+And if you want to regard
+if, then, else as a function,
+
+00:03:32.260 --> 00:03:33.450 align:middle line:90%
+that's rather important.
+
+00:03:33.450 --> 00:03:35.800 align:middle line:84%
+Because you don't want
+to do both the then part
+
+00:03:35.800 --> 00:03:36.550 align:middle line:90%
+and the else part.
+
+00:03:36.550 --> 00:03:38.216 align:middle line:84%
+Because you only want
+to do one in them.
+
+00:03:38.216 --> 00:03:39.740 align:middle line:84%
+They're kind
+crucially important.
+
+00:03:39.740 --> 00:03:41.400 align:middle line:84%
+But then it turned out to be
+more than just convenient.
+
+00:03:41.400 --> 00:03:43.358 align:middle line:84%
+John Hughes wrote this
+very influential paper--
+
+00:03:43.358 --> 00:03:45.030 align:middle line:84%
+John Hughes, also
+here at Glasgow--
+
+00:03:45.030 --> 00:03:46.780 align:middle line:84%
+called Why Functional
+Programming Matters,
+
+00:03:46.780 --> 00:03:49.590 align:middle line:84%
+in which he described how
+lazy evaluation allows you
+
+00:03:49.590 --> 00:03:53.507 align:middle line:84%
+to compose programs together
+in a way that you couldn't.
+
+00:03:53.507 --> 00:03:55.090 align:middle line:84%
+You can write a
+program that generates
+
+00:03:55.090 --> 00:03:57.847 align:middle line:84%
+all the possible moves in
+a game tree, sort of all
+
+00:03:57.847 --> 00:03:58.930 align:middle line:90%
+the possible alternatives.
+
+00:03:58.930 --> 00:04:00.340 align:middle line:90%
+That is an infinite tree.
+
+00:04:00.340 --> 00:04:01.840 align:middle line:84%
+And then separately,
+you could write
+
+00:04:01.840 --> 00:04:05.155 align:middle line:84%
+a program that walks over the
+tree and picks the right one.
+
+00:04:05.155 --> 00:04:09.280 align:middle line:84%
+And in a eager language, you
+have to meld those two passes
+
+00:04:09.280 --> 00:04:10.030 align:middle line:90%
+together into one.
+
+00:04:10.030 --> 00:04:11.946 align:middle line:84%
+But in a lazy language,
+you can separate them.
+
+00:04:11.946 --> 00:04:14.950 align:middle line:84%
+So it's a powerful
+modularity mechanism.
+
+00:04:14.950 --> 00:04:16.750 align:middle line:84%
+And also it's a powerful
+purity mechanism.
+
+00:04:16.750 --> 00:04:18.124 align:middle line:84%
+It sort of forces
+you to be pure,
+
+00:04:18.124 --> 00:04:20.029 align:middle line:84%
+which retrospectively
+I think was the most
+
+00:04:20.029 --> 00:04:21.180 align:middle line:90%
+important thing about it.
+
+00:04:21.180 --> 00:04:23.490 align:middle line:90%
+INTERVIEWER: Good.
+
+00:04:23.490 --> 00:04:26.000 align:middle line:84%
+There are noises in
+the Haskell community
+
+00:04:26.000 --> 00:04:28.724 align:middle line:84%
+about becoming more
+strict these days.
+
+00:04:28.724 --> 00:04:30.140 align:middle line:84%
+Is that something
+you approve off?
+
+00:04:30.140 --> 00:04:32.790 align:middle line:84%
+SIMON PEYTON JONES: Oh yes, the
+whole strict-lazy dichotomy.
+
+00:04:32.790 --> 00:04:35.060 align:middle line:84%
+So initially it was,
+well, there was Haskell,
+
+00:04:35.060 --> 00:04:36.590 align:middle line:84%
+which was a lazy
+language, and there
+
+00:04:36.590 --> 00:04:39.527 align:middle line:84%
+was Miranda, and SASL,
+and a few others,
+
+00:04:39.527 --> 00:04:40.860 align:middle line:90%
+and there were strict languages.
+
+00:04:40.860 --> 00:04:42.930 align:middle line:84%
+And these were very
+sort of different camps.
+
+00:04:42.930 --> 00:04:45.940 align:middle line:84%
+But over time, Haskell
+has grown more strict,
+
+00:04:45.940 --> 00:04:49.470 align:middle line:84%
+we have strictness annotations
+to allow the programmer more
+
+00:04:49.470 --> 00:04:51.090 align:middle line:90%
+control over evaluation order.
+
+00:04:51.090 --> 00:04:53.230 align:middle line:84%
+And indeed, the strict
+languages also usually
+
+00:04:53.230 --> 00:04:54.960 align:middle line:84%
+have some kind of
+thunking mechanism
+
+00:04:54.960 --> 00:04:57.030 align:middle line:84%
+to allow you to model
+lazy evaluation.
+
+00:04:57.030 --> 00:04:59.410 align:middle line:84%
+So in fact I think
+people now see it more
+
+00:04:59.410 --> 00:05:00.510 align:middle line:90%
+as a continuous spectrum.
+
+00:05:00.510 --> 00:05:03.190 align:middle line:84%
+It's more, what's the
+default, rather than
+
+00:05:03.190 --> 00:05:07.850 align:middle line:90%
+a sort of way of life doctrine.
+
+00:05:07.850 --> 00:05:09.930 align:middle line:84%
+INTERVIEWER: Yes,
+I'd like to ask you
+
+00:05:09.930 --> 00:05:14.850 align:middle line:84%
+about Haskell applications
+out in the real world.
+
+00:05:14.850 --> 00:05:19.670 align:middle line:84%
+Can you think of any examples of
+perhaps very exotic deployments
+
+00:05:19.670 --> 00:05:21.205 align:middle line:90%
+of Haskell programs?
+
+00:05:21.205 --> 00:05:22.830 align:middle line:84%
+SIMON PEYTON JONES:
+Oh well, so Haskell
+
+00:05:22.830 --> 00:05:27.990 align:middle line:84%
+is kind of strange, because it's
+been quite a niche language.
+
+00:05:27.990 --> 00:05:31.510 align:middle line:84%
+So it's been difficult
+for large companies
+
+00:05:31.510 --> 00:05:34.060 align:middle line:84%
+to start using Haskell in a
+major way, because they're
+
+00:05:34.060 --> 00:05:36.220 align:middle line:84%
+always worried about how many
+Haskell programmers there'll be
+
+00:05:36.220 --> 00:05:38.511 align:middle line:84%
+and will the Haskell compiler
+continue to be supported?
+
+00:05:38.511 --> 00:05:42.105 align:middle line:84%
+So I think that Haskell as kind
+of like a fungus or a mushroom.
+
+00:05:42.105 --> 00:05:45.290 align:middle line:84%
+You know the way that fungi I
+have these very long tendrils
+
+00:05:45.290 --> 00:05:46.160 align:middle line:90%
+under the ground.
+
+00:05:46.160 --> 00:05:49.040 align:middle line:84%
+So they're quite widespread,
+but you can't see them?
+
+00:05:49.040 --> 00:05:50.740 align:middle line:90%
+INTERVIEWER: Yeah.
+
+00:05:50.740 --> 00:05:54.050 align:middle line:84%
+So Haskell is quite widely used,
+particularly in small startup
+
+00:05:54.050 --> 00:05:57.040 align:middle line:84%
+companies with the chief
+technology officer--
+
+00:05:57.040 --> 00:06:00.110 align:middle line:84%
+Like there's a company called
+SchedMe in New York doing
+
+00:06:00.110 --> 00:06:01.537 align:middle line:90%
+some kind of scheduling system.
+
+00:06:01.537 --> 00:06:03.120 align:middle line:84%
+And they're entirely
+built in Haskell.
+
+00:06:03.120 --> 00:06:05.450 align:middle line:84%
+And their CEO is telling
+me how they threw away
+
+00:06:05.450 --> 00:06:08.780 align:middle line:84%
+their Ruby code, and it was
+just so much better in Haskell.
+
+00:06:08.780 --> 00:06:10.750 align:middle line:84%
+So it's used in small
+companies quite a bit.
+
+00:06:10.750 --> 00:06:13.840 align:middle line:84%
+It's also used in some big
+companies, particularly banks.
+
+00:06:13.840 --> 00:06:16.510 align:middle line:84%
+Every bank appears to have a
+secret functional programming
+
+00:06:16.510 --> 00:06:17.817 align:middle line:90%
+group.
+
+00:06:17.817 --> 00:06:19.900 align:middle line:84%
+And quite often, that
+functional programming group
+
+00:06:19.900 --> 00:06:20.500 align:middle line:90%
+is using Haskell.
+
+00:06:20.500 --> 00:06:21.958 align:middle line:84%
+So Standard Chartered,
+for example,
+
+00:06:21.958 --> 00:06:24.240 align:middle line:90%
+has quite a big Haskell group.
+
+00:06:24.240 --> 00:06:27.290 align:middle line:84%
+In fact, they're
+continually hiring people.
+
+00:06:27.290 --> 00:06:32.320 align:middle line:84%
+And they don't get their
+quants, their traders,
+
+00:06:32.320 --> 00:06:34.910 align:middle line:84%
+to write Haskell directly, but
+a lot of their infrastructure
+
+00:06:34.910 --> 00:06:36.350 align:middle line:90%
+is written in Haskell.
+
+00:06:36.350 --> 00:06:38.350 align:middle line:84%
+And when their quants
+say, we want some new kind
+
+00:06:38.350 --> 00:06:40.080 align:middle line:84%
+of spreadsheet-oriented
+tool, they'll
+
+00:06:40.080 --> 00:06:43.685 align:middle line:84%
+write spreadsheets that
+invoke functions written
+
+00:06:43.685 --> 00:06:46.890 align:middle line:84%
+in Mu, which is essentially a
+reimplementation of Haskell.
+
+00:06:46.890 --> 00:06:48.810 align:middle line:84%
+So Haskell has become
+quite important
+
+00:06:48.810 --> 00:06:50.330 align:middle line:84%
+in a number of
+financial settings.
+
+00:06:50.330 --> 00:06:54.760 align:middle line:84%
+And then Galois, founded by
+John Launchbury, who is also
+
+00:06:54.760 --> 00:06:57.220 align:middle line:90%
+a graduate of this department.
+
+00:06:57.220 --> 00:06:59.460 align:middle line:84%
+So is now quite a
+successful company
+
+00:06:59.460 --> 00:07:01.160 align:middle line:90%
+in the northwest United States.
+
+00:07:01.160 --> 00:07:03.380 align:middle line:84%
+And I was talking to Alice
+Miller earlier on today.
+
+00:07:03.380 --> 00:07:06.510 align:middle line:84%
+They do a lot of safety
+critical things using Haskell.
+
+00:07:06.510 --> 00:07:08.950 align:middle line:84%
+One example was they have
+a domain-specific language
+
+00:07:08.950 --> 00:07:12.562 align:middle line:84%
+for writing the control systems
+for called quad copters.
+
+00:07:12.562 --> 00:07:14.770 align:middle line:84%
+So they write in this very
+high-level language, which
+
+00:07:14.770 --> 00:07:16.853 align:middle line:84%
+is essentially Haskell,
+and then they compile that
+
+00:07:16.853 --> 00:07:19.830 align:middle line:84%
+down to C, which runs
+on the quad copter.
+
+00:07:19.830 --> 00:07:22.080 align:middle line:84%
+INTERVIEWER: Here's a slightly
+cheeky question, Simon.
+
+00:07:22.080 --> 00:07:24.710 align:middle line:84%
+What's your second favorite
+programming language
+
+00:07:24.710 --> 00:07:26.380 align:middle line:84%
+after Haskell presumably
+is your first?
+
+00:07:26.380 --> 00:07:28.880 align:middle line:84%
+SIMON PEYTON JONES: Difficult
+question, yes, because they're
+
+00:07:28.880 --> 00:07:31.830 align:middle line:90%
+a long way behind.
+
+00:07:31.830 --> 00:07:33.739 align:middle line:90%
+I think I'd have to say Excel.
+
+00:07:33.739 --> 00:07:34.530 align:middle line:90%
+INTERVIEWER: Right?
+
+00:07:34.530 --> 00:07:35.210 align:middle line:90%
+That's interesting.
+
+00:07:35.210 --> 00:07:35.730 align:middle line:84%
+SIMON PEYTON JONES:
+Most people don't
+
+00:07:35.730 --> 00:07:37.940 align:middle line:84%
+think of Excel as a
+programming language at all.
+
+00:07:37.940 --> 00:07:39.420 align:middle line:90%
+But it is, right?
+
+00:07:39.420 --> 00:07:42.130 align:middle line:84%
+And moreover, it's a functional
+programming language, which
+
+00:07:42.130 --> 00:07:44.274 align:middle line:84%
+everybody believes should
+be fun-- They don't even
+
+00:07:44.274 --> 00:07:46.940 align:middle line:84%
+think of it as func-- They don't
+even think they're programming.
+
+00:07:46.940 --> 00:07:47.660 align:middle line:90%
+They're modeling.
+
+00:07:47.660 --> 00:07:49.160 align:middle line:84%
+So what I would
+like to do is to get
+
+00:07:49.160 --> 00:07:52.030 align:middle line:84%
+Excel to be more up front about
+being a functional programming
+
+00:07:52.030 --> 00:07:54.590 align:middle line:84%
+language, and particularly to
+support user-defined functions
+
+00:07:54.590 --> 00:07:56.720 align:middle line:84%
+and rich data structures,
+records and arrays ways
+
+00:07:56.720 --> 00:07:57.510 align:middle line:90%
+and so forth.
+
+00:07:57.510 --> 00:07:59.910 align:middle line:84%
+And then in my grand
+vision, we would
+
+00:07:59.910 --> 00:08:02.820 align:middle line:84%
+teach Excel as our first
+programming language.
+
+00:08:02.820 --> 00:08:04.549 align:middle line:84%
+Because anything you
+can do in Haskell,
+
+00:08:04.549 --> 00:08:07.090 align:middle line:84%
+ultimately you could do in Excel
+if you could do all of this.
+
+00:08:07.090 --> 00:08:08.160 align:middle line:90%
+That would be pretty exciting.
+
+00:08:08.160 --> 00:08:10.040 align:middle line:84%
+So my second favorite
+programming language
+
+00:08:10.040 --> 00:08:12.300 align:middle line:84%
+is not Excel as it
+is today, but Excel
+
+00:08:12.300 --> 00:08:15.111 align:middle line:90%
+as I hope it might be one day.
+
+00:08:15.111 --> 00:08:15.860 align:middle line:90%
+INTERVIEWER: Good.
+
+00:08:15.860 --> 00:08:18.570 align:middle line:84%
+This is my last
+question now, Simon.
+
+00:08:18.570 --> 00:08:22.280 align:middle line:84%
+You've written an
+article about how Haskell
+
+00:08:22.280 --> 00:08:24.750 align:middle line:90%
+is like wearing a hair shirt.
+
+00:08:24.750 --> 00:08:29.130 align:middle line:84%
+Now I want you to give some
+encouraging words to novice
+
+00:08:29.130 --> 00:08:31.902 align:middle line:84%
+Haskell programmers, people
+who are learning about Haskell
+
+00:08:31.902 --> 00:08:35.320 align:middle line:84%
+in our course and maybe
+finding it quite difficult.
+
+00:08:35.320 --> 00:08:38.640 align:middle line:84%
+What would you say to encourage
+them to pursue functional
+
+00:08:38.640 --> 00:08:39.140 align:middle line:90%
+programming?
+
+00:08:39.140 --> 00:08:40.829 align:middle line:90%
+
+
+00:08:40.829 --> 00:08:42.620 align:middle line:84%
+SIMON PEYTON JONES:
+Functional programming,
+
+00:08:42.620 --> 00:08:45.130 align:middle line:84%
+particularly if you're used to
+writing in imperative programs,
+
+00:08:45.130 --> 00:08:47.470 align:middle line:84%
+does feel a bit like rewiring
+your brain, which can feel
+
+00:08:47.470 --> 00:08:48.720 align:middle line:90%
+a little bit painful at first.
+
+00:08:48.720 --> 00:08:51.160 align:middle line:84%
+But the experience is once
+you come through that pain,
+
+00:08:51.160 --> 00:08:53.540 align:middle line:84%
+you look at the entire--
+functional programming
+
+00:08:53.540 --> 00:08:56.430 align:middle line:84%
+is kind of like a radical
+and eloquent attack
+
+00:08:56.430 --> 00:08:58.942 align:middle line:84%
+on the entire enterprise
+of writing programs.
+
+00:08:58.942 --> 00:09:01.150 align:middle line:84%
+It's not like, well, I'm
+just going to switch syntax.
+
+00:09:01.150 --> 00:09:03.005 align:middle line:90%
+It's just C# instead of Java.
+
+00:09:03.005 --> 00:09:05.380 align:middle line:84%
+It's a whole different way of
+thinking about the problem.
+
+00:09:05.380 --> 00:09:08.334 align:middle line:84%
+And if you think about
+complex problems, and programs
+
+00:09:08.334 --> 00:09:10.750 align:middle line:84%
+are the most complex artifacts
+that human beings have ever
+
+00:09:10.750 --> 00:09:13.083 align:middle line:84%
+built. If you think about
+complex problems in a new way,
+
+00:09:13.083 --> 00:09:15.360 align:middle line:84%
+that could shed really
+new light on it.
+
+00:09:15.360 --> 00:09:17.530 align:middle line:84%
+So I think one of the
+interesting things
+
+00:09:17.530 --> 00:09:23.070 align:middle line:84%
+about Haskell in particular, is
+it sticks remorselessly purely
+
+00:09:23.070 --> 00:09:26.870 align:middle line:84%
+to one central idea, which
+is a programming with values
+
+00:09:26.870 --> 00:09:28.615 align:middle line:84%
+and functions rather
+than programming
+
+00:09:28.615 --> 00:09:30.412 align:middle line:90%
+with mutation and side effects.
+
+00:09:30.412 --> 00:09:32.370 align:middle line:84%
+And most other functional
+programming languages
+
+00:09:32.370 --> 00:09:33.762 align:middle line:84%
+sort of dice with
+the devil a bit
+
+00:09:33.762 --> 00:09:35.220 align:middle line:84%
+and do quite a lot
+of side effects.
+
+00:09:35.220 --> 00:09:37.420 align:middle line:84%
+Haskell is pretty
+remorselessly pure about that.
+
+00:09:37.420 --> 00:09:39.610 align:middle line:84%
+And that kind of
+educates you continually
+
+00:09:39.610 --> 00:09:40.980 align:middle line:90%
+into this new way of thinking.
+
+00:09:40.980 --> 00:09:43.070 align:middle line:90%
+I'll just give one tiny example.
+
+00:09:43.070 --> 00:09:45.000 align:middle line:84%
+Sometimes you do want
+to do mutating things,
+
+00:09:45.000 --> 00:09:48.630 align:middle line:90%
+and we do that using monads.
+
+00:09:48.630 --> 00:09:52.309 align:middle line:84%
+When you want
+concurrent threads that
+
+00:09:52.309 --> 00:09:54.600 align:middle line:84%
+are doing I/O in the world,
+so they must be concurrent,
+
+00:09:54.600 --> 00:09:57.070 align:middle line:84%
+they must interact with each
+other in some stateful way,
+
+00:09:57.070 --> 00:10:00.180 align:middle line:84%
+a good way to make them interact
+is using transactional memory.
+
+00:10:00.180 --> 00:10:01.680 align:middle line:84%
+So transactional
+memory is something
+
+00:10:01.680 --> 00:10:03.679 align:middle line:84%
+that's quite hard to do
+in imperative languages,
+
+00:10:03.679 --> 00:10:06.720 align:middle line:84%
+because in principle, every
+mutation of every memory
+
+00:10:06.720 --> 00:10:08.000 align:middle line:90%
+location must be tracked.
+
+00:10:08.000 --> 00:10:11.880 align:middle line:84%
+But in Haskell, because the
+mutation of mutable locations
+
+00:10:11.880 --> 00:10:14.920 align:middle line:84%
+are so carefully
+partitioned in the type
+
+00:10:14.920 --> 00:10:16.450 align:middle line:84%
+system-- and a
+little bit awkward
+
+00:10:16.450 --> 00:10:19.260 align:middle line:84%
+to get at as a programmer--
+then there are very few of them.
+
+00:10:19.260 --> 00:10:22.460 align:middle line:84%
+So transactional memory systems
+are efficient and effective.
+
+00:10:22.460 --> 00:10:26.264 align:middle line:84%
+And indeed they come
+out of the box with JHC.
+
+00:10:26.264 --> 00:10:27.930 align:middle line:84%
+INTERVIEWER: Simon,
+thank you very much.
+
+00:10:27.930 --> 00:10:29.140 align:middle line:84%
+SIMON PEYTON JONES: It's
+been great talking to you.
+
+00:10:29.140 --> 00:10:31.590 align:middle line:84%
+It's really nice to be
+back in Glasgow actually.
+
+00:10:31.590 --> 00:10:34.940 align:middle line:90%
+[MUSIC PLAYING]
+
+00:10:34.940 --> 00:10:37.411 align:middle line:90%

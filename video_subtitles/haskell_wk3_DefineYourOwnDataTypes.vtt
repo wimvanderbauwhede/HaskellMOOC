@@ -1,0 +1,392 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.030 align:middle line:90%
+
+
+00:00:05.030 --> 00:00:08.280 align:middle line:84%
+SPEAKER: Let's talk
+about data types.
+
+00:00:08.280 --> 00:00:13.770 align:middle line:84%
+A type is a set of values that
+are related, a family of values
+
+00:00:13.770 --> 00:00:16.260 align:middle line:90%
+that belong together.
+
+00:00:16.260 --> 00:00:20.020 align:middle line:84%
+So far we've seen the Bool
+data type, which consist
+
+00:00:20.020 --> 00:00:22.460 align:middle line:90%
+of values true and false.
+
+00:00:22.460 --> 00:00:24.550 align:middle line:84%
+We've also used
+the int data type,
+
+00:00:24.550 --> 00:00:26.380 align:middle line:84%
+which consists of
+whole number values
+
+00:00:26.380 --> 00:00:28.520 align:middle line:84%
+from some minimum
+to some maximum.
+
+00:00:28.520 --> 00:00:31.230 align:middle line:84%
+These bounds may differ
+based on whether your OS is
+
+00:00:31.230 --> 00:00:33.500 align:middle line:90%
+32-bit or 64-bit.
+
+00:00:33.500 --> 00:00:34.560 align:middle line:90%
+What else we looked at?
+
+00:00:34.560 --> 00:00:35.950 align:middle line:90%
+Characters, lists.
+
+00:00:35.950 --> 00:00:38.610 align:middle line:90%
+Oh, yes, and pairs as well.
+
+00:00:38.610 --> 00:00:41.410 align:middle line:84%
+We've also looked at
+function types that describe
+
+00:00:41.410 --> 00:00:44.970 align:middle line:90%
+argument and return values.
+
+00:00:44.970 --> 00:00:48.980 align:middle line:84%
+Now, we want to think
+about user-defined types,
+
+00:00:48.980 --> 00:00:52.065 align:middle line:84%
+creating custom data
+types for our own program.
+
+00:00:52.065 --> 00:00:57.110 align:middle line:90%
+
+
+00:00:57.110 --> 00:01:00.300 align:middle line:84%
+First, we'll consider
+a simple type
+
+00:01:00.300 --> 00:01:05.330 align:middle line:84%
+that consists of a finite
+set of alternative values.
+
+00:01:05.330 --> 00:01:07.970 align:middle line:84%
+Apparently, in
+the Amazon jungle,
+
+00:01:07.970 --> 00:01:12.790 align:middle line:84%
+there is a tribe who
+count one, two, many.
+
+00:01:12.790 --> 00:01:14.450 align:middle line:84%
+That is, they have
+no distinct words
+
+00:01:14.450 --> 00:01:18.040 align:middle line:90%
+for larger integers than two.
+
+00:01:18.040 --> 00:01:20.560 align:middle line:84%
+We could represent
+this type in Haskell
+
+00:01:20.560 --> 00:01:28.850 align:middle line:84%
+as follows-- data SimpleNum
+equals One or Two or Many.
+
+00:01:28.850 --> 00:01:32.770 align:middle line:84%
+If you have GHCi
+open, why not type
+
+00:01:32.770 --> 00:01:36.610 align:middle line:84%
+this in your interactive
+session right away?
+
+00:01:36.610 --> 00:01:42.080 align:middle line:84%
+The key word "data" indicates
+we are defining a new type.
+
+00:01:42.080 --> 00:01:45.190 align:middle line:84%
+The name of the type and
+the names of the values
+
+00:01:45.190 --> 00:01:47.980 align:middle line:84%
+should start with
+capital letters.
+
+00:01:47.980 --> 00:01:52.040 align:middle line:84%
+The alternative values are
+separated with a vertical bar
+
+00:01:52.040 --> 00:01:54.820 align:middle line:90%
+character.
+
+00:01:54.820 --> 00:01:57.660 align:middle line:84%
+Let's have a look at
+some of these values.
+
+00:01:57.660 --> 00:02:00.910 align:middle line:90%
+One-- ah, we can't see it.
+
+00:02:00.910 --> 00:02:03.430 align:middle line:84%
+We need to be able
+to print it out.
+
+00:02:03.430 --> 00:02:07.295 align:middle line:84%
+Add deriving Show to
+the type definition.
+
+00:02:07.295 --> 00:02:10.280 align:middle line:90%
+
+
+00:02:10.280 --> 00:02:12.600 align:middle line:90%
+Show is a type class.
+
+00:02:12.600 --> 00:02:15.180 align:middle line:84%
+We'll talk in more
+detail about this later.
+
+00:02:15.180 --> 00:02:21.410 align:middle line:84%
+For now, let's just understand
+that any type must derive show
+
+00:02:21.410 --> 00:02:23.205 align:middle line:84%
+if we are to print
+out its values.
+
+00:02:23.205 --> 00:02:26.280 align:middle line:90%
+
+
+00:02:26.280 --> 00:02:32.140 align:middle line:84%
+Data SimpleNum equals One or
+Two or Many deriving Show.
+
+00:02:32.140 --> 00:02:32.640 align:middle line:90%
+OK.
+
+00:02:32.640 --> 00:02:39.950 align:middle line:90%
+
+
+00:02:39.950 --> 00:02:41.070 align:middle line:90%
+Great.
+
+00:02:41.070 --> 00:02:45.640 align:middle line:84%
+Now, let's write a function
+to convert from int
+
+00:02:45.640 --> 00:02:49.930 align:middle line:90%
+to SimpleNum values.
+
+00:02:49.930 --> 00:02:54.210 align:middle line:84%
+First, I'm going to turn on
+multi-line support in GHCi
+
+00:02:54.210 --> 00:02:58.540 align:middle line:84%
+so I can format my function
+definition over several lines.
+
+00:02:58.540 --> 00:03:02.550 align:middle line:84%
+I use the set
+command to do this.
+
+00:03:02.550 --> 00:03:03.400 align:middle line:90%
+OK.
+
+00:03:03.400 --> 00:03:05.490 align:middle line:90%
+Let's go for it.
+
+00:03:05.490 --> 00:03:10.780 align:middle line:84%
+Let convert 1 equal One,
+convert 2 equal Two,
+
+00:03:10.780 --> 00:03:15.180 align:middle line:90%
+convert underscore equal Many.
+
+00:03:15.180 --> 00:03:18.495 align:middle line:84%
+So convert takes an int
+input-- well, really
+
+00:03:18.495 --> 00:03:20.810 align:middle line:84%
+a value that has a type
+belonging to the Num data
+
+00:03:20.810 --> 00:03:27.700 align:middle line:84%
+class-- again, more later--
+and return a SimpleNum output.
+
+00:03:27.700 --> 00:03:28.850 align:middle line:90%
+Let's try this out.
+
+00:03:28.850 --> 00:03:32.020 align:middle line:90%
+
+
+00:03:32.020 --> 00:03:33.770 align:middle line:90%
+Convert 1.
+
+00:03:33.770 --> 00:03:36.350 align:middle line:90%
+
+
+00:03:36.350 --> 00:03:40.100 align:middle line:90%
+Convert 300.
+
+00:03:40.100 --> 00:03:42.400 align:middle line:90%
+OK.
+
+00:03:42.400 --> 00:03:46.155 align:middle line:90%
+Map convert 1 to 5.
+
+00:03:46.155 --> 00:03:46.655 align:middle line:90%
+Perfect.
+
+00:03:46.655 --> 00:03:51.170 align:middle line:90%
+
+
+00:03:51.170 --> 00:03:52.690 align:middle line:90%
+Right.
+
+00:03:52.690 --> 00:03:57.060 align:middle line:84%
+That's a custom data type with
+alternative values, otherwise
+
+00:03:57.060 --> 00:04:00.040 align:middle line:90%
+known as a Sum data type.
+
+00:04:00.040 --> 00:04:03.300 align:middle line:84%
+Now let's think about
+a record data type that
+
+00:04:03.300 --> 00:04:06.084 align:middle line:90%
+stores a portfolio of values.
+
+00:04:06.084 --> 00:04:07.530 align:middle line:90%
+Hm.
+
+00:04:07.530 --> 00:04:10.070 align:middle line:90%
+How about cricket scores?
+
+00:04:10.070 --> 00:04:12.680 align:middle line:84%
+When a team bats in
+cricket, you need
+
+00:04:12.680 --> 00:04:15.460 align:middle line:90%
+to know two integer values.
+
+00:04:15.460 --> 00:04:18.920 align:middle line:84%
+The first is the number of
+runs scored by the team.
+
+00:04:18.920 --> 00:04:22.500 align:middle line:84%
+The second is the number of
+players who are out, i.e.
+
+00:04:22.500 --> 00:04:25.230 align:middle line:90%
+have been eliminated.
+
+00:04:25.230 --> 00:04:29.050 align:middle line:84%
+So a good score for the
+New Zealand cricket team
+
+00:04:29.050 --> 00:04:32.810 align:middle line:90%
+might be 350 [INAUDIBLE].
+
+00:04:32.810 --> 00:04:38.130 align:middle line:84%
+But 350 runs scored for
+the loss of four players.
+
+00:04:38.130 --> 00:04:42.990 align:middle line:84%
+We can represent this
+as a Product data type.
+
+00:04:42.990 --> 00:04:48.820 align:middle line:84%
+Data CricketScore equals
+Score Char list int, int,
+
+00:04:48.820 --> 00:04:49.695 align:middle line:90%
+deriving Show.
+
+00:04:49.695 --> 00:04:57.980 align:middle line:90%
+
+
+00:04:57.980 --> 00:05:03.200 align:middle line:84%
+Score is a type constructor
+that takes a string and two int
+
+00:05:03.200 --> 00:05:06.504 align:middle line:84%
+arguments and returns
+a cricket score value.
+
+00:05:06.504 --> 00:05:11.750 align:middle line:90%
+
+
+00:05:11.750 --> 00:05:14.690 align:middle line:84%
+In general, these kinds
+of custom data types
+
+00:05:14.690 --> 00:05:17.970 align:middle line:90%
+are called algebraic data types.
+
+00:05:17.970 --> 00:05:21.700 align:middle line:84%
+The alternative values
+relate to algebraic sums,
+
+00:05:21.700 --> 00:05:26.040 align:middle line:84%
+and the record values relate
+to algebraic products.
+
+00:05:26.040 --> 00:05:28.730 align:middle line:84%
+I'll spare you the Harris
+Type Theory for now.
+
+00:05:28.730 --> 00:05:32.500 align:middle line:84%
+But at least you know to
+Google for algebraic data types
+
+00:05:32.500 --> 00:05:37.320 align:middle line:84%
+if you are keen to discover
+more about type theory.
+
+00:05:37.320 --> 00:05:41.256 align:middle line:84%
+Let's conclude with what
+we've learned in this session.
+
+00:05:41.256 --> 00:05:44.730 align:middle line:90%
+
+
+00:05:44.730 --> 00:05:49.840 align:middle line:84%
+First, we use the "data" keyword
+to define a new custom type.
+
+00:05:49.840 --> 00:05:53.540 align:middle line:84%
+Second, types must derive
+the Show type class
+
+00:05:53.540 --> 00:05:56.290 align:middle line:84%
+if we want to see their
+values printed out.
+
+00:05:56.290 --> 00:06:01.570 align:middle line:84%
+Third, we used vertical bars
+to specify alternatives, or sum
+
+00:06:01.570 --> 00:06:02.930 align:middle line:90%
+data types.
+
+00:06:02.930 --> 00:06:06.710 align:middle line:84%
+And we used type constructors
+to build record types
+
+00:06:06.710 --> 00:06:12.920 align:middle line:84%
+like score values in cricket,
+which are product data types.
+
+00:06:12.920 --> 00:06:14.140 align:middle line:90%
+Thanks.
+
+00:06:14.140 --> 00:06:15.690 align:middle line:90%
+Goodbye.
+
+00:06:15.690 --> 00:06:19.763 align:middle line:90%

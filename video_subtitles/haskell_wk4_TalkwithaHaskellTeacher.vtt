@@ -1,0 +1,1100 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.808 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.808 --> 00:00:07.309 align:middle line:90%
+
+
+00:00:07.309 --> 00:00:08.100 align:middle line:90%
+JEREMY: Hi, Graham.
+
+00:00:08.100 --> 00:00:10.680 align:middle line:90%
+Welcome to Glasgow.
+
+00:00:10.680 --> 00:00:11.870 align:middle line:90%
+Good to see you.
+
+00:00:11.870 --> 00:00:15.470 align:middle line:84%
+We should give your official
+title, Professor Hutton.
+
+00:00:15.470 --> 00:00:18.910 align:middle line:84%
+Now I think you
+teach first years
+
+00:00:18.910 --> 00:00:21.465 align:middle line:84%
+to program in Haskell in
+Nottingham University,
+
+00:00:21.465 --> 00:00:22.444 align:middle line:90%
+don't you?
+
+00:00:22.444 --> 00:00:23.235 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:00:23.235 --> 00:00:26.045 align:middle line:84%
+JEREMY: Do you think Haskell a
+good first programming language
+
+00:00:26.045 --> 00:00:27.410 align:middle line:90%
+to learn?
+
+00:00:27.410 --> 00:00:30.580 align:middle line:84%
+GRAHAM HUTTON: I think I think
+it depends on the individual.
+
+00:00:30.580 --> 00:00:33.010 align:middle line:84%
+What we find in Nottingham
+is some people who've
+
+00:00:33.010 --> 00:00:35.870 align:middle line:84%
+done lots of
+programming before, it's
+
+00:00:35.870 --> 00:00:38.030 align:middle line:84%
+kind of hard to
+unwire their brain
+
+00:00:38.030 --> 00:00:41.660 align:middle line:84%
+and get them to forget the
+imperative, loop-based,
+
+00:00:41.660 --> 00:00:43.084 align:middle line:90%
+variable-based way of thinking.
+
+00:00:43.084 --> 00:00:44.500 align:middle line:84%
+JEREMY: Which is
+totally different
+
+00:00:44.500 --> 00:00:45.550 align:middle line:90%
+to our functional style.
+
+00:00:45.550 --> 00:00:47.300 align:middle line:84%
+GRAHAM HUTTON: Which
+is totally different.
+
+00:00:47.300 --> 00:00:49.770 align:middle line:84%
+And it takes a while for
+them to undo their brain.
+
+00:00:49.770 --> 00:00:52.740 align:middle line:84%
+Whereas some people who have
+never seen any programming
+
+00:00:52.740 --> 00:00:55.180 align:middle line:84%
+language before, they can
+get into the Haskell way
+
+00:00:55.180 --> 00:00:56.510 align:middle line:90%
+of thinking straight away.
+
+00:00:56.510 --> 00:00:57.926 align:middle line:84%
+And what we tend
+to find is people
+
+00:00:57.926 --> 00:00:59.660 align:middle line:84%
+who can think
+abstractly, they're
+
+00:00:59.660 --> 00:01:02.449 align:middle line:84%
+the ones who can pick
+it up very, very easily.
+
+00:01:02.449 --> 00:01:02.990 align:middle line:90%
+JEREMY: Yeah.
+
+00:01:02.990 --> 00:01:03.490 align:middle line:90%
+OK.
+
+00:01:03.490 --> 00:01:06.320 align:middle line:84%
+So there are certain
+notions that people really
+
+00:01:06.320 --> 00:01:11.560 align:middle line:84%
+struggle with like recursion,
+for instance or other kind
+
+00:01:11.560 --> 00:01:14.720 align:middle line:84%
+of functional concepts that you
+wouldn't see in an imperative
+
+00:01:14.720 --> 00:01:16.700 align:middle line:90%
+language so readily.
+
+00:01:16.700 --> 00:01:20.030 align:middle line:84%
+What do you do when people
+say, I don't get this?
+
+00:01:20.030 --> 00:01:22.832 align:middle line:84%
+How do you kind of coax them
+into a functional mind set?
+
+00:01:22.832 --> 00:01:24.540 align:middle line:84%
+GRAHAM HUTTON: So I've
+thought about this
+
+00:01:24.540 --> 00:01:25.450 align:middle line:84%
+for quite a long
+time because I've
+
+00:01:25.450 --> 00:01:27.116 align:middle line:84%
+been teaching Haskell
+to the first years
+
+00:01:27.116 --> 00:01:30.020 align:middle line:84%
+and second years
+for about 20 years.
+
+00:01:30.020 --> 00:01:32.100 align:middle line:84%
+What I do with the
+students is three things.
+
+00:01:32.100 --> 00:01:35.730 align:middle line:84%
+I say you should be very
+systematic about your learning.
+
+00:01:35.730 --> 00:01:37.335 align:middle line:84%
+So when I teach
+Haskell, I teach it
+
+00:01:37.335 --> 00:01:38.990 align:middle line:84%
+in a very kind of
+language-focused way
+
+00:01:38.990 --> 00:01:39.670 align:middle line:90%
+at the start.
+
+00:01:39.670 --> 00:01:41.770 align:middle line:84%
+So I teach the very
+basic concepts,
+
+00:01:41.770 --> 00:01:43.690 align:middle line:84%
+the functions, list
+comprehensions,
+
+00:01:43.690 --> 00:01:45.020 align:middle line:90%
+recursion, and so on.
+
+00:01:45.020 --> 00:01:46.540 align:middle line:84%
+And I very much see
+this is a tower.
+
+00:01:46.540 --> 00:01:49.050 align:middle line:84%
+You learn the simple things,
+then a little bit more,
+
+00:01:49.050 --> 00:01:50.227 align:middle line:90%
+and then a little bit more.
+
+00:01:50.227 --> 00:01:52.060 align:middle line:84%
+And the second thing I
+do to the students is
+
+00:01:52.060 --> 00:01:55.310 align:middle line:84%
+say you must actually look at
+larger programming examples.
+
+00:01:55.310 --> 00:01:58.920 align:middle line:84%
+So in the new book, I've got
+about 20 larger programming
+
+00:01:58.920 --> 00:01:59.619 align:middle line:90%
+examples.
+
+00:01:59.619 --> 00:02:01.660 align:middle line:84%
+And I go through some of
+those with the students.
+
+00:02:01.660 --> 00:02:04.070 align:middle line:84%
+And they see kind of code
+written by somebody who's
+
+00:02:04.070 --> 00:02:05.480 align:middle line:90%
+been doing this a long time.
+
+00:02:05.480 --> 00:02:07.195 align:middle line:84%
+And I hope it gets
+them up to speed.
+
+00:02:07.195 --> 00:02:09.195 align:middle line:84%
+And last thing, of course,
+I say to the students
+
+00:02:09.195 --> 00:02:11.195 align:middle line:84%
+is you need to do a lot
+of programming yourself.
+
+00:02:11.195 --> 00:02:14.090 align:middle line:84%
+So we sent them lots and
+lots of exercises in the labs
+
+00:02:14.090 --> 00:02:16.010 align:middle line:90%
+and with course-works and so on.
+
+00:02:16.010 --> 00:02:19.604 align:middle line:84%
+And they build up to writing
+larger programs themselves.
+
+00:02:19.604 --> 00:02:20.770 align:middle line:90%
+JEREMY: I think that's good.
+
+00:02:20.770 --> 00:02:22.561 align:middle line:84%
+There's got to be a
+balance between reading
+
+00:02:22.561 --> 00:02:24.160 align:middle line:90%
+code and writing code yourself.
+
+00:02:24.160 --> 00:02:24.270 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:02:24.270 --> 00:02:25.320 align:middle line:84%
+JEREMY: Both things
+are important--
+
+00:02:25.320 --> 00:02:25.380 align:middle line:90%
+GRAHAM HUTTON: Absolutely.
+
+00:02:25.380 --> 00:02:26.750 align:middle line:84%
+JEREMY: --to build an
+understanding of language.
+
+00:02:26.750 --> 00:02:27.306 align:middle line:90%
+That's good.
+
+00:02:27.306 --> 00:02:29.180 align:middle line:84%
+That's what we're trying
+to do in our course.
+
+00:02:29.180 --> 00:02:31.000 align:middle line:84%
+Now you mentioned
+your new book there.
+
+00:02:31.000 --> 00:02:33.190 align:middle line:84%
+This is that the Glasgow
+leg of your book tour.
+
+00:02:33.190 --> 00:02:33.520 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:02:33.520 --> 00:02:35.800 align:middle line:84%
+JEREMY: Can you tell us
+something about your Haskell
+
+00:02:35.800 --> 00:02:36.570 align:middle line:90%
+textbook?
+
+00:02:36.570 --> 00:02:37.361 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:02:37.361 --> 00:02:40.030 align:middle line:84%
+So this is the new
+book, which is just out.
+
+00:02:40.030 --> 00:02:43.372 align:middle line:84%
+So I've been teaching
+Haskell for 20 years.
+
+00:02:43.372 --> 00:02:45.080 align:middle line:84%
+So I've got lots of
+experience with this.
+
+00:02:45.080 --> 00:02:46.120 align:middle line:90%
+And I love Haskell.
+
+00:02:46.120 --> 00:02:47.840 align:middle line:84%
+And I love teaching
+it to people.
+
+00:02:47.840 --> 00:02:49.940 align:middle line:84%
+And I want everyone
+to learn Haskell.
+
+00:02:49.940 --> 00:02:53.810 align:middle line:84%
+So that's why I've produced
+a second edition of the book.
+
+00:02:53.810 --> 00:02:55.220 align:middle line:90%
+It's divided into two parts.
+
+00:02:55.220 --> 00:02:56.860 align:middle line:84%
+It's got some
+introductory material
+
+00:02:56.860 --> 00:02:58.530 align:middle line:90%
+in the first half of the book.
+
+00:02:58.530 --> 00:03:00.114 align:middle line:84%
+JEREMY: So you could
+pick up this book
+
+00:03:00.114 --> 00:03:02.571 align:middle line:84%
+if you weren't a programmer or
+you haven't done programming
+
+00:03:02.571 --> 00:03:03.220 align:middle line:90%
+before?
+
+00:03:03.220 --> 00:03:04.303 align:middle line:90%
+GRAHAM HUTTON: Absolutely.
+
+00:03:04.303 --> 00:03:06.150 align:middle line:84%
+So the book is aimed
+at basically anybody.
+
+00:03:06.150 --> 00:03:09.930 align:middle line:84%
+So what it says in the preface
+is anybody over the age of 16
+
+00:03:09.930 --> 00:03:12.200 align:middle line:84%
+with a reasonable aptitude
+for scientific ideas
+
+00:03:12.200 --> 00:03:14.846 align:middle line:84%
+could pick up a book like this
+and learn some Haskell from it.
+
+00:03:14.846 --> 00:03:17.220 align:middle line:84%
+So it's not necessarily aimed
+at professional programmers
+
+00:03:17.220 --> 00:03:18.470 align:middle line:90%
+or students or laypeople.
+
+00:03:18.470 --> 00:03:20.070 align:middle line:90%
+It's aimed at basically anybody.
+
+00:03:20.070 --> 00:03:22.560 align:middle line:84%
+So one half focuses
+on the basics.
+
+00:03:22.560 --> 00:03:24.847 align:middle line:84%
+And it does it in this
+very systematic way,
+
+00:03:24.847 --> 00:03:25.930 align:middle line:90%
+which I was talking about.
+
+00:03:25.930 --> 00:03:29.360 align:middle line:84%
+So it covers the very basics
+of types and functions and list
+
+00:03:29.360 --> 00:03:30.490 align:middle line:90%
+comprehensions and so on.
+
+00:03:30.490 --> 00:03:32.470 align:middle line:84%
+And it builds up to
+more complicated things.
+
+00:03:32.470 --> 00:03:33.970 align:middle line:84%
+And then the second
+half of the book
+
+00:03:33.970 --> 00:03:35.812 align:middle line:84%
+covers some of the more
+advanced topics that
+
+00:03:35.812 --> 00:03:37.520 align:middle line:84%
+might be in, for
+example, a second course
+
+00:03:37.520 --> 00:03:40.760 align:middle line:84%
+on functional programming
+like reasoning about programs,
+
+00:03:40.760 --> 00:03:43.230 align:middle line:84%
+programming with monads,
+with applicative functors,
+
+00:03:43.230 --> 00:03:44.990 align:middle line:90%
+with functors, [INAUDIBLE].
+
+00:03:44.990 --> 00:03:47.453 align:middle line:84%
+All the kind of newer
+stuff in Haskell.
+
+00:03:47.453 --> 00:03:48.260 align:middle line:90%
+JEREMY: OK.
+
+00:03:48.260 --> 00:03:48.860 align:middle line:90%
+Good.
+
+00:03:48.860 --> 00:03:50.430 align:middle line:90%
+So a recommended read.
+
+00:03:50.430 --> 00:03:52.080 align:middle line:90%
+Good.
+
+00:03:52.080 --> 00:03:55.260 align:middle line:84%
+In Nottingham, you've got a
+functional programming lab.
+
+00:03:55.260 --> 00:03:56.010 align:middle line:90%
+GRAHAM HUTTON: Yes
+
+00:03:56.010 --> 00:03:57.480 align:middle line:84%
+JEREMY: And you have
+large team of people--
+
+00:03:57.480 --> 00:03:57.950 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:03:57.950 --> 00:03:58.640 align:middle line:84%
+JEREMY: --working
+with you there.
+
+00:03:58.640 --> 00:04:00.010 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:04:00.010 --> 00:04:02.070 align:middle line:84%
+JEREMY: What is it
+about Haskell that
+
+00:04:02.070 --> 00:04:04.951 align:middle line:84%
+is particularly attractive
+in terms of research,
+
+00:04:04.951 --> 00:04:09.740 align:middle line:84%
+a vehicle for doing interesting
+programming language
+
+00:04:09.740 --> 00:04:10.240 align:middle line:90%
+experiments?
+
+00:04:10.240 --> 00:04:12.031 align:middle line:84%
+GRAHAM HUTTON: That's
+a very good question.
+
+00:04:12.031 --> 00:04:13.660 align:middle line:84%
+So I think for me,
+it's the balance
+
+00:04:13.660 --> 00:04:16.140 align:middle line:84%
+of being a very nice
+theoretical vehicle for studying
+
+00:04:16.140 --> 00:04:18.862 align:middle line:84%
+programming language principles
+and kind of advancing that.
+
+00:04:18.862 --> 00:04:21.320 align:middle line:84%
+But it's also, on the other
+hand, a very practical language
+
+00:04:21.320 --> 00:04:23.180 align:middle line:84%
+for writing real
+world applications.
+
+00:04:23.180 --> 00:04:25.010 align:middle line:84%
+And I think that's one
+of the things which
+
+00:04:25.010 --> 00:04:26.884 align:middle line:84%
+is very exciting about
+the Haskell community.
+
+00:04:26.884 --> 00:04:29.050 align:middle line:84%
+I mean it's been going
+for about 30 years.
+
+00:04:29.050 --> 00:04:30.740 align:middle line:84%
+And for the first
+maybe 15 or so years,
+
+00:04:30.740 --> 00:04:32.520 align:middle line:84%
+it was very much an
+academic pursuit.
+
+00:04:32.520 --> 00:04:34.600 align:middle line:84%
+And people like me were
+interested in writing
+
+00:04:34.600 --> 00:04:36.620 align:middle line:90%
+academic papers about Haskell.
+
+00:04:36.620 --> 00:04:39.452 align:middle line:84%
+And in the last 15 years and
+really in the last five years,
+
+00:04:39.452 --> 00:04:40.660 align:middle line:90%
+things have really taken off.
+
+00:04:40.660 --> 00:04:43.330 align:middle line:84%
+And people who have no interest
+in this kind of language
+
+00:04:43.330 --> 00:04:45.900 align:middle line:84%
+technology are now
+getting interested in it.
+
+00:04:45.900 --> 00:04:47.640 align:middle line:84%
+And it's become one
+of the hot languages
+
+00:04:47.640 --> 00:04:49.230 align:middle line:90%
+that people want to learn.
+
+00:04:49.230 --> 00:04:51.030 align:middle line:90%
+There's quite a few jobs now.
+
+00:04:51.030 --> 00:04:53.710 align:middle line:84%
+And we tell our students now
+that there's a realistic chance
+
+00:04:53.710 --> 00:04:56.550 align:middle line:84%
+if they want that they can get
+a job in Haskell afterwards.
+
+00:04:56.550 --> 00:04:58.670 align:middle line:84%
+So it's a really nice
+language to do research
+
+00:04:58.670 --> 00:05:01.430 align:middle line:84%
+on because it's both at the
+cutting edge of programming
+
+00:05:01.430 --> 00:05:04.220 align:middle line:84%
+language research and also at
+the cutting edge of practice.
+
+00:05:04.220 --> 00:05:05.950 align:middle line:84%
+I mean people in
+the real big players
+
+00:05:05.950 --> 00:05:08.060 align:middle line:84%
+like the Facebooks, the
+Googles, the Microsofts,
+
+00:05:08.060 --> 00:05:10.999 align:middle line:84%
+they're writing real production
+software now using this cutting
+
+00:05:10.999 --> 00:05:12.040 align:middle line:90%
+edge language technology.
+
+00:05:12.040 --> 00:05:14.634 align:middle line:84%
+So it's a really nice
+research field to be in.
+
+00:05:14.634 --> 00:05:17.050 align:middle line:84%
+JEREMY: I want to pick up on
+something you mentioned there
+
+00:05:17.050 --> 00:05:19.860 align:middle line:84%
+about the sense of
+community around Haskell
+
+00:05:19.860 --> 00:05:21.250 align:middle line:90%
+and functional programming.
+
+00:05:21.250 --> 00:05:23.180 align:middle line:84%
+I get the impression
+that there does
+
+00:05:23.180 --> 00:05:27.830 align:middle line:84%
+seem to be more of a kind of
+gregarious and social nature
+
+00:05:27.830 --> 00:05:34.070 align:middle line:84%
+to the Haskell community and
+online forums and news groups
+
+00:05:34.070 --> 00:05:35.305 align:middle line:90%
+and so on.
+
+00:05:35.305 --> 00:05:36.430 align:middle line:90%
+Have you picked up on that?
+
+00:05:36.430 --> 00:05:38.280 align:middle line:90%
+And if so, why?
+
+00:05:38.280 --> 00:05:40.030 align:middle line:84%
+Why is functional
+programming so friendly?
+
+00:05:40.030 --> 00:05:40.610 align:middle line:90%
+GRAHAM HUTTON: Absolutely.
+
+00:05:40.610 --> 00:05:42.260 align:middle line:84%
+I mean that's one of the
+reasons I became a functional
+
+00:05:42.260 --> 00:05:42.759 align:middle line:90%
+programmer.
+
+00:05:42.759 --> 00:05:44.264 align:middle line:90%
+My PhD wasn't in that area.
+
+00:05:44.264 --> 00:05:45.680 align:middle line:84%
+And I migrated to
+that afterwards.
+
+00:05:45.680 --> 00:05:48.138 align:middle line:84%
+And it was partly because it
+was such a friendly community.
+
+00:05:48.138 --> 00:05:51.590 align:middle line:84%
+I mean there's lots of things
+going on, lots of forums,
+
+00:05:51.590 --> 00:05:54.940 align:middle line:84%
+lots of newsgroups, meet
+ups, and things like that.
+
+00:05:54.940 --> 00:05:58.150 align:middle line:84%
+It's a really nice
+community to be part of.
+
+00:05:58.150 --> 00:06:00.510 align:middle line:84%
+And I think the
+reason it's developed
+
+00:06:00.510 --> 00:06:03.580 align:middle line:84%
+like that is that it grew
+out from a core of about 20
+
+00:06:03.580 --> 00:06:05.350 align:middle line:84%
+or so people who
+started the Haskell
+
+00:06:05.350 --> 00:06:07.130 align:middle line:90%
+language about 30 years ago.
+
+00:06:07.130 --> 00:06:09.150 align:middle line:84%
+And they all shared
+this common vision.
+
+00:06:09.150 --> 00:06:11.150 align:middle line:84%
+And they're all very
+nice people as well.
+
+00:06:11.150 --> 00:06:13.460 align:middle line:84%
+And as the community has
+grown, they've wanted
+
+00:06:13.460 --> 00:06:15.020 align:middle line:90%
+to keep this ethos, I think.
+
+00:06:15.020 --> 00:06:17.027 align:middle line:84%
+So I think it's that the
+people who started it
+
+00:06:17.027 --> 00:06:18.860 align:middle line:84%
+were very nice and very,
+very clever people.
+
+00:06:18.860 --> 00:06:21.910 align:middle line:84%
+And they wanted to keep
+that kind of nice community
+
+00:06:21.910 --> 00:06:23.140 align:middle line:90%
+as a group.
+
+00:06:23.140 --> 00:06:24.800 align:middle line:84%
+JEREMY: That's a
+good atmosphere.
+
+00:06:24.800 --> 00:06:26.562 align:middle line:84%
+So people who use
+programming languages
+
+00:06:26.562 --> 00:06:28.770 align:middle line:84%
+turn out like the people
+who invented the programming
+
+00:06:28.770 --> 00:06:29.730 align:middle line:90%
+languages.
+
+00:06:29.730 --> 00:06:30.690 align:middle line:90%
+[LAUGHTER]
+
+00:06:30.690 --> 00:06:31.650 align:middle line:90%
+Very good.
+
+00:06:31.650 --> 00:06:32.450 align:middle line:90%
+OK.
+
+00:06:32.450 --> 00:06:33.400 align:middle line:90%
+Last question.
+
+00:06:33.400 --> 00:06:38.910 align:middle line:84%
+This is about maybe a fun or
+interesting Haskell application
+
+00:06:38.910 --> 00:06:40.260 align:middle line:90%
+that you've developed.
+
+00:06:40.260 --> 00:06:43.170 align:middle line:84%
+Can you tell us something
+about a large piece of code
+
+00:06:43.170 --> 00:06:45.940 align:middle line:84%
+that you've written in Haskell
+that's just something cool?
+
+00:06:45.940 --> 00:06:47.940 align:middle line:84%
+GRAHAM HUTTON: So I think
+the one I'd pick up on
+
+00:06:47.940 --> 00:06:50.840 align:middle line:84%
+is actually one that's in the
+book, fortuitously enough,
+
+00:06:50.840 --> 00:06:52.720 align:middle line:90%
+which is the countdown problem.
+
+00:06:52.720 --> 00:06:55.850 align:middle line:84%
+And the idea is you're given
+a collection of numbers, maybe
+
+00:06:55.850 --> 00:06:56.550 align:middle line:90%
+six numbers.
+
+00:06:56.550 --> 00:06:58.122 align:middle line:84%
+And you're given
+the target number.
+
+00:06:58.122 --> 00:06:59.830 align:middle line:84%
+And you need to build
+a simple arithmetic
+
+00:06:59.830 --> 00:07:02.690 align:middle line:84%
+expression that evaluates
+to that target number.
+
+00:07:02.690 --> 00:07:04.680 align:middle line:84%
+And I use this is an
+example in the book
+
+00:07:04.680 --> 00:07:07.480 align:middle line:84%
+because it kind of illustrates
+many of the interesting things
+
+00:07:07.480 --> 00:07:08.700 align:middle line:90%
+about functional programming.
+
+00:07:08.700 --> 00:07:11.076 align:middle line:84%
+So what I do in the
+book is I start off
+
+00:07:11.076 --> 00:07:12.700 align:middle line:84%
+with a kind of high
+level specification
+
+00:07:12.700 --> 00:07:14.540 align:middle line:84%
+for what it means to
+solve this problem.
+
+00:07:14.540 --> 00:07:16.650 align:middle line:84%
+And then in a series
+of simple steps,
+
+00:07:16.650 --> 00:07:19.260 align:middle line:84%
+I show how you can end up with
+an extremely efficient program
+
+00:07:19.260 --> 00:07:20.926 align:middle line:84%
+that can solve any
+of these number games
+
+00:07:20.926 --> 00:07:22.960 align:middle line:84%
+as soon as you basically
+hit the Return key.
+
+00:07:22.960 --> 00:07:24.947 align:middle line:84%
+So I think, for me,
+this is a nice example
+
+00:07:24.947 --> 00:07:26.030 align:middle line:90%
+of functional programming.
+
+00:07:26.030 --> 00:07:27.810 align:middle line:84%
+Because it takes a
+problem which everyone
+
+00:07:27.810 --> 00:07:30.540 align:middle line:84%
+is familiar with-- a simple
+numbers game from the TV--
+
+00:07:30.540 --> 00:07:33.450 align:middle line:84%
+and it shows how, in
+a very systematic way,
+
+00:07:33.450 --> 00:07:35.590 align:middle line:84%
+you can write a very,
+very efficient program
+
+00:07:35.590 --> 00:07:37.920 align:middle line:84%
+to solve it and end
+up with something
+
+00:07:37.920 --> 00:07:40.542 align:middle line:84%
+quite interesting to look
+at and fun to look at.
+
+00:07:40.542 --> 00:07:42.000 align:middle line:84%
+And I've been
+teaching that example
+
+00:07:42.000 --> 00:07:43.410 align:middle line:84%
+to my first years
+for many years.
+
+00:07:43.410 --> 00:07:46.031 align:middle line:84%
+And they always find
+this one quite engaging.
+
+00:07:46.031 --> 00:07:46.572 align:middle line:90%
+JEREMY: Yeah.
+
+00:07:46.572 --> 00:07:47.410 align:middle line:90%
+That's nice.
+
+00:07:47.410 --> 00:07:50.140 align:middle line:84%
+So we're saying Haskell
+is both fun and elegant.
+
+00:07:50.140 --> 00:07:52.410 align:middle line:84%
+GRAHAM HUTTON: Well, it's
+fun, elegant, and practical.
+
+00:07:52.410 --> 00:07:55.182 align:middle line:84%
+That's why it's such a nice
+field to be in at the moment.
+
+00:07:55.182 --> 00:07:56.140 align:middle line:90%
+JEREMY: Thanks, Graham.
+
+00:07:56.140 --> 00:07:57.939 align:middle line:84%
+GRAHAM HUTTON: Thanks
+very much, Jeremy.
+
+00:07:57.939 --> 00:08:01.931 align:middle line:90%
+[MUSIC PLAYING]
+
+00:08:01.931 --> 00:12:09.840 align:middle line:90%
+
+
+00:12:09.840 --> 00:12:12.360 align:middle line:84%
+JEREMY: I know you've written
+a textbook on Haskell.
+
+00:12:12.360 --> 00:12:14.140 align:middle line:84%
+And you've got a
+new edition of out.
+
+00:12:14.140 --> 00:12:16.697 align:middle line:84%
+Would you like to tell us a
+little about your Haskell book?
+
+00:12:16.697 --> 00:12:17.947 align:middle line:90%
+GRAHAM HUTTON: Yes, of course.
+
+00:12:17.947 --> 00:12:22.340 align:middle line:84%
+I just fortuitously happen to
+have a copy here to show you.
+
+00:12:22.340 --> 00:12:25.570 align:middle line:84%
+So this is based on my
+teaching in Nottingham
+
+00:12:25.570 --> 00:12:27.331 align:middle line:90%
+over the last 20 years.
+
+00:12:27.331 --> 00:12:28.830 align:middle line:84%
+And it kind of boils
+down everything
+
+00:12:28.830 --> 00:12:33.090 align:middle line:84%
+I've learned about teaching
+Haskell into book form.
+
+00:12:33.090 --> 00:12:34.570 align:middle line:90%
+And it's in two parts.
+
+00:12:34.570 --> 00:12:38.300 align:middle line:84%
+So the first part explains
+the basic concepts of Haskell
+
+00:12:38.300 --> 00:12:39.270 align:middle line:90%
+in about nine chapters.
+
+00:12:39.270 --> 00:12:42.260 align:middle line:84%
+So we go through things like
+recursion, list comprehensions,
+
+00:12:42.260 --> 00:12:43.891 align:middle line:84%
+higher order
+functions, and so on.
+
+00:12:43.891 --> 00:12:44.390 align:middle line:90%
+JEREMY: Ooh.
+
+00:12:44.390 --> 00:12:46.050 align:middle line:84%
+All the things that we're
+doing in our course in fact.
+
+00:12:46.050 --> 00:12:47.120 align:middle line:90%
+GRAHAM HUTTON: Exactly.
+
+00:12:47.120 --> 00:12:48.786 align:middle line:84%
+And then in the second
+part of the book,
+
+00:12:48.786 --> 00:12:50.220 align:middle line:90%
+that's the more advanced stuff.
+
+00:12:50.220 --> 00:12:52.790 align:middle line:84%
+That's where you learn
+about things like monads,
+
+00:12:52.790 --> 00:12:56.739 align:middle line:84%
+applicative functors, lazy
+evaluation, reasoning,
+
+00:12:56.739 --> 00:12:59.280 align:middle line:84%
+all of the kind of newer, more
+advanced things that you maybe
+
+00:12:59.280 --> 00:13:01.520 align:middle line:84%
+would put into second
+or third course
+
+00:13:01.520 --> 00:13:03.040 align:middle line:90%
+even on functional programming.
+
+00:13:03.040 --> 00:13:05.900 align:middle line:84%
+JEREMY: We cover some of
+those things very basically
+
+00:13:05.900 --> 00:13:06.880 align:middle line:90%
+in our course.
+
+00:13:06.880 --> 00:13:07.210 align:middle line:90%
+GRAHAM HUTTON: Yes.
+
+00:13:07.210 --> 00:13:07.710 align:middle line:90%
+JEREMY: OK.
+
+00:13:07.710 --> 00:13:09.186 align:middle line:90%
+Good.
+
+00:13:09.186 --> 00:13:13.260 align:middle line:84%
+And your book is aimed at
+novice programmers, perhaps?
+
+00:13:13.260 --> 00:13:13.760 align:middle line:90%
+Or--
+
+00:13:13.760 --> 00:13:15.730 align:middle line:84%
+GRAHAM HUTTON: It's
+basically aimed at anybody.
+
+00:13:15.730 --> 00:13:17.890 align:middle line:84%
+I mean what it says
+in the preface is
+
+00:13:17.890 --> 00:13:20.290 align:middle line:84%
+that anybody over
+the age of around 16
+
+00:13:20.290 --> 00:13:22.819 align:middle line:84%
+with a basic aptitude
+for scientific ideas--
+
+00:13:22.819 --> 00:13:24.610 align:middle line:84%
+so whether you're a
+professional programmer
+
+00:13:24.610 --> 00:13:27.042 align:middle line:84%
+or an undergraduate student
+or layperson-- it's basically
+
+00:13:27.042 --> 00:13:27.750 align:middle line:90%
+aimed at anybody.
+
+00:13:27.750 --> 00:13:29.470 align:middle line:84%
+So if you don't know
+any programming,
+
+00:13:29.470 --> 00:13:31.762 align:middle line:84%
+you can read the first half
+and see how you can get on.
+
+00:13:31.762 --> 00:13:33.261 align:middle line:84%
+And if you do know
+some already, you
+
+00:13:33.261 --> 00:13:34.690 align:middle line:84%
+can skim read that
+and then get on
+
+00:13:34.690 --> 00:13:37.730 align:middle line:84%
+to the more advanced stuff in
+the second half of the book.
+
+00:13:37.730 --> 00:13:40.184 align:middle line:84%
+JEREMY: Was it an enjoyable
+experience writing a book?
+
+00:13:40.184 --> 00:13:41.850 align:middle line:84%
+GRAHAM HUTTON: This
+time around, it was.
+
+00:13:41.850 --> 00:13:42.030 align:middle line:90%
+Because--
+
+00:13:42.030 --> 00:13:43.320 align:middle line:84%
+JEREMY: Well, this is
+the second edition.
+
+00:13:43.320 --> 00:13:45.070 align:middle line:84%
+GRAHAM HUTTON: This
+is the second edition.
+
+00:13:45.070 --> 00:13:46.114 align:middle line:90%
+The first edition was--
+
+00:13:46.114 --> 00:13:46.780 align:middle line:90%
+JEREMY: Painful.
+
+00:13:46.780 --> 00:13:48.220 align:middle line:84%
+GRAHAM HUTTON: Painful
+and took too long.
+
+00:13:48.220 --> 00:13:50.305 align:middle line:84%
+And I learned from that
+to write the book quickly.
+
+00:13:50.305 --> 00:13:51.780 align:middle line:90%
+So I had a year off work.
+
+00:13:51.780 --> 00:13:52.930 align:middle line:90%
+I had a year's sabbatical.
+
+00:13:52.930 --> 00:13:55.180 align:middle line:84%
+And I spent the whole year
+holed up writing that book.
+
+00:13:55.180 --> 00:13:57.221 align:middle line:84%
+And it was actually a very
+pleasurable experience
+
+00:13:57.221 --> 00:13:57.790 align:middle line:90%
+this time.
+
+00:13:57.790 --> 00:13:58.390 align:middle line:90%
+JEREMY: Yeah.
+
+00:13:58.390 --> 00:13:59.290 align:middle line:90%
+Good.
+
+00:13:59.290 --> 00:14:00.081 align:middle line:90%
+MALE SPEAKER: Cool.
+
+00:14:00.081 --> 00:14:01.090 align:middle line:90%
+Very nice, guys.
+
+00:14:01.090 --> 00:14:02.640 align:middle line:90%
+GRAHAM HUTTON: OK.

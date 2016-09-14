@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.540 align:middle line:90%
+
+
+00:00:07.540 --> 00:00:08.595 align:middle line:90%
+DR. JEREMY SINGER: Wow!
+
+00:00:08.595 --> 00:00:10.606 align:middle line:90%
+We're at the end of the course.
+
+00:00:10.606 --> 00:00:12.350 align:middle line:90%
+Ohh.
+
+00:00:12.350 --> 00:00:13.960 align:middle line:90%
+But know we're really happy.
+
+00:00:13.960 --> 00:00:16.710 align:middle line:84%
+Now we are functional
+programmers.
+
+00:00:16.710 --> 00:00:18.460 align:middle line:84%
+DR. BJORN JENSEN: Over
+the past six weeks,
+
+00:00:18.460 --> 00:00:20.290 align:middle line:84%
+we have been on a
+learning journey,
+
+00:00:20.290 --> 00:00:22.870 align:middle line:84%
+discovering the Haskell
+language and the key concepts
+
+00:00:22.870 --> 00:00:24.320 align:middle line:90%
+of functional programming.
+
+00:00:24.320 --> 00:00:27.760 align:middle line:84%
+Jeremy and I hope that your
+journey doesn't stop here,
+
+00:00:27.760 --> 00:00:29.938 align:middle line:84%
+that you will carry on with
+functional programming.
+
+00:00:29.938 --> 00:00:32.229 align:middle line:84%
+DR. JEREMY SINGER: If you
+want to keep up with Haskell,
+
+00:00:32.229 --> 00:00:34.350 align:middle line:84%
+there are plenty of
+resources online.
+
+00:00:34.350 --> 00:00:36.350 align:middle line:84%
+Check out some of
+the links below.
+
+00:00:36.350 --> 00:00:37.950 align:middle line:84%
+The best place to
+start is probably
+
+00:00:37.950 --> 00:00:40.270 align:middle line:90%
+the haskell.org website.
+
+00:00:40.270 --> 00:00:43.055 align:middle line:84%
+We also recommend you sign up
+for the Haskell mailing list.
+
+00:00:43.055 --> 00:00:45.430 align:middle line:84%
+DR. BJORN JENSEN: However,
+the main learning or objective
+
+00:00:45.430 --> 00:00:48.862 align:middle line:84%
+for this course is to enable
+you to think functionally.
+
+00:00:48.862 --> 00:00:50.920 align:middle line:84%
+Now that you have this
+functional perspective,
+
+00:00:50.920 --> 00:00:53.600 align:middle line:84%
+it will change the
+way you develop code.
+
+00:00:53.600 --> 00:00:56.740 align:middle line:84%
+So you might be using list
+comprehensions in Python,
+
+00:00:56.740 --> 00:00:59.605 align:middle line:84%
+lambdas in C++, or
+maps and folds in Java.
+
+00:00:59.605 --> 00:01:00.980 align:middle line:84%
+DR. JEREMY SINGER:
+We hope you've
+
+00:01:00.980 --> 00:01:02.610 align:middle line:90%
+enjoyed taking the course.
+
+00:01:02.610 --> 00:01:04.778 align:middle line:84%
+We've certainly
+enjoyed the experience.
+
+00:01:04.778 --> 00:01:08.445 align:middle line:90%
+So a final word of valediction.
+
+00:01:08.445 --> 00:01:10.850 align:middle line:84%
+DR. BJORN JENSEN: May your
+functions always [INAUDIBLE].
+
+00:01:10.850 --> 00:01:13.120 align:middle line:84%
+DR. JEREMY SINGER: May
+your stack never overflow.
+
+00:01:13.120 --> 00:01:16.270 align:middle line:84%
+DR. BJORN JENSEN: And may your
+programs always terminate.
+
+00:01:16.270 --> 00:01:19.993 align:middle line:90%

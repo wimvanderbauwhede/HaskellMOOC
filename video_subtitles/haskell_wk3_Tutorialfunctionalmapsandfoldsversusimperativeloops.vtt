@@ -1,0 +1,367 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.990 align:middle line:90%
+
+
+00:00:04.990 --> 00:00:06.070 align:middle line:90%
+INSTRUCTOR: Hi.
+
+00:00:06.070 --> 00:00:09.830 align:middle line:84%
+In this tutorial, I want
+to explain the relationship
+
+00:00:09.830 --> 00:00:13.450 align:middle line:84%
+between maps and folds
+in Haskell and loops
+
+00:00:13.450 --> 00:00:16.360 align:middle line:90%
+in imperative language.
+
+00:00:16.360 --> 00:00:19.070 align:middle line:84%
+For the imperative language, I
+will use the scripting language
+
+00:00:19.070 --> 00:00:23.060 align:middle line:84%
+Ruby, but you can do this really
+in any imperative language.
+
+00:00:23.060 --> 00:00:28.300 align:middle line:84%
+So suppose we want to perform a
+map on a list using function f.
+
+00:00:28.300 --> 00:00:39.190 align:middle line:90%
+
+
+00:00:39.190 --> 00:00:41.980 align:middle line:84%
+And supposed the
+function f is simply
+
+00:00:41.980 --> 00:00:45.420 align:middle line:90%
+something like x times x plus 1.
+
+00:00:45.420 --> 00:00:48.310 align:middle line:90%
+
+
+00:00:48.310 --> 00:00:52.600 align:middle line:84%
+Suppose lst is just
+a list of numbers.
+
+00:00:52.600 --> 00:00:57.240 align:middle line:90%
+
+
+00:00:57.240 --> 00:00:59.715 align:middle line:84%
+Then we can print
+this computation.
+
+00:00:59.715 --> 00:01:26.970 align:middle line:90%
+
+
+00:01:26.970 --> 00:01:31.270 align:middle line:84%
+So, now, if you want to
+do the same thing in Ruby,
+
+00:01:31.270 --> 00:01:36.350 align:middle line:84%
+then we first need to
+create the function f.
+
+00:01:36.350 --> 00:01:46.510 align:middle line:90%
+
+
+00:01:46.510 --> 00:01:54.430 align:middle line:84%
+And then we create the
+lists, lst is an empty list.
+
+00:01:54.430 --> 00:01:56.095 align:middle line:84%
+And then we populate
+it with the range.
+
+00:01:56.095 --> 00:02:11.300 align:middle line:90%
+
+
+00:02:11.300 --> 00:02:13.115 align:middle line:90%
+Now, we create the result list.
+
+00:02:13.115 --> 00:02:15.660 align:middle line:90%
+
+
+00:02:15.660 --> 00:02:16.820 align:middle line:90%
+And we apply the map.
+
+00:02:16.820 --> 00:02:35.840 align:middle line:90%
+
+
+00:02:35.840 --> 00:02:37.335 align:middle line:90%
+And then we simply print this.
+
+00:02:37.335 --> 00:02:45.600 align:middle line:90%
+
+
+00:02:45.600 --> 00:02:46.100 align:middle line:90%
+[INAUDIBLE]
+
+00:02:46.100 --> 00:02:58.910 align:middle line:90%
+
+
+00:02:58.910 --> 00:03:04.120 align:middle line:84%
+So to get a bit similar result
+in Ruby, we can move this.
+
+00:03:04.120 --> 00:03:08.710 align:middle line:84%
+And now it looks a bit
+more like the Haskell saw.
+
+00:03:08.710 --> 00:03:13.210 align:middle line:84%
+Clearly, the for loop is a very
+straightforward implementation
+
+00:03:13.210 --> 00:03:13.930 align:middle line:90%
+of the map.
+
+00:03:13.930 --> 00:03:16.390 align:middle line:84%
+So, for every
+element in the list,
+
+00:03:16.390 --> 00:03:21.840 align:middle line:84%
+we push a new element
+on to the new list lst_.
+
+00:03:21.840 --> 00:03:23.580 align:middle line:90%
+So what about folds.
+
+00:03:23.580 --> 00:03:27.790 align:middle line:84%
+Now, suppose we have
+operation g is (/).
+
+00:03:27.790 --> 00:03:31.970 align:middle line:90%
+
+
+00:03:31.970 --> 00:03:38.170 align:middle line:84%
+And then we can fold to
+division and using the left
+
+00:03:38.170 --> 00:03:42.915 align:middle line:84%
+fold, [INAUDIBLE]
+foldl g and then
+
+00:03:42.915 --> 00:03:49.600 align:middle line:84%
+an accumulator, which we can
+set to 1, and on our list.
+
+00:03:49.600 --> 00:03:52.870 align:middle line:90%
+
+
+00:03:52.870 --> 00:03:58.414 align:middle line:84%
+So we can print this
+now and see what we get.
+
+00:03:58.414 --> 00:04:02.950 align:middle line:90%
+
+
+00:04:02.950 --> 00:04:06.700 align:middle line:84%
+So, now, let's do the
+same thing in Ruby.
+
+00:04:06.700 --> 00:04:08.310 align:middle line:84%
+We have to create
+the function g.
+
+00:04:08.310 --> 00:04:11.420 align:middle line:84%
+And we can't do this neat
+thing like we do in Haskell,
+
+00:04:11.420 --> 00:04:14.350 align:middle line:84%
+so we have to actually
+say def g(occ.elt).
+
+00:04:14.350 --> 00:04:19.350 align:middle line:90%
+
+
+00:04:19.350 --> 00:04:27.010 align:middle line:84%
+And we have occ/elt.
+And then we have a loop.
+
+00:04:27.010 --> 00:04:29.980 align:middle line:90%
+
+
+00:04:29.980 --> 00:04:35.706 align:middle line:90%
+And we start with occ = 1.0.
+
+00:04:35.706 --> 00:04:39.280 align:middle line:84%
+And we apply the function
+through the occ = g(occ,elt).
+
+00:04:39.280 --> 00:04:44.660 align:middle line:90%
+
+
+00:04:44.660 --> 00:04:45.880 align:middle line:90%
+And we can try it out.
+
+00:04:45.880 --> 00:04:53.200 align:middle line:90%
+
+
+00:04:53.200 --> 00:04:55.090 align:middle line:90%
+Indeed, we get the same thing.
+
+00:04:55.090 --> 00:05:00.020 align:middle line:84%
+Now, if we do the same
+but with a right foldr,
+
+00:05:00.020 --> 00:05:02.940 align:middle line:84%
+so, obviously, the Haskell
+example is fairly simple.
+
+00:05:02.940 --> 00:05:14.340 align:middle line:90%
+
+
+00:05:14.340 --> 00:05:17.120 align:middle line:84%
+And g prime is
+just the same as g.
+
+00:05:17.120 --> 00:05:19.950 align:middle line:90%
+
+
+00:05:19.950 --> 00:05:25.586 align:middle line:84%
+And so we can simply print
+with the new accumulator.
+
+00:05:25.586 --> 00:05:28.300 align:middle line:90%
+And try that.
+
+00:05:28.300 --> 00:05:31.380 align:middle line:90%
+
+
+00:05:31.380 --> 00:05:36.451 align:middle line:84%
+And in Ruby, we need to
+find a new function g.
+
+00:05:36.451 --> 00:05:39.780 align:middle line:84%
+And I can't use a prime,
+so I'll use an underscore.
+
+00:05:39.780 --> 00:05:43.800 align:middle line:84%
+But note that we have
+to find it like this.
+
+00:05:43.800 --> 00:05:46.840 align:middle line:90%
+
+
+00:05:46.840 --> 00:05:48.940 align:middle line:90%
+And we have our for loop.
+
+00:05:48.940 --> 00:05:56.390 align:middle line:90%
+
+
+00:05:56.390 --> 00:06:01.200 align:middle line:84%
+Where we reverse the list, so
+that we can start at the end.
+
+00:06:01.200 --> 00:06:06.430 align:middle line:90%
+
+
+00:06:06.430 --> 00:06:08.610 align:middle line:90%
+We can inspect this.
+
+00:06:08.610 --> 00:06:16.310 align:middle line:90%
+
+
+00:06:16.310 --> 00:06:21.780 align:middle line:84%
+And indeed, we do
+get the same result.
+
+00:06:21.780 --> 00:06:27.640 align:middle line:84%
+So, essentially, what we see
+is that the fold operations are
+
+00:06:27.640 --> 00:06:34.780 align:middle line:84%
+actually loops that change
+updatable variable using
+
+00:06:34.780 --> 00:06:37.950 align:middle line:84%
+a function that uses
+the same variable.
+
+00:06:37.950 --> 00:06:44.060 align:middle line:84%
+So g uses occ and returns and
+a new value-based occ and elt,
+
+00:06:44.060 --> 00:06:46.190 align:middle line:90%
+and the same says to occ.
+
+00:06:46.190 --> 00:06:49.910 align:middle line:90%
+And g_ does the same thing.
+
+00:06:49.910 --> 00:06:53.940 align:middle line:84%
+And you have to
+explicitly specify
+
+00:06:53.940 --> 00:06:56.370 align:middle line:84%
+the order of the
+arguments, so that when
+
+00:06:56.370 --> 00:06:59.130 align:middle line:84%
+you traverse the
+list from the right,
+
+00:06:59.130 --> 00:07:02.930 align:middle line:84%
+you get the same
+result as in Haskell.
+
+00:07:02.930 --> 00:07:04.460 align:middle line:90%
+For the map, it's much simpler.
+
+00:07:04.460 --> 00:07:10.450 align:middle line:84%
+So you take a list,
+you apply the function
+
+00:07:10.450 --> 00:07:13.090 align:middle line:84%
+on each element of the
+list, and this result
+
+00:07:13.090 --> 00:07:14.650 align:middle line:90%
+is pushed onto the new list.
+
+00:07:14.650 --> 00:07:17.490 align:middle line:90%
+
+
+00:07:17.490 --> 00:07:22.510 align:middle line:84%
+Note, again, how much neater
+all this is in Haskell,
+
+00:07:22.510 --> 00:07:28.480 align:middle line:84%
+so each of these folds and
+maps are just single lines.
+
+00:07:28.480 --> 00:07:31.270 align:middle line:84%
+In Ruby, we have to
+write explicit functions
+
+00:07:31.270 --> 00:07:32.900 align:middle line:90%
+for each of them.
+
+00:07:32.900 --> 00:07:37.290 align:middle line:84%
+But the main message
+is that if you
+
+00:07:37.290 --> 00:07:41.820 align:middle line:84%
+are in some doubt of how
+a fold, left or a right
+
+00:07:41.820 --> 00:07:47.450 align:middle line:84%
+fold, or map works in Haskell,
+you can always try and think
+
+00:07:47.450 --> 00:07:51.270 align:middle line:84%
+of this alternative-- how it
+works in an imperative language
+
+00:07:51.270 --> 00:07:52.510 align:middle line:90%
+with for loops.
+
+00:07:52.510 --> 00:07:56.670 align:middle line:84%
+And from there, you can easily
+reason about what your maps
+
+00:07:56.670 --> 00:07:59.440 align:middle line:90%
+or folds should look like.
+
+00:07:59.440 --> 00:08:05.483 align:middle line:90%

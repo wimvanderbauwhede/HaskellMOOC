@@ -1,0 +1,290 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.290 align:middle line:90%
+
+
+00:00:07.290 --> 00:00:08.550 align:middle line:90%
+INTERVIEWER: Hello, everyone.
+
+00:00:08.550 --> 00:00:11.330 align:middle line:84%
+In this short video,
+I want to give you
+
+00:00:11.330 --> 00:00:14.800 align:middle line:84%
+an intuition on how type
+inference in Haskell works.
+
+00:00:14.800 --> 00:00:18.030 align:middle line:84%
+As you know, in Haskell, you
+can provide type signatures
+
+00:00:18.030 --> 00:00:20.450 align:middle line:84%
+to functions, but
+you don't have to.
+
+00:00:20.450 --> 00:00:22.290 align:middle line:84%
+And if you don't,
+then the type checker
+
+00:00:22.290 --> 00:00:25.120 align:middle line:84%
+will work out what the
+types are of the functions
+
+00:00:25.120 --> 00:00:26.840 align:middle line:90%
+that you have provided.
+
+00:00:26.840 --> 00:00:30.050 align:middle line:84%
+And I want to kind of give
+an idea of how that works,
+
+00:00:30.050 --> 00:00:33.050 align:middle line:84%
+that process that the type
+checker uses to figure out
+
+00:00:33.050 --> 00:00:36.450 align:middle line:84%
+what types your functions
+that you defined
+
+00:00:36.450 --> 00:00:38.430 align:middle line:90%
+would actually have.
+
+00:00:38.430 --> 00:00:45.350 align:middle line:84%
+So let's just take an example
+of a function of x and xs,
+
+00:00:45.350 --> 00:00:48.195 align:middle line:90%
+which we define like this.
+
+00:00:48.195 --> 00:00:50.810 align:middle line:90%
+
+
+00:00:50.810 --> 00:00:57.100 align:middle line:84%
+So we have a function of
+two arguments-- x and xs.
+
+00:00:57.100 --> 00:00:59.600 align:middle line:84%
+And it returns the sum
+of the first argument
+
+00:00:59.600 --> 00:01:02.160 align:middle line:84%
+and the length of
+the second argument.
+
+00:01:02.160 --> 00:01:06.690 align:middle line:84%
+So then the question
+is, what is the type
+
+00:01:06.690 --> 00:01:09.220 align:middle line:90%
+of this particular function?
+
+00:01:09.220 --> 00:01:13.000 align:middle line:84%
+And so the answer is that
+the type checker will
+
+00:01:13.000 --> 00:01:16.970 align:middle line:90%
+try putting very general types.
+
+00:01:16.970 --> 00:01:19.380 align:middle line:84%
+So it will say this--
+this is a and this is b.
+
+00:01:19.380 --> 00:01:21.565 align:middle line:84%
+And this is as good
+as it gets for me now.
+
+00:01:21.565 --> 00:01:28.650 align:middle line:84%
+And so it will say f is
+a b, and then some c.
+
+00:01:28.650 --> 00:01:33.680 align:middle line:84%
+And then it will try to
+infer the constraints on each
+
+00:01:33.680 --> 00:01:35.190 align:middle line:90%
+of these type variables.
+
+00:01:35.190 --> 00:01:37.870 align:middle line:84%
+And the more it can be
+constrained, the better.
+
+00:01:37.870 --> 00:01:40.660 align:middle line:84%
+So in the end, hopefully
+it will be so constrained
+
+00:01:40.660 --> 00:01:42.680 align:middle line:84%
+that it will no longer
+be a type variable,
+
+00:01:42.680 --> 00:01:45.590 align:middle line:90%
+but a particular concrete type.
+
+00:01:45.590 --> 00:01:50.430 align:middle line:84%
+So in this particular case, we
+have already, from the prelude,
+
+00:01:50.430 --> 00:01:53.240 align:middle line:84%
+we have types for
+the plus operation
+
+00:01:53.240 --> 00:01:54.760 align:middle line:90%
+and for the length function.
+
+00:01:54.760 --> 00:02:05.680 align:middle line:84%
+So we know that plus
+is of type Num a,
+
+00:02:05.680 --> 00:02:18.750 align:middle line:84%
+and that the length is of
+type-- let's call this b,
+
+00:02:18.750 --> 00:02:22.180 align:middle line:84%
+maybe, because they don't
+have to be the same.
+
+00:02:22.180 --> 00:02:25.740 align:middle line:84%
+So we know that
+length of xs, if this
+
+00:02:25.740 --> 00:02:29.640 align:middle line:84%
+has to be a valid type
+checking function,
+
+00:02:29.640 --> 00:02:33.630 align:middle line:84%
+this will have to
+be of type Int.
+
+00:02:33.630 --> 00:02:38.710 align:middle line:84%
+And we know, from the type
+signature of the addition,
+
+00:02:38.710 --> 00:02:42.330 align:middle line:84%
+that the types of both
+arguments must be the same.
+
+00:02:42.330 --> 00:02:47.760 align:middle line:84%
+So consequently, this will
+also have to be of type Int.
+
+00:02:47.760 --> 00:02:52.370 align:middle line:84%
+So, because the x
+here is the x here,
+
+00:02:52.370 --> 00:02:56.840 align:middle line:84%
+we already know that our type of
+our first argument must be Int.
+
+00:02:56.840 --> 00:02:58.780 align:middle line:84%
+For the type of
+our next argument,
+
+00:02:58.780 --> 00:03:02.000 align:middle line:84%
+well, we know that
+it's a list because we
+
+00:03:02.000 --> 00:03:04.040 align:middle line:90%
+call the length function on it.
+
+00:03:04.040 --> 00:03:06.070 align:middle line:84%
+But that's really
+all we can tell
+
+00:03:06.070 --> 00:03:09.500 align:middle line:84%
+because we don't need to
+know what's in the list
+
+00:03:09.500 --> 00:03:10.630 align:middle line:90%
+to calculate its length.
+
+00:03:10.630 --> 00:03:14.960 align:middle line:84%
+So the type of the arguments
+of the list are not important.
+
+00:03:14.960 --> 00:03:18.900 align:middle line:84%
+So that means that, in the
+end, the type inference
+
+00:03:18.900 --> 00:03:24.550 align:middle line:84%
+will say that it has found a
+function which takes an Int
+
+00:03:24.550 --> 00:03:29.790 align:middle line:84%
+and something-- a list
+of some arbitrary type--
+
+00:03:29.790 --> 00:03:35.320 align:middle line:90%
+and it will return an Int.
+
+00:03:35.320 --> 00:03:36.345 align:middle line:90%
+And so it works.
+
+00:03:36.345 --> 00:03:40.460 align:middle line:84%
+So the type checker tries to
+apply more and more constraints
+
+00:03:40.460 --> 00:03:45.260 align:middle line:84%
+so that it can actually
+resolve the entire types.
+
+00:03:45.260 --> 00:03:54.050 align:middle line:84%
+So for instance, if we had
+done something like this, then
+
+00:03:54.050 --> 00:03:57.300 align:middle line:84%
+automatically, we
+would know that head
+
+00:03:57.300 --> 00:04:01.150 align:middle line:84%
+x's would have to
+be also type Int.
+
+00:04:01.150 --> 00:04:04.070 align:middle line:84%
+Now, we know the signature
+for the head function.
+
+00:04:04.070 --> 00:04:11.090 align:middle line:84%
+So we know this, which
+means that this list would
+
+00:04:11.090 --> 00:04:12.780 align:middle line:90%
+have to be of type Integer.
+
+00:04:12.780 --> 00:04:18.190 align:middle line:84%
+So you see, by making the
+expression a little bit
+
+00:04:18.190 --> 00:04:21.880 align:middle line:84%
+different, we used the
+element of the list,
+
+00:04:21.880 --> 00:04:23.770 align:middle line:84%
+and immediately,
+the type inference
+
+00:04:23.770 --> 00:04:27.732 align:middle line:84%
+can tell us that this has
+to be a list of Integers.
+
+00:04:27.732 --> 00:04:31.050 align:middle line:84%
+And so, in general, that's
+how the whole process works.
+
+00:04:31.050 --> 00:04:36.070 align:middle line:84%
+It works by a combination of
+the structure of the types
+
+00:04:36.070 --> 00:04:39.060 align:middle line:84%
+and the type definitions
+of the basic functions
+
+00:04:39.060 --> 00:04:40.830 align:middle line:90%
+in the [INAUDIBLE].
+
+00:04:40.830 --> 00:04:42.406 align:middle line:84%
+There's actually a
+lot more to this,
+
+00:04:42.406 --> 00:04:46.470 align:middle line:84%
+but we will cover this
+in a later lecture.
+
+00:04:46.470 --> 00:04:51.086 align:middle line:90%
