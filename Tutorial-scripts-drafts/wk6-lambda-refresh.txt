@@ -1,0 +1,29 @@
+Let's have a quick refresher about lambda calculus.
+effectively, lambda calculus is the assembler code for functional programming.
+
+there are 3 basic constructs
+
+variables like x that bind to actual values
+
+lambda abstractions are functions
+
+and applications are function calls - i.e. functions supplied with parameters
+
+There are three rewrite rules - which capture the essence of computation in lambda calculus
+
+the first is alpha conversion, which we can understand as
+variable renaming, effectively alpha conversion is refactoring in the lambda calculus
+
+we take a lambda term which uses variable x, and replace all the occurrences of x in it with y, where y is a fresh name that isn't used elsewhere in the expression.
+
+We must replace x on the left hand side of the arrow, and all bound instances of x on the right hand side.
+
+the second rewrite rule is beta reduction. This is really the workhorse of lambda calculus.
+This is the function calling mechanism. So we have a lambda term, and a parameter v. when we evaluate this application, then we take the expression on the rhs of the lambda term and substitute v into every occurrence of variable x - replace x by v
+
+The final rewrite rule is a simplification - this is called eta reduction.
+Again, I suppose this is another refactoring.
+When we see lambda x -> f x and x does not appear inside f, then we are abstracting a function, and then applying it immediately, so we might as well just replace this with the function itself. The two have the same behaviour. This is related to point free programming in Haskell - google for more details.
+
+eta reduction helps us to simplify complex lambda terms.
+
