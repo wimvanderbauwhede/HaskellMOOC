@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:05.030 --> 00:00:08.280 align:middle line:84%
-SPEAKER: Let's talk
+JEREMY: Let's talk
 about data types.
 
 00:00:08.280 --> 00:00:13.770 align:middle line:84%
@@ -16,14 +16,14 @@ that belong together.
 
 00:00:16.260 --> 00:00:20.020 align:middle line:84%
 So far we've seen the Bool
-data type, which consist
+data type, which consists
 
 00:00:20.020 --> 00:00:22.460 align:middle line:90%
-of values true and false.
+of values True and False.
 
 00:00:22.460 --> 00:00:24.550 align:middle line:84%
 We've also used
-the int data type,
+the Int data type,
 
 00:00:24.550 --> 00:00:26.380 align:middle line:84%
 which consists of
@@ -41,7 +41,7 @@ based on whether your OS is
 32-bit or 64-bit.
 
 00:00:33.500 --> 00:00:34.560 align:middle line:90%
-What else we looked at?
+What else have we looked at?
 
 00:00:34.560 --> 00:00:35.950 align:middle line:90%
 Characters, lists.
@@ -152,7 +152,7 @@ detail about this later.
 
 00:02:15.180 --> 00:02:21.410 align:middle line:84%
 For now, let's just understand
-that any type must derive show
+that any type must derive Show
 
 00:02:21.410 --> 00:02:23.205 align:middle line:84%
 if we are to print
@@ -291,10 +291,10 @@ So a good score for the
 New Zealand cricket team
 
 00:04:29.050 --> 00:04:32.810 align:middle line:90%
-might be 350 [INAUDIBLE].
+might be 350 for 4.
 
 00:04:32.810 --> 00:04:38.130 align:middle line:84%
-But 350 runs scored for
+That's 350 runs scored for
 the loss of four players.
 
 00:04:38.130 --> 00:04:42.990 align:middle line:84%
@@ -338,7 +338,7 @@ and the record values relate
 to algebraic products.
 
 00:05:26.040 --> 00:05:28.730 align:middle line:84%
-I'll spare you the Harris
+I'll spare you the hairy
 Type Theory for now.
 
 00:05:28.730 --> 00:05:32.500 align:middle line:84%
