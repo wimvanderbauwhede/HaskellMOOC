@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:06.972 --> 00:00:11.100 align:middle line:84%
-INTERVIEWER: Hey, so Simon,
+JEREMY: Hey, so Simon,
 welcome back to Glasgow.
 
 00:00:11.100 --> 00:00:13.067 align:middle line:84%
@@ -34,7 +34,7 @@ of change for the department.
 So it was a very exciting time.
 
 00:00:21.580 --> 00:00:23.871 align:middle line:84%
-INTERVIEWER: Well, as well
+JEREMY: Well, as well
 as your children being born,
 
 00:00:23.871 --> 00:00:25.655 align:middle line:84%
@@ -53,7 +53,7 @@ So they refer to Haskell
 as my first child.
 
 00:00:30.744 --> 00:00:31.660 align:middle line:90%
-INTERVIEWER: Oh I see.
+JEREMY: Oh I see.
 
 00:00:31.660 --> 00:00:32.500 align:middle line:90%
 Very good.
@@ -112,7 +112,7 @@ So it was a sort of
 epicenter, if you like.
 
 00:01:09.440 --> 00:01:11.398 align:middle line:84%
-INTERVIEWER: The epicenter,
+JEREMY: The epicenter,
 that's a nice word.
 
 00:01:11.398 --> 00:01:12.520 align:middle line:90%
@@ -168,7 +168,7 @@ being quite successful
 over the long term.
 
 00:01:46.117 --> 00:01:47.700 align:middle line:84%
-INTERVIEWER: There's
+JEREMY: There's
 a wonderful quote
 
 00:01:47.700 --> 00:01:49.840 align:middle line:84%
@@ -275,7 +275,7 @@ in a way that has definitely
 exceeded my expectations.
 
 00:02:53.430 --> 00:02:55.200 align:middle line:84%
-INTERVIEWER: You
+JEREMY: You
 mentioned laziness there.
 
 00:02:55.200 --> 00:02:57.850 align:middle line:84%
@@ -357,7 +357,7 @@ Because you only want
 to do one in them.
 
 00:03:38.216 --> 00:03:39.740 align:middle line:84%
-They're kind
+They're kind of
 crucially important.
 
 00:03:39.740 --> 00:03:41.400 align:middle line:84%
@@ -437,7 +437,7 @@ I think was the most
 important thing about it.
 
 00:04:21.180 --> 00:04:23.490 align:middle line:90%
-INTERVIEWER: Good.
+JEREMY: Good.
 
 00:04:23.490 --> 00:04:26.000 align:middle line:84%
 There are noises in
@@ -512,7 +512,7 @@ default, rather than
 a sort of way of life doctrine.
 
 00:05:07.850 --> 00:05:09.930 align:middle line:84%
-INTERVIEWER: Yes,
+JEREMY: Yes,
 I'd like to ask you
 
 00:05:09.930 --> 00:05:14.850 align:middle line:84%
@@ -555,7 +555,7 @@ So I think that Haskell as kind
 of like a fungus or a mushroom.
 
 00:05:42.105 --> 00:05:45.290 align:middle line:84%
-You know the way that fungi I
+You know the way that fungi 
 have these very long tendrils
 
 00:05:45.290 --> 00:05:46.160 align:middle line:90%
@@ -566,7 +566,7 @@ So they're quite widespread,
 but you can't see them?
 
 00:05:49.040 --> 00:05:50.740 align:middle line:90%
-INTERVIEWER: Yeah.
+JEREMY: Yeah.
 
 00:05:50.740 --> 00:05:54.050 align:middle line:84%
 So Haskell is quite widely used,
@@ -691,7 +691,7 @@ a domain-specific language
 
 00:07:08.950 --> 00:07:12.562 align:middle line:84%
 for writing the control systems
-for called quad copters.
+for cool quad copters.
 
 00:07:12.562 --> 00:07:14.770 align:middle line:84%
 So they write in this very
@@ -706,7 +706,7 @@ down to C, which runs
 on the quad copter.
 
 00:07:19.830 --> 00:07:22.080 align:middle line:84%
-INTERVIEWER: Here's a slightly
+JEREMY: Here's a slightly
 cheeky question, Simon.
 
 00:07:22.080 --> 00:07:24.710 align:middle line:84%
@@ -728,7 +728,7 @@ a long way behind.
 I think I'd have to say Excel.
 
 00:07:33.739 --> 00:07:34.530 align:middle line:90%
-INTERVIEWER: Right?
+JEREMY: Right?
 
 00:07:34.530 --> 00:07:35.210 align:middle line:90%
 That's interesting.
@@ -809,7 +809,7 @@ is today, but Excel
 as I hope it might be one day.
 
 00:08:15.111 --> 00:08:15.860 align:middle line:90%
-INTERVIEWER: Good.
+JEREMY: Good.
 
 00:08:15.860 --> 00:08:18.570 align:middle line:84%
 This is my last
@@ -1007,10 +1007,10 @@ are efficient and effective.
 
 00:10:22.460 --> 00:10:26.264 align:middle line:84%
 And indeed they come
-out of the box with JHC.
+out of the box with GHC.
 
 00:10:26.264 --> 00:10:27.930 align:middle line:84%
-INTERVIEWER: Simon,
+JEREMY: Simon,
 thank you very much.
 
 00:10:27.930 --> 00:10:29.140 align:middle line:84%
