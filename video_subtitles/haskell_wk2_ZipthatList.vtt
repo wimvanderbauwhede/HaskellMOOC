@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:05.010 --> 00:00:06.390 align:middle line:90%
-INSTRUCTOR: Hello everyone.
+JEREMY: Hello everyone.
 
 00:00:06.390 --> 00:00:09.300 align:middle line:84%
 Time for some more
@@ -47,7 +47,7 @@ of strings, different food
 
 00:00:45.180 --> 00:00:47.990 align:middle line:84%
 stuffs here-- fish, bread, and
-salt-- represented the Haskell
+salt-- represented as Haskell
 
 00:00:47.990 --> 00:00:48.500 align:middle line:90%
 strings.
@@ -72,7 +72,7 @@ as a pair-- fish and chips.
 
 00:01:01.100 --> 00:01:04.709 align:middle line:84%
 It's the same with the second
-two elements from the list.
+two elements from the lists.
 
 00:01:04.709 --> 00:01:06.896 align:middle line:84%
 Bread and butter belong
@@ -128,7 +128,7 @@ all the code I'm
 
 00:01:47.610 --> 00:01:51.150 align:middle line:84%
 going to show you
-using the Try Haskell
+using the TryHaskell
 
 00:01:51.150 --> 00:01:53.450 align:middle line:84%
 online environment,
@@ -199,7 +199,7 @@ and the second element of
 each pair is a character.
 
 00:02:42.540 --> 00:02:45.790 align:middle line:90%
-Indeed, 1, a pair together.
+Indeed, 1 and a pair together.
 
 00:02:45.790 --> 00:02:47.300 align:middle line:90%
 2 and b are paired together.
@@ -481,7 +481,7 @@ Take one element,
 another element,
 
 00:07:13.150 --> 00:07:14.850 align:middle line:84%
-then produces a
+then produce a
 pair of elements.
 
 00:07:14.850 --> 00:07:17.490 align:middle line:90%
