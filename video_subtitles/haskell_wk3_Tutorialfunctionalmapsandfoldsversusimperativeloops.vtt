@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:04.990 --> 00:00:06.070 align:middle line:90%
-INSTRUCTOR: Hi.
+WIM: Hi.
 
 00:00:06.070 --> 00:00:09.830 align:middle line:84%
 In this tutorial, I want
@@ -15,7 +15,7 @@ between maps and folds
 in Haskell and loops
 
 00:00:13.450 --> 00:00:16.360 align:middle line:90%
-in imperative language.
+in imperative languages.
 
 00:00:16.360 --> 00:00:19.070 align:middle line:84%
 For the imperative language, I
