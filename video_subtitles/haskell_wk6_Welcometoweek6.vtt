@@ -4,7 +4,7 @@ WEBVTT
 [MUSIC PLAYING]
 
 00:00:07.690 --> 00:00:10.460 align:middle line:84%
-SPEAKER 1: Hello, and welcome
+WIM: Hello, and welcome
 to the sixth and final week
 
 00:00:10.460 --> 00:00:12.080 align:middle line:90%
@@ -42,7 +42,7 @@ in part due to the type classes.
 
 00:00:35.310 --> 00:00:37.690 align:middle line:84%
 And then there is
-[INAUDIBLE], the mystery
+monads, the mystery
 
 00:00:37.690 --> 00:00:39.930 align:middle line:90%
 at the heart of Haskell.
@@ -71,7 +71,7 @@ Church in the 1930s
 
 00:00:54.870 --> 00:00:59.570 align:middle line:84%
 to answer the question, what
-does it mean to do competition?
+does it mean to do computation.
 
 00:00:59.570 --> 00:01:03.620 align:middle line:84%
 All this and much more in
