@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:07.290 --> 00:00:08.550 align:middle line:90%
-INTERVIEWER: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:08.550 --> 00:00:11.330 align:middle line:84%
 In this short video,
@@ -120,7 +120,7 @@ but a particular concrete type.
 
 00:01:45.590 --> 00:01:50.430 align:middle line:84%
 So in this particular case, we
-have already, from the prelude,
+have already, from the Prelude,
 
 00:01:50.430 --> 00:01:53.240 align:middle line:84%
 we have types for
@@ -234,7 +234,7 @@ automatically, we
 would know that head
 
 00:03:57.300 --> 00:04:01.150 align:middle line:84%
-x's would have to
+xs would have to
 be also type Int.
 
 00:04:01.150 --> 00:04:04.070 align:middle line:84%
@@ -277,7 +277,7 @@ and the type definitions
 of the basic functions
 
 00:04:39.060 --> 00:04:40.830 align:middle line:90%
-in the [INAUDIBLE].
+in the Prelude.
 
 00:04:40.830 --> 00:04:42.406 align:middle line:84%
 There's actually a

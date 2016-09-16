@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:07.019 --> 00:00:08.060 align:middle line:90%
-SPEAKER: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:08.060 --> 00:00:09.982 align:middle line:84%
 In this short
@@ -101,19 +101,19 @@ an actual function,
 
 00:01:38.290 --> 00:01:40.660 align:middle line:84%
 it's easiest to use
-longer functions.
+lambda functions.
 
 00:01:40.660 --> 00:01:46.114 align:middle line:84%
-So suppose we have a longer
+So suppose we have a lambda
 function of X, Y, and Z,
 
 00:01:46.114 --> 00:01:49.550 align:middle line:84%
-and function [INAUDIBLE]
+and function body
 is completely irrelevant.
 
 00:01:49.550 --> 00:01:51.590 align:middle line:84%
 Then to rewrite
-this, [INAUDIBLE]
+this, so that
 
 00:01:51.590 --> 00:01:54.620 align:middle line:84%
 this becomes a function
@@ -125,7 +125,7 @@ function, which is this one.
 
 00:01:58.700 --> 00:02:02.725 align:middle line:84%
 So the body remains
-completely [INAUDIBLE]
+completely irrelevant.
 
 00:02:02.725 --> 00:02:05.250 align:middle line:84%
 And we can rewrite this
@@ -151,7 +151,7 @@ returns a function of a single
 argument, which eventually
 
 00:02:18.920 --> 00:02:20.860 align:middle line:90%
-returns the following.
+returns the value.
 
 00:02:20.860 --> 00:02:24.210 align:middle line:84%
 So this is the typical
@@ -159,10 +159,10 @@ technique known
 
 00:02:24.210 --> 00:02:26.550 align:middle line:84%
 as currying you
-use to transform--
+use to transform multi-argument
 
 00:02:26.550 --> 00:02:29.680 align:middle line:90%
-move the argument [INAUDIBLE]
+functions into single argument functions.
 
 00:02:29.680 --> 00:02:31.920 align:middle line:84%
 So it's named after the
@@ -197,7 +197,7 @@ is that of partial application.
 
 00:02:52.130 --> 00:02:56.065 align:middle line:84%
 For example, consider
-the function Sq,
+the function sq,
 
 00:02:56.065 --> 00:03:02.020 align:middle line:84%
 which takes X and Y and
@@ -231,10 +231,10 @@ So we can do other things
 like, for instance, say OK.
 
 00:03:28.850 --> 00:03:35.090 align:middle line:90%
-Let's find Sq4 as Sq4.
+Let's define sq4 as sq4.
 
 00:03:35.090 --> 00:03:38.030 align:middle line:84%
-And now Sq4 is a new function
+And now sq4 is a new function
 which just takes one argument.
 
 00:03:38.030 --> 00:03:46.370 align:middle line:84%
@@ -247,11 +247,11 @@ partial application.
 
 00:03:48.190 --> 00:03:54.970 align:middle line:84%
 So basically, we've applied
-four to the function argument X,
+four to the function argument x,
 
 00:03:54.970 --> 00:03:56.935 align:middle line:84%
-but we have multiplied
-anything to Y,
+but we haven't multiplied
+anything to y,
 
 00:03:56.935 --> 00:03:58.310 align:middle line:84%
 and the result is
