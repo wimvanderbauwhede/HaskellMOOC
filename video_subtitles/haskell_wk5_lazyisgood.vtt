@@ -61,7 +61,7 @@ is done when the
 function f is invoked.
 
 00:00:56.420 --> 00:00:58.850 align:middle line:90%
-This is called by value.
+This is call by value.
 
 00:00:58.850 --> 00:01:01.460 align:middle line:84%
 Whereas in a lazy
@@ -76,7 +76,7 @@ when the parameter value is
 used in the function body, known
 
 00:01:08.490 --> 00:01:11.200 align:middle line:90%
-as called by need.
+as call by need.
 
 00:01:11.200 --> 00:01:14.300 align:middle line:84%
 So in a lazy language,
@@ -87,7 +87,7 @@ is never needed then the
 parameter is never evaluated.
 
 00:01:20.030 --> 00:01:29.150 align:middle line:84%
-Consider fxy equals y, then
+Consider f x y equals y, then
 f 1 add 1 2 add 2 has value 4
 
 00:01:29.150 --> 00:01:32.980 align:middle line:84%
