@@ -111,7 +111,7 @@ For example, look at this code.
 
 00:01:38.830 --> 00:01:44.760 align:middle line:84%
 This is a use of the IO monad
-and wrapped up as a do block.
+wrapped up as a do block.
 
 00:01:44.760 --> 00:01:48.100 align:middle line:90%
 Secondly, the maybe monad.
@@ -121,7 +121,7 @@ In week three of the course
 we studied maybe values, which
 
 00:01:52.640 --> 00:01:55.970 align:middle line:90%
-could be just x or nothing.
+could be Just x or Nothing.
 
 00:01:55.970 --> 00:01:59.200 align:middle line:84%
 These are used to represent
@@ -171,7 +171,7 @@ Here's another do block.
 What value does it return?
 
 00:02:41.160 --> 00:02:43.050 align:middle line:84%
-The nothing value
+The Nothing value
 propagates through the
 
 00:02:43.050 --> 00:02:46.760 align:middle line:90%
