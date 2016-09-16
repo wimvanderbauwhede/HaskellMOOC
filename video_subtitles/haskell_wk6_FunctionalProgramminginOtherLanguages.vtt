@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:04.990 --> 00:00:08.520 align:middle line:84%
-INSTRUCTOR: This is the final
+JEREMY: This is the final
 screen cast of the course.
 
 00:00:08.520 --> 00:00:10.470 align:middle line:90%
@@ -21,7 +21,7 @@ I'm going to start a
 Python interpreter instead
 
 00:00:15.360 --> 00:00:16.393 align:middle line:90%
-of the usual GHCI.
+of the usual GHCi.
 
 00:00:16.393 --> 00:00:20.430 align:middle line:90%
 
@@ -59,12 +59,12 @@ and it's probably true that
 no functional programming
 
 00:00:42.680 --> 00:00:47.930 align:middle line:84%
-languages in the same league
+language is in the same league
 as Python, Java, or C++.
 
 00:00:47.930 --> 00:00:51.310 align:middle line:84%
 However, functional
-construct and ideas
+constructs and ideas
 
 00:00:51.310 --> 00:00:54.710 align:middle line:84%
 are being incorporated into
@@ -240,8 +240,8 @@ At this point, you're
 probably feeling unhappy.
 
 00:03:29.090 --> 00:03:31.070 align:middle line:84%
-Now you know Haskell
-is dynamically typed,
+Now you know Haskell,
+dynamically typed
 
 00:03:31.070 --> 00:03:33.790 align:middle line:90%
 lists seem wrong.
@@ -295,7 +295,7 @@ functools dot reduce.
 
 00:04:33.620 --> 00:04:37.740 align:middle line:84%
 This is the
-[INAUDIBLE] in Python.
+foldl function in Python.
 
 00:04:37.740 --> 00:04:45.960 align:middle line:84%
 Lambda a, b, a times b-- that's
@@ -338,7 +338,7 @@ let us know which
 languages you are using
 
 00:05:17.317 --> 00:05:19.650 align:middle line:84%
-and whether you think the
+and whether you think there is 
 scope to write in a functional
 
 00:05:19.650 --> 00:05:21.536 align:middle line:90%
