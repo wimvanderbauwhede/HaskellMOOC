@@ -1,0 +1,17 @@
+develop simple programs involving basic Haskell techniques, including pure function definitions;
+
+explore standard combinators for operating on lists;
+
+produce definitions of algebraic data types and apply recursion to define functions that traverse recursive types;
+
+interpret data structures and function interfaces using types
+
+justify the results of type inference
+
+assess how to structure programs using monads, how to use the most common standard monads (including IO and Maybe) and how to use a monad transformer;
+
+develop substantial software applications including GUIs and system interaction;
+
+apply formal methods to prove properties of functional programs;
+
+develop, modify, and interpret code using standard Haskell platform tools.
