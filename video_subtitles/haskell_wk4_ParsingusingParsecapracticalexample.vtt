@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:05.170 --> 00:00:07.100 align:middle line:84%
-SPEAKER: In this
+WIM: In this
 tutorial, I want
 
 00:00:07.100 --> 00:00:10.320 align:middle line:84%
@@ -16,7 +16,7 @@ the Parsec parser combinator
 
 00:00:10.320 --> 00:00:12.950 align:middle line:84%
 library for practical
-parsing task.
+parsing tasks.
 
 00:00:12.950 --> 00:00:16.059 align:middle line:90%
 
@@ -26,7 +26,7 @@ You have learned before how
 to use the Show typeclass
 
 00:00:19.360 --> 00:00:24.120 align:middle line:84%
-and the Show function to print
+and the show function to print
 out Haskell data structures.
 
 00:00:24.120 --> 00:00:26.540 align:middle line:84%
@@ -90,18 +90,18 @@ write your own Show function.
 
 00:01:13.080 --> 00:01:16.410 align:middle line:84%
 By using this
-deriving clause, JHC
+deriving clause, GHC
 
 00:01:16.410 --> 00:01:18.640 align:middle line:84%
 will automatically
-create the Show function
+create the show function
 
 00:01:18.640 --> 00:01:20.670 align:middle line:90%
 for these data structures.
 
 00:01:20.670 --> 00:01:24.320 align:middle line:84%
 And it is the output of this
-automatically created Show
+automatically created show
 
 00:01:24.320 --> 00:01:28.130 align:middle line:84%
 function that we
@@ -119,12 +119,12 @@ So let's say record
 1 is, and record 2.
 
 00:01:38.430 --> 00:01:50.410 align:middle line:84%
-And now we can use Show
+And now we can use show
 on these two records,
 
 00:01:50.410 --> 00:01:53.330 align:middle line:84%
 and this is the output
-that Show gives us.
+that show gives us.
 
 00:01:53.330 --> 00:01:55.850 align:middle line:84%
 So it's this output
@@ -217,7 +217,7 @@ lexer, so basically,
 
 00:03:13.520 --> 00:03:15.430 align:middle line:84%
 the definition of
-what are identifies
+what are identifiers
 
 00:03:15.430 --> 00:03:20.070 align:middle line:84%
 and so on in our system, we can
@@ -235,7 +235,7 @@ and now you can actually parse
 parentheses, brackets, braces,
 
 00:03:31.660 --> 00:03:34.510 align:middle line:84%
-comma-separate
+comma-separated
 lists, white spaces,
 
 00:03:34.510 --> 00:03:38.680 align:middle line:84%
@@ -335,7 +335,7 @@ So in our case, the data type
 that we desire is a string,
 
 00:04:59.370 --> 00:05:01.840 align:middle line:90%
-so c here is a string.
+so see here is a string.
 
 00:05:01.840 --> 00:05:07.620 align:middle line:84%
 And what it does is it applies
@@ -402,12 +402,12 @@ this function a little bit.
 
 
 00:06:06.469 --> 00:06:08.010 align:middle line:84%
-In the opening type,
+In the opening tag,
 we must actually
 
 00:06:08.010 --> 00:06:09.700 align:middle line:84%
 create, not just the
-name of the type,
+name of the tag,
 
 00:06:09.700 --> 00:06:12.110 align:middle line:90%
 but also the list of attributes.
@@ -444,14 +444,14 @@ convenient, rather than using
 the ++ in terms of readability.
 
 00:06:43.410 --> 00:06:45.650 align:middle line:84%
-So concat c will
+So concat will
 simply concatenate
 
 00:06:45.650 --> 00:06:47.560 align:middle line:90%
 all of the elements of a list.
 
 00:06:47.560 --> 00:06:49.750 align:middle line:84%
-With these [INAUDIBLE]
+With these tag
 manipulation functions,
 
 00:06:49.750 --> 00:06:52.230 align:middle line:84%
@@ -512,7 +512,7 @@ With all this machinery
 ready, we can now
 
 00:07:29.170 --> 00:07:32.100 align:middle line:90%
-create the rest of our parses.
+create the rest of our parsers.
 
 00:07:32.100 --> 00:07:36.180 align:middle line:84%
 For instance, if we
@@ -543,7 +543,7 @@ them with newlines,
 
 00:07:56.870 --> 00:08:01.370 align:middle line:84%
 and each element is surrounded
-by a type list element.
+by a tag list element.
 
 00:08:01.370 --> 00:08:03.840 align:middle line:84%
 The other parsers
@@ -569,7 +569,7 @@ record_parser, which first
 
 00:08:17.110 --> 00:08:19.970 align:middle line:84%
 parses the name of the
-record, and then it has bases,
+record, and then it has braces,
 
 00:08:19.970 --> 00:08:22.040 align:middle line:84%
 and then it has a
@@ -609,10 +609,10 @@ that start with an uppercase
 letter and then one
 
 00:08:47.500 --> 00:08:49.420 align:middle line:90%
-or more [INAUDIBLE] letters.
+or more alphanumeric letters.
 
 00:08:49.420 --> 00:08:53.004 align:middle line:84%
-This is our Parsec that we
+This is our Parser that we
 use to parse the labels.
 
 00:08:53.004 --> 00:08:54.420 align:middle line:84%
@@ -620,7 +620,7 @@ So with all these
 things together,
 
 00:08:54.420 --> 00:08:59.650 align:middle line:84%
-we can actually parse a Show
+we can actually parse a show
 output and turn it into XML.
 
 00:08:59.650 --> 00:09:02.970 align:middle line:84%
@@ -646,7 +646,7 @@ program just a little bit.
 
 
 00:09:21.730 --> 00:09:25.530 align:middle line:84%
-So we call Show on
+So we call show on
 the records that we
 
 00:09:25.530 --> 00:09:28.010 align:middle line:84%
@@ -658,7 +658,7 @@ We call ParseShow
 on the record string
 
 00:09:30.300 --> 00:09:31.542 align:middle line:90%
-and that's our main proof.
+and that's our main program.
 
 00:09:31.542 --> 00:09:35.150 align:middle line:90%
 
@@ -672,7 +672,7 @@ created an XML document
 
 00:09:42.840 --> 00:09:47.970 align:middle line:84%
 that represents the output of
-Show called on our custom data
+show called on our custom data
 
 00:09:47.970 --> 00:09:48.680 align:middle line:90%
 structure.

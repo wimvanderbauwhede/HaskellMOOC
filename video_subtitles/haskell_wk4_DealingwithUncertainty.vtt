@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:06.400 --> 00:00:09.400 align:middle line:84%
-PROFESSOR: Do you want to
+JEREMY: Do you want to
 know something upsetting?
 
 00:00:09.400 --> 00:00:11.340 align:middle line:90%
@@ -132,10 +132,10 @@ an optional value.
 
 00:01:44.660 --> 00:01:48.840 align:middle line:84%
 So the value might either
-be just a, for some a.
+be Just a, for some a.
 
 00:01:48.840 --> 00:01:51.600 align:middle line:90%
-Or it's empty which is nothing.
+Or it's empty which is Nothing.
 
 00:01:51.600 --> 00:01:54.050 align:middle line:84%
 The documentation goes
@@ -153,7 +153,7 @@ So these are the
 type constructors.
 
 00:02:01.860 --> 00:02:05.100 align:middle line:90%
-Either nothing or just a.
+Either Nothing or Just a.
 
 00:02:05.100 --> 00:02:06.740 align:middle line:84%
 We can look at the
@@ -176,17 +176,17 @@ in the course.
 
 00:02:19.880 --> 00:02:24.136 align:middle line:84%
 Maybe is either
-nothing or just a.
+Nothing or Just a.
 
 00:02:24.136 --> 00:02:26.880 align:middle line:90%
 For the type variable a.
 
 00:02:26.880 --> 00:02:30.470 align:middle line:84%
 And again, we have
-these two type clusters
+these two type classes
 
 00:02:30.470 --> 00:02:31.960 align:middle line:90%
-that Maybe deprives.
+that Maybe derives.
 
 00:02:31.960 --> 00:02:33.500 align:middle line:90%
 Eq for equality.
@@ -298,7 +298,7 @@ I'm going to start an
 interactive prompt inside
 
 00:04:02.795 --> 00:04:08.484 align:middle line:84%
-my emax session and
+my emacs session and
 I"m going to run ghci.
 
 00:04:08.484 --> 00:04:11.010 align:middle line:84%
@@ -340,7 +340,7 @@ I've said minus 1.
 
 00:04:34.580 --> 00:04:37.300 align:middle line:84%
 So I need to put
-that inside bracket.
+that inside brackets.
 
 00:04:37.300 --> 00:04:40.520 align:middle line:84%
 That's interpreted correctly
@@ -348,7 +348,7 @@ as an integer value.
 
 00:04:40.520 --> 00:04:43.190 align:middle line:84%
 So maxhelper with an interim
-maximum of minus 1 and I list
+maximum of minus 1 and a list
 
 00:04:43.190 --> 00:04:48.440 align:middle line:90%
 1, 2, 3 returns 3, and so on.
@@ -393,7 +393,7 @@ There is no maximum to return.
 So let's return nothing.
 
 00:05:22.970 --> 00:05:28.550 align:middle line:84%
-And let's say our return time
+And let's say our return type
 has now become Maybe int.
 
 00:05:28.550 --> 00:05:31.350 align:middle line:84%
@@ -402,7 +402,7 @@ an int if there is a maximum.
 
 00:05:31.350 --> 00:05:35.490 align:middle line:84%
 And if there isn't, we'll
-have to return nothing.
+have to return Nothing.
 
 00:05:35.490 --> 00:05:37.260 align:middle line:90%
 Maxfromlist.
@@ -433,7 +433,7 @@ up inside the Maybe.
 
 00:05:57.740 --> 00:06:02.750 align:middle line:84%
 So I need to say it's going to
-return just this integer value.
+return Just this integer value.
 
 00:06:02.750 --> 00:06:03.490 align:middle line:90%
 Good.
@@ -454,14 +454,14 @@ And now I should be able
 to say maxfromlist 1 2, 3,
 
 00:06:20.310 --> 00:06:22.210 align:middle line:90%
-And that returns just 3.
+And that returns Just 3.
 
 00:06:22.210 --> 00:06:22.890 align:middle line:90%
 Good.
 
 00:06:22.890 --> 00:06:28.760 align:middle line:84%
 If I say maxfromlist empty
-list it returns nothing.
+list it returns Nothing.
 
 00:06:28.760 --> 00:06:29.680 align:middle line:90%
 Great.
@@ -474,7 +474,7 @@ The Maybe type means
 that the type checker
 
 00:06:34.940 --> 00:06:39.420 align:middle line:84%
-guarantee client code will check
+guarantees client code will check
 the result of the computation.
 
 00:06:39.420 --> 00:06:41.650 align:middle line:90%
@@ -482,7 +482,7 @@ Probably with a case expression.
 
 00:06:41.650 --> 00:06:45.220 align:middle line:84%
 This is much more robust
-than c error codes.
+than C error codes.
 
 00:06:45.220 --> 00:06:48.090 align:middle line:90%
 
@@ -526,7 +526,7 @@ values.
 
 00:07:15.460 --> 00:07:22.070 align:middle line:84%
 So let's say let function
-inc equal one plus.
+inc equals one plus.
 
 00:07:22.070 --> 00:07:24.630 align:middle line:90%
 
@@ -548,7 +548,7 @@ So if I say inc 1 it
 returns the value 2.
 
 00:07:48.360 --> 00:07:53.540 align:middle line:90%
-How about if I say inc just 1?
+How about if I say inc Just 1?
 
 00:07:53.540 --> 00:07:54.120 align:middle line:90%
 Look.
@@ -566,33 +566,33 @@ the fmap function--
 
 00:08:06.280 --> 00:08:12.300 align:middle line:84%
 this is a higher order
-function here-- inc just 1.
+function here-- inc Just 1.
 
 00:08:12.300 --> 00:08:15.250 align:middle line:90%
-I get back just 2.
+I get back Just 2.
 
 00:08:15.250 --> 00:08:22.140 align:middle line:84%
 So fmap allows inc to be applied
 to the value inside the Maybe.
 
 00:08:22.140 --> 00:08:25.230 align:middle line:90%
-The 1 inside the just 1.
+The 1 inside the Just 1.
 
 00:08:25.230 --> 00:08:32.812 align:middle line:90%
-Fmap inc just 2 return just 3.
+Fmap inc Just 2 returns Just 3.
 
 00:08:32.812 --> 00:08:34.270 align:middle line:84%
 And now you're
 saying, what happens
 
 00:08:34.270 --> 00:08:38.110 align:middle line:90%
-if I apply inc 2 nothing?
+if I apply inc 2 Nothing?
 
 00:08:38.110 --> 00:08:40.169 align:middle line:90%
 Guess.
 
 00:08:40.169 --> 00:08:43.000 align:middle line:90%
-I get back nothing.
+I get back Nothing.
 
 00:08:43.000 --> 00:08:43.919 align:middle line:90%
 Great.

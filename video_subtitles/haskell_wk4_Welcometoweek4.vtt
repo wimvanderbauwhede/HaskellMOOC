@@ -19,8 +19,8 @@ First, we will look at
 some more advanced patterns
 
 00:00:15.970 --> 00:00:20.040 align:middle line:84%
-of computation based on the
-user functions as value.
+of computation based on 
+using functions as values.
 
 00:00:20.040 --> 00:00:22.651 align:middle line:84%
 As an example we
@@ -80,7 +80,7 @@ We will first look
 at a program scope.
 
 00:00:58.810 --> 00:01:02.070 align:middle line:84%
-And Scoping is the
+And scoping is the
 real key feature
 
 00:01:02.070 --> 00:01:04.920 align:middle line:84%
