@@ -15,7 +15,7 @@ between maps and folds
 in Haskell and loops
 
 00:00:13.450 --> 00:00:16.360 align:middle line:90%
-in imperative languages.
+in an imperative language.
 
 00:00:16.360 --> 00:00:19.070 align:middle line:84%
 For the imperative language, I
@@ -33,7 +33,7 @@ map on a list using function f.
 
 
 00:00:39.190 --> 00:00:41.980 align:middle line:84%
-And supposed the
+And suppose the
 function f is simply
 
 00:00:41.980 --> 00:00:45.420 align:middle line:90%
@@ -97,7 +97,7 @@ And then we simply print this.
 
 
 00:02:45.600 --> 00:02:46.100 align:middle line:90%
-[INAUDIBLE]
+Let's try this.
 
 00:02:46.100 --> 00:02:58.910 align:middle line:90%
 
@@ -108,7 +108,7 @@ in Ruby, we can move this.
 
 00:03:04.120 --> 00:03:08.710 align:middle line:84%
 And now it looks a bit
-more like the Haskell saw.
+more like the Haskell we saw.
 
 00:03:08.710 --> 00:03:13.210 align:middle line:84%
 Clearly, the for loop is a very
@@ -136,11 +136,11 @@ operation g is (/).
 
 
 00:03:31.970 --> 00:03:38.170 align:middle line:84%
-And then we can fold to
+And then we can fold the
 division and using the left
 
 00:03:38.170 --> 00:03:42.915 align:middle line:84%
-fold, [INAUDIBLE]
+fold, 
 foldl g and then
 
 00:03:42.915 --> 00:03:49.600 align:middle line:84%
@@ -171,24 +171,24 @@ thing like we do in Haskell,
 
 00:04:11.420 --> 00:04:14.350 align:middle line:84%
 so we have to actually
-say def g(occ.elt).
+say def g(accumulator and element).
 
 00:04:14.350 --> 00:04:19.350 align:middle line:90%
 
 
 00:04:19.350 --> 00:04:27.010 align:middle line:84%
-And we have occ/elt.
+And we have acc/elt.
 And then we have a loop.
 
 00:04:27.010 --> 00:04:29.980 align:middle line:90%
 
 
 00:04:29.980 --> 00:04:35.706 align:middle line:90%
-And we start with occ = 1.0.
+And we start with qcc = 1.0.
 
 00:04:35.706 --> 00:04:39.280 align:middle line:84%
 And we apply the function
-through the occ = g(occ,elt).
+to the accumulator
 
 00:04:39.280 --> 00:04:44.660 align:middle line:90%
 
@@ -204,7 +204,7 @@ Indeed, we get the same thing.
 
 00:04:55.090 --> 00:05:00.020 align:middle line:84%
 Now, if we do the same
-but with a right foldr,
+but with a right fold,
 
 00:05:00.020 --> 00:05:02.940 align:middle line:84%
 so, obviously, the Haskell
@@ -232,7 +232,7 @@ And try that.
 
 00:05:31.380 --> 00:05:36.451 align:middle line:84%
 And in Ruby, we need to
-find a new function g.
+define a new function g.
 
 00:05:36.451 --> 00:05:39.780 align:middle line:84%
 And I can't use a prime,
@@ -240,7 +240,7 @@ so I'll use an underscore.
 
 00:05:39.780 --> 00:05:43.800 align:middle line:84%
 But note that we have
-to find it like this.
+to define it like this.
 
 00:05:43.800 --> 00:05:46.840 align:middle line:90%
 
@@ -281,11 +281,11 @@ a function that uses
 the same variable.
 
 00:06:37.950 --> 00:06:44.060 align:middle line:84%
-So g uses occ and returns and
-a new value-based occ and elt,
+So g uses acc and returns and
+a new value-based on acc and elt,
 
 00:06:44.060 --> 00:06:46.190 align:middle line:90%
-and the same says to occ.
+and it sends this to acc.
 
 00:06:46.190 --> 00:06:49.910 align:middle line:90%
 And g_ does the same thing.
@@ -347,7 +347,7 @@ are in some doubt of how
 a fold, left or a right
 
 00:07:41.820 --> 00:07:47.450 align:middle line:84%
-fold, or map works in Haskell,
+fold, or a map works in Haskell,
 you can always try and think
 
 00:07:47.450 --> 00:07:51.270 align:middle line:84%
