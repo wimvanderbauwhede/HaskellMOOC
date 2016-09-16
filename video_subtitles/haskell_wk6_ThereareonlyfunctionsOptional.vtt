@@ -104,15 +104,15 @@ And we will essentially do the
 equivalent of currying
 
 00:01:36.730 --> 00:01:37.550 align:middle line:90%
-in the let box.
+in the let block.
 
 00:01:37.550 --> 00:01:40.800 align:middle line:84%
 So we will transform this let
-block in a nest of let blocks.
+block into a nested let block.
 
 00:01:40.800 --> 00:01:44.880 align:middle line:84%
 So what we're doing-- what
-you're doing is k and--
+you're doing is clear and--
 
 00:01:44.880 --> 00:02:04.610 align:middle line:90%
 
@@ -131,7 +131,7 @@ with just a single variable
 here.
 
 00:02:12.700 --> 00:02:16.750 align:middle line:84%
-And we can rewrite this as a
+And we can now rewrite this as a
 lambda expression as follows.
 
 00:02:16.750 --> 00:02:18.868 align:middle line:84%
@@ -219,7 +219,7 @@ expressions, and so on.
 
 00:03:48.450 --> 00:03:52.320 align:middle line:84%
 And for that we need to define
-the values of true and false.
+the values of True and False.
 
 00:03:52.320 --> 00:03:54.060 align:middle line:84%
 You might wonder,
@@ -234,4 +234,4 @@ because remember we're
 going to use only functions,
 
 00:03:59.520 --> 00:04:02.260 align:middle line:90%
-so even numbers are not.
+so even numbers are not available.
