@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:07.074 --> 00:00:08.240 align:middle line:90%
-INSTRUCTOR: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:08.240 --> 00:00:09.860 align:middle line:84%
 In this short
@@ -42,7 +42,7 @@ So let's give a few examples.
 
 00:00:31.780 --> 00:00:34.596 align:middle line:84%
 So the first example is of
-the additional position.
+the addition operation.
 
 00:00:34.596 --> 00:00:39.650 align:middle line:90%
 
@@ -130,7 +130,7 @@ that allow you to put
 constraints on the types
 
 00:01:51.740 --> 00:01:54.470 align:middle line:84%
-without [INAUDIBLE]
+without [INAUDIBLE]XXX
 express that for instance,
 
 00:01:54.470 --> 00:01:58.585 align:middle line:84%
@@ -192,7 +192,7 @@ classes.
 
 00:02:52.020 --> 00:02:55.330 align:middle line:84%
 What we are going to
-do in the next series
+do in the next step
 
 00:02:55.330 --> 00:02:58.450 align:middle line:84%
 is to look at how you can
