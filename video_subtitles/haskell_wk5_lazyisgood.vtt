@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.330 align:middle line:90%
+
+
+00:00:04.330 --> 00:00:06.640 align:middle line:84%
+SPEAKER 1: In real
+life, laziness
+
+00:00:06.640 --> 00:00:10.370 align:middle line:84%
+is frowned upon and
+considered to be a bad thing.
+
+00:00:10.370 --> 00:00:13.690 align:middle line:84%
+However, in programming
+languages laziness is a feature
+
+00:00:13.690 --> 00:00:16.329 align:middle line:84%
+and may be considered
+a good thing.
+
+00:00:16.329 --> 00:00:19.420 align:middle line:90%
+Haskell is a lazy language.
+
+00:00:19.420 --> 00:00:22.300 align:middle line:84%
+This means that the
+evaluation of expressions
+
+00:00:22.300 --> 00:00:26.710 align:middle line:84%
+is delayed until their
+values are actually needed.
+
+00:00:26.710 --> 00:00:29.930 align:middle line:84%
+The opposite is
+eager evaluation,
+
+00:00:29.930 --> 00:00:33.140 align:middle line:84%
+which is what most programming
+languages implement,
+
+00:00:33.140 --> 00:00:37.360 align:middle line:90%
+like C, Java, and Python.
+
+00:00:37.360 --> 00:00:40.610 align:middle line:84%
+For instance, consider
+this expression--
+
+00:00:40.610 --> 00:00:46.171 align:middle line:84%
+f applied to 1 plus 1, given
+this function definition
+
+00:00:46.171 --> 00:00:50.440 align:middle line:90%
+f x equals 0.
+
+00:00:50.440 --> 00:00:53.880 align:middle line:84%
+In an eager language,
+the calculation 1 plus 1
+
+00:00:53.880 --> 00:00:56.420 align:middle line:84%
+is done when the
+function f is invoked.
+
+00:00:56.420 --> 00:00:58.850 align:middle line:90%
+This is called by value.
+
+00:00:58.850 --> 00:01:01.460 align:middle line:84%
+Whereas in a lazy
+language, like Haskell,
+
+00:01:01.460 --> 00:01:04.440 align:middle line:84%
+the calculation 1
+plus 1 is only done
+
+00:01:04.440 --> 00:01:08.490 align:middle line:84%
+when the parameter value is
+used in the function body, known
+
+00:01:08.490 --> 00:01:11.200 align:middle line:90%
+as called by need.
+
+00:01:11.200 --> 00:01:14.300 align:middle line:84%
+So in a lazy language,
+if a parameter value
+
+00:01:14.300 --> 00:01:20.030 align:middle line:84%
+is never needed then the
+parameter is never evaluated.
+
+00:01:20.030 --> 00:01:29.150 align:middle line:84%
+Consider fxy equals y, then
+f 1 add 1 2 add 2 has value 4
+
+00:01:29.150 --> 00:01:32.980 align:middle line:84%
+and the calculation of 1
+add 1 is never performed.
+
+00:01:32.980 --> 00:01:35.590 align:middle line:84%
+Formally, we say
+the function f is
+
+00:01:35.590 --> 00:01:39.860 align:middle line:90%
+strict in its second argument.
+
+00:01:39.860 --> 00:01:43.690 align:middle line:84%
+Some values do not terminate
+when we try to evaluate them.
+
+00:01:43.690 --> 00:01:45.240 align:middle line:84%
+The simplest
+non-terminating value
+
+00:01:45.240 --> 00:01:48.810 align:middle line:84%
+is called bottom, written
+in mathematical notation
+
+00:01:48.810 --> 00:01:50.950 align:middle line:90%
+as shown here.
+
+00:01:50.950 --> 00:01:57.650 align:middle line:84%
+It's recursive definition in
+Haskell is bot equals bot.
+
+00:01:57.650 --> 00:02:00.020 align:middle line:84%
+A function is strict
+in its argument
+
+00:02:00.020 --> 00:02:02.850 align:middle line:84%
+if when we supply
+bottom as that argument
+
+00:02:02.850 --> 00:02:04.760 align:middle line:90%
+the function fails to terminate.
+
+00:02:04.760 --> 00:02:07.800 align:middle line:90%
+
+
+00:02:07.800 --> 00:02:10.990 align:middle line:84%
+F bot 42 terminates
+fine since we never
+
+00:02:10.990 --> 00:02:12.980 align:middle line:90%
+evaluate the first argument.
+
+00:02:12.980 --> 00:02:15.530 align:middle line:84%
+On the other hand,
+f 42 bot loops
+
+00:02:15.530 --> 00:02:17.960 align:middle line:84%
+forever, or at least
+until we press Ctrl-C
+
+00:02:17.960 --> 00:02:20.105 align:middle line:90%
+in the GHC interactive console.
+
+00:02:20.105 --> 00:02:23.420 align:middle line:90%
+
+
+00:02:23.420 --> 00:02:27.130 align:middle line:90%
+Infinite data structures.
+
+00:02:27.130 --> 00:02:32.640 align:middle line:84%
+Laziness is very useful when
+dealing with infinite data.
+
+00:02:32.640 --> 00:02:37.920 align:middle line:84%
+For example, think of the
+infinite list of one values.
+
+00:02:37.920 --> 00:02:41.130 align:middle line:84%
+That's an infinite list where
+each element is the integer
+
+00:02:41.130 --> 00:02:41.840 align:middle line:90%
+one.
+
+00:02:41.840 --> 00:02:45.150 align:middle line:84%
+We can define this
+in GHCi as follows.
+
+00:02:45.150 --> 00:02:50.180 align:middle line:84%
+Let ones equal 1
+[INAUDIBLE] onto ones.
+
+00:02:50.180 --> 00:02:53.750 align:middle line:84%
+See the recursive nature
+of the definition here.
+
+00:02:53.750 --> 00:02:57.380 align:middle line:84%
+What value is
+returned by head ones?
+
+00:02:57.380 --> 00:03:00.110 align:middle line:90%
+Simply the integer value one.
+
+00:03:00.110 --> 00:03:03.240 align:middle line:84%
+What value is
+returned by tail ones?
+
+00:03:03.240 --> 00:03:04.420 align:middle line:90%
+An infinite list.
+
+00:03:04.420 --> 00:03:07.210 align:middle line:84%
+I need to press
+Ctrl-C to interrupt
+
+00:03:07.210 --> 00:03:12.450 align:middle line:84%
+this printing and evaluation
+of the expression.
+
+00:03:12.450 --> 00:03:15.030 align:middle line:84%
+The same is true if I
+just try to evaluate
+
+00:03:15.030 --> 00:03:17.040 align:middle line:90%
+the whole expression ones.
+
+00:03:17.040 --> 00:03:21.380 align:middle line:84%
+I get another infinite
+list of one values.
+
+00:03:21.380 --> 00:03:25.410 align:middle line:84%
+The take function selects
+a finite number of elements
+
+00:03:25.410 --> 00:03:28.290 align:middle line:84%
+from the front of a
+potentially infinite list.
+
+00:03:28.290 --> 00:03:31.020 align:middle line:84%
+So let's say take
+3 ones and I get
+
+00:03:31.020 --> 00:03:34.260 align:middle line:84%
+that, the finite
+list of 3 one values.
+
+00:03:34.260 --> 00:03:38.090 align:middle line:84%
+The drop function drops elements
+from the front of the list
+
+00:03:38.090 --> 00:03:39.570 align:middle line:84%
+and returns the
+rest of the list.
+
+00:03:39.570 --> 00:03:41.060 align:middle line:84%
+Again, it's infinite
+so I'm going
+
+00:03:41.060 --> 00:03:45.450 align:middle line:84%
+to press Ctrl-C to
+interrupt the evaluation.
+
+00:03:45.450 --> 00:03:48.800 align:middle line:84%
+In summary, if computations
+are not needed,
+
+00:03:48.800 --> 00:03:50.890 align:middle line:90%
+then they won't be evaluated.
+
+00:03:50.890 --> 00:03:54.760 align:middle line:84%
+And we can compute with
+infinite data structures
+
+00:03:54.760 --> 00:03:58.840 align:middle line:84%
+so long as we don't traverse
+the structure infinitely.
+
+00:03:58.840 --> 00:04:02.463 align:middle line:90%
