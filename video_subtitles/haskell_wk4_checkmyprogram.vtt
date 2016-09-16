@@ -1,0 +1,937 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.480 align:middle line:90%
+
+
+00:00:04.480 --> 00:00:06.420 align:middle line:84%
+JEREMY: In today's
+video, we're going
+
+00:00:06.420 --> 00:00:09.530 align:middle line:84%
+to find out about a
+powerful, automated testing
+
+00:00:09.530 --> 00:00:12.930 align:middle line:90%
+tool called QuickCheck.
+
+00:00:12.930 --> 00:00:18.000 align:middle line:84%
+This allows us to run randomly
+generated tests on our code
+
+00:00:18.000 --> 00:00:22.100 align:middle line:84%
+to ensure the code meets certain
+correctness properties that we
+
+00:00:22.100 --> 00:00:23.630 align:middle line:90%
+specify.
+
+00:00:23.630 --> 00:00:27.310 align:middle line:84%
+QuickCheck comes as part
+of the Haskell platform,
+
+00:00:27.310 --> 00:00:29.440 align:middle line:84%
+so you should already
+have access to it
+
+00:00:29.440 --> 00:00:32.240 align:middle line:90%
+on your own machine.
+
+00:00:32.240 --> 00:00:36.380 align:middle line:84%
+It's widely used in
+the software industry.
+
+00:00:36.380 --> 00:00:43.250 align:middle line:84%
+For instance, many modern
+telecom software products
+
+00:00:43.250 --> 00:00:47.290 align:middle line:90%
+are tested using QuickCheck.
+
+00:00:47.290 --> 00:00:52.400 align:middle line:84%
+OK, suppose we want to
+implement a substitution cipher.
+
+00:00:52.400 --> 00:00:55.820 align:middle line:84%
+Let's do Caesar's cipher,
+where we encode letters
+
+00:00:55.820 --> 00:00:57.890 align:middle line:84%
+by shifting them a
+certain number of places
+
+00:00:57.890 --> 00:00:59.830 align:middle line:90%
+along in the alphabet.
+
+00:00:59.830 --> 00:01:04.140 align:middle line:84%
+In this example here, we
+shift letters one place.
+
+00:01:04.140 --> 00:01:07.740 align:middle line:84%
+So add-- A-D-D in
+the plaintext--
+
+00:01:07.740 --> 00:01:12.720 align:middle line:84%
+will become bee-- B-E-E--
+in the ciphertext.
+
+00:01:12.720 --> 00:01:16.000 align:middle line:84%
+We might ask what plaintext
+Z, the final letter
+
+00:01:16.000 --> 00:01:18.580 align:middle line:84%
+of the alphabet,
+should be in code.
+
+00:01:18.580 --> 00:01:20.050 align:middle line:90%
+The answer is a.
+
+00:01:20.050 --> 00:01:22.000 align:middle line:90%
+The alphabet wraps round.
+
+00:01:22.000 --> 00:01:24.370 align:middle line:84%
+Properly, this is a rotation
+rather than a shift.
+
+00:01:24.370 --> 00:01:26.910 align:middle line:90%
+
+
+00:01:26.910 --> 00:01:31.540 align:middle line:84%
+First, we import the
+Data.Char module,
+
+00:01:31.540 --> 00:01:35.820 align:middle line:84%
+which allows us to use utility
+functions for manipulating
+
+00:01:35.820 --> 00:01:36.320 align:middle line:90%
+characters.
+
+00:01:36.320 --> 00:01:39.750 align:middle line:90%
+
+
+00:01:39.750 --> 00:01:45.400 align:middle line:84%
+We select candidate
+characters to cipher or encode
+
+00:01:45.400 --> 00:01:49.090 align:middle line:84%
+using the shouldcipher
+function here.
+
+00:01:49.090 --> 00:01:50.310 align:middle line:90%
+Look at the type signature.
+
+00:01:50.310 --> 00:01:53.400 align:middle line:84%
+It's going to take a
+character, a single character,
+
+00:01:53.400 --> 00:01:55.840 align:middle line:84%
+and return a Boolean that
+tells us whether or not
+
+00:01:55.840 --> 00:01:59.490 align:middle line:84%
+this particular character
+is going to be enciphered.
+
+00:01:59.490 --> 00:02:03.940 align:middle line:84%
+And we're only going to
+want to cipher characters c
+
+00:02:03.940 --> 00:02:09.580 align:middle line:84%
+that are letters and are
+ASCII character codes.
+
+00:02:09.580 --> 00:02:14.120 align:middle line:84%
+Haskell actually uses the
+Unicode character set.
+
+00:02:14.120 --> 00:02:20.080 align:middle line:84%
+So this means we're only
+going to encipher letters,
+
+00:02:20.080 --> 00:02:24.690 align:middle line:84%
+alphabetic letters, and
+not numbers or punctuation
+
+00:02:24.690 --> 00:02:26.910 align:middle line:90%
+characters.
+
+00:02:26.910 --> 00:02:30.360 align:middle line:84%
+To encipher letters, then come
+down to the next function here,
+
+00:02:30.360 --> 00:02:31.710 align:middle line:90%
+cipherchar.
+
+00:02:31.710 --> 00:02:36.299 align:middle line:84%
+We want to move letters along
+in places in the alphabet,
+
+00:02:36.299 --> 00:02:38.840 align:middle line:84%
+where the number of places we
+move them is the first argument
+
+00:02:38.840 --> 00:02:39.510 align:middle line:90%
+shift.
+
+00:02:39.510 --> 00:02:41.320 align:middle line:90%
+That's an integer.
+
+00:02:41.320 --> 00:02:44.580 align:middle line:84%
+And the second argument
+is the original character,
+
+00:02:44.580 --> 00:02:46.350 align:middle line:90%
+the character in the plaintext.
+
+00:02:46.350 --> 00:02:49.770 align:middle line:84%
+And we're going to return
+the character that's
+
+00:02:49.770 --> 00:02:54.230 align:middle line:84%
+the ciphered version of
+our plaintext character.
+
+00:02:54.230 --> 00:02:57.890 align:middle line:84%
+So let's think about how
+we're going to do this.
+
+00:02:57.890 --> 00:03:00.770 align:middle line:84%
+What we really want
+to do is to add
+
+00:03:00.770 --> 00:03:06.430 align:middle line:84%
+a certain number of character
+positions, the shift,
+
+00:03:06.430 --> 00:03:09.450 align:middle line:90%
+to the original character.
+
+00:03:09.450 --> 00:03:13.900 align:middle line:84%
+But c is a character,
+and shift is an integer.
+
+00:03:13.900 --> 00:03:19.200 align:middle line:84%
+So actually, we have
+to use the ord function
+
+00:03:19.200 --> 00:03:22.690 align:middle line:84%
+to turn the character
+into an integer code.
+
+00:03:22.690 --> 00:03:25.200 align:middle line:84%
+And then add in the
+shift and then use
+
+00:03:25.200 --> 00:03:29.570 align:middle line:84%
+the chr function to turn
+the resulting integer back
+
+00:03:29.570 --> 00:03:32.420 align:middle line:90%
+into a character.
+
+00:03:32.420 --> 00:03:33.770 align:middle line:90%
+Type safety is important here.
+
+00:03:33.770 --> 00:03:37.120 align:middle line:84%
+We can't add integers
+and characters directly.
+
+00:03:37.120 --> 00:03:41.160 align:middle line:84%
+Ord and chr might be familiar
+to Python programmers,
+
+00:03:41.160 --> 00:03:43.730 align:middle line:90%
+for instance.
+
+00:03:43.730 --> 00:03:47.450 align:middle line:84%
+Now we only want to do
+this in the situation
+
+00:03:47.450 --> 00:03:50.930 align:middle line:84%
+where the character--
+that is, the input c--
+
+00:03:50.930 --> 00:03:55.220 align:middle line:84%
+is going to be a character
+that's a letter that we ought
+
+00:03:55.220 --> 00:03:57.050 align:middle line:90%
+to cipher.
+
+00:03:57.050 --> 00:04:02.350 align:middle line:84%
+So let's say
+shouldcipher c means
+
+00:04:02.350 --> 00:04:04.178 align:middle line:90%
+that we do this calculation.
+
+00:04:04.178 --> 00:04:08.960 align:middle line:84%
+And otherwise, we're
+going to say, just
+
+00:04:08.960 --> 00:04:11.370 align:middle line:90%
+return the value c itself.
+
+00:04:11.370 --> 00:04:14.650 align:middle line:84%
+It might be a punctuation
+character, or a space,
+
+00:04:14.650 --> 00:04:17.290 align:middle line:90%
+or another non-letter character.
+
+00:04:17.290 --> 00:04:19.839 align:middle line:90%
+
+
+00:04:19.839 --> 00:04:23.460 align:middle line:84%
+Great, now what we want
+to do is to-- let's
+
+00:04:23.460 --> 00:04:31.370 align:middle line:84%
+get rid of this comment--
+map this cipherchar function
+
+00:04:31.370 --> 00:04:32.830 align:middle line:90%
+over the whole of the string.
+
+00:04:32.830 --> 00:04:34.540 align:middle line:84%
+And that's what the
+next function does.
+
+00:04:34.540 --> 00:04:36.240 align:middle line:90%
+Cipher, do you see here?
+
+00:04:36.240 --> 00:04:39.190 align:middle line:84%
+It takes an integer shift
+amount, a character list,
+
+00:04:39.190 --> 00:04:40.060 align:middle line:90%
+i.e. a string.
+
+00:04:40.060 --> 00:04:41.350 align:middle line:90%
+That's the plaintext.
+
+00:04:41.350 --> 00:04:45.870 align:middle line:84%
+And returns another character
+list, which is the ciphertext.
+
+00:04:45.870 --> 00:04:47.690 align:middle line:90%
+So here's the definition here.
+
+00:04:47.690 --> 00:04:50.140 align:middle line:84%
+We're going to use
+the map function.
+
+00:04:50.140 --> 00:04:54.610 align:middle line:84%
+And what we're mapping is
+the cipherchar function
+
+00:04:54.610 --> 00:04:59.090 align:middle line:84%
+for a certain shift amount
+mapped onto every character
+
+00:04:59.090 --> 00:05:01.810 align:middle line:90%
+in the plaintext.
+
+00:05:01.810 --> 00:05:03.420 align:middle line:90%
+Let's try out this code.
+
+00:05:03.420 --> 00:05:04.540 align:middle line:90%
+I'm going to save it.
+
+00:05:04.540 --> 00:05:07.080 align:middle line:90%
+
+
+00:05:07.080 --> 00:05:10.840 align:middle line:90%
+So let's try this inside GHCi.
+
+00:05:10.840 --> 00:05:13.540 align:middle line:90%
+First, we'll load cipher.hs.
+
+00:05:13.540 --> 00:05:15.420 align:middle line:90%
+That's in the code directory.
+
+00:05:15.420 --> 00:05:20.670 align:middle line:84%
+And then we're going
+to say cipher hello.
+
+00:05:20.670 --> 00:05:21.410 align:middle line:90%
+That's my string.
+
+00:05:21.410 --> 00:05:24.390 align:middle line:84%
+And we want to move
+things along one space.
+
+00:05:24.390 --> 00:05:25.850 align:middle line:90%
+Sorry, one space.
+
+00:05:25.850 --> 00:05:26.950 align:middle line:90%
+There we are.
+
+00:05:26.950 --> 00:05:30.280 align:middle line:84%
+And we get the
+enciphered message.
+
+00:05:30.280 --> 00:05:33.120 align:middle line:84%
+And then we'll do an
+original Caesar message.
+
+00:05:33.120 --> 00:05:36.170 align:middle line:84%
+He'd normally move
+things three places long.
+
+00:05:36.170 --> 00:05:40.050 align:middle line:90%
+Veni, vidi, vici.
+
+00:05:40.050 --> 00:05:43.350 align:middle line:84%
+And we get back a rather
+unpronounceable string there,
+
+00:05:43.350 --> 00:05:46.520 align:middle line:90%
+which is its encoding.
+
+00:05:46.520 --> 00:05:51.180 align:middle line:84%
+Now for the decipher, we
+want to shift letters back
+
+00:05:51.180 --> 00:05:55.240 align:middle line:84%
+in the opposite direction
+to the encipher.
+
+00:05:55.240 --> 00:06:01.250 align:middle line:84%
+Look-- so decipher is going to
+have the same type as decipher.
+
+00:06:01.250 --> 00:06:03.320 align:middle line:84%
+It's going to take an
+integer shift amount.
+
+00:06:03.320 --> 00:06:07.900 align:middle line:84%
+The second parameter is going to
+be the character amount shift.
+
+00:06:07.900 --> 00:06:11.471 align:middle line:84%
+And then it's going to return
+to the decoded, deciphered
+
+00:06:11.471 --> 00:06:11.970 align:middle line:90%
+message.
+
+00:06:11.970 --> 00:06:14.970 align:middle line:90%
+
+
+00:06:14.970 --> 00:06:22.400 align:middle line:84%
+So decipher shift ciphertext
+is going to be-- well,
+
+00:06:22.400 --> 00:06:27.120 align:middle line:84%
+it's really just the
+ciphering function,
+
+00:06:27.120 --> 00:06:31.680 align:middle line:84%
+but shifting in the
+opposite direction.
+
+00:06:31.680 --> 00:06:34.830 align:middle line:84%
+But hopefully, this
+ought to give us
+
+00:06:34.830 --> 00:06:39.640 align:middle line:84%
+the deciphered or
+decrypted message.
+
+00:06:39.640 --> 00:06:42.990 align:middle line:90%
+So let's say reload.
+
+00:06:42.990 --> 00:06:45.470 align:middle line:84%
+And now we should be able to
+use the decipher function.
+
+00:06:45.470 --> 00:06:50.450 align:middle line:84%
+If I say, decipher
+3, and then I'm
+
+00:06:50.450 --> 00:06:56.350 align:middle line:84%
+going to copy and paste
+this encoded string here.
+
+00:06:56.350 --> 00:06:59.620 align:middle line:84%
+I should get back
+the original message.
+
+00:06:59.620 --> 00:07:02.570 align:middle line:90%
+And I do.
+
+00:07:02.570 --> 00:07:06.270 align:middle line:84%
+Now we want to check that
+our code works properly.
+
+00:07:06.270 --> 00:07:08.900 align:middle line:84%
+Of course we know it
+shouldn't because we haven't
+
+00:07:08.900 --> 00:07:14.620 align:middle line:84%
+done the wrapping around
+the alphabet for Z.
+
+00:07:14.620 --> 00:07:17.680 align:middle line:84%
+Rather than devise a
+number of test cases,
+
+00:07:17.680 --> 00:07:21.700 align:middle line:84%
+we will use the QuickCheck tool
+to generate random input data
+
+00:07:21.700 --> 00:07:25.540 align:middle line:84%
+and see whether a correctness
+property holds for our code.
+
+00:07:25.540 --> 00:07:28.960 align:middle line:84%
+The property we want to check
+is, if we cipher a message
+
+00:07:28.960 --> 00:07:32.660 align:middle line:84%
+and then decipher it, we should
+get back the original message.
+
+00:07:32.660 --> 00:07:36.664 align:middle line:84%
+First, let's import
+the QuickCheck module.
+
+00:07:36.664 --> 00:07:37.330 align:middle line:90%
+Test.QuickCheck.
+
+00:07:37.330 --> 00:07:40.190 align:middle line:90%
+
+
+00:07:40.190 --> 00:07:43.710 align:middle line:84%
+Make sure you get the
+capital letters right.
+
+00:07:43.710 --> 00:07:45.620 align:middle line:84%
+Notice how the
+interactive prompt now
+
+00:07:45.620 --> 00:07:48.860 align:middle line:84%
+has been modified to
+include Test.QuickCheck
+
+00:07:48.860 --> 00:07:51.810 align:middle line:84%
+to show that it's loaded
+into our environment.
+
+00:07:51.810 --> 00:07:56.410 align:middle line:84%
+Now let's ask QuickCheck
+to check our property.
+
+00:07:56.410 --> 00:07:59.350 align:middle line:84%
+We need to encode the
+property in Haskell.
+
+00:07:59.350 --> 00:08:05.320 align:middle line:84%
+So suppose we cipher a string
+by shifting it n places.
+
+00:08:05.320 --> 00:08:07.180 align:middle line:90%
+The string is called s.
+
+00:08:07.180 --> 00:08:12.640 align:middle line:84%
+And then we decipher this string
+using the same shift amount.
+
+00:08:12.640 --> 00:08:14.750 align:middle line:84%
+Then the answer we
+ought to get back
+
+00:08:14.750 --> 00:08:17.140 align:middle line:84%
+should be equal to the
+original string itself.
+
+00:08:17.140 --> 00:08:20.080 align:middle line:90%
+
+
+00:08:20.080 --> 00:08:21.810 align:middle line:84%
+This is the property
+we want to check.
+
+00:08:21.810 --> 00:08:25.440 align:middle line:84%
+We need to wrap this up
+as a lambda abstraction.
+
+00:08:25.440 --> 00:08:32.298 align:middle line:84%
+So we're going to take n, which
+is an integer, and then s,
+
+00:08:32.298 --> 00:08:33.306 align:middle line:90%
+which is a string.
+
+00:08:33.306 --> 00:08:36.640 align:middle line:90%
+
+
+00:08:36.640 --> 00:08:40.650 align:middle line:84%
+And given these
+two parameters, we
+
+00:08:40.650 --> 00:08:43.080 align:middle line:84%
+can then check that
+when we decipher
+
+00:08:43.080 --> 00:08:46.400 align:middle line:84%
+the enciphered message, we
+get back the original message.
+
+00:08:46.400 --> 00:08:49.890 align:middle line:90%
+Let's put some types here.
+
+00:08:49.890 --> 00:08:54.580 align:middle line:84%
+So we take an int,
+n, the string, s.
+
+00:08:54.580 --> 00:08:56.330 align:middle line:84%
+And we're going to
+return a Boolean, which
+
+00:08:56.330 --> 00:09:00.015 align:middle line:84%
+is the result of
+the equality check.
+
+00:09:00.015 --> 00:09:00.515 align:middle line:90%
+OK.
+
+00:09:00.515 --> 00:09:03.330 align:middle line:90%
+
+
+00:09:03.330 --> 00:09:08.800 align:middle line:84%
+And we're going to provide
+this lambda abstraction
+
+00:09:08.800 --> 00:09:13.720 align:middle line:84%
+as an argument to the
+QuickCheck function.
+
+00:09:13.720 --> 00:09:18.130 align:middle line:84%
+And look, it runs, and
+then it says it failed.
+
+00:09:18.130 --> 00:09:20.340 align:middle line:90%
+And it's failed after six tests.
+
+00:09:20.340 --> 00:09:21.910 align:middle line:90%
+And here's where it's failed.
+
+00:09:21.910 --> 00:09:23.550 align:middle line:90%
+Look.
+
+00:09:23.550 --> 00:09:28.830 align:middle line:84%
+The shift amount is one, and the
+string we're trying to cipher
+
+00:09:28.830 --> 00:09:30.130 align:middle line:90%
+is z.
+
+00:09:30.130 --> 00:09:33.092 align:middle line:84%
+If we shift z along
+one place-- well,
+
+00:09:33.092 --> 00:09:34.550 align:middle line:84%
+let's do that and
+see what happens.
+
+00:09:34.550 --> 00:09:37.225 align:middle line:90%
+cipher 1 z.
+
+00:09:37.225 --> 00:09:39.710 align:middle line:84%
+And then we end up
+with the next character
+
+00:09:39.710 --> 00:09:44.550 align:middle line:84%
+in the character encoding,
+which is open curly brace.
+
+00:09:44.550 --> 00:09:48.940 align:middle line:84%
+And now, if we try and decipher
+this-- decipher 1 open curly
+
+00:09:48.940 --> 00:09:53.310 align:middle line:84%
+brace, it doesn't go
+back to z, because look--
+
+00:09:53.310 --> 00:09:55.970 align:middle line:90%
+this is not a letter.
+
+00:09:55.970 --> 00:09:58.600 align:middle line:84%
+And we're only
+ciphering letters.
+
+00:09:58.600 --> 00:10:01.740 align:middle line:84%
+And the definition of
+decipher 1 curly brace
+
+00:10:01.740 --> 00:10:06.570 align:middle line:84%
+is of course cipher
+minus 1 curly brace.
+
+00:10:06.570 --> 00:10:11.330 align:middle line:84%
+And ciphering doesn't work
+for non-letter characters.
+
+00:10:11.330 --> 00:10:13.820 align:middle line:90%
+So this is the problem.
+
+00:10:13.820 --> 00:10:17.950 align:middle line:84%
+Our code fails because
+it doesn't wrap around
+
+00:10:17.950 --> 00:10:18.930 align:middle line:90%
+the alphabet.
+
+00:10:18.930 --> 00:10:23.180 align:middle line:84%
+Our cipherchar doesn't do
+the adjustment for wrapping.
+
+00:10:23.180 --> 00:10:25.920 align:middle line:84%
+So QuickCheck showed us
+that our program is wrong.
+
+00:10:25.920 --> 00:10:30.320 align:middle line:84%
+Let's go back and write a
+correct Caesar cipher code.
+
+00:10:30.320 --> 00:10:35.550 align:middle line:84%
+And in fact, I should have one
+a little bit further down here.
+
+00:10:35.550 --> 00:10:39.030 align:middle line:84%
+So we need to check to see
+whether our character, when
+
+00:10:39.030 --> 00:10:41.610 align:middle line:84%
+it's shifted, is going to
+wrap around the alphabet.
+
+00:10:41.610 --> 00:10:43.480 align:middle line:90%
+So it's a lower character.
+
+00:10:43.480 --> 00:10:46.900 align:middle line:84%
+And it's character code
+is greater than z
+
+00:10:46.900 --> 00:10:48.470 align:middle line:90%
+when we've done the shift.
+
+00:10:48.470 --> 00:10:50.410 align:middle line:84%
+Then yes, we need
+to wrap around.
+
+00:10:50.410 --> 00:10:54.310 align:middle line:84%
+If it's an upper case character,
+and its character code,
+
+00:10:54.310 --> 00:10:58.240 align:middle line:84%
+when we add the shift in,
+is greater than an upper case Z,
+
+00:10:58.240 --> 00:10:59.450 align:middle line:90%
+Then yes, we need to wrap.
+
+00:10:59.450 --> 00:11:00.995 align:middle line:90%
+Otherwise, we don't.
+
+00:11:00.995 --> 00:11:02.827 align:middle line:90%
+So that's the wrap around.
+
+00:11:02.827 --> 00:11:04.410 align:middle line:84%
+And then this other
+function here I've
+
+00:11:04.410 --> 00:11:08.490 align:middle line:84%
+called bettercipherchar takes
+an integer shift amount,
+
+00:11:08.490 --> 00:11:11.780 align:middle line:84%
+a character to encode, and
+then the encoded character.
+
+00:11:11.780 --> 00:11:15.960 align:middle line:84%
+And this does some
+adjustments to make sure
+
+00:11:15.960 --> 00:11:19.460 align:middle line:84%
+that we wrap around the
+alphabet if we need to.
+
+00:11:19.460 --> 00:11:23.630 align:middle line:84%
+You can download this code and
+check it for yourself later on.
+
+00:11:23.630 --> 00:11:29.255 align:middle line:84%
+It's linked at the bottom
+of this page in the course.
+
+00:11:29.255 --> 00:11:33.970 align:middle line:84%
+But what I'm going to do is
+change the definition of cipher
+
+00:11:33.970 --> 00:11:41.190 align:middle line:84%
+to use bettercipherchar, rather
+than the original cipherchar.
+
+00:11:41.190 --> 00:11:50.800 align:middle line:84%
+And now, hopefully when I go
+back to shell and say reload,
+
+00:11:50.800 --> 00:11:54.600 align:middle line:84%
+and then try and
+test my property
+
+00:11:54.600 --> 00:11:57.690 align:middle line:84%
+again with this
+bettercipherchar,
+
+00:11:57.690 --> 00:12:00.910 align:middle line:90%
+it ought to work now.
+
+00:12:00.910 --> 00:12:04.510 align:middle line:84%
+So I want to QuickCheck
+this expression.
+
+00:12:04.510 --> 00:12:07.770 align:middle line:84%
+Lambda n, that's
+my shift amount.
+
+00:12:07.770 --> 00:12:11.140 align:middle line:90%
+Lambda s, that's my string.
+
+00:12:11.140 --> 00:12:18.870 align:middle line:84%
+And I want to check that when I
+decipher the ciphered message,
+
+00:12:18.870 --> 00:12:22.320 align:middle line:84%
+then the thing I get back
+is the original message.
+
+00:12:22.320 --> 00:12:26.080 align:middle line:90%
+
+
+00:12:26.080 --> 00:12:31.270 align:middle line:84%
+I'm going to put
+in the types again.
+
+00:12:31.270 --> 00:12:34.170 align:middle line:84%
+The types are helpful
+for QuickCheck
+
+00:12:34.170 --> 00:12:38.180 align:middle line:84%
+to generate the right
+kind of random input data.
+
+00:12:38.180 --> 00:12:40.530 align:middle line:84%
+Let's run this now, and
+hopefully, it ought to pass.
+
+00:12:40.530 --> 00:12:44.500 align:middle line:84%
+Look, it says it
+passed 100 tests, which
+
+00:12:44.500 --> 00:12:48.040 align:middle line:84%
+gives us some confidence
+that it might be correct.
+
+00:12:48.040 --> 00:12:51.010 align:middle line:84%
+We can actually trace
+the QuickCheck tests
+
+00:12:51.010 --> 00:12:52.470 align:middle line:84%
+to see what the
+randomly generated
+
+00:12:52.470 --> 00:12:54.200 align:middle line:90%
+input data looks like.
+
+00:12:54.200 --> 00:12:56.830 align:middle line:84%
+Instead of using the
+QuickCheck function--
+
+00:12:56.830 --> 00:12:59.350 align:middle line:84%
+I'm just going to
+borrow that code there.
+
+00:12:59.350 --> 00:13:04.570 align:middle line:84%
+Instead, we use the
+verboseCheck function instead.
+
+00:13:04.570 --> 00:13:06.300 align:middle line:90%
+VerboseCheck.
+
+00:13:06.300 --> 00:13:10.400 align:middle line:84%
+Let's run that, and we'll see
+it generates the input data.
+
+00:13:10.400 --> 00:13:11.830 align:middle line:90%
+There it is scrolling up there.
+
+00:13:11.830 --> 00:13:14.200 align:middle line:84%
+It says for each test
+whether it passes.
+
+00:13:14.200 --> 00:13:17.950 align:middle line:84%
+So in this last example here,
+the shift amount is minus 42.
+
+00:13:17.950 --> 00:13:20.360 align:middle line:84%
+And here's the string,
+very random string here
+
+00:13:20.360 --> 00:13:21.786 align:middle line:90%
+that was generated.
+
+00:13:21.786 --> 00:13:23.660 align:middle line:84%
+Some of the characters
+aren't even printable.
+
+00:13:23.660 --> 00:13:27.260 align:middle line:90%
+But it passes all the tests.
+
+00:13:27.260 --> 00:13:30.030 align:middle line:90%
+Great, we've passed the tests.
+
+00:13:30.030 --> 00:13:32.240 align:middle line:84%
+A word of warning-- even
+though the property is
+
+00:13:32.240 --> 00:13:35.590 align:middle line:84%
+correct for all tests, this
+doesn't guarantee our code
+
+00:13:35.590 --> 00:13:36.990 align:middle line:90%
+is correct.
+
+00:13:36.990 --> 00:13:40.120 align:middle line:84%
+Edsger Dijkstra, a
+famous computer scientist
+
+00:13:40.120 --> 00:13:43.230 align:middle line:84%
+once said, testing can
+only show the presence
+
+00:13:43.230 --> 00:13:46.630 align:middle line:90%
+of bugs, not their absence.
+
+00:13:46.630 --> 00:13:48.720 align:middle line:84%
+However, QuickCheck
+provides a nice way
+
+00:13:48.720 --> 00:13:51.016 align:middle line:84%
+to generate automated
+random tests
+
+00:13:51.016 --> 00:13:53.920 align:middle line:84%
+to help us have more
+confidence that our code is
+
+00:13:53.920 --> 00:13:55.150 align:middle line:90%
+doing what we want it to do.
+
+00:13:55.150 --> 00:13:56.700 align:middle line:90%
+[MUSIC PLAYING]
+
+00:13:56.700 --> 00:13:58.589 align:middle line:90%
