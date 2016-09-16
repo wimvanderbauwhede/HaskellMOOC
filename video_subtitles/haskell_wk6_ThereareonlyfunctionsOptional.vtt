@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:04.850 --> 00:00:06.332 align:middle line:90%
-PROFESSOR: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:06.332 --> 00:00:09.800 align:middle line:84%
 In this optional video I
@@ -46,11 +46,11 @@ the basic ideas.
 
 00:00:32.640 --> 00:00:38.150 align:middle line:84%
 So let's start with
-the let constructing.
+the let construction.
 
 00:00:38.150 --> 00:00:52.740 align:middle line:84%
 Suppose you have something
-like-- so we a let block
+like-- say a let block
 
 00:00:52.740 --> 00:00:55.590 align:middle line:84%
 where we have n
@@ -61,7 +61,7 @@ and we define the function
 f of x being x plus 1
 
 00:00:59.930 --> 00:01:03.740 align:middle line:84%
-and we apply f to n So
+and we apply f to n. So
 basically the whole thing should
 
 00:01:03.740 --> 00:01:06.330 align:middle line:90%
@@ -101,7 +101,7 @@ contains two variables.
 
 00:01:32.960 --> 00:01:36.730 align:middle line:84%
 And we will essentially do the
-equivalent of [? carrying ?]
+equivalent of currying
 
 00:01:36.730 --> 00:01:37.550 align:middle line:90%
 in the let box.
@@ -158,13 +158,13 @@ function and apply to n.
 
 00:02:49.722 --> 00:02:53.200 align:middle line:84%
 So all we have to do is do the
-same for the [? outer ?] let,
+same for the outer let,
 
 00:02:53.200 --> 00:02:54.200 align:middle line:90%
 and that's quite simple.
 
 00:02:54.200 --> 00:02:56.190 align:middle line:84%
-So we take the [? outer ?]
+So we take the outer
 let and transform it
 
 00:02:56.190 --> 00:03:02.320 align:middle line:84%
@@ -178,7 +178,7 @@ applied to this construct here.
 And apply to 10.
 
 00:03:09.070 --> 00:03:13.360 align:middle line:84%
-So if we've just straighten
+So if we just straighten
 it out a bit, we get.
 
 00:03:13.360 --> 00:03:22.290 align:middle line:90%
