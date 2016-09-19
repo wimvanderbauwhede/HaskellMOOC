@@ -101,7 +101,7 @@ a bit shorter.
 
 00:01:41.730 --> 00:01:44.880 align:middle line:84%
 So Haskell has
-very complex syntax
+very compact syntax
 
 00:01:44.880 --> 00:01:49.490 align:middle line:84%
 where you don't need parentheses
@@ -196,7 +196,7 @@ Then the function definition.
 
 00:03:20.140 --> 00:03:23.600 align:middle line:84%
 So again, essentially the same
-thing but much more complex.
+thing but much more compact.
 
 00:03:23.600 --> 00:03:26.520 align:middle line:84%
 So the final basic element of
