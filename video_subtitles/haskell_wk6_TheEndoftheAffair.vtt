@@ -20,7 +20,7 @@ Now we are functional
 programmers.
 
 00:00:16.710 --> 00:00:18.460 align:middle line:84%
-DR. BJORN JENSEN: Over
+DR. WIM VANDERBAUWHEDE: Over
 the past six weeks,
 
 00:00:18.460 --> 00:00:20.290 align:middle line:84%
@@ -35,7 +35,7 @@ language and the key concepts
 of functional programming.
 
 00:00:24.320 --> 00:00:27.760 align:middle line:84%
-Jeremy and I hope that your
+and I hope that your
 journey doesn't stop here,
 
 00:00:27.760 --> 00:00:29.938 align:middle line:84%
@@ -66,8 +66,8 @@ We also recommend you sign up
 for the Haskell mailing list.
 
 00:00:43.055 --> 00:00:45.430 align:middle line:84%
-DR. BJORN JENSEN: However,
-the main learning or objective
+DR. WIM VANDERBAUWHEDE: However,
+the main learning objective
 
 00:00:45.430 --> 00:00:48.862 align:middle line:84%
 for this course is to enable
@@ -104,15 +104,15 @@ enjoyed the experience.
 So a final word of valediction.
 
 00:01:08.445 --> 00:01:10.850 align:middle line:84%
-DR. BJORN JENSEN: May your
-functions always [INAUDIBLE].
+DR. WIM VANDERBAUWHEDE: May your
+functions always type-check.
 
 00:01:10.850 --> 00:01:13.120 align:middle line:84%
 DR. JEREMY SINGER: May
 your stack never overflow.
 
 00:01:13.120 --> 00:01:16.270 align:middle line:84%
-DR. BJORN JENSEN: And may your
+DR. WIM VANDERBAUWHEDE: And may your
 programs always terminate.
 
 00:01:16.270 --> 00:01:19.993 align:middle line:90%

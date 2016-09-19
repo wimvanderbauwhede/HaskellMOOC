@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:04.480 --> 00:00:06.420 align:middle line:84%
-SUBJECT: In today's
+JEREMY: In today's
 video, we're going
 
 00:00:06.420 --> 00:00:09.530 align:middle line:84%
@@ -79,7 +79,7 @@ We might ask what plaintext
 Z, the final letter
 
 00:01:16.000 --> 00:01:18.580 align:middle line:84%
-of the alphabet
+of the alphabet,
 should be in code.
 
 00:01:18.580 --> 00:01:20.050 align:middle line:90%
@@ -97,7 +97,7 @@ rather than a shift.
 
 00:01:26.910 --> 00:01:31.540 align:middle line:84%
 First, we import the
-data.char module,
+Data.Char module,
 
 00:01:31.540 --> 00:01:35.820 align:middle line:84%
 which allows us to use utility
@@ -156,7 +156,7 @@ not numbers or punctuation
 characters.
 
 00:02:26.910 --> 00:02:30.360 align:middle line:84%
-To encipher letters, that come
+To encipher letters, then come
 down to the next function here,
 
 00:02:30.360 --> 00:02:31.710 align:middle line:90%
@@ -288,7 +288,7 @@ to do is to-- let's
 
 00:04:23.460 --> 00:04:31.370 align:middle line:84%
 get rid of this comment--
-map this cipher chr function
+map this cipherchar function
 
 00:04:31.370 --> 00:04:32.830 align:middle line:90%
 over the whole of the string.
@@ -323,7 +323,7 @@ the map function.
 
 00:04:50.140 --> 00:04:54.610 align:middle line:84%
 And what we're mapping is
-the cipher chr function
+the cipherchar function
 
 00:04:54.610 --> 00:04:59.090 align:middle line:84%
 for a certain shift amount
@@ -342,7 +342,7 @@ I'm going to save it.
 
 
 00:05:07.080 --> 00:05:10.840 align:middle line:90%
-So let's try this inside CHCi.
+So let's try this inside GHCi.
 
 00:05:10.840 --> 00:05:13.540 align:middle line:90%
 First, we'll load cipher.hs.
@@ -387,7 +387,7 @@ And we get back a rather
 unpronounceable string there,
 
 00:05:43.350 --> 00:05:46.520 align:middle line:90%
-which is it encoding.
+which is its encoding.
 
 00:05:46.520 --> 00:05:51.180 align:middle line:84%
 Now for the decipher, we
@@ -462,8 +462,8 @@ the original message.
 And I do.
 
 00:07:02.570 --> 00:07:06.270 align:middle line:84%
-Now we want to check the
-dial code works properly.
+Now we want to check that
+our code works properly.
 
 00:07:06.270 --> 00:07:08.900 align:middle line:84%
 Of course we know it
@@ -555,7 +555,7 @@ we want to check.
 
 00:08:21.810 --> 00:08:25.440 align:middle line:84%
 We need to wrap this up
-as a lambda extraction.
+as a lambda abstraction.
 
 00:08:25.440 --> 00:08:32.298 align:middle line:84%
 So we're going to take n, which
@@ -602,7 +602,7 @@ OK.
 
 00:09:03.330 --> 00:09:08.800 align:middle line:84%
 And we're going to provide
-this lambda obstruction
+this lambda abstraction
 
 00:09:08.800 --> 00:09:13.720 align:middle line:84%
 as an argument to the
@@ -626,10 +626,10 @@ The shift amount is one, and the
 string we're trying to cipher
 
 00:09:28.830 --> 00:09:30.130 align:middle line:90%
-is zed.
+is z.
 
 00:09:30.130 --> 00:09:33.092 align:middle line:84%
-If we shift zed along
+If we shift z along
 one place-- well,
 
 00:09:33.092 --> 00:09:34.550 align:middle line:84%
@@ -637,7 +637,7 @@ let's do that and
 see what happens.
 
 00:09:34.550 --> 00:09:37.225 align:middle line:90%
-Cipher 1 zed.
+cipher 1 z.
 
 00:09:37.225 --> 00:09:39.710 align:middle line:84%
 And then we end up
@@ -653,7 +653,7 @@ this-- decipher 1 open curly
 
 00:09:48.940 --> 00:09:53.310 align:middle line:84%
 brace, it doesn't go
-back to Z, because look--
+back to z, because look--
 
 00:09:53.310 --> 00:09:55.970 align:middle line:90%
 this is not a letter.
@@ -685,12 +685,12 @@ it doesn't wrap around
 the alphabet.
 
 00:10:18.930 --> 00:10:23.180 align:middle line:84%
-Our cipher chr doesn't do
+Our cipherchar doesn't do
 the adjustment for wrapping.
 
 00:10:23.180 --> 00:10:25.920 align:middle line:84%
 So QuickCheck showed us
-that our program's wrong.
+that our program is wrong.
 
 00:10:25.920 --> 00:10:30.320 align:middle line:84%
 Let's go back and write a
@@ -705,7 +705,7 @@ So we need to check to see
 whether our character, when
 
 00:10:39.030 --> 00:10:41.610 align:middle line:84%
-it shifted, is going to
+it's shifted, is going to
 wrap around the alphabet.
 
 00:10:41.610 --> 00:10:43.480 align:middle line:90%
@@ -713,7 +713,7 @@ So it's a lower character.
 
 00:10:43.480 --> 00:10:46.900 align:middle line:84%
 And it's character code
-is greater than zed
+is greater than z
 
 00:10:46.900 --> 00:10:48.470 align:middle line:90%
 when we've done the shift.
@@ -728,7 +728,7 @@ and its character code,
 
 00:10:54.310 --> 00:10:58.240 align:middle line:84%
 when we add the shift in,
-is creating an upper case Z,
+is greater than an upper case Z,
 
 00:10:58.240 --> 00:10:59.450 align:middle line:90%
 Then yes, we need to wrap.

@@ -1,0 +1,365 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.493 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.493 --> 00:00:04.990 align:middle line:90%
+
+
+00:00:04.990 --> 00:00:08.520 align:middle line:84%
+JEREMY: This is the final
+screen cast of the course.
+
+00:00:08.520 --> 00:00:10.470 align:middle line:90%
+Here we are.
+
+00:00:10.470 --> 00:00:11.700 align:middle line:90%
+What's happening?
+
+00:00:11.700 --> 00:00:15.360 align:middle line:84%
+I'm going to start a
+Python interpreter instead
+
+00:00:15.360 --> 00:00:16.393 align:middle line:90%
+of the usual GHCi.
+
+00:00:16.393 --> 00:00:20.430 align:middle line:90%
+
+
+00:00:20.430 --> 00:00:21.130 align:middle line:90%
+Shock.
+
+00:00:21.130 --> 00:00:22.470 align:middle line:90%
+Horror.
+
+00:00:22.470 --> 00:00:27.220 align:middle line:84%
+Why am I reverting to Python--
+Python 3 to be precise.
+
+00:00:27.220 --> 00:00:28.350 align:middle line:90%
+Let me explain.
+
+00:00:28.350 --> 00:00:30.490 align:middle line:84%
+What I want to do in
+this final screencast
+
+00:00:30.490 --> 00:00:32.680 align:middle line:84%
+is to show you the
+functional constructs that
+
+00:00:32.680 --> 00:00:36.160 align:middle line:90%
+pop up in mainstream languages.
+
+00:00:36.160 --> 00:00:39.800 align:middle line:84%
+I admit Haskell isn't a
+mainstream language yet,
+
+00:00:39.800 --> 00:00:42.680 align:middle line:84%
+and it's probably true that
+no functional programming
+
+00:00:42.680 --> 00:00:47.930 align:middle line:84%
+language is in the same league
+as Python, Java, or C++.
+
+00:00:47.930 --> 00:00:51.310 align:middle line:84%
+However, functional
+constructs and ideas
+
+00:00:51.310 --> 00:00:54.710 align:middle line:84%
+are being incorporated into
+imperative and object-oriented
+
+00:00:54.710 --> 00:00:56.240 align:middle line:90%
+languages.
+
+00:00:56.240 --> 00:01:00.430 align:middle line:84%
+So let's have a
+little look at Python.
+
+00:01:00.430 --> 00:01:04.599 align:middle line:90%
+Here is a lambda expression.
+
+00:01:04.599 --> 00:01:07.170 align:middle line:90%
+Lambda x goes to x plus 1.
+
+00:01:07.170 --> 00:01:09.790 align:middle line:90%
+This is the increment function.
+
+00:01:09.790 --> 00:01:11.700 align:middle line:84%
+And we can apply
+this to an argument.
+
+00:01:11.700 --> 00:01:16.430 align:middle line:90%
+
+
+00:01:16.430 --> 00:01:20.960 align:middle line:84%
+Here, applying it to 2,
+and it returns the value 3.
+
+00:01:20.960 --> 00:01:22.680 align:middle line:90%
+Notice the parentheses.
+
+00:01:22.680 --> 00:01:26.910 align:middle line:84%
+I think Python would complain
+without these brackets.
+
+00:01:26.910 --> 00:01:31.750 align:middle line:84%
+Now, here's a map
+function in Python.
+
+00:01:31.750 --> 00:01:34.700 align:middle line:84%
+I'm going to map
+my same increment
+
+00:01:34.700 --> 00:01:44.591 align:middle line:84%
+function-- x goes to x plus 1
+over a list of elements 1, 2,
+
+00:01:44.591 --> 00:01:45.090 align:middle line:90%
+3.
+
+00:01:45.090 --> 00:01:47.960 align:middle line:90%
+
+
+00:01:47.960 --> 00:01:50.670 align:middle line:84%
+The thing I get back
+is a map object.
+
+00:01:50.670 --> 00:01:53.290 align:middle line:84%
+I can either
+enumerate this object
+
+00:01:53.290 --> 00:01:55.920 align:middle line:90%
+or convert it back into a list.
+
+00:01:55.920 --> 00:02:00.080 align:middle line:84%
+When I convert it into a list,
+I get back the list 2, 3, 4.
+
+00:02:00.080 --> 00:02:02.950 align:middle line:84%
+Each element is one more than
+the corresponding element
+
+00:02:02.950 --> 00:02:04.136 align:middle line:90%
+in the input list.
+
+00:02:04.136 --> 00:02:06.663 align:middle line:90%
+
+
+00:02:06.663 --> 00:02:07.829 align:middle line:90%
+Here's another map function.
+
+00:02:07.829 --> 00:02:15.090 align:middle line:90%
+
+
+00:02:15.090 --> 00:02:21.286 align:middle line:84%
+Hello plus str x-- that converts
+the input values to strings.
+
+00:02:21.286 --> 00:02:24.430 align:middle line:84%
+I'm going to map over-- well,
+let's just do 1, 2, 3 for now
+
+00:02:24.430 --> 00:02:26.940 align:middle line:90%
+actually.
+
+00:02:26.940 --> 00:02:29.220 align:middle line:84%
+And if I convert this
+thing back to a list,
+
+00:02:29.220 --> 00:02:31.550 align:middle line:90%
+I can see what's going on.
+
+00:02:31.550 --> 00:02:32.460 align:middle line:90%
+Hello 1.
+
+00:02:32.460 --> 00:02:33.480 align:middle line:90%
+Hello 2.
+
+00:02:33.480 --> 00:02:35.050 align:middle line:90%
+Hello 3.
+
+00:02:35.050 --> 00:02:39.325 align:middle line:84%
+So the anonymous function,
+the lambda function,
+
+00:02:39.325 --> 00:02:43.570 align:middle line:84%
+has turned each input element
+to a string and prepended hello
+
+00:02:43.570 --> 00:02:44.430 align:middle line:90%
+to it.
+
+00:02:44.430 --> 00:02:49.070 align:middle line:90%
+
+
+00:02:49.070 --> 00:02:53.740 align:middle line:84%
+Now, I can do the
+same thing for lists
+
+00:02:53.740 --> 00:02:57.060 align:middle line:84%
+that have elements of
+different types in them.
+
+00:02:57.060 --> 00:03:00.440 align:middle line:84%
+Remember, Python is a
+dynamically-typed language.
+
+00:03:00.440 --> 00:03:03.950 align:middle line:84%
+So here I'm going to say
+hello and concatenate that
+
+00:03:03.950 --> 00:03:06.380 align:middle line:84%
+to the string representation
+of whatever I've
+
+00:03:06.380 --> 00:03:12.955 align:middle line:84%
+got in my list, which is going
+to be 1, false, and string
+
+00:03:12.955 --> 00:03:13.455 align:middle line:90%
+jeremy.
+
+00:03:13.455 --> 00:03:16.970 align:middle line:90%
+
+
+00:03:16.970 --> 00:03:19.910 align:middle line:84%
+Turn this whole map
+function into a list,
+
+00:03:19.910 --> 00:03:23.247 align:middle line:84%
+and I get back hello 1,
+hello false, hello jeremy.
+
+00:03:23.247 --> 00:03:26.050 align:middle line:90%
+
+
+00:03:26.050 --> 00:03:29.090 align:middle line:84%
+At this point, you're
+probably feeling unhappy.
+
+00:03:29.090 --> 00:03:31.070 align:middle line:84%
+Now you know Haskell,
+dynamically typed
+
+00:03:31.070 --> 00:03:33.790 align:middle line:90%
+lists seem wrong.
+
+00:03:33.790 --> 00:03:36.950 align:middle line:90%
+Let's do a filter as well.
+
+00:03:36.950 --> 00:03:45.722 align:middle line:84%
+Filter lamba x goes
+to x mod 2 equals 1.
+
+00:03:45.722 --> 00:03:49.030 align:middle line:90%
+
+
+00:03:49.030 --> 00:03:52.260 align:middle line:84%
+Going to apply this over the
+range of integers from 1 to 10,
+
+00:03:52.260 --> 00:03:54.630 align:middle line:90%
+not including 10.
+
+00:03:54.630 --> 00:03:56.810 align:middle line:84%
+Again, if I convert
+this into a list,
+
+00:03:56.810 --> 00:04:01.690 align:middle line:84%
+I can see the answer,
+which is 1, 3, 5, 7, 9.
+
+00:04:01.690 --> 00:04:04.570 align:middle line:84%
+Actually, I could have used
+a list comprehension here
+
+00:04:04.570 --> 00:04:15.830 align:middle line:84%
+instead-- x for x in range
+1, 10 if x mod 2 equals 1.
+
+00:04:15.830 --> 00:04:19.690 align:middle line:90%
+And that returns the same value.
+
+00:04:19.690 --> 00:04:22.950 align:middle line:90%
+For good measure, here's a fold.
+
+00:04:22.950 --> 00:04:28.170 align:middle line:84%
+I need to import the
+functools module.
+
+00:04:28.170 --> 00:04:33.620 align:middle line:84%
+And now I can say
+functools dot reduce.
+
+00:04:33.620 --> 00:04:37.740 align:middle line:84%
+This is the
+foldl function in Python.
+
+00:04:37.740 --> 00:04:45.960 align:middle line:84%
+Lambda a, b, a times b-- that's
+just a simple multiplication--
+
+00:04:45.960 --> 00:04:49.353 align:middle line:84%
+over the range 1 to 5
+with the starting value
+
+00:04:49.353 --> 00:04:57.180 align:middle line:84%
+1 gives me the product of 1
+to 4 inclusive-- effectively
+
+00:04:57.180 --> 00:04:58.265 align:middle line:90%
+factorial of 4.
+
+00:04:58.265 --> 00:05:01.390 align:middle line:90%
+
+
+00:05:01.390 --> 00:05:04.490 align:middle line:84%
+Other mainstream languages
+now incorporate lambdas
+
+00:05:04.490 --> 00:05:06.540 align:middle line:90%
+as first-class functions.
+
+00:05:06.540 --> 00:05:11.270 align:middle line:84%
+Examples include Java 8
+released in 2014, and C++ 11,
+
+00:05:11.270 --> 00:05:13.610 align:middle line:90%
+released in 2011.
+
+00:05:13.610 --> 00:05:15.110 align:middle line:84%
+In the Comment
+section below, please
+
+00:05:15.110 --> 00:05:17.317 align:middle line:84%
+let us know which
+languages you are using
+
+00:05:17.317 --> 00:05:19.650 align:middle line:84%
+and whether you think there is 
+scope to write in a functional
+
+00:05:19.650 --> 00:05:21.536 align:middle line:90%
+style in these other languages.
+
+00:05:21.536 --> 00:05:24.210 align:middle line:90%
+
+
+00:05:24.210 --> 00:05:27.330 align:middle line:84%
+Another thing to
+talk about is syntax.
+
+00:05:27.330 --> 00:05:31.410 align:middle line:84%
+Now you know the clean and
+elegant syntax of Haskell,
+
+00:05:31.410 --> 00:05:34.830 align:middle line:90%
+does Python seem clunky?
+
+00:05:34.830 --> 00:05:37.710 align:middle line:84%
+Let us know in the
+Comments section.
+
+00:05:37.710 --> 00:05:41.868 align:middle line:90%

@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:05.200 --> 00:00:06.030 align:middle line:90%
-INSTRUCTOR: Hi.
+JEREMY: Hi.
 
 00:00:06.030 --> 00:00:09.340 align:middle line:84%
 In any high-level
@@ -23,7 +23,7 @@ There are also float and
 infinite precision integers,
 
 00:00:23.580 --> 00:00:29.820 align:middle line:84%
-like big integers in Java
+like BigIntegers in Java
 to name a few more types.
 
 00:00:29.820 --> 00:00:33.440 align:middle line:90%
@@ -136,7 +136,7 @@ equality with the (==) operator.
 
 00:02:49.550 --> 00:02:54.090 align:middle line:84%
 We see that given the context
-of the type a that's is
+of the type a that is
 
 00:02:54.090 --> 00:02:57.570 align:middle line:84%
 an instance of
@@ -185,16 +185,16 @@ ordering.
 
 
 00:03:54.060 --> 00:04:00.210 align:middle line:84%
-The show type class means we
+The Show type class means we
 can generate string values that
 
 00:04:00.210 --> 00:04:06.950 align:middle line:84%
 represent values of such
-types, like two string in Java.
+types, like toString() in Java.
 
 00:04:06.950 --> 00:04:11.440 align:middle line:84%
 So if I say, show
-42 integer values,
+42 integer value,
 
 00:04:11.440 --> 00:04:13.535 align:middle line:90%
 then I get back the string 42.
@@ -203,8 +203,8 @@ then I get back the string 42.
 
 
 00:04:16.329 --> 00:04:21.775 align:middle line:84%
-If I say show false, I
-get back the string false.
+If I say show False, I
+get back the string False.
 
 00:04:21.775 --> 00:04:28.180 align:middle line:90%
 
@@ -419,16 +419,16 @@ Note that type classes were
 one of the early innovations
 
 00:08:25.370 --> 00:08:29.200 align:middle line:84%
-of the high school
+of the Haskell
 programming language.
 
 00:08:29.200 --> 00:08:31.760 align:middle line:84%
 The type class
-constrained member types
+constrains member types
 
 00:08:31.760 --> 00:08:34.840 align:middle line:84%
 to provide functions that
-conform to certain types
+conform to certain type
 
 00:08:34.840 --> 00:08:39.870 align:middle line:84%
 signatures effectively,
@@ -455,7 +455,7 @@ a neat mechanism
 
 00:08:57.270 --> 00:09:03.050 align:middle line:84%
 to enable operator overloading
-in the high school language.
+in the Haskell language.
 
 00:09:03.050 --> 00:09:06.930 align:middle line:84%
 We've seen this with
@@ -463,7 +463,7 @@ functions like ==,
 
 00:09:06.930 --> 00:09:14.550 align:middle line:84%
 and relational operators, and
-the Show and Read functions.
+the show and read functions.
 
 00:09:14.550 --> 00:09:16.480 align:middle line:84%
 We'll explore type

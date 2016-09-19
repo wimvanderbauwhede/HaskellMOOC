@@ -34,7 +34,7 @@ don't you?
 GRAHAM HUTTON: Yes.
 
 00:00:23.235 --> 00:00:26.045 align:middle line:84%
-JEREMY: Do you think Haskell a
+JEREMY: Do you think Haskell is a
 good first programming language
 
 00:00:26.045 --> 00:00:27.410 align:middle line:90%
@@ -113,7 +113,7 @@ notions that people really
 
 00:01:06.320 --> 00:01:11.560 align:middle line:84%
 struggle with like recursion,
-for instance or other kind
+for instance or other kinds
 
 00:01:11.560 --> 00:01:14.720 align:middle line:84%
 of functional concepts that you
@@ -178,7 +178,7 @@ recursion, and so on.
 
 00:01:45.020 --> 00:01:46.540 align:middle line:84%
 And I very much see
-this is a tower.
+this as a tower.
 
 00:01:46.540 --> 00:01:49.050 align:middle line:84%
 You learn the simple things,
@@ -272,7 +272,7 @@ Now you mentioned
 your new book there.
 
 00:02:31.000 --> 00:02:33.190 align:middle line:84%
-This is that the Glasgow
+This is the Glasgow
 leg of your book tour.
 
 00:02:33.190 --> 00:02:33.520 align:middle line:90%
@@ -408,7 +408,7 @@ programming with monads,
 with applicative functors,
 
 00:03:43.230 --> 00:03:44.990 align:middle line:90%
-with functors, [INAUDIBLE].
+with functors, foldables, traversables.
 
 00:03:44.990 --> 00:03:47.453 align:middle line:84%
 All the kind of newer
@@ -764,7 +764,7 @@ expression that evaluates
 to that target number.
 
 00:07:02.690 --> 00:07:04.680 align:middle line:84%
-And I use this is an
+And I use this as an
 example in the book
 
 00:07:04.680 --> 00:07:07.480 align:middle line:84%

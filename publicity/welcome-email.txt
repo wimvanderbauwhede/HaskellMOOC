@@ -1,0 +1,39 @@
+We're very excited to start the Functional Programming in Haskell
+course. We ([Wim](https://www.futurelearn.com/profiles/2175260) 
+and [Jeremy](https://www.futurelearn.com/profiles/1884921)) 
+are your lead educators. We'll be 
+guiding you along as you learn how to develop code in Haskell.
+Around 4,000 of you have signed up and we are really looking forward
+to working with you.
+
+The course is open for you to explore as quickly or as slowly 
+as you like. We, along with the mentoring team, will be 
+answering questions on the course but we also hope 
+you'll form a vibrant community of learners that help each other. 
+
+Over the next six weeks, we'll introduce the Haskell programming
+language. We start off this week with basic expressions, functions
+and lists. Since you probably already know another programming
+language, we will try to relate Haskell concepts to other languages.
+
+The best way to learn programming is to *do* it. We have 
+several interactive coding sessions this week, and we really
+encourage you to spend time on these exercises.
+
+
+###Get a personalised certificate
+
+We would like to let you know that you have the opportunity to 
+purchase a 
+[Certificate of Achievement](https://www.futurelearn.com/courses/functional-programming-haskell/1/certificate-of-achievement) for this course if you mark 90% of steps as complete, and score 70% or higher across all tests in this course. You might find this useful for providing evidence of Continuing Professional Development (CPD), commitment to your career, or of your awareness of the issues in this subject.
+Alternatively, if you mark the majority of steps as complete, you can purchase a [Statement of Participation](https://www.futurelearn.com/courses/functional-programming-haskell/1/statement-of-participation) to celebrate taking part in the course.
+
+
+We hope you enjoy the course and look forward to reading your code and responding to your comments!
+Best wishes,
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
+
+

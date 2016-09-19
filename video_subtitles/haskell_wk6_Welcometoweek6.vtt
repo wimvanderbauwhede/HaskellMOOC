@@ -1,0 +1,83 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.690 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:07.690 --> 00:00:10.460 align:middle line:84%
+WIM: Hello, and welcome
+to the sixth and final week
+
+00:00:10.460 --> 00:00:12.080 align:middle line:90%
+of our Haskell Course.
+
+00:00:12.080 --> 00:00:14.760 align:middle line:84%
+You have come a long
+way in these six weeks,
+
+00:00:14.760 --> 00:00:17.820 align:middle line:84%
+from the very basics of Haskell,
+all the way to this week
+
+00:00:17.820 --> 00:00:20.590 align:middle line:84%
+where we will discuss
+some more advanced topics.
+
+00:00:20.590 --> 00:00:23.450 align:middle line:90%
+First, there's type classes.
+
+00:00:23.450 --> 00:00:26.130 align:middle line:84%
+In their 1990s article,
+the designers of Haskell
+
+00:00:26.130 --> 00:00:29.660 align:middle line:84%
+said that certainly the type
+system is Haskell's most
+
+00:00:29.660 --> 00:00:31.270 align:middle line:90%
+innovative feature.
+
+00:00:31.270 --> 00:00:35.310 align:middle line:84%
+And we think this is at least
+in part due to the type classes.
+
+00:00:35.310 --> 00:00:37.690 align:middle line:84%
+And then there is
+monads, the mystery
+
+00:00:37.690 --> 00:00:39.930 align:middle line:90%
+at the heart of Haskell.
+
+00:00:39.930 --> 00:00:42.520 align:middle line:84%
+Now, what are they, and
+what is their relationship
+
+00:00:42.520 --> 00:00:45.340 align:middle line:90%
+to type classes?
+
+00:00:45.340 --> 00:00:47.970 align:middle line:84%
+Also, there's the
+lambda calculus,
+
+00:00:47.970 --> 00:00:50.140 align:middle line:84%
+the mathematical
+formalism that underlies
+
+00:00:50.140 --> 00:00:51.880 align:middle line:90%
+functional programming.
+
+00:00:51.880 --> 00:00:54.870 align:middle line:84%
+It was invented by Alonzo
+Church in the 1930s
+
+00:00:54.870 --> 00:00:59.570 align:middle line:84%
+to answer the question, what
+does it mean to do computation.
+
+00:00:59.570 --> 00:01:03.620 align:middle line:84%
+All this and much more in
+this final week of our course.
+
+00:01:03.620 --> 00:01:05.170 align:middle line:90%
+Enjoy.
+
+00:01:05.170 --> 00:01:08.128 align:middle line:90%

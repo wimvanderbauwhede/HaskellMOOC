@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:07.830 --> 00:00:11.260 align:middle line:84%
-SUBJECT: Hi, and welcome to
+WIM: Hi, and welcome to
 week four of our Haskell course.
 
 00:00:11.260 --> 00:00:13.230 align:middle line:84%
@@ -19,8 +19,8 @@ First, we will look at
 some more advanced patterns
 
 00:00:15.970 --> 00:00:20.040 align:middle line:84%
-of computation based on the
-user functions as value.
+of computation based on 
+using functions as values.
 
 00:00:20.040 --> 00:00:22.651 align:middle line:84%
 As an example we
@@ -39,7 +39,7 @@ according to the rules
 of the formal grammar.
 
 00:00:31.030 --> 00:00:32.833 align:middle line:90%
-You will learn to use parsing.
+You will learn to use parsec.
 
 00:00:32.833 --> 00:00:35.210 align:middle line:84%
 This is a Haskell
@@ -80,12 +80,12 @@ We will first look
 at a program scope.
 
 00:00:58.810 --> 00:01:02.070 align:middle line:84%
-And Scoping is the
+And scoping is the
 real key feature
 
 00:01:02.070 --> 00:01:04.920 align:middle line:84%
 that you use to create
-module programs.
+modular programs.
 
 00:01:04.920 --> 00:01:07.470 align:middle line:84%
 And then we will
