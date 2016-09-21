@@ -1,0 +1,237 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.395 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.395 --> 00:00:04.850 align:middle line:90%
+
+
+00:00:04.850 --> 00:00:06.332 align:middle line:90%
+WIM: Hello, everyone.
+
+00:00:06.332 --> 00:00:09.800 align:middle line:84%
+In this optional video I
+want to explain that really,
+
+00:00:09.800 --> 00:00:13.430 align:middle line:84%
+in functional languages,
+there are only functions.
+
+00:00:13.430 --> 00:00:16.120 align:middle line:84%
+What I want to do is give
+you a quick intuition
+
+00:00:16.120 --> 00:00:18.930 align:middle line:84%
+how we can remove all
+the syntactic sugar
+
+00:00:18.930 --> 00:00:20.920 align:middle line:84%
+from functional
+languages and reduce it
+
+00:00:20.920 --> 00:00:22.960 align:middle line:90%
+to only lambda functions.
+
+00:00:22.960 --> 00:00:26.180 align:middle line:84%
+So the full elaboration
+of how you can do this
+
+00:00:26.180 --> 00:00:29.660 align:middle line:84%
+is explained in the
+article on the site.
+
+00:00:29.660 --> 00:00:32.640 align:middle line:84%
+We will just cover
+the basic ideas.
+
+00:00:32.640 --> 00:00:38.150 align:middle line:84%
+So let's start with
+the let construction.
+
+00:00:38.150 --> 00:00:52.740 align:middle line:84%
+Suppose you have something
+like-- say a let block
+
+00:00:52.740 --> 00:00:55.590 align:middle line:84%
+where we have n
+is assigned to 10,
+
+00:00:55.590 --> 00:00:59.930 align:middle line:84%
+and we define the function
+f of x being x plus 1
+
+00:00:59.930 --> 00:01:03.740 align:middle line:84%
+and we apply f to n. So
+basically the whole thing should
+
+00:01:03.740 --> 00:01:06.330 align:middle line:90%
+return 11.
+
+00:01:06.330 --> 00:01:09.655 align:middle line:84%
+So we want to rewrite this
+so that there will only
+
+00:01:09.655 --> 00:01:11.720 align:middle line:90%
+be lambda functions left.
+
+00:01:11.720 --> 00:01:13.840 align:middle line:84%
+So the obvious first
+rewrite we can do
+
+00:01:13.840 --> 00:01:18.790 align:middle line:84%
+is rewrite this function
+definition of the lambda.
+
+00:01:18.790 --> 00:01:20.672 align:middle line:90%
+So very simply.
+
+00:01:20.672 --> 00:01:25.540 align:middle line:90%
+
+
+00:01:25.540 --> 00:01:27.060 align:middle line:90%
+OK?
+
+00:01:27.060 --> 00:01:29.260 align:middle line:84%
+So then the next
+thing we will do
+
+00:01:29.260 --> 00:01:32.960 align:middle line:84%
+is we have a let that
+contains two variables.
+
+00:01:32.960 --> 00:01:36.730 align:middle line:84%
+And we will essentially do the
+equivalent of currying
+
+00:01:36.730 --> 00:01:37.550 align:middle line:90%
+in the let block.
+
+00:01:37.550 --> 00:01:40.800 align:middle line:84%
+So we will transform this let
+block into a nested let block.
+
+00:01:40.800 --> 00:01:44.880 align:middle line:84%
+So what we're doing-- what
+you're doing is clear and--
+
+00:01:44.880 --> 00:02:04.610 align:middle line:90%
+
+
+00:02:04.610 --> 00:02:05.140 align:middle line:90%
+OK.
+
+00:02:05.140 --> 00:02:07.540 align:middle line:90%
+So now we have a nested let.
+
+00:02:07.540 --> 00:02:12.200 align:middle line:84%
+Now we have this let expression
+with just a single variable
+
+00:02:12.200 --> 00:02:12.700 align:middle line:90%
+here.
+
+00:02:12.700 --> 00:02:16.750 align:middle line:84%
+And we can now rewrite this as a
+lambda expression as follows.
+
+00:02:16.750 --> 00:02:18.868 align:middle line:84%
+So I'll just put it
+on this right here.
+
+00:02:18.868 --> 00:02:32.040 align:middle line:90%
+
+
+00:02:32.040 --> 00:02:35.800 align:middle line:84%
+So this whole let
+block here is actually
+
+00:02:35.800 --> 00:02:39.230 align:middle line:84%
+entirely equivalent to a
+lambda function applied
+
+00:02:39.230 --> 00:02:42.970 align:middle line:90%
+to the function that defines f.
+
+00:02:42.970 --> 00:02:49.722 align:middle line:84%
+So we bind f to this
+function and apply to n.
+
+00:02:49.722 --> 00:02:53.200 align:middle line:84%
+So all we have to do is do the
+same for the outer let,
+
+00:02:53.200 --> 00:02:54.200 align:middle line:90%
+and that's quite simple.
+
+00:02:54.200 --> 00:02:56.190 align:middle line:84%
+So we take the outer
+let and transform it
+
+00:02:56.190 --> 00:03:02.320 align:middle line:84%
+into lambda expression, which
+says basically, we have n
+
+00:03:02.320 --> 00:03:07.580 align:middle line:90%
+applied to this construct here.
+
+00:03:07.580 --> 00:03:09.070 align:middle line:90%
+And apply to 10.
+
+00:03:09.070 --> 00:03:13.360 align:middle line:84%
+So if we just straighten
+it out a bit, we get.
+
+00:03:13.360 --> 00:03:22.290 align:middle line:90%
+
+
+00:03:22.290 --> 00:03:25.360 align:middle line:84%
+So we have transformed
+the whole nested
+
+00:03:25.360 --> 00:03:29.100 align:middle line:90%
+let into a series of lambdas.
+
+00:03:29.100 --> 00:03:31.180 align:middle line:84%
+Thus you can see it's
+entirely equivalent,
+
+00:03:31.180 --> 00:03:32.910 align:middle line:84%
+but it's a lot
+less easy to type,
+
+00:03:32.910 --> 00:03:35.700 align:middle line:84%
+which is why the let syntax
+is available in the language
+
+00:03:35.700 --> 00:03:36.297 align:middle line:90%
+of course.
+
+00:03:36.297 --> 00:03:42.250 align:middle line:90%
+
+
+00:03:42.250 --> 00:03:45.040 align:middle line:84%
+So the next thing
+we want to do is
+
+00:03:45.040 --> 00:03:48.450 align:middle line:84%
+see if we can define conditional
+expressions, and so on.
+
+00:03:48.450 --> 00:03:52.320 align:middle line:84%
+And for that we need to define
+the values of True and False.
+
+00:03:52.320 --> 00:03:54.060 align:middle line:84%
+You might wonder,
+how can we define
+
+00:03:54.060 --> 00:03:57.395 align:middle line:84%
+the values of true and false
+without having any numbers,
+
+00:03:57.395 --> 00:03:59.520 align:middle line:84%
+because remember we're
+going to use only functions,
+
+00:03:59.520 --> 00:04:02.260 align:middle line:90%
+so even numbers are not available.

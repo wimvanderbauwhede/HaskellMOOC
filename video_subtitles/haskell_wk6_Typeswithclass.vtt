@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.444 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.444 --> 00:00:07.074 align:middle line:90%
+
+
+00:00:07.074 --> 00:00:08.240 align:middle line:90%
+WIM: Hello, everyone.
+
+00:00:08.240 --> 00:00:09.860 align:middle line:84%
+In this short
+video, we are going
+
+00:00:09.860 --> 00:00:12.240 align:middle line:84%
+to do a quick recap
+of type classes
+
+00:00:12.240 --> 00:00:15.300 align:middle line:84%
+that you've seen in
+the previous lectures.
+
+00:00:15.300 --> 00:00:21.070 align:middle line:84%
+So type classes are a way
+to restrict the polymorphism
+
+00:00:21.070 --> 00:00:23.240 align:middle line:84%
+in types so that
+you can actually
+
+00:00:23.240 --> 00:00:27.550 align:middle line:84%
+overload functions and
+operators in specific cases.
+
+00:00:27.550 --> 00:00:29.690 align:middle line:84%
+This is called
+ad-hoc polymorphism.
+
+00:00:29.690 --> 00:00:31.780 align:middle line:90%
+So let's give a few examples.
+
+00:00:31.780 --> 00:00:34.596 align:middle line:84%
+So the first example is of
+the addition operation.
+
+00:00:34.596 --> 00:00:39.650 align:middle line:90%
+
+
+00:00:39.650 --> 00:00:42.040 align:middle line:84%
+So the addition
+operation should work
+
+00:00:42.040 --> 00:00:45.440 align:middle line:84%
+on any number types--
+should work on real types,
+
+00:00:45.440 --> 00:00:48.780 align:middle line:84%
+on rational
+types, on integers.
+
+00:00:48.780 --> 00:00:51.530 align:middle line:84%
+So we need some kind of type
+variable to express this.
+
+00:00:51.530 --> 00:00:56.470 align:middle line:84%
+So we could write the
+signature as a type variable--
+
+00:00:56.470 --> 00:01:01.060 align:middle line:84%
+so the operation takes something
+of type a-- two elements
+
+00:01:01.060 --> 00:01:02.560 align:middle line:90%
+and returns something of type a.
+
+00:01:02.560 --> 00:01:04.143 align:middle line:84%
+But, of course,
+that's not good enough
+
+00:01:04.143 --> 00:01:08.820 align:middle line:84%
+because if a is not a
+number, it will not work.
+
+00:01:08.820 --> 00:01:11.350 align:middle line:84%
+Similarly, if we
+have say smaller
+
+00:01:11.350 --> 00:01:15.100 align:middle line:84%
+than-- the less than operator--
+again, you could say,
+
+00:01:15.100 --> 00:01:20.030 align:middle line:84%
+OK, it takes something
+of a certain type
+
+00:01:20.030 --> 00:01:24.020 align:middle line:84%
+and something of the same
+type, and it returns a Boolean.
+
+00:01:24.020 --> 00:01:27.260 align:middle line:84%
+So it indicates whether the
+comparison is true or false.
+
+00:01:27.260 --> 00:01:28.700 align:middle line:84%
+But again, that's
+not good enough
+
+00:01:28.700 --> 00:01:33.310 align:middle line:84%
+because, in general, types
+are not necessarily such
+
+00:01:33.310 --> 00:01:38.040 align:middle line:84%
+that they can be compared to
+one another in a meaningful way.
+
+00:01:38.040 --> 00:01:41.140 align:middle line:84%
+So in both cases, the
+way we solve this problem
+
+00:01:41.140 --> 00:01:42.780 align:middle line:90%
+is by introducing type classes.
+
+00:01:42.780 --> 00:01:47.790 align:middle line:84%
+So type classes are
+actually constructs
+
+00:01:47.790 --> 00:01:51.740 align:middle line:84%
+that allow you to put
+constraints on the types
+
+00:01:51.740 --> 00:01:54.470 align:middle line:84%
+without ... you
+express that for instance,
+
+00:01:54.470 --> 00:01:58.585 align:middle line:84%
+in this expression, a must be a
+number, and in this expression,
+
+00:01:58.585 --> 00:02:00.310 align:middle line:90%
+a must be orderable.
+
+00:02:00.310 --> 00:02:03.520 align:middle line:84%
+And the way we do that is we
+extend the syntax a little bit.
+
+00:02:03.520 --> 00:02:09.210 align:middle line:90%
+
+
+00:02:09.210 --> 00:02:14.500 align:middle line:84%
+So for instance,
+we say for addition
+
+00:02:14.500 --> 00:02:18.370 align:middle line:84%
+given that a belongs to the
+Num type class, meaning a
+
+00:02:18.370 --> 00:02:23.610 align:middle line:84%
+is a number, then we can
+write this valid signature.
+
+00:02:23.610 --> 00:02:26.711 align:middle line:90%
+
+
+00:02:26.711 --> 00:02:30.650 align:middle line:90%
+And the same for this one.
+
+00:02:30.650 --> 00:02:35.470 align:middle line:84%
+Given that a belongs to
+Ord type class-- that's
+
+00:02:35.470 --> 00:02:41.550 align:middle line:84%
+what this fat arrow means--
+then the following signature
+
+00:02:41.550 --> 00:02:42.206 align:middle line:90%
+is valid.
+
+00:02:42.206 --> 00:02:45.540 align:middle line:90%
+
+
+00:02:45.540 --> 00:02:47.700 align:middle line:84%
+So these are practical
+examples of type classes.
+
+00:02:47.700 --> 00:02:51.120 align:middle line:84%
+Other ones that you have seen
+are the Show and the Read type
+
+00:02:51.120 --> 00:02:52.020 align:middle line:90%
+classes.
+
+00:02:52.020 --> 00:02:55.330 align:middle line:84%
+What we are going to
+do in the next step
+
+00:02:55.330 --> 00:02:58.450 align:middle line:84%
+is to look at how you can
+define type classes-- how
+
+00:02:58.450 --> 00:03:02.220 align:middle line:84%
+type classes are defined and
+how you can make your own.
+
+00:03:02.220 --> 00:03:06.248 align:middle line:90%
