@@ -1,0 +1,36 @@
+
+
+We have been overwhelmed by the positive response to
+Functional Programming in Haskell. You are now part of a community
+of over 5000 learners. The immediate sense of togetherness
+is apparent from the comments and discussion forums. It's great
+to see everyone helping each other out with advice and feedback.
+
+We realise there have been several glitches with the 
+interactive tutorial exercises, for which we apologise.
+We pushed an update last Wednesday afternoon, so hopefully things 
+should be more stable now. Sometimes, the `next` and 
+`prev` commands don't work --- this is due to error handling
+with unexpected input. It might be best to use the `stepN` command,
+where `N` is the step you want to move to.
+
+Later this week, we will be advising you to install Haskell
+software on your own computer. We recommend either the 
+[Haskell Platform](https://www.haskell.org/platform/) or
+[Stack](https://docs.haskellstack.org/en/stable/README/).
+Our team of mentors, including
+[Blair](https://www.futurelearn.com/profiles/4396391),
+[Cristian](https://www.futurelearn.com/profiles/4188971) and 
+[Magnus](https://www.futurelearn.com/profiles/4396698),
+will be on hand to guide you through
+the installation process if you have difficulties.
+
+As you continue to engage with the course throughout this week,
+we look forward to reading your comments and responding to
+feedback regularly. Happy Haskell-ing!
+
+Best wishes,
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
