@@ -120,7 +120,7 @@ reading character
 
 00:02:02.900 --> 00:02:09.600 align:middle line:84%
 input from the standard terminal
-using getChar.
+using getLine.
 
 00:02:09.600 --> 00:02:12.430 align:middle line:84%
 As you do the tutorial,
