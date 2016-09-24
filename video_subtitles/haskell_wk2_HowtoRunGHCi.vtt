@@ -31,7 +31,7 @@ type in 'ghci', which
 
 00:00:23.560 --> 00:00:26.800 align:middle line:84%
 is the interpreter for the
-classical Haskell compiler.
+Glasgow Haskell compiler.
 
 00:00:26.800 --> 00:00:27.810 align:middle line:90%
 Press Enter.
