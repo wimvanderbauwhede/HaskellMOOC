@@ -1,0 +1,34 @@
+
+
+Many of you have spent the past fortnight getting to know Haskell.
+However it's apparent that some learners have considerable prior
+expertise in functional programming.
+One of the most encouraging aspects of our community
+interaction has been the way that experienced learners have
+helped and supported the novice Haskell-ers.
+This is excellent --- you are doing so well that the
+course educators almost feel redundant!
+
+By now, you should have installed Haskell software on your own machine.
+However if you have problems with your installation,
+please post your issues in the comments and we will try to assist you.
+At the very least, you need to be able to run GHCi to participate in
+the programming exercises for the remainder of the course.
+
+We had great fun reading your source code submissions for
+guessing games --- including Guess the Number and Mastermind.
+I'm coding up a Battleships game, which I'll push to github soon.
+
+Later this week,
+[Blair](https://www.futurelearn.com/profiles/4396391) and I
+will post a
+[feedback video](https://www.futurelearn.com/courses/functional-programming-haskell/1/steps/122939)
+online.
+We will be responding to your comments and trying to identify
+high-level themes that emerge from learner activities.
+
+Keep on coding!
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
