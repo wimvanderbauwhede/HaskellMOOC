@@ -1,0 +1,67 @@
+
+COURSE FEEDBACK - WEEK 3 
+
+BLAIR and JEREMY
+
+hi everyone, great to see you!
+
+Did you know that you belong to a community of over 5000 learners!
+It's wonderful to see the momentum that is building up on this Functional
+Programming course. We hope you are still enjoying yourself, at this
+half-way stage.
+
+We realise that some of you have experienced issues with our
+tryHaskell online interpreter. Sorry about this. We have fixed a few
+bugs. Currently the main problem seems to be that next/back instructions
+don't always work. We're trying to fix this right now - please bear with us.
+As a handy trick, did you know you can click on the Haskell source text
+to enter it directly without having to type it in yourself!
+
+OK - let's talk about indentation. Whereas some block-structured 
+mainstream languages use curly braces or similar to denote scope,
+Haskell uses whitespace instead.
+
+Blair - can you show us how to define multiple variables in a let 
+expression in Haskell?
+ (talk it over)
+Similar for do, where and case (although we haven't seen all these yet)
+
+One more thing here, lots of you want to post code in the comments sections
+on the FutureLearn site. Sadly, FutureLearn comments don't support syntax 
+highlighting, so we are recommending that you put your Haskell source on
+github gist, or pastebin, then post a link in the FutureLearn comments.
+We like reading your source code - thanks!
+
+Now, let's talk a little more about Foldable - this is a type class
+that is important since GHC v7.10. Previously, foldl and foldr functions
+worked on lists, now they work on instances of Foldable.
+
+So the type signature for foldl is
+
+Foldable t -> (b->a->b) -> b -> t a -> b
+
+Well, you can understand this as follows, given a t
+type over which you can accumulate values, then
+foldl takes a function, a base value, a t structure, and
+folds the function over the structure.
+
+For lists, it looks like this
+
+(b -> a -> b) -> b -> [a] -> b
+
+Trees might be Foldable too ...
+
+(b -> a -> b) -> b -> Tree a -> b
+
+Post questions in the comments section, if you would like
+to explore this in more detail.
+
+Finally, our "spot the difference" discussion in week 1 generated
+lots of interesting reactions. People have been discussing other
+'functional' languages like OCaml, Elm and F#.
+Haskell's laziness distinguishes it from these languages - but as
+we've said lots of times before, once you 'get' functional programming,
+you can work functionally in any language!
+
+Keep on going with the course. We'll have another feedback video in two
+weeks' time. Bye for now!
