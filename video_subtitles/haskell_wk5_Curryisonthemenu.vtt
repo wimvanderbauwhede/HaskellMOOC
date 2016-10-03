@@ -125,7 +125,7 @@ function, which is this one.
 
 00:01:58.700 --> 00:02:02.725 align:middle line:84%
 So the body remains
-completely irrelevant.
+completely untouched.
 
 00:02:02.725 --> 00:02:05.250 align:middle line:84%
 And we can rewrite this
@@ -238,8 +238,8 @@ And now sq4 is a new function
 which just takes one argument.
 
 00:03:38.030 --> 00:03:46.370 align:middle line:84%
-If we now call Sq4 value
-three, it will return 95.
+If we now call Sq4 on value
+three, it will return 25.
 
 00:03:46.370 --> 00:03:48.190 align:middle line:84%
 This is an example of
@@ -250,7 +250,7 @@ So basically, we've applied
 four to the function argument x,
 
 00:03:54.970 --> 00:03:56.935 align:middle line:84%
-but we haven't multiplied
+but we haven't applied
 anything to y,
 
 00:03:56.935 --> 00:03:58.310 align:middle line:84%
