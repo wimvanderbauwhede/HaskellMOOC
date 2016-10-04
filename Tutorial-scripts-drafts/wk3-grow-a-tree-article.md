@@ -1,5 +1,3 @@
-Grow a Tree
-
 In Computer Science, trees grow upside-down. The unique *root*  
 is at the top, and the *leaves* are at the bottom. 
 
@@ -54,7 +52,8 @@ need to recursively process the two child trees.
 ~~~ haskell
 treeDepth :: Tree -> Int
 treeDepth Leaf = 0
-treeDepth Node _ leftSubtree rightSubtree = 1 + max (treeDepth leftSubtree) (treeDepth rightSubtree)
+treeDepth (Node _ leftSubtree rightSubtree) = 
+  1 + max (treeDepth leftSubtree) (treeDepth rightSubtree)
 ~~~
 
 Notice the `_` 'don't care' value, since we discard the `Int` payload
@@ -91,7 +90,7 @@ isSortedTree :: Tree -> Int -> Int -> Bool
 isSortedTree Leaf _ _ = True
 isSortedTree (Node x leftSubtree rightSubtree) minVal maxVal =
     let leftSorted   = isSortedTree leftSubtree minVal x
-         rightSorted = isSortedTree rightSubtree x maxVal
+        rightSorted = isSortedTree rightSubtree x maxVal
     in x >= minVal && x< maxVal && leftSorted && rightSorted
 ~~~ 
 
@@ -141,7 +140,7 @@ this concept.
 
 
 Next you need to write some `Tree` functions for yourself.
-Download the `trees.hs` file below and load it into ghci. 
-In the following assignment, we are going to look at 
-inserting values into a `Tree` in order, and turning a `Tree` into a list.
-
+Download the `sortedtree.hs` file below and load it into GHCi. 
+Can you write functions to insert a value into a `Tree` in order, or to 
+convert from a `Tree` into a list?
+ 
