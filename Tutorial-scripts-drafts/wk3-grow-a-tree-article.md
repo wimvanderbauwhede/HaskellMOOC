@@ -72,8 +72,8 @@ treeSum :: Tree -> Int
 How about a function to check whether a tree is sorted properly?
 The data structure invariant we want is
 that, for any `Node` storing value `x`, all values in its left subtree are
-`<= x`, and all values in its right
-subtree are `> x`.
+`< x`, and all values in its right
+subtree are `>= x`.
 
 So this function will take in a `Tree`, a minimum value,
 a maximum value and it will return a `Bool`.
