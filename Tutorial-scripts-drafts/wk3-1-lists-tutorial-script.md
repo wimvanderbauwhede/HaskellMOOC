@@ -73,7 +73,7 @@ filter pred (x:xs)
 
 ### Function composition
 
-- We can express a large compution by “chaining together” a sequence of functions that perform smaller computations
+- We can express a large computation by “chaining together” a sequence of functions that perform smaller computations
 
 1. Start with an argument of type $$a$$
 2. Apply a function $$g :: a->b$$ to it, getting an intermediate result of type $$b$$
