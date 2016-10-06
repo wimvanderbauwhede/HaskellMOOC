@@ -1,10 +1,12 @@
-def f(x)
-    x*(x+1)
-end
-
+# our list
 lst = []
 for i in 1 .. 10
     lst.push(i)
+end
+
+# operations to emulate map 
+def f(x)
+    x*(x+1)
 end
 
 lst_ = []
@@ -15,6 +17,7 @@ end
 
 puts lst_.inspect
 
+# operations to emulate foldl
 def g(acc,elt)
     acc/elt
 end
@@ -26,8 +29,9 @@ end
 
 puts acc
 
+# operations to emulate foldr
 def g_(acc,elt)
-    elt/acc
+    acc/elt
 end
 
 acc = 1.0
@@ -36,5 +40,3 @@ for elt in lst.reverse
 end
 
 puts acc
-
-
