@@ -6,6 +6,8 @@ These tasks will require the use of two Haskell libraries ---
 one of the strengths of the language is the vast array of
 freely available tools and code.
 
+Our team of course mentors will be on hand to help out if you have any difficulties with these activities. 
+
 Last Friday, I (Jeremy) visited the 
 [Haskell eXchange](https://skillsmatter.com/conferences/7276-haskell-exchange-2016) event in London,
 where I met several learners on our course. It was great
