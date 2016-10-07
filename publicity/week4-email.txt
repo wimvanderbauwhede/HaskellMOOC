@@ -1,0 +1,18 @@
+
+Now that you have some confidence with Haskell,
+we will move into more challenging territory. This week 
+we will explore text parsers and the QuickCheck tool.
+These tasks will require the use of two Haskell libraries --- 
+one of the strengths of the language is the vast array of
+freely available tools and code.
+
+Last Friday, I (Jeremy) visited the 
+[Haskell eXchange](https://skillsmatter.com/conferences/7276-haskell-exchange-2016) event in London,
+where I met several learners on our course. It was great
+to see you in person and to chat about your experiences.
+
+Keep on coding!
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
