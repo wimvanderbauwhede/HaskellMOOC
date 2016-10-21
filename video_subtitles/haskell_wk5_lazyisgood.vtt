@@ -179,7 +179,7 @@ in GHCi as follows.
 
 00:02:45.150 --> 00:02:50.180 align:middle line:84%
 Let ones equal 1
-[INAUDIBLE] onto ones.
+cons'd onto ones.
 
 00:02:50.180 --> 00:02:53.750 align:middle line:84%
 See the recursive nature
