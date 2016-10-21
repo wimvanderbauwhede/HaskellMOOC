@@ -7,7 +7,7 @@ WEBVTT
 
 
 00:00:04.850 --> 00:00:06.332 align:middle line:90%
-SUBJECT: Hello, everyone.
+WIM: Hello, everyone.
 
 00:00:06.332 --> 00:00:09.800 align:middle line:84%
 In this optional video, I
@@ -104,7 +104,7 @@ and we will essentially
 do the equivalent
 
 00:01:36.010 --> 00:01:37.460 align:middle line:90%
-of carrying in the let blocks.
+of currying in the let blocks.
 
 00:01:37.460 --> 00:01:41.030 align:middle line:84%
 So we will transform this let
@@ -174,7 +174,7 @@ applied to this construct here.
 And apply to 10.
 
 00:03:08.740 --> 00:03:13.580 align:middle line:84%
-So If we just straighten
+So if we just straighten
 it out a bit, we get--
 
 00:03:13.580 --> 00:03:22.290 align:middle line:90%
@@ -286,7 +286,7 @@ if true else if false.
 
 00:04:54.230 --> 00:04:56.595 align:middle line:84%
 So condition, if
-true and a false
+true and if false
 
 00:04:56.595 --> 00:04:58.100 align:middle line:84%
 are expressions in
@@ -409,7 +409,7 @@ So what we have to do now is
 define cons and the empty list
 
 00:07:11.120 --> 00:07:14.010 align:middle line:84%
-using number functions
+using lambda functions
 and nothing else.
 
 00:07:14.010 --> 00:07:16.500 align:middle line:84%
@@ -426,14 +426,14 @@ have nothing else, remember?
 
 00:07:23.940 --> 00:07:32.620 align:middle line:84%
 So we define cons as a lambda
-function of x and axis,
+function of x and xs,
 
 00:07:32.620 --> 00:07:37.240 align:middle line:84%
 which returns, in its own
 right, a function that
 
 00:07:37.240 --> 00:07:38.970 align:middle line:90%
-operate on x and axis.
+operates on x and xs.
 
 00:07:38.970 --> 00:07:41.530 align:middle line:90%
 
@@ -447,12 +447,12 @@ so normally cons is of
 course a function of x and y.
 
 00:07:47.930 --> 00:07:51.880 align:middle line:84%
-We've rewritten it is a variable
+We've rewritten it as a variable
 binding to a lambda expression.
 
 00:07:51.880 --> 00:07:54.500 align:middle line:84%
 And this lambda
-expression in x and axis
+expression in x and xs
 
 00:07:54.500 --> 00:07:58.760 align:middle line:84%
 returns this
@@ -491,14 +491,14 @@ whole system is consistent.
 
 00:08:31.660 --> 00:08:35.669 align:middle line:84%
 So in the same fashion
-you can define triples
+you can define tuples
 
 00:08:35.669 --> 00:08:41.120 align:middle line:84%
 and then you can go on to define
 list operations, recursions,
 
 00:08:41.120 --> 00:08:42.530 align:middle line:90%
-false maps.
+folds, maps.
 
 00:08:42.530 --> 00:08:45.470 align:middle line:84%
 And then you can go on
@@ -528,8 +528,8 @@ in terms of nothing else
 than lambda functions.
 
 00:09:04.050 --> 00:09:07.610 align:middle line:84%
-So really, they're
-our only functions.
+So really, there
+are only functions.
 
 00:09:07.610 --> 00:09:09.160 align:middle line:90%
 OK.
