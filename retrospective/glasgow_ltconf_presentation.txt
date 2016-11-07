@@ -1,0 +1,56 @@
+Glasgow's Largest Ever Computing Science Course (presentation)
+
+Jeremy Singer, Computing Science, Science and Engineering (Presenter)
+Vicki Dale, Learning Technology Unit, University Services (Contributor)
+Wim Vanderbauwhede, Computing Science, Science and Engineering (Contributor)
+Niall Barr, Learning Technology Unit, University Services (Contributor)
+
+Primary contact: Jeremy Singer, 3638, jeremy.singer@glasgow.ac.uk
+
+Abstract
+Imagine having 6000 learners in your class! That's how many students signed up for the 'Functional Programming in Haskell' online course, run by the School of Computing Science in Sep 2016 and hosted on the FutureLearn platform [1]. The students divide into two categories - Honours undergraduates at Glasgow and remote learners from across the world. We review our blended online learning approach for the Glasgow students, and how this dovetails with the fully online provision for the remote learners. Our innovations include:
+1) following Laurillard's Arena Blended Connected (ABC) curriculum design, modified for a technical course in software engineering [2]
+2) scaling traditional assessment activities to thousands of learners with Pollitt's Adaptive Comparative Judgment [3] that involves students in the assessment process
+3) facilitating conversation-oriented peer learning via online forums [4]
+4) providing automated yet personalised interactive feedback for programming tutorial exercises [5]
+
+We will discuss the experiences of learners, teaching assistants and lecturers involved with this course. Throughout the presentation, we will emphasize the key themes of (a) learning in the community and (b) technology enhanced learning. If possible, please bring a laptop or tablet to this session as we will have live, hands-on demonstrations of several tools and technologies which make up the core platform for this course.
+
+[1] https://www.futurelearn.com/courses/functional-programming-haskell
+[2] http://blogs.ucl.ac.uk/digital-education/2015/04/09/abc-arena-blended-connected-curriculum-design/
+[3] http://www.tandfonline.com/doi/abs/10.1080/0969594X.2012.665354
+[4] http://www.ascilite.org/conferences/singapore07/procs/harris.pdf
+[5] https://net.educause.edu/ir/library/pdf/ERM0352.pdf
+References
+The method of Adaptive Comparative Judgement
+Alastair Pollitt
+Assessment in Education: Principles, Policy & Practice, 19(3). 2012.
+
+
+
+Developing online discussion forums as student centred peer e-learning environments.
+Neil Harris and Maria Sandor.
+Proc. ascilite, Singapore, 2007.
+
+
+New models for online learning: Improving learning and reducing costs.
+Carol Twigg.
+EDUCAUSE review, 38(5), pp 28-38. 2003.
+Activities
+10 mins overview of the motivation and course design.
+7.5 mins summarizing student, TA and lecturer experience.
+7.5 mins interactive demo of tools and platforms.
+5 mins Q+A from audience.
+Learning outcomes
+- analyse the effectiveness of Laurillard's ABC course design for technical/engineering style courses
+- appraise the suitability of a traditional Glasgow taught course for transfer to the FutureLearn platform
+- discuss how to use technology to involve students in the assessment process, to enable scaling of assessment to massive class sizes
+- evaluate how a particular set of Glasgow undergraduate students engage with a massive globally distributed cohort of online learners, possibly extrapolating this evidence for other local students
+Student Engagement
+- anonymised feedback and anecdotal evidence from student experiences on the course
+- discussion and demonstration of student peer-assessment tools and student-led peer-learning discussion forums
+IT & AV requirements
+Powerpoint slides on data projector.
+Eduroam wifi access.
+Session participants should also be able to use laptops/tablets.
+
