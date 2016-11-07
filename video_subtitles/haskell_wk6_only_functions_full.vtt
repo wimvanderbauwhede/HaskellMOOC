@@ -1,0 +1,537 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.395 align:middle line:90%
+[MUSIC PLAYING]
+
+00:00:03.395 --> 00:00:04.850 align:middle line:90%
+
+
+00:00:04.850 --> 00:00:06.332 align:middle line:90%
+WIM: Hello, everyone.
+
+00:00:06.332 --> 00:00:09.800 align:middle line:84%
+In this optional video, I
+want to explain that, really,
+
+00:00:09.800 --> 00:00:13.430 align:middle line:84%
+in functional languages
+there are only functions.
+
+00:00:13.430 --> 00:00:16.120 align:middle line:84%
+What I want to do is give
+you a quick intuition
+
+00:00:16.120 --> 00:00:18.930 align:middle line:84%
+how we can remove all
+the syntactic sugar
+
+00:00:18.930 --> 00:00:20.910 align:middle line:84%
+from a functional
+language and reduce it
+
+00:00:20.910 --> 00:00:23.070 align:middle line:90%
+to only lambda functions.
+
+00:00:23.070 --> 00:00:26.180 align:middle line:84%
+So the full elaboration
+of how you can do this
+
+00:00:26.180 --> 00:00:29.660 align:middle line:84%
+is explained in the
+article on the site.
+
+00:00:29.660 --> 00:00:32.640 align:middle line:84%
+We will just cover
+the basic ideas.
+
+00:00:32.640 --> 00:00:38.150 align:middle line:84%
+So let's start with
+the let construct.
+
+00:00:38.150 --> 00:00:52.740 align:middle line:84%
+Suppose we have something
+like-- so we a let block,
+
+00:00:52.740 --> 00:00:55.590 align:middle line:84%
+where we have n
+is assigned to 10,
+
+00:00:55.590 --> 00:00:59.920 align:middle line:84%
+and we define the function
+f of x being x plus 1.
+
+00:00:59.920 --> 00:01:02.320 align:middle line:90%
+And we apply f to n.
+
+00:01:02.320 --> 00:01:06.330 align:middle line:84%
+So basically the whole
+thing should return 11.
+
+00:01:06.330 --> 00:01:09.820 align:middle line:84%
+So, we want to rewrite this
+so that there will only
+
+00:01:09.820 --> 00:01:11.720 align:middle line:90%
+be lambda functions left.
+
+00:01:11.720 --> 00:01:13.830 align:middle line:84%
+So the obvious first
+rewrite we can do
+
+00:01:13.830 --> 00:01:19.740 align:middle line:84%
+is rewrite this function
+definition of the lambda.
+
+00:01:19.740 --> 00:01:20.668 align:middle line:90%
+So, very simply.
+
+00:01:20.668 --> 00:01:25.530 align:middle line:90%
+
+
+00:01:25.530 --> 00:01:27.050 align:middle line:90%
+OK.
+
+00:01:27.050 --> 00:01:29.250 align:middle line:84%
+So then the next
+thing we will do
+
+00:01:29.250 --> 00:01:32.960 align:middle line:84%
+is, we have a let that
+contains two variables,
+
+00:01:32.960 --> 00:01:36.010 align:middle line:84%
+and we will essentially
+do the equivalent
+
+00:01:36.010 --> 00:01:37.460 align:middle line:90%
+of currying in the let blocks.
+
+00:01:37.460 --> 00:01:41.030 align:middle line:84%
+So we will transform this let
+block in a nest of let blocks.
+
+00:01:41.030 --> 00:01:42.560 align:middle line:90%
+So what we're doing is--
+
+00:01:42.560 --> 00:02:04.590 align:middle line:90%
+
+
+00:02:04.590 --> 00:02:05.150 align:middle line:90%
+OK.
+
+00:02:05.150 --> 00:02:07.540 align:middle line:90%
+So now we have a nested let.
+
+00:02:07.540 --> 00:02:12.340 align:middle line:84%
+Now we have this let expression,
+with just a single variable
+
+00:02:12.340 --> 00:02:16.745 align:middle line:84%
+here, and we can rewrite this as
+a lambda expression as follows.
+
+00:02:16.745 --> 00:02:18.650 align:middle line:84%
+So I'll just put it
+on this side here.
+
+00:02:18.650 --> 00:02:32.030 align:middle line:90%
+
+
+00:02:32.030 --> 00:02:35.800 align:middle line:84%
+So this whole let
+block here is actually
+
+00:02:35.800 --> 00:02:39.230 align:middle line:84%
+entirely equivalent to a
+lambda function applied
+
+00:02:39.230 --> 00:02:42.960 align:middle line:90%
+to the function that defines f.
+
+00:02:42.960 --> 00:02:49.712 align:middle line:84%
+So we bind f to this
+function, and apply it to n.
+
+00:02:49.712 --> 00:02:53.190 align:middle line:84%
+So all we have to do is
+do the same for other let.
+
+00:02:53.190 --> 00:02:54.190 align:middle line:90%
+And that's quite simple.
+
+00:02:54.190 --> 00:02:56.190 align:middle line:84%
+So we take the other
+let and transform it
+
+00:02:56.190 --> 00:03:02.310 align:middle line:84%
+into a lambda expression, which
+says, basically, we have n
+
+00:03:02.310 --> 00:03:07.570 align:middle line:90%
+applied to this construct here.
+
+00:03:07.570 --> 00:03:08.740 align:middle line:90%
+And apply to 10.
+
+00:03:08.740 --> 00:03:13.580 align:middle line:84%
+So if we just straighten
+it out a bit, we get--
+
+00:03:13.580 --> 00:03:22.290 align:middle line:90%
+
+
+00:03:22.290 --> 00:03:25.350 align:middle line:84%
+So we have transformed
+the whole nested
+
+00:03:25.350 --> 00:03:29.100 align:middle line:90%
+let into a series of lambdas.
+
+00:03:29.100 --> 00:03:31.180 align:middle line:84%
+This you can see, it's
+entirely equivalent,
+
+00:03:31.180 --> 00:03:32.910 align:middle line:84%
+but it's a lot
+less easy to type,
+
+00:03:32.910 --> 00:03:35.700 align:middle line:84%
+which is why the let syntax
+is available in the language
+
+00:03:35.700 --> 00:03:36.250 align:middle line:90%
+of course.
+
+00:03:36.250 --> 00:03:42.250 align:middle line:90%
+
+
+00:03:42.250 --> 00:03:45.040 align:middle line:84%
+So the next thing
+we want to do is
+
+00:03:45.040 --> 00:03:48.490 align:middle line:84%
+see if we can define conditional
+expressions, and so on.
+
+00:03:48.490 --> 00:03:52.320 align:middle line:84%
+And for that we need to define
+the values of true and false.
+
+00:03:52.320 --> 00:03:54.060 align:middle line:84%
+You might wonder,
+how can we define
+
+00:03:54.060 --> 00:03:57.395 align:middle line:84%
+the values of true and false
+without having any numbers,
+
+00:03:57.395 --> 00:03:59.520 align:middle line:84%
+because remember we're
+going to use only functions,
+
+00:03:59.520 --> 00:04:02.400 align:middle line:84%
+so even numbers are
+not defined yet.
+
+00:04:02.400 --> 00:04:04.180 align:middle line:90%
+So it's actually quite easy.
+
+00:04:04.180 --> 00:04:06.706 align:middle line:84%
+We define true and
+false as functions.
+
+00:04:06.706 --> 00:04:14.720 align:middle line:84%
+So we say true is defined as a
+function of two elements, which
+
+00:04:14.720 --> 00:04:16.010 align:middle line:90%
+returns the first element.
+
+00:04:16.010 --> 00:04:21.829 align:middle line:84%
+And false is a function
+of two elements which
+
+00:04:21.829 --> 00:04:24.191 align:middle line:90%
+returns the second elements.
+
+00:04:24.191 --> 00:04:25.440 align:middle line:90%
+And that's all there is to it.
+
+00:04:25.440 --> 00:04:28.890 align:middle line:84%
+This is our-- this is by
+definition, in our system,
+
+00:04:28.890 --> 00:04:30.540 align:middle line:90%
+true and false.
+
+00:04:30.540 --> 00:04:32.810 align:middle line:84%
+And now we can use these
+values of true and false,
+
+00:04:32.810 --> 00:04:34.890 align:middle line:84%
+these definitions
+to define things
+
+00:04:34.890 --> 00:04:38.760 align:middle line:84%
+like if then else constructs,
+or-- Let's do that next.
+
+00:04:38.760 --> 00:04:42.180 align:middle line:84%
+So, in if then else--
+so that in Haskell it
+
+00:04:42.180 --> 00:04:54.230 align:middle line:84%
+looks if condition then
+if true else if false.
+
+00:04:54.230 --> 00:04:56.595 align:middle line:84%
+So condition, if
+true and if false
+
+00:04:56.595 --> 00:04:58.100 align:middle line:84%
+are expressions in
+their own right,
+
+00:04:58.100 --> 00:05:00.570 align:middle line:84%
+condition evaluates
+to true or false.
+
+00:05:00.570 --> 00:05:03.496 align:middle line:84%
+So the first thing
+is this if then else,
+
+00:05:03.496 --> 00:05:04.620 align:middle line:90%
+we know it's an expression.
+
+00:05:04.620 --> 00:05:07.195 align:middle line:84%
+And it's actually just
+syntactic sugar for a function,
+
+00:05:07.195 --> 00:05:09.680 align:middle line:84%
+and we will call this
+function if then else.
+
+00:05:09.680 --> 00:05:24.630 align:middle line:84%
+So we have if then else
+condition if true if false.
+
+00:05:24.630 --> 00:05:28.590 align:middle line:84%
+So this is our first step in
+removing some syntactic sugar.
+
+00:05:28.590 --> 00:05:31.480 align:middle line:84%
+So now with these definitions
+for true and false,
+
+00:05:31.480 --> 00:05:34.340 align:middle line:84%
+it turns out that the
+definition of this if then else
+
+00:05:34.340 --> 00:05:36.260 align:middle line:90%
+is actually quite simple.
+
+00:05:36.260 --> 00:05:47.910 align:middle line:84%
+It is very simply--
+because remember,
+
+00:05:47.910 --> 00:05:50.130 align:middle line:84%
+condition evaluates
+to true or false.
+
+00:05:50.130 --> 00:05:52.600 align:middle line:84%
+So it must return one
+of these two functions.
+
+00:05:52.600 --> 00:05:54.600 align:middle line:84%
+These are functions of
+two elements, that return
+
+00:05:54.600 --> 00:05:56.080 align:middle line:90%
+either the first or the second.
+
+00:05:56.080 --> 00:06:00.285 align:middle line:84%
+So if it's this one, then
+condition will return this.
+
+00:06:00.285 --> 00:06:02.530 align:middle line:84%
+If that one, condition
+will return that.
+
+00:06:02.530 --> 00:06:05.327 align:middle line:84%
+So this way, we have
+defined if then else.
+
+00:06:05.327 --> 00:06:07.950 align:middle line:90%
+
+
+00:06:07.950 --> 00:06:08.950 align:middle line:90%
+Neat, huh?
+
+00:06:08.950 --> 00:06:21.610 align:middle line:90%
+
+
+00:06:21.610 --> 00:06:25.520 align:middle line:84%
+Finally, I want to show
+how to define lists.
+
+00:06:25.520 --> 00:06:32.500 align:middle line:84%
+So let's say we have a
+list which is just 1, 2, 3.
+
+00:06:32.500 --> 00:06:36.120 align:middle line:84%
+We already know from what we've
+seen earlier that this bracket
+
+00:06:36.120 --> 00:06:39.020 align:middle line:84%
+syntax for list is
+actually syntactic sugar
+
+00:06:39.020 --> 00:06:42.552 align:middle line:84%
+for a combination of the cons
+operation and the empty list.
+
+00:06:42.552 --> 00:06:44.760 align:middle line:84%
+So we know that this is
+entirely equivalent to saying
+
+00:06:44.760 --> 00:06:50.020 align:middle line:90%
+1, 2, 3 empty list.
+
+00:06:50.020 --> 00:06:54.397 align:middle line:84%
+Or written out more explicitly
+using the cons function.
+
+00:06:54.397 --> 00:07:05.820 align:middle line:90%
+
+
+00:07:05.820 --> 00:07:11.120 align:middle line:84%
+So what we have to do now is
+define cons and the empty list
+
+00:07:11.120 --> 00:07:14.010 align:middle line:84%
+using lambda functions
+and nothing else.
+
+00:07:14.010 --> 00:07:16.500 align:middle line:84%
+And we will use the
+same trick again
+
+00:07:16.500 --> 00:07:19.360 align:middle line:84%
+of using-- defining
+a function that
+
+00:07:19.360 --> 00:07:23.940 align:middle line:84%
+returns a function, because we
+have nothing else, remember?
+
+00:07:23.940 --> 00:07:32.620 align:middle line:84%
+So we define cons as a lambda
+function of x and xs,
+
+00:07:32.620 --> 00:07:37.240 align:middle line:84%
+which returns, in its own
+right, a function that
+
+00:07:37.240 --> 00:07:38.970 align:middle line:90%
+operates on x and xs.
+
+00:07:38.970 --> 00:07:41.530 align:middle line:90%
+
+
+00:07:41.530 --> 00:07:45.480 align:middle line:84%
+So this is-- because we don't
+want any syntactic sugar,
+
+00:07:45.480 --> 00:07:47.930 align:middle line:84%
+so normally cons is of
+course a function of x and y.
+
+00:07:47.930 --> 00:07:51.880 align:middle line:84%
+We've rewritten it as a variable
+binding to a lambda expression.
+
+00:07:51.880 --> 00:07:54.500 align:middle line:84%
+And this lambda
+expression in x and xs
+
+00:07:54.500 --> 00:07:58.760 align:middle line:84%
+returns this
+particular function.
+
+00:07:58.760 --> 00:08:02.240 align:middle line:84%
+So all we need now
+is the empty list.
+
+00:08:02.240 --> 00:08:04.510 align:middle line:90%
+And this is again very simple.
+
+00:08:04.510 --> 00:08:15.226 align:middle line:84%
+So we define the empty list as
+a function of anything to true.
+
+00:08:15.226 --> 00:08:17.670 align:middle line:84%
+And the reason for this,
+why it has to be true,
+
+00:08:17.670 --> 00:08:20.470 align:middle line:84%
+is because we will
+work on from this
+
+00:08:20.470 --> 00:08:22.800 align:middle line:84%
+and define things like
+test for emptiness
+
+00:08:22.800 --> 00:08:27.370 align:middle line:84%
+of the list, and length
+of the list, and so on.
+
+00:08:27.370 --> 00:08:31.660 align:middle line:84%
+And with this definition the
+whole system is consistent.
+
+00:08:31.660 --> 00:08:35.669 align:middle line:84%
+So in the same fashion
+you can define tuples
+
+00:08:35.669 --> 00:08:41.120 align:middle line:84%
+and then you can go on to define
+list operations, recursions,
+
+00:08:41.120 --> 00:08:42.530 align:middle line:90%
+folds, maps.
+
+00:08:42.530 --> 00:08:45.470 align:middle line:84%
+And then you can go on
+to define numbers simply
+
+00:08:45.470 --> 00:08:50.310 align:middle line:84%
+by saying that you have a 0, of
+some arbitrary starting point,
+
+00:08:50.310 --> 00:08:54.230 align:middle line:84%
+and then a function that
+always defines the next number,
+
+00:08:54.230 --> 00:08:54.730 align:middle line:90%
+and so on.
+
+00:08:54.730 --> 00:08:57.830 align:middle line:84%
+All that is explained in
+the article in more detail.
+
+00:08:57.830 --> 00:09:01.540 align:middle line:84%
+But in this way, we can
+define our complete language
+
+00:09:01.540 --> 00:09:04.050 align:middle line:84%
+in terms of nothing else
+than lambda functions.
+
+00:09:04.050 --> 00:09:07.610 align:middle line:84%
+So really, there
+are only functions.
+
+00:09:07.610 --> 00:09:09.160 align:middle line:90%
+OK.
+
+00:09:09.160 --> 00:09:11.659 align:middle line:90%

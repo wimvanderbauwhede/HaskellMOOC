@@ -4,7 +4,7 @@ WEBVTT
 
 
 00:00:04.330 --> 00:00:06.640 align:middle line:84%
-SPEAKER 1: In real
+JEREMY: In real
 life, laziness
 
 00:00:06.640 --> 00:00:10.370 align:middle line:84%
@@ -117,7 +117,7 @@ in mathematical notation
 as shown here.
 
 00:01:50.950 --> 00:01:57.650 align:middle line:84%
-It's recursive definition in
+Its recursive definition in
 Haskell is bot equals bot.
 
 00:01:57.650 --> 00:02:00.020 align:middle line:84%
@@ -179,7 +179,7 @@ in GHCi as follows.
 
 00:02:45.150 --> 00:02:50.180 align:middle line:84%
 Let ones equal 1
-[INAUDIBLE] onto ones.
+cons'd onto ones.
 
 00:02:50.180 --> 00:02:53.750 align:middle line:84%
 See the recursive nature

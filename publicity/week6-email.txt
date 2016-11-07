@@ -1,0 +1,18 @@
+In this final week of the course, we will encounter some of the
+more advanced topics that underpin functional programming.
+We will see how *type classes* enable ad-hoc polymorphism in 
+Haskell. We will go back to the 1930s and discover *lambda 
+calculus* --- the theoretical basis of functional programming.
+
+Finally, we will stop mumbling about *monads* and explain how
+they work. 
+
+Thanks for keeping up with the course. Do continue to post comments
+and feedback this week. As always, the teaching team will available to help.
+Enjoy week 6 and thank you for your participation throughout the course.
+
+Keep on coding!
+
+Wim Vanderbauwhede and Jeremy Singer <br />
+Lecturers in Computing Science <br />
+University of Glasgow  <br />

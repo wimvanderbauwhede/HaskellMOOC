@@ -56,7 +56,7 @@ Maybe we could turn the final guard into `otherwise`
 and also refactor with a `where` clause.
 
 ~~~ haskell
-holescore :: Int -> Int -> String
+holeScore :: Int -> Int -> String
 holeScore strokes par
   | score < 0 = show (abs score) ++ " under par"
   | score == 0 = "level par"

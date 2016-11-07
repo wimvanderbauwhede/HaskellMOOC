@@ -1,0 +1,14 @@
+We've reached the end of the course. However the learning materials will remain online so you can catch up or review content later on.
+
+Lots of learners have given us helpful feedback about the course. Some people wanted us to provide *coding challenges* for you. Here are two possible exercises that you might attempt:
+
+1. a [noughts-and-crosses](https://en.wikipedia.org/wiki/Tic-tac-toe) game, perhaps with a web front end using [Yesod](http://www.yesodweb.com/)
+2. an ASCII-art based  maze generator, using one of the standard [algorithms](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
+
+From all the team at Glasgow, thanks for participating in the course. It's been a great experience and we hope you will have the confidence to use Haskell and functional programming techniques in future software development projects.
+
+Keep on coding!
+
+Wim Vanderbauwhede and Jeremy Singer <br />
+Lecturers in Computing Science <br />
+University of Glasgow  <br />

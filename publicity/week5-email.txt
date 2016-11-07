@@ -1,0 +1,16 @@
+Why is Haskell such a distinctive language? It uses lazy evaluation, which enables simple computation on infinite data structures. We will explore laziness in some detail this week. We also examine the type system, to give you an intuition about how Haskell 'guesses' types in your programs.
+Although Haskell is an exotic programming language, it is widely used in industry. This week we visit Facebook London, and [interview](https://www.futurelearn.com/courses/functional-programming-haskell/1/steps/121632) one of their Haskell developers.
+
+Finally,
+[Blair](https://www.futurelearn.com/profiles/4396391) and [Jeremy](https://www.futurelearn.com/profiles/1884921)
+will post a
+[feedback video](https://www.futurelearn.com/courses/functional-programming-haskell/1/steps/122939)
+online at the end of the week.
+We will be responding to your comments and highlighting
+recurrent themes that emerge from learner activities.
+
+Keep on coding!
+
+Wim Vanderbauwhede and Jeremy Singer
+Lecturers in Computing Science
+University of Glasgow
