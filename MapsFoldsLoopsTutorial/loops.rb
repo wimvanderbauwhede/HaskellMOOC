@@ -31,7 +31,7 @@ puts acc
 
 # operations to emulate foldr
 def g_(acc,elt)
-    elt/acc
+    acc/elt
 end
 
 acc = 1.0
